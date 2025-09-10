@@ -1,1 +1,1743 @@
+<!DOCTYPE html>
+<html lang="id">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet">
+  <title>Albary Keuangan – Multi Pengguna</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <style>
+    /* Sembunyikan scrollbar di HP */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Background putih */
+    body {
+      background-color: #f9fafb;
+      min-height: 100vh;
+    }
+
+    /* Card style yang lebih keren */
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header style */
+    .header {
+      background: linear-gradient(135deg, #0d5016 0%, #c9a227 100%);
+      color: white;
+    }
+
+    /* Card khusus untuk transaksi */
+    .card-transaksi {
+      border-left: 4px solid;
+    }
+
+    .card-transaksi.masuk {
+      border-left-color: #10b981;
+    }
+
+    .card-transaksi.keluar {
+      border-left-color: #ef4444;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(201, 162, 39, 0.5);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(201, 162, 39, 0.8);
+    }
+
+    /* Animasi pulse */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* Loading spinner */
+    .loader {
+      border: 3px solid rgba(201, 162, 39, 0.3);
+      border-radius: 50%;
+      border-top: 3px solid #c9a227;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Notifikasi */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+      z-index: 1000;
+      transform: translateX(150%);
+      transition: transform 0.3s ease;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification.success {
+      background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    }
+
+    .notification.error {
+      background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+    }
+
+    /* Tombol dengan aksen emas */
+    .btn-gold {
+      background: linear-gradient(135deg, #c9a227 0%, #f7d794 100%);
+      color: #0d5016;
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #a68527 0%, #e5c257 100%);
+    }
+
+    /* Ikon dengan warna emas */
+    .icon-gold {
+      color: #c9a227;
+    }
+
+    /* Teks dengan warna emas */
+    .text-gold {
+      color: #c9a227;
+    }
+
+    /* Border dengan warna emas */
+    .border-gold {
+      border-color: rgba(201, 162, 39, 0.5);
+    }
+
+    /* Background dengan warna hijau */
+    .bg-green-dark {
+      background-color: rgba(13, 80, 22, 0.1);
+    }
+
+    /* Background dengan warna emas */
+    .bg-gold {
+      background-color: rgba(201, 162, 39, 0.1);
+    }
+
+    /* Style untuk kantong aktif */
+    .kantong-aktif {
+      border: 2px solid #c9a227;
+      box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.2);
+    }
+
+    /* Style untuk form login */
+    .login-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .login-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* Security indicator */
+    .security-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .card {
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .section-margin {
+        margin-bottom: 1.5rem;
+      }
+
+      .p-4-mobile {
+        padding: 1rem;
+      }
+
+      .text-lg-mobile {
+        font-size: 1.125rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-gray-800">
+  <!-- Login Form -->
+  <div id="loginContainer" class="login-container">
+    <div class="login-form">
+      <div class="text-center mb-6">
+        <div class="security-indicator mb-3">
+          <i class="fas fa-shield-alt"></i>
+          <span>Enkripsi AES-256</span>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800">Autentikasi Keamanan</h2>
+        <p class="text-gray-600 mt-2">Masukkan password untuk mengakses data keuangan</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Password</label>
+          <div class="relative">
+            <input type="password" id="passwordInput"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder="Masukkan password" required>
+            <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+              <i class="fas fa-eye text-gray-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-gray-700 mb-2">GitHub Token (Opsional)</label>
+          <textarea id="tokenInput"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 h-24 resize-none focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            placeholder="Tempel token GitHub Anda di sini..."></textarea>
+          <p class="text-xs text-gray-500 mt-1">Token akan dienkripsi dan disimpan aman di browser Anda</p>
+        </div>
+
+        <button type="submit" class="w-full btn-gold py-3 rounded-lg font-medium">
+          <i class="fas fa-lock mr-2"></i> Masuk & Enkripsi Token
+        </button>
+      </form>
+
+      <div class="mt-4 text-center">
+        <button id="forgotPassword" class="text-sm text-gray-600 hover:text-gray-800">
+          Lupa password?
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header sticky top-0 shadow-lg z-10 py-3 sm:py-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between px-4">
+      <div class="flex items-center mb-2 sm:mb-0">
+        <i class="fas fa-wallet text-white text-xl sm:text-2xl mr-2 sm:mr-3"></i>
+        <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white">Albary Keuangan</h1>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center w-full sm:w-auto">
+        <div id="userAktif"
+          class="flex items-center gap-1 sm:gap-2 p-2 sm:p-3 bg-white/20 rounded-lg text-white w-full sm:w-auto mb-2 sm:mb-0 sm:mr-3 text-sm">
+          <i class="fas fa-user-circle text-white"></i>
+          <span class="font-medium truncate max-w-[120px]">Belum ada user dipilih</span>
+        </div>
+        <div class="flex gap-1 sm:gap-2">
+          <button id="pilihUserBtn"
+            class="bg-white/20 hover:bg-white/30 px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-white text-xs sm:text-sm flex items-center gap-1">
+            <i class="fas fa-user-check"></i> <span class="hidden sm:inline">Pilih User</span>
+          </button>
+          <button id="tambahPengguna"
+            class="btn-gold px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm flex items-center gap-1">
+            <i class="fas fa-user-plus"></i> <span class="hidden sm:inline">+ User</span>
+          </button>
+          <button id="securityBtn"
+            class="bg-white/20 hover:bg-white/30 px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-white text-xs sm:text-sm flex items-center gap-1"
+            title="Keamanan">
+            <i class="fas fa-shield-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white p-6 rounded-xl flex flex-col items-center shadow-xl">
+      <div class="loader mb-3"></div>
+      <p class="text-gray-700">Memuat data...</p>
+    </div>
+  </div>
+
+  <!-- Notifikasi -->
+  <div id="notification" class="notification"></div>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-4 sm:py-6">
+    <!-- Ringkasan -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mb-4 sm:mb-8 section-margin">
+      <div class="card p-4 sm:p-6 text-center">
+        <div class="flex items-center justify-center mb-2 sm:mb-3">
+          <div class="bg-green-dark p-2 sm:p-3 rounded-full">
+            <i class="fas fa-money-bill-wave text-green-600 text-lg sm:text-xl"></i>
+          </div>
+        </div>
+        <p class="text-gray-500 text-xs sm:text-sm mb-1">Total Rupiah</p>
+        <p id="totalRp" class="text-lg sm:text-2xl md:text-3xl font-bold text-gray-800">Rp 0</p>
+      </div>
+      <div class="card p-4 sm:p-6 text-center">
+        <div class="flex items-center justify-center mb-2 sm:mb-3">
+          <div class="bg-gold p-2 sm:p-3 rounded-full">
+            <i class="fas fa-coins text-gold text-lg sm:text-xl"></i>
+          </div>
+        </div>
+        <p class="text-gray-500 text-xs sm:text-sm mb-1">Total Riyal</p>
+        <p id="totalSar" class="text-lg sm:text-2xl md:text-3xl font-bold text-gray-800">SAR 0</p>
+      </div>
+    </section>
+
+    <!-- Tombol Transaksi -->
+    <section class="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-8 section-margin">
+      <button id="tombolMasuk"
+        class="card p-3 sm:p-4 flex flex-col items-center justify-center gap-1 sm:gap-3 border border-green-400/30 hover:bg-green-50 text-green-700">
+        <div class="bg-green-dark p-2 sm:p-3 rounded-full">
+          <i class="fas fa-arrow-down text-green-600 text-base sm:text-xl"></i>
+        </div>
+        <span class="font-medium text-xs sm:text-sm">Masuk</span>
+      </button>
+      <button id="tombolKeluar"
+        class="card p-3 sm:p-4 flex flex-col items-center justify-center gap-1 sm:gap-3 border border-red-400/30 hover:bg-red-50 text-red-700">
+        <div class="bg-red-100 p-2 sm:p-3 rounded-full">
+          <i class="fas fa-arrow-up text-red-600 text-base sm:text-xl"></i>
+        </div>
+        <span class="font-medium text-xs sm:text-sm">Keluar</span>
+      </button>
+      <button id="tombolTransfer"
+        class="card p-3 sm:p-4 flex flex-col items-center justify-center gap-1 sm:gap-3 border border-blue-400/30 hover:bg-blue-50 text-blue-700">
+        <div class="bg-blue-100 p-2 sm:p-3 rounded-full">
+          <i class="fas fa-exchange-alt text-blue-600 text-base sm:text-xl"></i>
+        </div>
+        <span class="font-medium text-xs sm:text-sm">Transfer</span>
+      </button>
+    </section>
+
+    <!-- Kantong -->
+    <section class="mb-4 sm:mb-8 section-margin">
+      <div class="flex justify-between items-center mb-2 sm:mb-4">
+        <h2 class="text-base sm:text-xl font-bold text-gray-800 flex items-center gap-1 sm:gap-2">
+          <i class="fas fa-wallet text-gold"></i> <span class="text-lg-mobile">Kantong</span>
+        </h2>
+        <button id="tambahKantong"
+          class="btn-gold px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-white text-xs sm:text-sm flex items-center gap-1">
+          <i class="fas fa-plus-circle"></i> <span class="hidden sm:inline">Tambah Kantong</span>
+        </button>
+      </div>
+      <div id="daftarKantong"
+        class="flex gap-3 sm:gap-4 overflow-x-auto pb-2 sm:pb-4 pt-1 sm:pt-2 snap-x scrollbar-hide">
+        <!-- Kantong akan ditampilkan di sini -->
+      </div>
+    </section>
+
+    <!-- Transaksi -->
+    <section class="section-margin">
+      <div class="flex justify-between items-center mb-2 sm:mb-4">
+        <h2 class="text-base sm:text-xl font-bold text-gray-800 flex items-center gap-1 sm:gap-2">
+          <i class="fas fa-history text-gold"></i> <span class="text-lg-mobile">Riwayat Transaksi</span>
+        </h2>
+      </div>
+      <div id="daftarTransaksi" class="space-y-2 sm:space-y-4">
+        <!-- Transaksi akan ditampilkan di sini -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 px-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md p-4 sm:p-6">
+      <h3 id="modalJudul" class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Judul</h3>
+      <div id="modalIsi" class="mb-4 sm:mb-6">
+        <!-- Isi modal -->
+      </div>
+      <div class="flex justify-end gap-2 sm:gap-3">
+        <button id="modalBatal"
+          class="px-3 py-1 sm:px-4 sm:py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm">
+          Batal
+        </button>
+        <button id="modalSimpan" class="btn-gold px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-white text-sm">
+          Simpan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Backup (floating) -->
+  <button id="btnBackup"
+    class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 h-12 w-12 sm:h-16 sm:w-16 rounded-full btn-gold text-white shadow-xl flex items-center justify-center text-lg sm:text-2xl z-[100] pulse">
+    <i class="fas fa-cloud-download-alt"></i>
+  </button>
+
+  <!-- Modal Backup -->
+  <div id="backupModal" class="fixed inset-0 hidden items-center justify-center p-4 z-[90]" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-close></div>
+    <div id="backupDialog" role="dialog" aria-modal="true" aria-label="Backup & Export"
+      class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl ring-1 ring-gray-200 overflow-hidden pointer-events-auto">
+      <div class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200">
+        <h3 class="text-lg sm:text-xl font-bold text-gray-800">Backup & Export Data</h3>
+        <div class="flex gap-2 sm:gap-3">
+          <button id="btnExportExcel"
+            class="px-3 py-1 sm:px-4 sm:py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white text-xs sm:text-sm flex items-center gap-1">
+            <i class="fas fa-file-excel"></i> <span class="hidden sm:inline">Excel</span>
+          </button>
+          <button id="btnExportPDF"
+            class="px-3 py-1 sm:px-4 sm:py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm flex items-center gap-1">
+            <i class="fas fa-file-pdf"></i> <span class="hidden sm:inline">PDF</span>
+          </button>
+          <button class="px-3 py-1 sm:px-4 sm:py-2 rounded-lg hover:bg-gray-100 text-gray-800" data-close
+            aria-label="Tutup">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="p-3 sm:p-6">
+        <div id="gridContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+  <script>
+    // Security System
+    class SecuritySystem {
+      constructor() {
+        this.STORAGE_KEYS = {
+          PASSWORD_HASH: 'albary_password_hash',
+          ENCRYPTED_TOKEN: 'albary_encrypted_token',
+          SECURITY_SALT: 'albary_security_salt'
+        };
+        this.GITHUB_URL = "https://api.github.com/repos/idarohpusat-blip/my_rep/contents/keuangan_albary.json";
+        this.githubToken = null;
+      }
+
+      // Generate hash dari password
+      hashPassword(password) {
+        return CryptoJS.SHA256(password + this.STORAGE_KEYS.SECURITY_SALT).toString();
+      }
+
+      // Enkripsi data dengan AES
+      encrypt(data, password) {
+        return CryptoJS.AES.encrypt(data, password).toString();
+      }
+
+      // Dekripsi data dengan AES
+      decrypt(encryptedData, password) {
+        try {
+          const bytes = CryptoJS.AES.decrypt(encryptedData, password);
+          return bytes.toString(CryptoJS.enc.Utf8);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      // Simpan password hash
+      savePasswordHash(password) {
+        const hash = this.hashPassword(password);
+        localStorage.setItem(this.STORAGE_KEYS.PASSWORD_HASH, hash);
+      }
+
+      // Verifikasi password
+      verifyPassword(password) {
+        const savedHash = localStorage.getItem(this.STORAGE_KEYS.PASSWORD_HASH);
+        if (!savedHash) return false;
+
+        const inputHash = this.hashPassword(password);
+        return savedHash === inputHash;
+      }
+
+      // Simpan token terenkripsi
+      saveEncryptedToken(token, password) {
+        const encrypted = this.encrypt(token, password);
+        localStorage.setItem(this.STORAGE_KEYS.ENCRYPTED_TOKEN, encrypted);
+      }
+
+      // Ambil token terenkripsi
+      getEncryptedToken(password) {
+        const encrypted = localStorage.getItem(this.STORAGE_KEYS.ENCRYPTED_TOKEN);
+        if (!encrypted) return null;
+
+        return this.decrypt(encrypted, password);
+      }
+
+      // Cek apakah sudah ada password yang diset
+      hasPassword() {
+        return !!localStorage.getItem(this.STORAGE_KEYS.PASSWORD_HASH);
+      }
+
+      // Hapus semua data keamanan
+      clearSecurityData() {
+        localStorage.removeItem(this.STORAGE_KEYS.PASSWORD_HASH);
+        localStorage.removeItem(this.STORAGE_KEYS.ENCRYPTED_TOKEN);
+      }
+
+      // Set GitHub token
+      setGithubToken(token) {
+        this.githubToken = token;
+      }
+
+      // Get GitHub token
+      getGithubToken() {
+        return this.githubToken;
+      }
+    }
+
+    // Inisialisasi security system
+    const securitySystem = new SecuritySystem();
+
+    // Data
+    let pengguna = [];
+    let penggunaAktif = 0;
+    let kantongAktif = null;
+    let fileSha = null; // Untuk update file di GitHub
+
+    function idUnik() {
+      return Date.now() + '' + Math.floor(Math.random() * 1000);
+    }
+
+    function hariIni() {
+      return new Date().toISOString().split('T')[0];
+    }
+
+    function el(id) {
+      return document.getElementById(id);
+    }
+
+    // Fungsi untuk menampilkan/menyembunyikan loading
+    function toggleLoading(show) {
+      const loadingOverlay = el('loadingOverlay');
+      if (show) {
+        loadingOverlay.classList.remove('hidden');
+        loadingOverlay.classList.add('flex');
+      } else {
+        loadingOverlay.classList.add('hidden');
+        loadingOverlay.classList.remove('flex');
+      }
+    }
+
+    // Fungsi untuk menampilkan notifikasi
+    function showNotification(message, type = 'success') {
+      const notification = el('notification');
+      notification.textContent = message;
+      notification.className = `notification ${type}`;
+      notification.classList.add('show');
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    // Fungsi untuk mengambil data dari GitHub
+    async function fetchDataFromGitHub() {
+      try {
+        toggleLoading(true);
+        const token = securitySystem.getGithubToken();
+        if (!token) {
+          throw new Error("Token GitHub tidak tersedia");
+        }
+
+        const response = await fetch(securitySystem.GITHUB_URL, {
+          headers: {
+            'Authorization': `token ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          // Jika file tidak ditemukan (404), kembalikan data default
+          if (response.status === 404) {
+            return [{
+              nama: 'Pengguna 1',
+              kantong: [
+                { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
+                { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
+              ],
+              transaksi: []
+            }];
+          }
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        fileSha = data.sha;
+
+        // Decode content dari base64
+        const content = atob(data.content);
+        return JSON.parse(content);
+      } catch (error) {
+        console.error("Error fetching data from GitHub:", error);
+        // Return default data jika error
+        return [{
+          nama: 'Pengguna 1',
+          kantong: [
+            { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
+            { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
+          ],
+          transaksi: []
+        }];
+      } finally {
+        toggleLoading(false);
+      }
+    }
+
+    // Fungsi untuk menyimpan data ke GitHub
+    async function saveDataToGitHub(data) {
+      try {
+        toggleLoading(true);
+
+        // Validasi data sebelum menyimpan
+        if (!data || !Array.isArray(data) || data.length === 0) {
+          throw new Error("Data tidak valid untuk disimpan");
+        }
+
+        const token = securitySystem.getGithubToken();
+        if (!token) {
+          throw new Error("Token GitHub tidak tersedia");
+        }
+
+        const content = btoa(JSON.stringify(data));
+
+        const body = {
+          message: `Update data keuangan ${new Date().toLocaleString()}`,
+          content: content,
+          branch: "main"
+        };
+
+        // Jika file sudah ada, tambahkan sha
+        if (fileSha) {
+          body.sha = fileSha;
+        }
+
+        const response = await fetch(securitySystem.GITHUB_URL, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `token ${token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error("GitHub API Error:", errorData);
+          throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message || 'Unknown error'}`);
+        }
+
+        const result = await response.json();
+        fileSha = result.sha; // Update sha untuk penggunaan selanjutnya
+        return true;
+      } catch (error) {
+        console.error("Error saving data to GitHub:", error);
+        showNotification("Gagal menyimpan data: " + error.message, 'error');
+        return false;
+      } finally {
+        toggleLoading(false);
+      }
+    }
+
+    // Modal Helper
+    function bukaModal(judul, isiHTML, simpanCallback) {
+      el('modalJudul').textContent = judul;
+      el('modalIsi').innerHTML = isiHTML;
+      el('modal').classList.remove('hidden');
+      el('modal').classList.add('flex');
+
+      el('modalSimpan').onclick = () => {
+        simpanCallback();
+        tutupModal();
+      };
+
+      el('modalBatal').onclick = tutupModal;
+    }
+
+    function tutupModal() {
+      el('modal').classList.add('hidden');
+      el('modal').classList.remove('flex');
+    }
+
+    // Pilih User
+    function pilihUserPopup() {
+      let isi = '<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">';
+      pengguna.forEach((u, i) => {
+        isi += `
+          <div class="relative card p-3 sm:p-4 flex flex-col items-center cursor-pointer hover:bg-gray-50 ${penggunaAktif === i ? 'kantong-aktif' : ''}"
+               onclick="setUser(${i})">
+            <!-- Tombol hapus -->
+            <button class="absolute -top-2 -right-2 bg-rose-600 hover:bg-rose-700 text-white rounded-full w-6 h-6 sm:w-8 sm:h-8 grid place-items-center shadow"
+                    title="Hapus user"
+                    onclick="hapusUser(${i}, event)">
+              <i class="fas fa-trash text-xs sm:text-sm"></i>
+            </button>
+            <div class="bg-gold p-2 sm:p-3 rounded-full mb-2 sm:mb-3">
+              <i class="fas fa-user icon-gold text-lg sm:text-xl"></i>
+            </div>
+            <p class="font-medium text-gray-800 text-sm sm:text-base">${u.nama}</p>
+          </div>
+        `;
+      });
+      isi += '</div>';
+      bukaModal("Pilih User", isi, () => { });
+    }
+
+    function hapusUser(i, ev) {
+      if (ev) ev.stopPropagation();
+      if (pengguna.length <= 1) {
+        showNotification("Minimal harus ada 1 user. Tambah user baru dulu sebelum menghapus ini.", 'error');
+        return;
+      }
+
+      const nama = pengguna[i]?.nama || 'User';
+      if (!confirm(`Hapus user "${nama}" beserta kantong & transaksinya?`)) return;
+
+      pengguna.splice(i, 1);
+
+      if (penggunaAktif === i) {
+        penggunaAktif = 0;
+        kantongAktif = null;
+      } else if (penggunaAktif > i) {
+        penggunaAktif -= 1;
+      }
+
+      simpanData();
+      tampilUserAktif();
+
+      if (!el('modal').classList.contains('hidden')) {
+        pilihUserPopup();
+      }
+    }
+
+    el("pilihUserBtn").addEventListener("click", pilihUserPopup);
+
+    // Tambah User
+    el('tambahPengguna').addEventListener('click', () => {
+      bukaModal("Tambah User", `
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Nama User</label>
+          <input id="userNama" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Nama user..." />
+        </div>
+      `, async () => {
+        const nama = el('userNama').value.trim();
+        if (!nama) {
+          el('userNama').focus();
+          return;
+        }
+
+        pengguna.push({
+          nama,
+          kantong: [],
+          transaksi: []
+        });
+
+        penggunaAktif = pengguna.length - 1;
+        kantongAktif = null;
+
+        await simpanData();
+        tampilUserAktif();
+        showNotification("User berhasil ditambahkan", 'success');
+      });
+
+      setTimeout(() => el('userNama')?.focus(), 0);
+    });
+
+    // Simpan & Muat Data
+    async function simpanData() {
+      if (pengguna.length === 0) {
+        showNotification("Tidak ada data untuk disimpan", 'error');
+        return;
+      }
+
+      const success = await saveDataToGitHub(pengguna);
+      if (success) {
+        tampilSemua();
+        showNotification("Data berhasil disimpan", 'success');
+      }
+    }
+
+    async function muatData() {
+      pengguna = await fetchDataFromGitHub();
+
+      // Tentukan user aktif
+      if (pengguna.length && penggunaAktif >= pengguna.length) {
+        penggunaAktif = 0;
+      }
+
+      // Tentukan kantong aktif
+      if (penggunaAktif != null && pengguna[penggunaAktif]?.kantong?.length) {
+        if (kantongAktif === null || kantongAktif >= pengguna[penggunaAktif].kantong.length) {
+          kantongAktif = 0;
+        }
+      } else {
+        kantongAktif = null;
+      }
+
+      tampilUserAktif();
+      tampilSemua();
+    }
+
+    // Tampil User Aktif
+    function tampilUserAktif() {
+      const box = el("userAktif");
+      if (!pengguna.length || penggunaAktif == null) {
+        box.innerHTML = `
+          <i class="fas fa-user-circle text-white"></i>
+          <span class="font-medium text-white">Belum ada user dipilih</span>
+        `;
+        return;
+      }
+
+      box.innerHTML = `
+        <i class="fas fa-user-circle text-white"></i>
+        <span class="font-medium text-white">${pengguna[penggunaAktif].nama}</span>
+      `;
+    }
+
+    function setUser(i) {
+      penggunaAktif = i;
+      kantongAktif = null;
+      simpanData();
+      tampilUserAktif();
+      tutupModal();
+    }
+
+    // Kantong
+    function tampilKantong() {
+      const wadah = el('daftarKantong');
+      const user = pengguna[penggunaAktif];
+      wadah.innerHTML = '';
+
+      if (!user || !user.kantong || user.kantong.length === 0) {
+        wadah.innerHTML = `
+          <div class="card p-4 sm:p-6 text-center min-w-[150px] sm:min-w-[200px]">
+            <i class="fas fa-wallet text-gray-400 text-2xl sm:text-3xl mb-2 sm:mb-3"></i>
+            <p class="text-gray-500 text-sm">Belum ada kantong</p>
+          </div>
+        `;
+        return;
+      }
+
+      user.kantong.forEach((kantong, i) => {
+        const div = document.createElement('div');
+        div.className = `
+          relative flex-shrink-0 w-48 sm:w-64 card p-3 sm:p-4 snap-start cursor-pointer
+          ${kantongAktif === i ? 'kantong-aktif' : ''}
+        `;
+
+        div.innerHTML = `
+          <button class="absolute -top-2 -right-2 bg-rose-600 hover:bg-rose-700 text-white rounded-full w-6 h-6 sm:w-8 sm:h-8 grid place-items-center shadow"
+                  title="Hapus kantong"
+                  onclick="hapusKantong(${i}, event)">
+            <i class="fas fa-trash text-xs sm:text-sm"></i>
+          </button>
+          <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
+            <div class="bg-gold p-2 sm:p-3 rounded-full">
+              <i class="fas fa-wallet icon-gold text-lg sm:text-xl"></i>
+            </div>
+            <h3 class="font-bold text-gray-800 text-sm sm:text-base">${kantong.nama}</h3>
+          </div>
+          <div class="mt-1 sm:mt-2">
+            <p class="text-gray-500 text-xs mb-1">Saldo</p>
+            <p class="font-bold text-gray-800 text-base sm:text-xl">
+              ${formatUang(kantong.mataUang, kantong.saldo)}
+            </p>
+          </div>
+        `;
+
+        div.onclick = () => {
+          kantongAktif = i;
+          tampilKantong();
+          tampilTransaksi();
+        };
+
+        wadah.appendChild(div);
+      });
+    }
+
+    function hapusKantong(i, ev) {
+      if (ev) ev.stopPropagation();
+      const user = pengguna[penggunaAktif];
+      const nama = user.kantong[i]?.nama || 'Kantong';
+
+      if (!confirm(`Hapus kantong "${nama}" beserta transaksi di kantong ini?`)) return;
+
+      // Hapus semua transaksi yang milik kantong ini
+      user.transaksi = user.transaksi.filter(t => t.kantong !== i);
+
+      // Hapus kantong
+      user.kantong.splice(i, 1);
+
+      // Atur kantongAktif
+      if (user.kantong.length === 0) {
+        kantongAktif = null;
+      } else if (kantongAktif === i) {
+        kantongAktif = 0;
+      } else if (kantongAktif > i) {
+        kantongAktif -= 1;
+      }
+
+      simpanData();
+      showNotification("Kantong berhasil dihapus", 'success');
+    }
+
+    el('tambahKantong').addEventListener('click', () => {
+      bukaModal("Tambah Kantong", `
+        <div class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-2">Nama Kantong</label>
+            <input id="kantongNama" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Mata Uang</label>
+            <select id="kantongMataUang" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+              <option value="Rp">Rupiah (Rp)</option>
+              <option value="SAR">Riyal (SAR)</option>
+            </select>
+          </div>
+        </div>
+      `, async () => {
+        const nama = el('kantongNama').value;
+        const mataUang = el('kantongMataUang').value;
+
+        if (!nama) return;
+
+        pengguna[penggunaAktif].kantong.push({
+          nama,
+          saldo: 0,
+          mataUang
+        });
+
+        await simpanData();
+        showNotification("Kantong berhasil ditambahkan", 'success');
+      });
+    });
+
+    // Transaksi Masuk, Keluar
+    function formTransaksi(jenis) {
+      const user = pengguna[penggunaAktif];
+      if (kantongAktif === null) {
+        showNotification("Pilih kantong dulu sebelum transaksi!", 'error');
+        return;
+      }
+
+      const k = user.kantong[kantongAktif];
+      const jenisText = jenis === 'masuk' ? 'Masuk' : 'Keluar';
+      const icon = jenis === 'masuk' ? 'arrow-down' : 'arrow-up';
+      const color = jenis === 'masuk' ? 'green' : 'red';
+
+      bukaModal(`Transaksi ${jenisText} (${k.nama})`, `
+        <div class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-2">Jumlah (${k.mataUang})</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <span class="text-gray-500">${k.mataUang}</span>
+              </div>
+              <input id="transaksiJumlah" type="text" class="w-full border border-gray-300 rounded-lg pl-10 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                     placeholder="${k.mataUang === 'Rp' ? '10.000' : '10,00'}" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Keterangan</label>
+            <input id="transaksiKeterangan" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+          </div>
+        </div>
+      `, async () => {
+        const jumlah = getNilaiDariInput(el('transaksiJumlah'));
+        const ket = (el('transaksiKeterangan').value || '').trim();
+
+        if (!jumlah || jumlah <= 0) {
+          el('transaksiJumlah').focus();
+          return;
+        }
+
+        if (jenis === 'masuk') {
+          k.saldo += jumlah;
+        } else {
+          if (k.saldo < jumlah) {
+            showNotification("Saldo tidak mencukupi!", 'error');
+            return;
+          }
+          k.saldo -= jumlah;
+        }
+
+        user.transaksi.push({
+          id: idUnik(),
+          kantong: kantongAktif,
+          jenis,
+          jumlah,
+          mataUang: k.mataUang,
+          keterangan: ket,
+          tanggal: hariIni()
+        });
+
+        await simpanData();
+        showNotification(`Transaksi ${jenisText} berhasil`, 'success');
+      });
+
+      setTimeout(() => {
+        const input = el('transaksiJumlah');
+        if (input) {
+          input.addEventListener('input', () => formatInputUang(input, k.mataUang));
+          input.addEventListener('focus', () => setTimeout(() => input.select(), 0));
+          input.focus();
+        }
+      }, 0);
+    }
+
+    el('tombolMasuk').addEventListener('click', () => formTransaksi('masuk'));
+    el('tombolKeluar').addEventListener('click', () => formTransaksi('keluar'));
+
+    // Transfer Antar Kantong
+    function formTransfer() {
+      const user = pengguna[penggunaAktif];
+      if (!user || user.kantong.length < 2) {
+        showNotification("Minimal butuh 2 kantong untuk melakukan transfer!", 'error');
+        return;
+      }
+
+      let kantongOptions = '';
+      user.kantong.forEach((kantong, i) => {
+        kantongOptions += `<option value="${i}">${kantong.nama} (${formatUang(kantong.mataUang, kantong.saldo)})</option>`;
+      });
+
+      bukaModal("Transfer Antar Kantong", `
+        <div class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-2">Dari Kantong</label>
+            <select id="transferDari" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+              ${kantongOptions}
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Ke Kantong</label>
+            <select id="transferKe" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+              ${kantongOptions}
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Jumlah</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <span class="text-gray-500">Rp</span>
+              </div>
+              <input id="transferJumlah" type="text" class="w-full border border-gray-300 rounded-lg pl-10 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Keterangan</label>
+            <input id="transferKeterangan" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+          </div>
+        </div>
+      `, async () => {
+        const dariIndex = parseInt(el('transferDari').value);
+        const keIndex = parseInt(el('transferKe').value);
+        const jumlah = getNilaiDariInput(el('transferJumlah'));
+        const ket = (el('transferKeterangan').value || '').trim();
+
+        if (dariIndex === keIndex) {
+          showNotification("Kantong asal dan tujuan tidak boleh sama!", 'error');
+          return;
+        }
+
+        if (!jumlah || jumlah <= 0) {
+          el('transferJumlah').focus();
+          return;
+        }
+
+        const dariKantong = user.kantong[dariIndex];
+        const keKantong = user.kantong[keIndex];
+
+        if (dariKantong.mataUang !== keKantong.mataUang) {
+          showNotification("Tidak dapat transfer antar mata uang yang berbeda!", 'error');
+          return;
+        }
+
+        if (dariKantong.saldo < jumlah) {
+          showNotification("Saldo tidak mencukupi untuk transfer ini!", 'error');
+          return;
+        }
+
+        // Proses transfer
+        dariKantong.saldo -= jumlah;
+        keKantong.saldo += jumlah;
+
+        // Catat transaksi untuk kantong asal (pengurangan)
+        user.transaksi.push({
+          id: idUnik(),
+          kantong: dariIndex,
+          jenis: 'keluar',
+          jumlah: jumlah,
+          mataUang: dariKantong.mataUang,
+          keterangan: `Transfer ke ${keKantong.nama}: ${ket}`,
+          tanggal: hariIni()
+        });
+
+        // Catat transaksi untuk kantong tujuan (penambahan)
+        user.transaksi.push({
+          id: idUnik(),
+          kantong: keIndex,
+          jenis: 'masuk',
+          jumlah: jumlah,
+          mataUang: keKantong.mataUang,
+          keterangan: `Transfer dari ${dariKantong.nama}: ${ket}`,
+          tanggal: hariIni()
+        });
+
+        await simpanData();
+        showNotification("Transfer berhasil", 'success');
+      });
+
+      setTimeout(() => {
+        const inputJumlah = el('transferJumlah');
+        if (inputJumlah) {
+          inputJumlah.addEventListener('input', () => formatInputUang(inputJumlah, 'Rp'));
+          inputJumlah.addEventListener('focus', () => setTimeout(() => inputJumlah.select(), 0));
+          inputJumlah.focus();
+        }
+      }, 0);
+    }
+
+    el('tombolTransfer').addEventListener('click', formTransfer);
+
+    // Transaksi
+    function tampilTransaksi() {
+      const wadah = el('daftarTransaksi');
+      const user = pengguna[penggunaAktif];
+      wadah.innerHTML = '';
+
+      if (kantongAktif === null) {
+        wadah.innerHTML = `
+          <div class="card p-4 text-center">
+            <i class="fas fa-history text-gray-400 text-2xl mb-2"></i>
+            <p class="text-gray-500">Pilih kantong untuk melihat transaksi</p>
+          </div>
+        `;
+        return;
+      }
+
+      const transaksiKantong = user.transaksi
+        .filter(tr => tr.kantong === kantongAktif)
+        .slice().reverse();
+
+      if (transaksiKantong.length === 0) {
+        wadah.innerHTML = `
+          <div class="card p-4 text-center">
+            <i class="fas fa-receipt text-gray-400 text-2xl mb-2"></i>
+            <p class="text-gray-500">Belum ada transaksi di kantong ini</p>
+          </div>
+        `;
+        return;
+      }
+
+      transaksiKantong.forEach(tr => {
+        const row = document.createElement('div');
+        const cardClass = tr.jenis === 'masuk' ? 'masuk' : 'keluar';
+        row.className = `card p-3 sm:p-4 card-transaksi ${cardClass}`;
+
+        const icon = tr.jenis === 'masuk' ? 'arrow-down' : 'arrow-up';
+        const color = tr.jenis === 'masuk' ? 'text-green-600' : 'text-red-600';
+        const bgColor = tr.jenis === 'masuk' ? 'bg-green-100' : 'bg-red-100';
+
+        row.innerHTML = `
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              <div class="${bgColor} p-2 rounded-full">
+                <i class="fas fa-${icon} ${color}"></i>
+              </div>
+              <div>
+                <p class="font-semibold ${color}">
+                  ${tr.jenis === 'masuk' ? '+' : '-'} ${formatUang(tr.mataUang, tr.jumlah)}
+                </p>
+                <p class="text-gray-500 text-xs">${tr.keterangan || ''} • ${tr.tanggal}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="bg-gray-100 hover:bg-gray-200 p-1.5 rounded-lg text-gray-700" title="Edit" onclick="editTransaksi('${tr.id}')">
+                <i class="fas fa-edit text-sm"></i>
+              </button>
+              <button class="bg-gray-100 hover:bg-gray-200 p-1.5 rounded-lg text-gray-700" title="Hapus" onclick="hapusTransaksi('${tr.id}')">
+                <i class="fas fa-trash text-sm"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+        wadah.appendChild(row);
+      });
+    }
+
+    function editTransaksi(id) {
+      const user = pengguna[penggunaAktif];
+      if (!user) return;
+
+      const tr = user.transaksi.find(t => t.id === id);
+      if (!tr) return;
+
+      const k = user.kantong[tr.kantong];
+      const judul = `Edit Transaksi (${k?.nama || '-'})`;
+
+      bukaModal(judul, `
+        <div class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-2">Jumlah (${tr.mataUang})</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <span class="text-gray-500">${tr.mataUang}</span>
+              </div>
+              <input id="editJumlah" type="text" class="w-full border border-gray-300 rounded-lg pl-10 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Keterangan</label>
+            <input id="editKet" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+          </div>
+          <div class="text-gray-500 text-sm">
+            Tanggal: <span class="font-medium">${tr.tanggal}</span> (tidak diubah)
+          </div>
+        </div>
+      `, async () => {
+        const inpJumlah = el('editJumlah');
+        const inpKet = el('editKet');
+        const jumlahBaru = getNilaiDariInput(inpJumlah);
+        const ketBaru = (inpKet.value || '').trim();
+
+        if (!jumlahBaru || jumlahBaru <= 0) {
+          inpJumlah.focus();
+          return;
+        }
+
+        // Koreksi saldo kantong berdasar selisih
+        const selisih = jumlahBaru - tr.jumlah;
+        if (tr.jenis === 'masuk') {
+          k.saldo += selisih;
+        } else {
+          k.saldo -= selisih;
+        }
+
+        // Update transaksi
+        tr.jumlah = jumlahBaru;
+        tr.keterangan = ketBaru;
+
+        await simpanData();
+        showNotification("Transaksi berhasil diperbarui", 'success');
+      });
+
+      setTimeout(() => {
+        const inpJumlah = el('editJumlah');
+        const inpKet = el('editKet');
+
+        if (inpJumlah) {
+          inpJumlah.value = formatUang(tr.mataUang, tr.jumlah);
+          inpKet.value = tr.keterangan || '';
+
+          inpJumlah.addEventListener('input', () => formatInputUang(inpJumlah, tr.mataUang));
+          inpJumlah.addEventListener('focus', () => setTimeout(() => inpJumlah.select(), 0));
+          inpJumlah.focus();
+        }
+      }, 0);
+    }
+
+    function hapusTransaksi(id) {
+      const user = pengguna[penggunaAktif];
+      if (!user) return;
+
+      const idx = user.transaksi.findIndex(t => t.id === id);
+      if (idx === -1) return;
+
+      const tr = user.transaksi[idx];
+      const k = user.kantong[tr.kantong];
+
+      if (!confirm('Hapus transaksi ini?')) return;
+
+      // Kembalikan saldo sesuai jenis transaksi
+      if (tr.jenis === 'masuk') {
+        k.saldo -= tr.jumlah;
+      } else {
+        k.saldo += tr.jumlah;
+      }
+
+      user.transaksi.splice(idx, 1);
+      simpanData();
+      showNotification("Transaksi berhasil dihapus", 'success');
+    }
+
+    // Ringkasan
+    function tampilRingkasan() {
+      const user = pengguna[penggunaAktif];
+      let jumlahRp = 0, jumlahSar = 0;
+
+      if (user && user.kantong) {
+        user.kantong.forEach(k => {
+          if (k.mataUang === 'Rp') jumlahRp += Number(k.saldo || 0);
+          if (k.mataUang === 'SAR') jumlahSar += Number(k.saldo || 0);
+        });
+      }
+
+      el('totalRp').textContent = formatUang('Rp', jumlahRp);
+      el('totalSar').textContent = formatUang('SAR', jumlahSar);
+    }
+
+    // Tampil Semua
+    function tampilSemua() {
+      tampilKantong();
+      tampilTransaksi();
+      tampilRingkasan();
+    }
+
+    // Format Uang
+    function formatUang(mataUang, nominal) {
+      const n = Number(nominal || 0);
+      if (mataUang === 'Rp') return 'Rp ' + n.toLocaleString('id-ID');
+      if (mataUang === 'SAR') return 'SAR ' + n.toLocaleString('id-ID');
+      return (mataUang || '') + ' ' + n.toLocaleString('id-ID');
+    }
+
+    function parseUang(str) {
+      if (typeof str === 'number') return str;
+      if (!str) return 0;
+      const clean = String(str).replace(/[^\d.,-]/g, '').replace(/\./g, '').replace(',', '.');
+      const n = parseFloat(clean);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function formatInputUang(inputEl, mataUang) {
+      const start = inputEl.selectionStart;
+      const before = inputEl.value;
+      const angka = parseUang(before);
+      inputEl.value = formatUang(mataUang, angka);
+
+      const diff = inputEl.value.length - before.length;
+      inputEl.setSelectionRange(Math.max(0, start + diff), Math.max(0, start + diff));
+    }
+
+    function getNilaiDariInput(inputEl) {
+      return parseUang(inputEl.value);
+    }
+
+    // Grid & Export
+    function renderGrid() {
+      const root = document.getElementById('gridContainer');
+      root.innerHTML = '';
+
+      const user = pengguna[penggunaAktif];
+      if (!user) return;
+
+      const rows = (user.transaksi || []).map(t => {
+        const namaKantong = user.kantong?.[t.kantong]?.nama || '-';
+        return [
+          t.tanggal,
+          namaKantong,
+          t.jenis,
+          Number(t.jumlah),
+          t.mataUang,
+          t.keterangan || ''
+        ];
+      });
+
+      new gridjs.Grid({
+        columns: ["Tanggal", "Kantong", "Jenis", "Nominal", "Mata Uang", "Keterangan"],
+        data: rows,
+        sort: true,
+        search: { enabled: true, placeholder: 'Cari...' },
+        pagination: { enabled: true, limit: 12 },
+        className: { table: 'min-w-full' }
+      }).render(root);
+    }
+
+    const modal = document.getElementById('backupModal');
+    const dialog = document.getElementById('backupDialog');
+    const openBtn = document.getElementById('btnBackup');
+
+    function openBackup() {
+      modal.classList.add('show');
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+      setTimeout(renderGrid, 0);
+      dialog.focus();
+      window.addEventListener('keydown', onEsc);
+    }
+
+    function closeBackup() {
+      modal.classList.remove('show');
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+      window.removeEventListener('keydown', onEsc);
+    }
+
+    function onEsc(e) {
+      if (e.key === 'Escape') closeBackup();
+    }
+
+    openBtn.addEventListener('click', openBackup);
+    modal.addEventListener('click', (e) => {
+      if (e.target.hasAttribute('data-close')) closeBackup();
+    });
+    dialog.addEventListener('click', (e) => e.stopPropagation());
+
+    // Export
+    document.getElementById('btnExportExcel').onclick = exportExcel;
+    document.getElementById('btnExportPDF').onclick = exportPDF;
+
+    function exportExcel() {
+      if (!window.XLSX) {
+        showNotification('SheetJS belum termuat', 'error');
+        return;
+      }
+
+      const user = (window.pengguna?.[window.penggunaAktif]) || { kantong: [], transaksi: [] };
+
+      // Transaksi
+      const trxRows = (user.transaksi || []).map(t => ({
+        Tanggal: t.tanggal || '',
+        Kantong: user.kantong?.[t.kantong]?.nama || '-',
+        Jenis: t.jenis || '',
+        Nominal: Number(
+          typeof t.jumlah === 'string' ? t.jumlah.replace(/[^\d.-]/g, '') : (t.jumlah || 0)
+        ),
+        MataUang: t.mataUang || '',
+        Keterangan: t.keterangan || ''
+      }));
+
+      const wb = XLSX.utils.book_new();
+      const wsT = XLSX.utils.json_to_sheet(
+        trxRows.length ? trxRows : [{
+          Tanggal: '',
+          Kantong: '',
+          Jenis: '',
+          Nominal: '',
+          MataUang: '',
+          Keterangan: ''
+        }],
+        { skipHeader: false }
+      );
+
+      wsT['!cols'] = [{ w: 12 }, { w: 18 }, { w: 10 }, { w: 14 }, { w: 10 }, { w: 40 }];
+
+      for (const c in wsT) {
+        if (/^D\d+$/.test(c) && typeof wsT[c].v === 'number')
+          wsT[c].z = '#,##0';
+      }
+
+      XLSX.utils.book_append_sheet(wb, wsT, 'Transaksi');
+
+      // Kantong
+      const kRows = (user.kantong || []).map(k => ({
+        Kantong: k.nama || '-',
+        Saldo: Number(k.saldo || 0),
+        MataUang: k.mataUang || ''
+      }));
+
+      const wsK = XLSX.utils.json_to_sheet(
+        kRows.length ? kRows : [{ Kantong: '', Saldo: '', MataUang: '' }],
+        { skipHeader: false }
+      );
+
+      wsK['!cols'] = [{ w: 24 }, { w: 16 }, { w: 10 }];
+
+      for (const c in wsK) {
+        if (/^B\d+$/.test(c) && typeof wsK[c].v === 'number')
+          wsK[c].z = '#,##0';
+      }
+
+      XLSX.utils.book_append_sheet(wb, wsK, 'Kantong');
+      XLSX.writeFile(wb, `backup_${new Date().toISOString().slice(0, 10)}.xlsx`);
+      showNotification("Data berhasil diekspor ke Excel", 'success');
+    }
+
+    function exportPDF() {
+      const user = pengguna[penggunaAktif];
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF('p', 'pt', 'a4');
+
+      doc.text('Daftar Transaksi', 40, 40);
+
+      const body = (user?.transaksi || []).map(t => [
+        t.tanggal,
+        user?.kantong?.[t.kantong]?.nama || '-',
+        t.jenis,
+        Number(t.jumlah).toLocaleString('id-ID'),
+        t.mataUang,
+        t.keterangan || ''
+      ]);
+
+      doc.autoTable({
+        startY: 60,
+        head: [['Tanggal', 'Kantong', 'Jenis', 'Nominal', 'Mata Uang', 'Keterangan']],
+        body
+      });
+
+      doc.save(`transaksi_${new Date().toISOString().slice(0, 10)}.pdf`);
+      showNotification("Data berhasil diekspor ke PDF", 'success');
+    }
+
+    // Security Functions
+    function checkAuthentication() {
+      if (!securitySystem.hasPassword()) {
+        // First time setup
+        showLoginForm();
+        return false;
+      }
+
+      // Check if already authenticated in this session
+      if (sessionStorage.getItem('albary_authenticated') === 'true') {
+        const token = securitySystem.getEncryptedToken(sessionStorage.getItem('albary_session_password'));
+        if (token) {
+          securitySystem.setGithubToken(token);
+          return true;
+        }
+      }
+
+      // Show login form
+      showLoginForm();
+      return false;
+    }
+
+    function showLoginForm() {
+      el('loginContainer').style.display = 'flex';
+    }
+
+    function hideLoginForm() {
+      el('loginContainer').style.display = 'none';
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const password = el('passwordInput').value;
+      const tokenInput = el('tokenInput').value.trim();
+
+      if (!password) {
+        showNotification('Password harus diisi', 'error');
+        return;
+      }
+
+      // If it's first time setup
+      if (!securitySystem.hasPassword()) {
+        if (!tokenInput) {
+          showNotification('Token GitHub harus diisi pada penggunaan pertama', 'error');
+          return;
+        }
+
+        // Save password hash and encrypted token
+        securitySystem.savePasswordHash(password);
+        securitySystem.saveEncryptedToken(tokenInput, password);
+
+        // Set session
+        sessionStorage.setItem('albary_authenticated', 'true');
+        sessionStorage.setItem('albary_session_password', password);
+
+        // Set github token
+        securitySystem.setGithubToken(tokenInput);
+
+        showNotification('Password dan token berhasil disimpan dengan aman', 'success');
+        hideLoginForm();
+        muatData();
+      } else {
+        // Verify password
+        if (!securitySystem.verifyPassword(password)) {
+          showNotification('Password salah', 'error');
+          return;
+        }
+
+        // Get decrypted token
+        const token = securitySystem.getEncryptedToken(password);
+        if (!token) {
+          showNotification('Gagal mendekripsi token. Password mungkin salah', 'error');
+          return;
+        }
+
+        // Set session
+        sessionStorage.setItem('albary_authenticated', 'true');
+        sessionStorage.setItem('albary_session_password', password);
+
+        // Set github token
+        securitySystem.setGithubToken(token);
+
+        showNotification('Autentikasi berhasil', 'success');
+        hideLoginForm();
+        muatData();
+      }
+    }
+
+    function handleLogout() {
+      sessionStorage.removeItem('albary_authenticated');
+      sessionStorage.removeItem('albary_session_password');
+      showLoginForm();
+    }
+
+    function handleForgotPassword() {
+      if (confirm('Ini akan menghapus semua data keamanan termasuk password dan token. Lanjutkan?')) {
+        securitySystem.clearSecurityData();
+        sessionStorage.removeItem('albary_authenticated');
+        sessionStorage.removeItem('albary_session_password');
+        showNotification('Data keamanan telah direset. Silakan atur ulang password dan token.', 'success');
+        location.reload();
+      }
+    }
+
+    function showSecurityInfo() {
+      bukaModal("Informasi Keamanan", `
+        <div class="space-y-4">
+          <div class="security-indicator">
+            <i class="fas fa-shield-alt"></i>
+            <span>Token Terenkripsi AES-256</span>
+          </div>
+          
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-medium text-blue-800 mb-2">Cara Kerja Keamanan:</h4>
+            <ul class="text-sm text-blue-700 space-y-1">
+              <li>• Token GitHub Anda dienkripsi dengan AES-256</li>
+              <li>• Password Anda di-hash dengan SHA-256 + salt</li>
+              <li>• Data tersimpan aman di localStorage browser</li>
+              <li>• Session aktif selama browser terbuka</li>
+            </ul>
+          </div>
+          
+          <div class="bg-yellow-50 p-4 rounded-lg">
+            <h4 class="font-medium text-yellow-800 mb-2">Keamanan Token:</h4>
+            <p class="text-sm text-yellow-700">
+              Token GitHub Anda tidak pernah ditampilkan dalam bentuk asli. Setiap akses ke GitHub menggunakan token yang telah didekripsi secara sementara di memori.
+            </p>
+          </div>
+          
+          <div class="flex flex-col gap-2">
+            <button onclick="handleLogout()" class="w-full py-2 px-4 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg font-medium">
+              <i class="fas fa-sign-out-alt mr-2"></i> Logout
+            </button>
+            <button onclick="handleForgotPassword()" class="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium">
+              <i class="fas fa-key mr-2"></i> Reset Password
+            </button>
+          </div>
+        </div>
+      `, () => { });
+    }
+
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', function () {
+      // Login form
+      const loginForm = el('loginForm');
+      if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+      }
+
+      // Toggle password visibility
+      const togglePassword = el('togglePassword');
+      if (togglePassword) {
+        togglePassword.addEventListener('click', function () {
+          const passwordInput = el('passwordInput');
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+
+          const icon = this.querySelector('i');
+          icon.classList.toggle('fa-eye');
+          icon.classList.toggle('fa-eye-slash');
+        });
+      }
+
+      // Forgot password
+      const forgotPassword = el('forgotPassword');
+      if (forgotPassword) {
+        forgotPassword.addEventListener('click', handleForgotPassword);
+      }
+
+      // Security button
+      const securityBtn = el('securityBtn');
+      if (securityBtn) {
+        securityBtn.addEventListener('click', showSecurityInfo);
+      }
+
+      // Check authentication on load
+      if (!checkAuthentication()) {
+        // Will show login form
+      }
+    });
+
+    // Auto reload jika idle 30 detik
+    let idleTimer;
+    function resetIdleTimer() {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        if (sessionStorage.getItem('albary_authenticated') === 'true') {
+          location.reload();
+        }
+      }, 30000);
+    }
+
+    ['click', 'mousemove', 'keydown', 'touchstart', 'scroll'].forEach(evt => {
+      document.addEventListener(evt, resetIdleTimer, { passive: true });
+    });
+
+    resetIdleTimer();
+  </script>
+</body>
+
+</html>
