@@ -18,7 +18,13 @@
     },
     {
       "nama": "hasan",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "kebutuhan",
+          "saldo": 0,
+          "mataUang": "SAR"
+        }
+      ],
       "transaksi": []
     }
   ],
