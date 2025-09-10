@@ -5,7 +5,7 @@
       "kantong": [
         {
           "nama": "Kebutuhan",
-          "saldo": 2671,
+          "saldo": 2771,
           "mataUang": "SAR"
         },
         {
@@ -92,6 +92,15 @@
           "mataUang": "SAR",
           "keterangan": "Makan",
           "tanggal": "2025-09-09"
+        },
+        {
+          "id": "175747187415372",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Contoh",
+          "tanggal": "2025-09-10"
         }
       ]
     },
@@ -335,5 +344,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
