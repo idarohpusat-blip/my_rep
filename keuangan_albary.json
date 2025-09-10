@@ -338,21 +338,11 @@
       "kantong": [
         {
           "nama": "Makan siang",
-          "saldo": 10000,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
-      "transaksi": [
-        {
-          "id": "1757471738096292",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 10000,
-          "mataUang": "SAR",
-          "keterangan": "Makan beruang",
-          "tanggal": "2025-09-10"
-        }
-      ]
+      "transaksi": []
     }
   ],
   "albary_user_terakhir": "2",
