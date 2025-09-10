@@ -335,7 +335,13 @@
     },
     {
       "nama": "Hasan",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Makan siang",
+          "saldo": 0,
+          "mataUang": "SAR"
+        }
+      ],
       "transaksi": []
     }
   ],
