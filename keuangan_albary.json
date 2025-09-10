@@ -17,36 +17,11 @@
       "transaksi": []
     },
     {
-      "nama": "jamaluddin",
-      "kantong": [
-    {
-      "nama": "Kebutuhan",
-      "saldo": 0,
-      "mataUang": "SAR"
-    },
-    {
-      "nama": "Keinginan",
-      "saldo": 0,
-      "mataUang": "SAR"
-    },
-    {
-      "nama": "Investasi",
-      "saldo": 0,
-      "mataUang": "SAR"
-    },
-    {
-      "nama": "INV Kel",
-      "saldo": 0,
-      "mataUang": "SAR"
-    },
-    {
-      "nama": "Inv akhir",
-      "saldo": 0,
-      "mataUang": "SAR"
+      "nama": "hasan",
+      "kantong": [],
+      "transaksi": []
     }
   ],
-  "transaksi": [
-  ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "-1"
 }
