@@ -1,27 +1,6 @@
 {
   "albary_pengguna": [
     {
-      "nama": "hasan",
-      "kantong": [
-        {
-          "nama": "kebutuhan",
-          "saldo": 1000,
-          "mataUang": "SAR"
-        }
-      ],
-      "transaksi": [
-        {
-          "id": "1757467559955874",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 1000,
-          "mataUang": "SAR",
-          "keterangan": "keuntugan",
-          "tanggal": "2025-09-10"
-        }
-      ]
-    },
-    {
       "nama": "Jamaluddin",
       "kantong": [
         {
@@ -355,6 +334,6 @@
       ]
     }
   ],
-  "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_user_terakhir": "1",
+  "albary_kantong_terakhir": "0"
 }
