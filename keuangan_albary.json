@@ -18,7 +18,13 @@
     },
     {
       "nama": "jamaluddin",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "20%",
+          "saldo": 0,
+          "mataUang": "SAR"
+        }
+      ],
       "transaksi": []
     }
   ],
