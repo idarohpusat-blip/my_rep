@@ -335,16 +335,10 @@
     },
     {
       "nama": "Hasan",
-      "kantong": [
-        {
-          "nama": "Makan siang",
-          "saldo": 0,
-          "mataUang": "SAR"
-        }
-      ],
+      "kantong": [],
       "transaksi": []
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "-1"
 }
