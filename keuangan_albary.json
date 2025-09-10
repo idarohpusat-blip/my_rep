@@ -1,22 +1,6 @@
 {
   "albary_pengguna": [
     {
-      "nama": "Pengguna 1",
-      "kantong": [
-        {
-          "nama": "Kas Rumah",
-          "saldo": 500000,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Tabungan SAR",
-          "saldo": 300,
-          "mataUang": "SAR"
-        }
-      ],
-      "transaksi": []
-    },
-    {
       "nama": "hasan",
       "kantong": [
         {
@@ -38,6 +22,6 @@
       ]
     }
   ],
-  "albary_user_terakhir": "1",
+  "albary_user_terakhir": "0",
   "albary_kantong_terakhir": "0"
 }
