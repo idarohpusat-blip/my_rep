@@ -103,33 +103,98 @@
         background: #a5b4fc;
       }
     }
+
+    /* Perbaikan tampilan mobile */
+    @media (max-width: 767px) {
+
+      /* Card lebih kecil dan ringkas */
+      .mobile-card {
+        padding: 0.75rem !important;
+        border-radius: 0.75rem !important;
+      }
+
+      /* Ikon lebih kecil */
+      .mobile-icon {
+        width: 2rem !important;
+        height: 2rem !important;
+        padding: 0.4rem !important;
+      }
+
+      .mobile-icon .material-icons {
+        font-size: 1.25rem !important;
+      }
+
+      /* Font lebih kecil untuk mobile */
+      .mobile-title {
+        font-size: 1.25rem !important;
+      }
+
+      .mobile-subtitle {
+        font-size: 0.75rem !important;
+      }
+
+      /* Progress bar lebih tipis */
+      .mobile-progress {
+        height: 0.25rem !important;
+        margin-top: 0.5rem !important;
+      }
+
+      /* Tombol transaksi lebih kecil */
+      .mobile-transaction-btn {
+        padding: 1rem 0.5rem !important;
+      }
+
+      .mobile-transaction-btn .material-icons {
+        font-size: 1.5rem !important;
+      }
+
+      /* Header lebih kompak */
+      .mobile-header {
+        padding: 0.75rem 0 !important;
+      }
+
+      .mobile-header h1 {
+        font-size: 1.25rem !important;
+      }
+
+      .mobile-user-info {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.75rem !important;
+      }
+
+      /* Tombol header lebih kecil */
+      .mobile-header-btn {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.75rem !important;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-gradient-to-br from-orange-50 to-blue-50 min-h-screen text-gray-800">
   <!-- Header -->
-  <header class="sticky top-0 bg-gradient-to-r from-blue-600 to-orange-500 text-white shadow-lg z-10">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+  <header class="sticky top-0 bg-gradient-to-r from-blue-600 to-orange-500 text-white shadow-lg z-10 mobile-header">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2 md:py-4">
       <div class="flex items-center space-x-3">
-        <div class="bg-white/20 p-2 rounded-lg">
-          <span class="material-icons text-2xl">account_balance_wallet</span>
+        <div class="bg-white/20 p-1 md:p-2 rounded-lg mobile-icon">
+          <span class="material-icons text-xl md:text-2xl">account_balance_wallet</span>
         </div>
-        <h1 class="text-xl md:text-2xl font-bold">Albary Keuangan</h1>
+        <h1 class="text-lg md:text-xl md:text-2xl font-bold">Albary Keuangan</h1>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="max-w-4xl mx-auto px-6 mt-0">
+      <div class="flex items-center gap-2 md:gap-3">
+        <div class="max-w-4xl mx-auto px-3 md:px-6 mt-0">
           <div id="userAktif"
-            class="flex items-center gap-2 p-2 bg-white shadow-md rounded-lg border border-gray-200 text-sm text-gray-700">
-            <span class="material-icons text-blue-600">person</span>
+            class="flex items-center gap-1 md:gap-2 p-1 md:p-2 bg-white shadow-md rounded-lg border border-gray-200 text-xs md:text-sm text-gray-700 mobile-user-info">
+            <span class="material-icons text-blue-600 text-sm">person</span>
             <span class="font-medium">Belum ada user dipilih</span>
           </div>
         </div>
         <button id="pilihUserBtn"
-          class="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg text-sm font-medium btn-hover">
+          class="bg-white/20 hover:bg-white/30 px-2 md:px-3 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium btn-hover mobile-header-btn">
           Pilih User
         </button>
         <button id="tambahPengguna"
-          class="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg text-sm font-medium btn-hover">
+          class="bg-white/20 hover:bg-white/30 px-2 md:px-3 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium btn-hover mobile-header-btn">
           + User
         </button>
         <div id="loadingIndicator" class="hidden">
@@ -138,102 +203,98 @@
       </div>
     </div>
   </header>
-
-  <main class="max-w-6xl mx-auto px-3 sm:px-3 py-4 sm:py-6">
+  <main class="max-w-6xl mx-auto px-3 sm:px-3 py-2 sm:py-6">
     <!-- Ringkasan -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
-      <div class="rounded-2xl bg-white p-5 shadow-lg card-hover border border-blue-100">
+    <section class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-2 md:gap-4 sm:gap-6 mb-4 md:mb-6">
+      <div
+        class="rounded-xl md:rounded-2xl bg-white p-3 md:p-5 shadow-lg card-hover border border-blue-100 mobile-card">
         <div class="flex justify-between items-start">
           <div>
-            <p class="text-sm text-gray-500">Total Rupiah</p>
-            <p id="totalRp" class="text-2xl md:text-3xl font-bold text-blue-700 mt-1">Rp 0</p>
+            <p class="text-xs md:text-sm text-gray-500 mobile-subtitle">Total Rupiah</p>
+            <p id="totalRp" class="text-lg md:text-2xl md:text-3xl font-bold text-blue-700 mt-1 mobile-title">Rp 0</p>
           </div>
-          <div class="bg-blue-100 p-3 rounded-full">
-            <span class="material-icons text-blue-600">payments</span>
+          <div class="bg-blue-100 p-1.5 md:p-3 rounded-full mobile-icon">
+            <span class="material-icons text-blue-600 text-sm md:text-base">payments</span>
           </div>
         </div>
-        <div class="mt-4 h-2 bg-blue-100 rounded-full overflow-hidden">
+        <div class="mt-2 md:mt-4 h-1 md:h-2 bg-blue-100 rounded-full overflow-hidden mobile-progress">
           <div id="progressRp" class="h-full bg-blue-600 rounded-full" style="width: 0%"></div>
         </div>
       </div>
-
-      <div class="rounded-2xl bg-white p-5 shadow-lg card-hover border border-orange-100">
+      <div
+        class="rounded-xl md:rounded-2xl bg-white p-3 md:p-5 shadow-lg card-hover border border-orange-100 mobile-card">
         <div class="flex justify-between items-start">
           <div>
-            <p class="text-sm text-gray-500">Total Riyal</p>
-            <p id="totalSar" class="text-2xl md:text-3xl font-bold text-orange-600 mt-1">SAR 0</p>
+            <p class="text-xs md:text-sm text-gray-500 mobile-subtitle">Total Riyal</p>
+            <p id="totalSar" class="text-lg md:text-2xl md:text-3xl font-bold text-orange-600 mt-1 mobile-title">SAR 0
+            </p>
           </div>
-          <div class="bg-orange-100 p-3 rounded-full">
-            <span class="material-icons text-orange-600">savings</span>
+          <div class="bg-orange-100 p-1.5 md:p-3 rounded-full mobile-icon">
+            <span class="material-icons text-orange-600 text-sm md:text-base">savings</span>
           </div>
         </div>
-        <div class="mt-4 h-2 bg-orange-100 rounded-full overflow-hidden">
+        <div class="mt-2 md:mt-4 h-1 md:h-2 bg-orange-100 rounded-full overflow-hidden mobile-progress">
           <div id="progressSar" class="h-full bg-orange-500 rounded-full" style="width: 0%"></div>
         </div>
       </div>
     </section>
-
     <!-- Tombol Transaksi -->
-    <section class="mt-2 sm:mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8">
+    <section class="mt-1 sm:mt-4 grid grid-cols-3 gap-2 sm:gap-4 md:grid-cols-3 md:gap-4 sm:gap-6 mb-4 md:mb-8">
       <button id="tombolMasuk"
-        class="flex flex-col items-center justify-center gap-3 bg-white shadow-lg rounded-2xl py-5 border border-green-200 hover:bg-green-50 text-sm sm:text-base card-hover">
-        <div class="bg-green-100 p-3 rounded-full">
-          <span class="material-icons text-green-600 text-2xl">arrow_downward</span>
+        class="flex flex-col items-center justify-center gap-2 md:gap-3 bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-green-200 hover:bg-green-50 text-xs md:text-sm sm:text-base card-hover mobile-transaction-btn">
+        <div class="bg-green-100 p-1.5 md:p-3 rounded-full mobile-icon">
+          <span class="material-icons text-green-600 text-lg md:text-2xl">arrow_downward</span>
         </div>
-        <span class="font-medium">Pemasukan</span>
+        <span class="font-medium text-xs md:text-sm">Pemasukan</span>
       </button>
-
       <button id="tombolKeluar"
-        class="flex flex-col items-center justify-center gap-3 bg-white shadow-lg rounded-2xl py-5 border border-red-200 hover:bg-red-50 text-sm sm:text-base card-hover">
-        <div class="bg-red-100 p-3 rounded-full">
-          <span class="material-icons text-red-600 text-2xl">arrow_upward</span>
+        class="flex flex-col items-center justify-center gap-2 md:gap-3 bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-red-200 hover:bg-red-50 text-xs md:text-sm sm:text-base card-hover mobile-transaction-btn">
+        <div class="bg-red-100 p-1.5 md:p-3 rounded-full mobile-icon">
+          <span class="material-icons text-red-600 text-lg md:text-2xl">arrow_upward</span>
         </div>
-        <span class="font-medium">Pengeluaran</span>
+        <span class="font-medium text-xs md:text-sm">Pengeluaran</span>
       </button>
-
       <button id="tombolTransfer"
-        class="flex flex-col items-center justify-center gap-3 bg-white shadow-lg rounded-2xl py-5 border border-blue-200 hover:bg-blue-50 text-sm sm:text-base card-hover">
-        <div class="bg-blue-100 p-3 rounded-full">
-          <span class="material-icons text-blue-600 text-2xl">swap_horiz</span>
+        class="flex flex-col items-center justify-center gap-2 md:gap-3 bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-blue-200 hover:bg-blue-50 text-xs md:text-sm sm:text-base card-hover mobile-transaction-btn">
+        <div class="bg-blue-100 p-1.5 md:p-3 rounded-full mobile-icon">
+          <span class="material-icons text-blue-600 text-lg md:text-2xl">swap_horiz</span>
         </div>
-        <span class="font-medium">Transfer</span>
+        <span class="font-medium text-xs md:text-sm">Transfer</span>
       </button>
     </section>
-
     <!-- Kantong -->
-    <section class="mt-5 sm:mt-8 mb-8">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="font-semibold text-gray-700 text-lg sm:text-xl flex items-center gap-2">
-          <span class="material-icons text-blue-600">account_balance_wallet</span>
+    <section class="mt-3 sm:mt-8 mb-4 md:mb-8">
+      <div class="flex justify-between items-center mb-2 md:mb-4">
+        <h2 class="font-semibold text-gray-700 text-base md:text-lg sm:text-xl flex items-center gap-1 md:gap-2">
+          <span class="material-icons text-blue-600 text-sm md:text-base">account_balance_wallet</span>
           Kantong Keuangan
         </h2>
         <button id="tambahKantong"
-          class="px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 text-sm font-medium btn-hover flex items-center gap-2">
-          <span class="material-icons text-lg">add</span>
-          Tambah Kantong
+          class="px-3 md:px-4 py-1.5 md:py-2 bg-blue-600 text-white rounded-lg md:rounded-xl shadow hover:bg-blue-700 text-xs md:text-sm font-medium btn-hover flex items-center gap-1 md:gap-2">
+          <span class="material-icons text-sm md:text-lg">add</span>
+          <span class="hidden sm:inline">Tambah Kantong</span>
         </button>
       </div>
-      <div id="daftarKantong" class="flex gap-4 overflow-x-auto pb-4 pt-2 snap-x scrollbar-hide px-2">
+      <div id="daftarKantong"
+        class="flex gap-3 md:gap-4 overflow-x-auto pb-3 md:pb-4 pt-1 md:pt-2 snap-x scrollbar-hide px-2">
       </div>
     </section>
-
     <!-- Transaksi -->
-    <section class="mt-5 sm:mt-8">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="font-semibold text-gray-700 text-lg sm:text-xl flex items-center gap-2">
-          <span class="material-icons text-blue-600">receipt_long</span>
+    <section class="mt-3 sm:mt-8">
+      <div class="flex justify-between items-center mb-2 md:mb-4">
+        <h2 class="font-semibold text-gray-700 text-base md:text-lg sm:text-xl flex items-center gap-1 md:gap-2">
+          <span class="material-icons text-blue-600 text-sm md:text-base">receipt_long</span>
           Riwayat Transaksi
         </h2>
       </div>
-      <div id="daftarTransaksi" class="space-y-3 sm:space-y-4">
-        <div class="text-center py-8 text-gray-500">
-          <span class="material-icons text-4xl text-gray-300">history</span>
-          <p class="mt-2">Pilih kantong untuk melihat transaksi</p>
+      <div id="daftarTransaksi" class="space-y-2 sm:space-y-3 md:space-y-4">
+        <div class="text-center py-6 md:py-8 text-gray-500">
+          <span class="material-icons text-3xl md:text-4xl text-gray-300">history</span>
+          <p class="mt-1 md:mt-2 text-sm">Pilih kantong untuk melihat transaksi</p>
         </div>
       </div>
     </section>
   </main>
-
   <!-- Modal -->
   <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-3">
     <div class="bg-white rounded-xl shadow-lg w-full max-w-sm p-4 sm:p-5">
@@ -247,7 +308,6 @@
       </div>
     </div>
   </div>
-
   <!-- Modal Token -->
   <div id="tokenModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-3">
     <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6">
@@ -262,14 +322,12 @@
       </div>
     </div>
   </div>
-
   <!-- Tombol Backup (floating) -->
   <button id="btnBackup"
-    class="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-indigo-600 text-white shadow-xl hover:bg-indigo-700 flex items-center justify-center text-2xl z-[100] btn-hover"
+    class="fixed bottom-6 right-6 h-12 w-12 md:h-14 md:w-14 rounded-full bg-indigo-600 text-white shadow-xl hover:bg-indigo-700 flex items-center justify-center text-xl md:text-2xl z-[100] btn-hover"
     aria-label="Buka Backup">
     ⬇️
   </button>
-
   <!-- Modal (aksesibilitas & klik aman) -->
   <div id="backupModal" class="fixed inset-0 hidden items-center justify-center p-4 z-[90]" aria-hidden="true">
     <!-- backdrop -->
@@ -292,7 +350,6 @@
       </div>
     </div>
   </div>
-
   <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js" defer></script>
@@ -303,7 +360,6 @@
     // -------------------------
     const GITHUB_URL = "https://api.github.com/repos/idarohpusat-blip/my_rep/contents/keuangan_albary.json";
     const TOKEN_KEY = "albary_github_token";
-
     // -------------------------
     // Data
     // -------------------------
@@ -311,11 +367,9 @@
     let penggunaAktif = 0;
     let kantongAktif = null;
     let githubToken = null;
-
     function idUnik() { return Date.now() + '' + Math.floor(Math.random() * 1000); }
     function hariIni() { return new Date().toISOString().split('T')[0]; }
     function el(id) { return document.getElementById(id); }
-
     // -------------------------
     // Fungsi GitHub API
     // -------------------------
@@ -326,12 +380,10 @@
         githubToken = savedToken;
         return true;
       }
-
       // Tampilkan modal input token
       return new Promise((resolve) => {
         el('tokenModal').classList.remove('hidden');
         el('tokenModal').classList.add('flex');
-
         el('tokenSimpan').onclick = () => {
           const token = el('tokenInput').value.trim();
           if (token) {
@@ -342,7 +394,6 @@
             resolve(true);
           }
         };
-
         el('tokenBatal').onclick = () => {
           el('tokenModal').classList.add('hidden');
           el('tokenModal').classList.remove('flex');
@@ -350,10 +401,8 @@
         };
       });
     }
-
     async function fetchDataFromGithub() {
       if (!githubToken) return null;
-
       try {
         const response = await fetch(GITHUB_URL, {
           headers: {
@@ -361,11 +410,9 @@
             'Accept': 'application/vnd.github.v3+json'
           }
         });
-
         if (!response.ok) {
           throw new Error(`GitHub API error: ${response.status}`);
         }
-
         const data = await response.json();
         const content = atob(data.content);
         return JSON.parse(content);
@@ -374,10 +421,8 @@
         return null;
       }
     }
-
     async function saveDataToGithub(data) {
       if (!githubToken) return false;
-
       try {
         // Get current file info first
         const currentData = await fetch(GITHUB_URL, {
@@ -386,16 +431,13 @@
             'Accept': 'application/vnd.github.v3+json'
           }
         });
-
         let sha = '';
         if (currentData.ok) {
           const currentFile = await currentData.json();
           sha = currentFile.sha;
         }
-
         const content = btoa(JSON.stringify(data, null, 2));
         const message = sha ? 'Update keuangan data' : 'Create keuangan data';
-
         const response = await fetch(GITHUB_URL, {
           method: sha ? 'PUT' : 'POST',
           headers: {
@@ -409,25 +451,21 @@
             sha: sha || undefined
           })
         });
-
         return response.ok;
       } catch (error) {
         console.error('Error saving data to GitHub:', error);
         return false;
       }
     }
-
     // -------------------------
     // Loading Indicator
     // -------------------------
     function showLoading() {
       el('loadingIndicator').classList.remove('hidden');
     }
-
     function hideLoading() {
       el('loadingIndicator').classList.add('hidden');
     }
-
     // -------------------------
     // Modal Helper
     // -------------------------
@@ -442,12 +480,10 @@
       };
       el('modalBatal').onclick = tutupModal;
     }
-
     function tutupModal() {
       el('modal').classList.add('hidden');
       el('modal').classList.remove('flex');
     }
-
     function pilihUserPopup() {
       let isi = '<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">';
       pengguna.forEach((u, i) => {
@@ -468,7 +504,6 @@
       isi += '</div>';
       bukaModal("Pilih User", isi, () => { /* tidak pakai tombol Simpan untuk popup pilih user */ });
     }
-
     function hapusUser(i, ev) {
       if (ev) ev.stopPropagation(); // ⛔ jangan trigger setUser
       if (pengguna.length <= 1) {
@@ -493,10 +528,8 @@
         pilihUserPopup();
       }
     }
-
     // Tombol pilih user
     el("pilihUserBtn").addEventListener("click", pilihUserPopup);
-
     // -------------------------
     // Simpan & Muat Data
     // -------------------------
@@ -507,21 +540,17 @@
         albary_user_terakhir: String(penggunaAktif ?? 0),
         albary_kantong_terakhir: String(kantongAktif ?? -1)
       };
-
       const success = await saveDataToGithub(data);
       hideLoading();
-
       if (success) {
         tampilSemua();
       } else {
         alert('Gagal menyimpan data ke GitHub. Periksa koneksi internet dan token Anda.');
       }
     }
-
     async function muatData() {
       showLoading();
       const hasToken = await loadGithubToken();
-
       if (!hasToken) {
         hideLoading();
         // Gunakan data default
@@ -539,10 +568,8 @@
         tampilSemua?.();
         return;
       }
-
       const data = await fetchDataFromGithub();
       hideLoading();
-
       if (data) {
         pengguna = data.albary_pengguna || [];
         // 1) Tentukan user terakhir
@@ -572,11 +599,9 @@
         penggunaAktif = 0;
         kantongAktif = null;
       }
-
       tampilUserAktif?.();
       tampilSemua?.();
     }
-
     // -------------------------
     // Pilihan Pengguna
     // -------------------------
@@ -584,17 +609,16 @@
       const box = el("userAktif");
       if (!pengguna.length || penggunaAktif == null) {
         box.innerHTML = `
-      <span class="material-icons text-blue-600">person</span>
+      <span class="material-icons text-blue-600 text-sm">person</span>
       <span class="font-medium">Belum ada user dipilih</span>
     `;
         return;
       }
       box.innerHTML = `
-    <span class="material-icons text-blue-600">person</span>
+    <span class="material-icons text-blue-600 text-sm">person</span>
     <span class="font-medium">${pengguna[penggunaAktif].nama}</span>
   `;
     }
-
     function setUser(i) {
       penggunaAktif = i;
       kantongAktif = null;
@@ -604,7 +628,6 @@
       tampilTransaksi();
       tutupModal?.();
     }
-
     // Tombol tambah user
     el('tambahPengguna').addEventListener('click', () => {
       bukaModal("Tambah User", `
@@ -623,7 +646,6 @@
       // fokus ke input begitu popup terbuka
       setTimeout(() => el('userNama')?.focus(), 0);
     });
-
     // -------------------------
     // Kantong
     // -------------------------
@@ -634,23 +656,23 @@
       user.kantong.forEach((kantong, i) => {
         const div = document.createElement('div');
         div.className = `
-      relative flex-shrink-0 w-28 sm:w-32
-      rounded-lg shadow p-2.5 snap-start cursor-pointer
+      relative flex-shrink-0 w-24 sm:w-28 md:w-32
+      rounded-lg shadow p-2 snap-start cursor-pointer
       transition-all duration-200
       ${kantongAktif === i ? 'bg-blue-50 ring-2 ring-blue-500 ring-offset-2' : 'bg-white hover:bg-gray-50'}
     `;
         div.innerHTML = `
   <button class="absolute -top-2 -right-2 bg-rose-600 hover:bg-rose-700 text-white 
-                 rounded-full w-6 h-6 grid place-items-center shadow"
+                 rounded-full w-5 h-5 grid place-items-center shadow"
           title="Hapus kantong"
           onclick="hapusKantong(${i}, event)">
-    <span class="material-icons text-[14px] leading-none">delete</span>
+    <span class="material-icons text-[12px] leading-none">delete</span>
   </button>
-  <div class="flex items-center gap-1.5">
-    <span class="material-icons text-blue-600 text-base">account_balance_wallet</span>
-    <p class="font-semibold text-sm break-words leading-snug">${kantong.nama}</p>
+  <div class="flex items-center gap-1">
+    <span class="material-icons text-blue-600 text-sm">account_balance_wallet</span>
+    <p class="font-semibold text-xs break-words leading-tight">${kantong.nama}</p>
   </div>
-  <p class="mt-1 font-semibold text-blue-700 text-sm sm:text-base leading-tight">
+  <p class="mt-1 font-semibold text-blue-700 text-xs sm:text-sm leading-tight">
     ${formatUang(kantong.mataUang, kantong.saldo)}
   </p>
 `;
@@ -662,7 +684,6 @@
         wadah.appendChild(div);
       });
     }
-
     function hapusKantong(i, ev) {
       if (ev) ev.stopPropagation(); // jangan dianggap klik pilih kantong
       const user = pengguna[penggunaAktif];
@@ -689,7 +710,6 @@
       tampilKantong();   // refresh kartu
       tampilTransaksi(); // refresh list transaksi
     }
-
     el('tambahKantong').addEventListener('click', () => {
       bukaModal("Tambah Kantong", `
         <label class="block mb-2 text-sm">Nama Kantong</label>
@@ -707,7 +727,6 @@
         simpanData();
       });
     });
-
     // -------------------------
     // Transaksi Masuk, Keluar
     // -------------------------
@@ -746,10 +765,8 @@
         input.focus();
       }, 0);
     }
-
     el('tombolMasuk').addEventListener('click', () => formTransaksi('masuk'));
     el('tombolKeluar').addEventListener('click', () => formTransaksi('keluar'));
-
     // -------------------------
     // Transaksi
     // -------------------------
@@ -770,25 +787,24 @@
       }
       transaksiKantong.forEach(tr => {
         const row = document.createElement('div');
-        row.className = 'flex justify-between items-center border-b py-3 last:border-0 bg-white rounded-lg px-4 shadow-sm card-hover';
+        row.className = 'flex justify-between items-center border-b py-2 last:border-0 bg-white rounded-lg px-3 shadow-sm card-hover';
         row.innerHTML = `
       <div class="flex-1">
-        <p class="font-semibold ${tr.jenis === 'masuk' ? 'text-emerald-600' : 'text-rose-600'} text-sm">
+        <p class="font-semibold ${tr.jenis === 'masuk' ? 'text-emerald-600' : 'text-rose-600'} text-xs sm:text-sm">
           ${tr.jenis === 'masuk' ? '+' : '-'} ${formatUang(tr.mataUang, tr.jumlah)}
         </p>
         <p class="text-xs text-gray-500 break-words">${tr.keterangan || ''} • ${tr.tanggal}</p>
       </div>
       <div class="flex items-center gap-1 ml-2">
-        <button class="material-icons text-gray-400 hover:text-blue-600 cursor-pointer text-base sm:text-lg"
+        <button class="material-icons text-gray-400 hover:text-blue-600 cursor-pointer text-sm sm:text-base sm:text-lg"
                 title="Edit" onclick="editTransaksi('${tr.id}')">edit</button>
-        <button class="material-icons text-gray-400 hover:text-red-600 cursor-pointer text-base sm:text-lg"
+        <button class="material-icons text-gray-400 hover:text-red-600 cursor-pointer text-sm sm:text-base sm:text-lg"
                 title="Hapus" onclick="hapusTransaksi('${tr.id}')">delete</button>
       </div>
     `;
         wadah.appendChild(row);
       });
     }
-
     function editTransaksi(id) {
       const user = pengguna[penggunaAktif];
       if (!user) return;
@@ -840,7 +856,6 @@
         inpJumlah.focus();
       }, 0);
     }
-
     function hapusTransaksi(id) {
       const user = pengguna[penggunaAktif];
       if (!user) return;
@@ -858,7 +873,6 @@
       user.transaksi.splice(idx, 1);
       simpanData(); // render ulang
     }
-
     // -------------------------
     // Ringkasan
     // -------------------------
@@ -869,20 +883,16 @@
         if (k.mataUang === 'Rp') jumlahRp += Number(k.saldo || 0);
         if (k.mataUang === 'SAR') jumlahSar += Number(k.saldo || 0);
       });
-
       el('totalRp').textContent = formatUang('Rp', jumlahRp);
       el('totalSar').textContent = formatUang('SAR', jumlahSar);
-
       // Update progress bar (asumsi target 10 juta untuk Rp dan 5000 untuk SAR)
       const targetRp = 10000000;
       const targetSar = 5000;
       const progressRp = Math.min(100, (jumlahRp / targetRp) * 100);
       const progressSar = Math.min(100, (jumlahSar / targetSar) * 100);
-
       el('progressRp').style.width = `${progressRp}%`;
       el('progressSar').style.width = `${progressSar}%`;
     }
-
     // -------------------------
     // Tampil Semua
     // -------------------------
@@ -891,10 +901,8 @@
       tampilTransaksi();
       tampilRingkasan();
     }
-
     // Init
     muatData();
-
     // Auto reload jika idle 30 detik
     let idleTimer;
     function resetIdleTimer() {
@@ -909,14 +917,12 @@
     });
     // Mulai timer pertama kali
     resetIdleTimer();
-
     function formatUang(mataUang, nominal) {
       const n = Number(nominal || 0);
       if (mataUang === 'Rp') return 'Rp ' + n.toLocaleString('id-ID');
       if (mataUang === 'SAR') return 'SAR ' + n.toLocaleString('id-ID');
       return (mataUang || '') + ' ' + n.toLocaleString('id-ID');
     }
-
     function parseUang(str) {
       if (typeof str === 'number') return str;
       if (!str) return 0;
@@ -924,7 +930,6 @@
       const n = parseFloat(clean);
       return isNaN(n) ? 0 : n;
     }
-
     // Format input live, simpan caret
     function formatInputUang(inputEl, mataUang) {
       const start = inputEl.selectionStart;
@@ -935,12 +940,10 @@
       const diff = inputEl.value.length - before.length;
       inputEl.setSelectionRange(Math.max(0, start + diff), Math.max(0, start + diff));
     }
-
     // Ambil angka murni dari input berformat
     function getNilaiDariInput(inputEl) {
       return parseUang(inputEl.value);
     }
-
     function renderGrid() {
       const root = document.getElementById('gridContainer');
       root.innerHTML = '';
@@ -965,7 +968,6 @@
         className: { table: 'min-w-full' }
       }).render(root);
     }
-
     // --- Util modal yang solid ---
     const modal = document.getElementById('backupModal');
     const dialog = document.getElementById('backupDialog');
@@ -998,11 +1000,9 @@
     });
     // cegah klik dalam dialog menembus backdrop
     dialog.addEventListener('click', (e) => e.stopPropagation());
-
     // --- Export (tetap sama dengan sebelumnya) ---
     document.getElementById('btnExportExcel').onclick = exportExcel;
     document.getElementById('btnExportPDF').onclick = exportPDF;
-
     function exportExcel() {
       if (!window.XLSX) { alert('SheetJS belum termuat'); return; }
       const user = (window.pengguna?.[window.penggunaAktif]) || { kantong: [], transaksi: [] };
@@ -1039,13 +1039,11 @@
       XLSX.utils.book_append_sheet(wb, wsK, 'Kantong');
       XLSX.writeFile(wb, `backup_${new Date().toISOString().slice(0, 10)}.xlsx`);
     }
-
     // Tambahkan tombol JSON di modal backup
     document.getElementById('btnExportPDF').insertAdjacentHTML('afterend',
       '<button id="btnExportJSON" class="px-3 py-1.5 rounded-lg ring-1 ring-gray-200 hover:bg-gray-50 text-sm">JSON</button>'
     );
     document.getElementById('btnExportJSON').addEventListener('click', exportJSON);
-
     // Fungsi export JSON
     function exportJSON() {
       const user = pengguna[penggunaAktif];
@@ -1068,7 +1066,6 @@
         URL.revokeObjectURL(url);
       }, 100);
     }
-
     function exportPDF() {
       const user = pengguna[penggunaAktif];
       const { jsPDF } = window.jspdf;
