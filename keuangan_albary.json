@@ -116,245 +116,245 @@
         }
       ]
     },
-{
-  "nama": "Ummi Sri",
-  "kantong": [
     {
-      "nama": "Ummi sri CK Agustus",
-      "saldo": -2208,
-      "mataUang": "SAR"
-    },
-    {
-      "nama": "Hutang Ummi sri",
-      "saldo": -3880,
-      "mataUang": "SAR"
-    },
-    {
-      "nama": "Umm Sri Rp",
-      "saldo": -484781,
-      "mataUang": "Rp"
+      "nama": "Ummi Sri",
+      "kantong": [
+        {
+          "nama": "Ummi sri CK Agustus",
+          "saldo": -2208,
+          "mataUang": "SAR"
+        },
+        {
+          "nama": "Hutang Ummi sri",
+          "saldo": -3880,
+          "mataUang": "SAR"
+        },
+        {
+          "nama": "Umm Sri Rp",
+          "saldo": -484781,
+          "mataUang": "Rp"
+        }
+      ],
+      "transaksi": [
+        {
+          "id": "1755521808233309",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 54,
+          "mataUang": "SAR",
+          "keterangan": "Dari Aplikasi Lama",
+          "tanggal": "2025-08-18"
+        },
+        {
+          "id": "1755521931144532",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 2200,
+          "mataUang": "SAR",
+          "keterangan": "Pelunasan Hotel",
+          "tanggal": "2025-08-18"
+        },
+        {
+          "id": "1755522029608619",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 4180,
+          "mataUang": "SAR",
+          "keterangan": "Makan 10x38x11",
+          "tanggal": "2025-08-18"
+        },
+        {
+          "id": "1755522087836832",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 3000,
+          "mataUang": "SAR",
+          "keterangan": "Muthowif 250x12",
+          "tanggal": "2025-08-18"
+        },
+        {
+          "id": "175552686323071",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 5500,
+          "mataUang": "SAR",
+          "keterangan": "Di bayar di 1 riyal madina",
+          "tanggal": "2025-08-18"
+        },
+        {
+          "id": "1755527324660633",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Kain Ihrom 2",
+          "tanggal": "2025-08-18"
+        },
+        {
+          "id": "1755597627190870",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 70,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy madina",
+          "tanggal": "2025-08-19"
+        },
+        {
+          "id": "1755614390603179",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 20,
+          "mataUang": "SAR",
+          "keterangan": "Matam suwayya",
+          "tanggal": "2025-08-19"
+        },
+        {
+          "id": "1755634423489998",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 72,
+          "mataUang": "SAR",
+          "keterangan": "Supir bus madina mekkah",
+          "tanggal": "2025-08-19"
+        },
+        {
+          "id": "1755634441451667",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 80,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy kedatangan mekkah",
+          "tanggal": "2025-08-19"
+        },
+        {
+          "id": "1755768618300212",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 42,
+          "mataUang": "SAR",
+          "keterangan": "Tip supir city tour makkah",
+          "tanggal": "2025-08-21"
+        },
+        {
+          "id": "1755836432536978",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 60,
+          "mataUang": "SAR",
+          "keterangan": "Cukur rambut",
+          "tanggal": "2025-08-22"
+        },
+        {
+          "id": "1755935103198271",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 21,
+          "mataUang": "SAR",
+          "keterangan": "Cofee sama ayah",
+          "tanggal": "2025-08-23"
+        },
+        {
+          "id": "1755935121634603",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 29,
+          "mataUang": "SAR",
+          "keterangan": "Pizza",
+          "tanggal": "2025-08-23"
+        },
+        {
+          "id": "1755944094425539",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 315,
+          "mataUang": "SAR",
+          "keterangan": "Museum tower",
+          "tanggal": "2025-08-23"
+        },
+        {
+          "id": "1755948345277507",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 600,
+          "mataUang": "SAR",
+          "keterangan": "Belanja museum",
+          "tanggal": "2025-08-23"
+        },
+        {
+          "id": "1755949680361165",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 108,
+          "mataUang": "SAR",
+          "keterangan": "Makan setelah mesium",
+          "tanggal": "2025-08-23"
+        },
+        {
+          "id": "1755952250871724",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 5,
+          "mataUang": "SAR",
+          "keterangan": "Pqlestina",
+          "tanggal": "2025-08-23"
+        },
+        {
+          "id": "1756025222703347",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 110,
+          "mataUang": "SAR",
+          "keterangan": "Kiswah",
+          "tanggal": "2025-08-24"
+        },
+        {
+          "id": "1756025686641373",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Kiswa pak ustadz",
+          "tanggal": "2025-08-24"
+        },
+        {
+          "id": "1756025912661913",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 220,
+          "mataUang": "SAR",
+          "keterangan": "3 orang telefri",
+          "tanggal": "2025-08-24"
+        },
+        {
+          "id": "1756031091795168",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Kopi ustadz dan ayah",
+          "tanggal": "2025-08-24"
+        },
+        {
+          "id": "1756155914981352",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 484781,
+          "mataUang": "Rp",
+          "keterangan": "Cofee moment",
+          "tanggal": "2025-08-25"
+        },
+        {
+          "id": "175625014660665",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 350,
+          "mataUang": "SAR",
+          "keterangan": "Porter kepulangan",
+          "tanggal": "2025-08-26"
+        }
+      ]
     }
   ],
-  "transaksi": [
-    {
-      "id": "1755521808233309",
-      "kantong": 0,
-      "jenis": "masuk",
-      "jumlah": 54,
-      "mataUang": "SAR",
-      "keterangan": "Dari Aplikasi Lama",
-      "tanggal": "2025-08-18"
-    },
-    {
-      "id": "1755521931144532",
-      "kantong": 1,
-      "jenis": "keluar",
-      "jumlah": 2200,
-      "mataUang": "SAR",
-      "keterangan": "Pelunasan Hotel",
-      "tanggal": "2025-08-18"
-    },
-    {
-      "id": "1755522029608619",
-      "kantong": 1,
-      "jenis": "keluar",
-      "jumlah": 4180,
-      "mataUang": "SAR",
-      "keterangan": "Makan 10x38x11",
-      "tanggal": "2025-08-18"
-    },
-    {
-      "id": "1755522087836832",
-      "kantong": 1,
-      "jenis": "keluar",
-      "jumlah": 3000,
-      "mataUang": "SAR",
-      "keterangan": "Muthowif 250x12",
-      "tanggal": "2025-08-18"
-    },
-    {
-      "id": "175552686323071",
-      "kantong": 1,
-      "jenis": "masuk",
-      "jumlah": 5500,
-      "mataUang": "SAR",
-      "keterangan": "Di bayar di 1 riyal madina",
-      "tanggal": "2025-08-18"
-    },
-    {
-      "id": "1755527324660633",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 50,
-      "mataUang": "SAR",
-      "keterangan": "Kain Ihrom 2",
-      "tanggal": "2025-08-18"
-    },
-    {
-      "id": "1755597627190870",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 70,
-      "mataUang": "SAR",
-      "keterangan": "Bilboy madina",
-      "tanggal": "2025-08-19"
-    },
-    {
-      "id": "1755614390603179",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 20,
-      "mataUang": "SAR",
-      "keterangan": "Matam suwayya",
-      "tanggal": "2025-08-19"
-    },
-    {
-      "id": "1755634423489998",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 72,
-      "mataUang": "SAR",
-      "keterangan": "Supir bus madina mekkah",
-      "tanggal": "2025-08-19"
-    },
-    {
-      "id": "1755634441451667",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 80,
-      "mataUang": "SAR",
-      "keterangan": "Bilboy kedatangan mekkah",
-      "tanggal": "2025-08-19"
-    },
-    {
-      "id": "1755768618300212",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 42,
-      "mataUang": "SAR",
-      "keterangan": "Tip supir city tour makkah",
-      "tanggal": "2025-08-21"
-    },
-    {
-      "id": "1755836432536978",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 60,
-      "mataUang": "SAR",
-      "keterangan": "Cukur rambut",
-      "tanggal": "2025-08-22"
-    },
-    {
-      "id": "1755935103198271",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 21,
-      "mataUang": "SAR",
-      "keterangan": "Cofee sama ayah",
-      "tanggal": "2025-08-23"
-    },
-    {
-      "id": "1755935121634603",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 29,
-      "mataUang": "SAR",
-      "keterangan": "Pizza",
-      "tanggal": "2025-08-23"
-    },
-    {
-      "id": "1755944094425539",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 315,
-      "mataUang": "SAR",
-      "keterangan": "Museum tower",
-      "tanggal": "2025-08-23"
-    },
-    {
-      "id": "1755948345277507",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 600,
-      "mataUang": "SAR",
-      "keterangan": "Belanja museum",
-      "tanggal": "2025-08-23"
-    },
-    {
-      "id": "1755949680361165",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 108,
-      "mataUang": "SAR",
-      "keterangan": "Makan setelah mesium",
-      "tanggal": "2025-08-23"
-    },
-    {
-      "id": "1755952250871724",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 5,
-      "mataUang": "SAR",
-      "keterangan": "Pqlestina",
-      "tanggal": "2025-08-23"
-    },
-    {
-      "id": "1756025222703347",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 110,
-      "mataUang": "SAR",
-      "keterangan": "Kiswah",
-      "tanggal": "2025-08-24"
-    },
-    {
-      "id": "1756025686641373",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 100,
-      "mataUang": "SAR",
-      "keterangan": "Kiswa pak ustadz",
-      "tanggal": "2025-08-24"
-    },
-    {
-      "id": "1756025912661913",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 220,
-      "mataUang": "SAR",
-      "keterangan": "3 orang telefri",
-      "tanggal": "2025-08-24"
-    },
-    {
-      "id": "1756031091795168",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 10,
-      "mataUang": "SAR",
-      "keterangan": "Kopi ustadz dan ayah",
-      "tanggal": "2025-08-24"
-    },
-    {
-      "id": "1756155914981352",
-      "kantong": 2,
-      "jenis": "keluar",
-      "jumlah": 484781,
-      "mataUang": "Rp",
-      "keterangan": "Cofee moment",
-      "tanggal": "2025-08-25"
-    },
-    {
-      "id": "175625014660665",
-      "kantong": 0,
-      "jenis": "keluar",
-      "jumlah": 350,
-      "mataUang": "SAR",
-      "keterangan": "Porter kepulangan",
-      "tanggal": "2025-08-26"
-    }
-  ]
-}
-  ],
-  "albary_user_terakhir": "1",
+  "albary_user_terakhir": "2",
   "albary_kantong_terakhir": "-1"
 }
