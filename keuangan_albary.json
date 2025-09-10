@@ -19,23 +19,95 @@
     {
       "nama": "jamaluddin",
       "kantong": [
-        {
-          "nama": "20%",
-          "saldo": 10,
-          "mataUang": "SAR"
-        }
-      ],
-      "transaksi": [
-        {
-          "id": "1757466916724212",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 10,
-          "mataUang": "SAR",
-          "keterangan": "makan",
-          "tanggal": "2025-09-10"
-        }
-      ]
+    {
+      "nama": "Kebutuhan",
+      "saldo": 2671,
+      "mataUang": "SAR"
+    },
+    {
+      "nama": "Keinginan",
+      "saldo": 362,
+      "mataUang": "SAR"
+    },
+    {
+      "nama": "Investasi",
+      "saldo": 1535,
+      "mataUang": "SAR"
+    },
+    {
+      "nama": "INV Kel",
+      "saldo": 0,
+      "mataUang": "SAR"
+    },
+    {
+      "nama": "Inv akhir",
+      "saldo": 0,
+      "mataUang": "SAR"
+    }
+  ],
+  "transaksi": [
+    {
+      "id": "1757002032861519",
+      "kantong": 0,
+      "jenis": "masuk",
+      "jumlah": 2751,
+      "mataUang": "SAR",
+      "keterangan": "Masuk",
+      "tanggal": "2025-09-04"
+    },
+    {
+      "id": "1757002054012163",
+      "kantong": 1,
+      "jenis": "masuk",
+      "jumlah": 362,
+      "mataUang": "SAR",
+      "keterangan": "Masuk",
+      "tanggal": "2025-09-04"
+    },
+    {
+      "id": "1757002074512744",
+      "kantong": 2,
+      "jenis": "masuk",
+      "jumlah": 1535,
+      "mataUang": "SAR",
+      "keterangan": "Masuk",
+      "tanggal": "2025-09-04"
+    },
+    {
+      "id": "1757066810530992",
+      "kantong": 0,
+      "jenis": "keluar",
+      "jumlah": 25,
+      "mataUang": "SAR",
+      "keterangan": "Sayur sama sabun",
+      "tanggal": "2025-09-05"
+    },
+    {
+      "id": "1757418768230530",
+      "kantong": 0,
+      "jenis": "keluar",
+      "jumlah": 25,
+      "mataUang": "SAR",
+      "keterangan": "Makan siang",
+      "tanggal": "2025-09-09"
+    },
+    {
+      "id": "1757445546975413",
+      "kantong": 0,
+      "jenis": "keluar",
+      "jumlah": 20,
+      "mataUang": "SAR",
+      "keterangan": "Cofee",
+      "tanggal": "2025-09-09"
+    },
+    {
+      "id": "1757445553768563",
+      "kantong": 0,
+      "jenis": "keluar",
+      "jumlah": 10,
+      "mataUang": "SAR",
+      "keterangan": "Makan",
+      "tanggal": "2025-09-09"
     }
   ],
   "albary_user_terakhir": "1",
