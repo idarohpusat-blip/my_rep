@@ -21,13 +21,23 @@
       "kantong": [
         {
           "nama": "20%",
-          "saldo": 0,
+          "saldo": 10,
           "mataUang": "SAR"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1757466916724212",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "makan",
+          "tanggal": "2025-09-10"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
