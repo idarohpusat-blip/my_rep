@@ -5,7 +5,7 @@
       "kantong": [
         {
           "nama": "Kebutuhan",
-          "saldo": 2771,
+          "saldo": 2671,
           "mataUang": "SAR"
         },
         {
@@ -92,15 +92,6 @@
           "mataUang": "SAR",
           "keterangan": "Makan",
           "tanggal": "2025-09-09"
-        },
-        {
-          "id": "175747187415372",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 100,
-          "mataUang": "SAR",
-          "keterangan": "Contoh",
-          "tanggal": "2025-09-10"
         }
       ]
     },
