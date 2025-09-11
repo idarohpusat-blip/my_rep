@@ -5,7 +5,7 @@
       "kantong": [
         {
           "nama": "Kebutuhan",
-          "saldo": 2498,
+          "saldo": 2507,
           "mataUang": "SAR"
         },
         {
@@ -109,6 +109,15 @@
           "jumlah": 23,
           "mataUang": "SAR",
           "keterangan": "Mansur ke tempat bus",
+          "tanggal": "2025-09-11"
+        },
+        {
+          "id": "1757607313709584",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 9,
+          "mataUang": "SAR",
+          "keterangan": "Makan siang",
           "tanggal": "2025-09-11"
         }
       ]
