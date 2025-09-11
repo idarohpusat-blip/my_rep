@@ -5,7 +5,7 @@
       "kantong": [
         {
           "nama": "Kebutuhan",
-          "saldo": 2671,
+          "saldo": 2521,
           "mataUang": "SAR"
         },
         {
@@ -92,6 +92,15 @@
           "mataUang": "SAR",
           "keterangan": "Makan",
           "tanggal": "2025-09-09"
+        },
+        {
+          "id": "1757607283618393",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 150,
+          "mataUang": "SAR",
+          "keterangan": "Mobil yaman bus",
+          "tanggal": "2025-09-11"
         }
       ]
     },
