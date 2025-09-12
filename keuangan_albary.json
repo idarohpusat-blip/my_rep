@@ -374,13 +374,23 @@
       "kantong": [
         {
           "nama": "Kebutuhan yaman",
-          "saldo": 0,
+          "saldo": -5000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1757706834360358",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 5000,
+          "mataUang": "Rp",
+          "keterangan": "Supir",
+          "tanggal": "2025-09-12"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
