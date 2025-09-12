@@ -368,8 +368,13 @@
           "tanggal": "2025-08-26"
         }
       ]
+    },
+    {
+      "nama": "Yaman",
+      "kantong": [],
+      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "0"
+  "albary_user_terakhir": "2",
+  "albary_kantong_terakhir": "-1"
 }
