@@ -371,7 +371,13 @@
     },
     {
       "nama": "Yaman",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Kebutuhan yaman",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
