@@ -374,7 +374,7 @@
       "kantong": [
         {
           "nama": "Kebutuhan yaman",
-          "saldo": -14300,
+          "saldo": -16300,
           "mataUang": "Rp"
         }
       ],
@@ -432,10 +432,19 @@
           "mataUang": "Rp",
           "keterangan": "Minum",
           "tanggal": "2025-09-13"
+        },
+        {
+          "id": "175778208620011",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 2000,
+          "mataUang": "Rp",
+          "keterangan": "Bensin",
+          "tanggal": "2025-09-13"
         }
       ]
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
