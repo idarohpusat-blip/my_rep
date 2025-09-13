@@ -374,7 +374,7 @@
       "kantong": [
         {
           "nama": "Kebutuhan yaman",
-          "saldo": -12100,
+          "saldo": -13800,
           "mataUang": "Rp"
         }
       ],
@@ -414,6 +414,15 @@
           "mataUang": "Rp",
           "keterangan": "Internet",
           "tanggal": "2025-09-12"
+        },
+        {
+          "id": "1757735670357754",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 1700,
+          "mataUang": "Rp",
+          "keterangan": "Makan pagi",
+          "tanggal": "2025-09-13"
         }
       ]
     }
