@@ -744,7 +744,7 @@
       const k = user.kantong[kantongAktif];
       bukaModal(`Transaksi ${jenis === 'masuk' ? 'Masuk' : 'Keluar'} (${k.nama})`, `
     <label class="block mb-2 text-sm">Jumlah (${k.mataUang})</label>
-    <input id="transaksiJumlah" type="text" class="w-full border rounded-lg px-3 py-2 mb-3"
+    <input id="transaksiJumlah" autocomplete="off" type="text" class="w-full border rounded-lg px-3 py-2 mb-3"
            placeholder="${k.mataUang === 'Rp' ? 'Rp 10.000' : 'SAR 10,00'}" />
     <label class="block mb-2 text-sm">Keterangan</label>
     <input id="transaksiKeterangan" class="w-full border rounded-lg px-3 py-2" />
