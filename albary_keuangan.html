@@ -247,7 +247,7 @@
         </div>
       </div>
     </section>
-    <!-- Tombol Transaksi -->
+    <!-- Tombol  -->
     <section class="mt-1 sm:mt-4 grid grid-cols-3 gap-2 sm:gap-4 md:grid-cols-3 md:gap-4 sm:gap-6 mb-4 md:mb-8">
       <button id="tombolMasuk"
         class="flex flex-col items-center justify-center bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-green-200 hover:bg-green-50 card-hover icon-only-btn">
@@ -286,18 +286,18 @@
         class="flex gap-3 md:gap-4 overflow-x-auto pb-3 md:pb-4 pt-2 md:pt-2 snap-x scrollbar-hide wallet-container px-2">
       </div>
     </section>
-    <!-- Transaksi -->
+    <!--  -->
     <section class="mt-3 sm:mt-8">
       <div class="flex justify-between items-center mb-2 md:mb-4">
         <h2 class="font-semibold text-gray-700 text-base md:text-lg sm:text-xl flex items-center gap-1 md:gap-2">
           <span class="material-icons text-blue-600 text-sm md:text-base">receipt_long</span>
-          Riwayat Transaksi
+          Riwayat 
         </h2>
       </div>
-      <div id="daftarTransaksi" class="space-y-2 sm:space-y-3 md:space-y-4">
+      <div id="daftar" class="space-y-2 sm:space-y-3 md:space-y-4">
         <div class="text-center py-6 md:py-8 text-gray-500">
           <span class="material-icons text-3xl md:text-4xl text-gray-300">history</span>
-          <p class="mt-1 md:mt-2 text-sm">Pilih kantong untuk melihat transaksi</p>
+          <p class="mt-1 md:mt-2 text-sm">Pilih kantong untuk melihat </p>
         </div>
       </div>
     </section>
@@ -518,7 +518,7 @@
         return;
       }
       const nama = pengguna[i]?.nama || 'User';
-      if (!confirm(`Hapus user "${nama}" beserta kantong & transaksinya?`)) return;
+      if (!confirm(`Hapus user "${nama}" beserta kantong & nya?`)) return;
       // Hapus user
       pengguna.splice(i, 1);
       // Perbaiki index aktif
@@ -567,7 +567,7 @@
             { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
             { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
           ],
-          transaksi: []
+          : []
         }];
         penggunaAktif = 0;
         kantongAktif = null;
@@ -601,7 +601,7 @@
             { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
             { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
           ],
-          transaksi: []
+          : []
         }];
         penggunaAktif = 0;
         kantongAktif = null;
@@ -632,7 +632,7 @@
       simpanData();            // ini juga menyimpan lagi, aman
       tampilUserAktif();
       tampilKantong();
-      tampilTransaksi();
+      tampil();
       tutupModal?.();
     }
     // Tombol tambah user
@@ -643,7 +643,7 @@
         const nama = el('userNama').value.trim();
         if (!nama) { el('userNama').focus(); return; } // tidak menutup jika kosong
         // simpan user baru
-        pengguna.push({ nama, kantong: [], transaksi: [] });
+        pengguna.push({ nama, kantong: [], : [] });
         penggunaAktif = pengguna.length - 1;
         kantongAktif = null;
         simpanData();        // akan render ulang
@@ -687,7 +687,7 @@
         div.onclick = () => {
           kantongAktif = i;
           tampilKantong();
-          tampilTransaksi();
+          tampil();
         };
         wadah.appendChild(div);
       });
@@ -696,9 +696,9 @@
       if (ev) ev.stopPropagation(); // jangan dianggap klik pilih kantong
       const user = pengguna[penggunaAktif];
       const nama = user.kantong[i]?.nama || 'Kantong';
-      if (!confirm(`Hapus kantong "${nama}" beserta transaksi di kantong ini?`)) return;
-      // Hapus semua transaksi yang milik kantong ini, dan reindex sisanya
-      user.transaksi = user.transaksi
+      if (!confirm(`Hapus kantong "${nama}" beserta  di kantong ini?`)) return;
+      // Hapus semua  yang milik kantong ini, dan reindex sisanya
+      user. = user.
         .filter(t => t.kantong !== i)
         .map(t => {
           if (t.kantong > i) return { ...t, kantong: t.kantong - 1 };
@@ -714,9 +714,9 @@
       } else if (kantongAktif > i) {
         kantongAktif -= 1;
       }
-      simpanData();      // render ulang ringkasan, transaksi, dsb
+      simpanData();      // render ulang ringkasan, , dsb
       tampilKantong();   // refresh kartu
-      tampilTransaksi(); // refresh list transaksi
+      tampil(); // refresh list 
     }
     el('tambahKantong').addEventListener('click', () => {
       bukaModal("Tambah Kantong", `
@@ -747,7 +747,7 @@
     <input id="transaksiJumlah" autocomplete="off" type="text" class="w-full border rounded-lg px-3 py-2 mb-3"
            placeholder="${k.mataUang === 'Rp' ? 'Rp 10.000' : 'SAR 10,00'}" />
     <label class="block mb-2 text-sm">Keterangan</label>
-    <input id="transaksiKeterangan" class="w-full border rounded-lg px-3 py-2" />
+    <input id="transaksiKeterangan"  autocomplete="off" class="w-full border rounded-lg px-3 py-2" />
   `, () => {
         const jumlah = getNilaiDariInput(el('transaksiJumlah'));  // ← angka murni
         const ket = (el('transaksiKeterangan').value || '').trim();
