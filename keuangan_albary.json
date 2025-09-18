@@ -379,7 +379,7 @@
         },
         {
           "nama": "Yaman jamal",
-          "saldo": 0,
+          "saldo": 85000,
           "mataUang": "Rp"
         }
       ],
@@ -482,10 +482,19 @@
           "mataUang": "Rp",
           "keterangan": "Makan brost",
           "tanggal": "2025-09-14"
+        },
+        {
+          "id": "1758211432056700",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 85000,
+          "mataUang": "Rp",
+          "keterangan": "Masuk",
+          "tanggal": "2025-09-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
