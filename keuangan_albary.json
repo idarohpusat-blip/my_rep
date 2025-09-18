@@ -376,6 +376,11 @@
           "nama": "Kebutuhan yaman",
           "saldo": -32300,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Yaman jamal",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
