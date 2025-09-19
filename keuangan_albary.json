@@ -379,7 +379,7 @@
         },
         {
           "nama": "Yaman jamal",
-          "saldo": 85000,
+          "saldo": 70000,
           "mataUang": "Rp"
         }
       ],
@@ -491,6 +491,15 @@
           "mataUang": "Rp",
           "keterangan": "Masuk",
           "tanggal": "2025-09-18"
+        },
+        {
+          "id": "1758261380828194",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 15000,
+          "mataUang": "Rp",
+          "keterangan": "Pembayaran Visa",
+          "tanggal": "2025-09-19"
         }
       ]
     }
