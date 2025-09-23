@@ -242,7 +242,7 @@
                 </div>
 
                 <div class="relative">
-                    <input type="url" id="appUrl" placeholder=" " required
+                    <input type="text" id="appUrl" placeholder=" " required
                         class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
                     <label for="appUrl" class="floating-label absolute left-4 top-3 text-gray-500 pointer-events-none">
                         URL Aplikasi
@@ -250,7 +250,7 @@
                 </div>
 
                 <div class="relative">
-                    <input type="url" id="appIcon" placeholder=" "
+                    <input type="text" id="appIcon" placeholder=" "
                         class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
                     <label for="appIcon" class="floating-label absolute left-4 top-3 text-gray-500 pointer-events-none">
                         URL Icon (opsional)
@@ -283,6 +283,9 @@
         </div>
     </div>
 
+    <!-- Hidden anchor for opening URLs -->
+    <a id="urlAnchor" target="_blank" style="display: none;"></a>
+
     <script>
         // Initialize
         let apps = JSON.parse(localStorage.getItem('albaryApps')) || [];
@@ -303,6 +306,7 @@
         const modalTitle = document.getElementById('modalTitle');
         const statsModal = document.getElementById('statsModal');
         const actionSheet = document.getElementById('actionSheet');
+        const urlAnchor = document.getElementById('urlAnchor');
 
         // Event Listeners
         searchInput.addEventListener('input', handleSearch);
@@ -509,9 +513,12 @@
             }
         }
 
-        // Open URL
+        // Open URL using anchor tag
         function openUrl(url) {
-            window.open(url, '_blank');
+            urlAnchor.href = url;
+            document.body.appendChild(urlAnchor);
+            urlAnchor.click();
+            document.body.removeChild(urlAnchor);
             closeActionSheet();
         }
 
