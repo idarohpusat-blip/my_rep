@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Albary - Manajemen Aplikasi</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="logo.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -32,6 +30,11 @@
 
         .app-card:active {
             transform: scale(0.98);
+        }
+
+        .app-card.pressed {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
         }
 
         .fab {
@@ -110,8 +113,8 @@
             <div class="flex items-center justify-between mb-3">
                 <!-- Title with icon -->
                 <h1 class="text-2xl font-bold text-gray-800 flex items-center">
-                    <img src="icon.png" alt="Albary Icon" class="w-8 h-8 mr-2 rounded-full border-2 border-green-600">
-                    AppAlbary
+                    <i class="fas fa-th-large text-green-600 mr-2"></i>
+                    Albary
                 </h1>
                 <div class="flex space-x-3">
                     <button onclick="toggleSearch()" class="text-gray-600">
@@ -137,7 +140,7 @@
     <!-- Main Content -->
     <main class="px-4 py-4">
         <!-- Apps Grid -->
-        <div id="appsGrid" class="grid grid-cols-2 gap-4">
+        <div id="appsGrid" class="grid grid-cols-4 gap-4">
             <!-- Apps will be dynamically inserted here -->
         </div>
 
@@ -242,7 +245,7 @@
         </div>
     </div>
 
-   <script>
+    <script>
         // Initialize
         let apps = JSON.parse(localStorage.getItem('albaryApps')) || [];
         let currentEditId = null;
@@ -296,6 +299,9 @@
                         class="w-full h-full object-cover"
                         onerror="this.src='${defaultIcon}'">
                     ${app.favorite ? '<i class="fas fa-star absolute top-1 right-1 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
+                </div>
+                <div class="p-2">
+                    <h3 class="font-semibold text-gray-800 text-center truncate">${app.name}</h3>
                 </div>
             `;
 
