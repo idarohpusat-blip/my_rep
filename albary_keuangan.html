@@ -2,501 +2,589 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet">
-  <title>Albary Keuangan – Multi Pengguna</title>
-   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="logo.png" type="image/png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Sembunyikan scrollbar di HP */
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    /* Font Inter untuk tampilan desktop yang lebih modern */
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Animasi untuk desktop */
-    @media (min-width: 768px) {
-      .card-hover {
-        transition: all 0.3s ease;
-      }
-
-      .card-hover:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn-hover {
-        transition: all 0.2s ease;
-      }
-
-      .btn-hover:hover {
-        transform: scale(1.05);
-      }
-
-      .fade-in {
-        animation: fadeIn 0.5s ease-in;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet">
+    <title>Albary Keuangan – Multi Pengguna</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Sembunyikan scrollbar di HP */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
         }
 
-        to {
-          opacity: 1;
-          transform: translateY(0);
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-      }
-    }
 
-    /* Loading spinner */
-    .spinner {
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top: 3px solid white;
-      width: 20px;
-      height: 20px;
-      animation: spin 1s linear infinite;
-      display: inline-block;
-    }
+        /* Font Inter untuk tampilan desktop yang lebih modern */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
+        /* Animasi untuk desktop */
+        @media (min-width: 768px) {
+            .card-hover {
+                transition: all 0.3s ease;
+            }
 
-      100% {
-        transform: rotate(360deg);
-      }
-    }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
 
-    /* Custom scrollbar untuk desktop */
-    @media (min-width: 768px) {
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
+            .btn-hover {
+                transition: all 0.2s ease;
+            }
 
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-      }
+            .btn-hover:hover {
+                transform: scale(1.05);
+            }
 
-      ::-webkit-scrollbar-thumb {
-        background: #c7d2fe;
-        border-radius: 10px;
-      }
+            .fade-in {
+                animation: fadeIn 0.5s ease-in;
+            }
 
-      ::-webkit-scrollbar-thumb:hover {
-        background: #a5b4fc;
-      }
-    }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
 
-    /* Perbaikan tampilan mobile */
-    @media (max-width: 767px) {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
 
-      /* Card lebih kecil dan ringkas */
-      .mobile-wallet-card {
-        width: 8rem !important;
-        padding: 0.75rem !important;
-      }
+        /* Loading spinner */
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid white;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
 
-      .icon-only-btn {
-        padding: 0.75rem !important;
-      }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-      /* Ganti ikon saldo */
-      .saldo-icon {
-        font-size: 1.5rem !important;
-      }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-      /* Ikon lebih kecil */
-      .mobile-icon {
-        width: 2rem !important;
-        height: 2rem !important;
-        padding: 0.4rem !important;
-      }
+        /* Custom scrollbar untuk desktop */
+        @media (min-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
 
-      .mobile-icon .material-icons {
-        font-size: 1.25rem !important;
-      }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
 
-      /* Font lebih kecil untuk mobile */
-      .mobile-title {
-        font-size: 1.25rem !important;
-      }
+            ::-webkit-scrollbar-thumb {
+                background: #c7d2fe;
+                border-radius: 10px;
+            }
 
-      .mobile-subtitle {
-        font-size: 0.75rem !important;
-      }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #a5b4fc;
+            }
+        }
 
-      /* Progress bar lebih tipis */
-      .mobile-progress {
-        height: 0.25rem !important;
-        margin-top: 0.5rem !important;
-      }
+        /* Perbaikan tampilan mobile */
+        @media (max-width: 767px) {
 
-      /* Tombol transaksi lebih kecil */
-      .mobile-transaction-btn {
-        padding: 1rem 0.5rem !important;
-      }
+            /* Card lebih kecil dan ringkas */
+            .mobile-wallet-card {
+                width: 8rem !important;
+                padding: 0.75rem !important;
+            }
 
-      .mobile-transaction-btn .material-icons {
-        font-size: 1.5rem !important;
-      }
+            .icon-only-btn {
+                padding: 0.75rem !important;
+            }
 
-      /* Header lebih kompak */
-      .mobile-header {
-        padding: 0.75rem 0 !important;
-      }
+            /* Ganti ikon saldo */
+            .saldo-icon {
+                font-size: 1.5rem !important;
+            }
 
-      .mobile-header h1 {
-        font-size: 1.25rem !important;
-      }
+            /* Ikon lebih kecil */
+            .mobile-icon {
+                width: 2rem !important;
+                height: 2rem !important;
+                padding: 0.4rem !important;
+            }
 
-      .mobile-user-info {
-        padding: 0.25rem 0.5rem !important;
-        font-size: 0.75rem !important;
-      }
+            .mobile-icon .material-icons {
+                font-size: 1.25rem !important;
+            }
 
-      /* Tombol header lebih kecil */
-      .mobile-header-btn {
-        padding: 0.4rem 0.5rem !important;
-        font-size: 0.75rem !important;
-      }
-    }
-  </style>
+            /* Font lebih kecil untuk mobile */
+            .mobile-title {
+                font-size: 1.25rem !important;
+            }
+
+            .mobile-subtitle {
+                font-size: 0.75rem !important;
+            }
+
+            /* Progress bar lebih tipis */
+            .mobile-progress {
+                height: 0.25rem !important;
+                margin-top: 0.5rem !important;
+            }
+
+            /* Tombol transaksi lebih kecil */
+            .mobile-transaction-btn {
+                padding: 1rem 0.5rem !important;
+            }
+
+            .mobile-transaction-btn .material-icons {
+                font-size: 1.5rem !important;
+            }
+
+            /* Header lebih kompak */
+            .mobile-header {
+                padding: 0.75rem 0 !important;
+            }
+
+            .mobile-header h1 {
+                font-size: 1.25rem !important;
+            }
+
+            .mobile-user-info {
+                padding: 0.25rem 0.5rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            /* Tombol header lebih kecil */
+            .mobile-header-btn {
+                padding: 0.4rem 0.5rem !important;
+                font-size: 0.75rem !important;
+            }
+        }
+
+        /* Notification styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification.success {
+            border-left: 4px solid #10b981;
+        }
+
+        .notification.error {
+            border-left: 4px solid #ef4444;
+        }
+
+        .notification.info {
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
 </head>
 
 <body class="bg-gradient-to-br from-orange-50 to-blue-50 min-h-screen text-gray-800">
-  <!-- Header -->
-  <header class="sticky top-0 bg-gradient-to-r from-blue-600 to-orange-500 text-white shadow-lg z-10 mobile-header">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2 md:py-4">
-      <div class="flex items-center space-x-3">
-        <div class="bg-white/20 p-1 md:p-2 rounded-lg mobile-icon">
-          <span class="material-icons text-xl md:text-2xl">account_balance_wallet</span>
+    <!-- Header -->
+    <header class="sticky top-0 bg-gradient-to-r from-blue-600 to-orange-500 text-white shadow-lg z-10 mobile-header">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2 md:py-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/20 p-1 md:p-2 rounded-lg mobile-icon">
+                    <span class="material-icons text-xl md:text-2xl">account_balance_wallet</span>
+                </div>
+                <h1 class="text-lg md:text-xl md:text-2xl font-bold">Albary Keuangan</h1>
+            </div>
+            <div class="flex items-center gap-2 md:gap-3">
+                <div class="max-w-4xl mx-auto px-3 md:px-6 mt-0">
+                    <div id="userAktif"
+                        class="flex items-center gap-1 md:gap-2 p-1 md:p-2 bg-white shadow-md rounded-lg border border-gray-200 text-xs md:text-sm text-gray-700 mobile-user-info">
+                        <span class="material-icons text-blue-600 text-sm">person</span>
+                        <span class="font-medium">Belum ada user dipilih</span>
+                    </div>
+                </div>
+                <button id="pilihUserBtn"
+                    class="bg-white/20 hover:bg-white/30 px-2 md:px-3 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium btn-hover mobile-header-btn">
+                    Pilih User
+                </button>
+                <button id="tambahPengguna"
+                    class="bg-white/20 hover:bg-white/30 px-2 md:px-3 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium btn-hover mobile-header-btn">
+                    + User
+                </button>
+                <div id="loadingIndicator" class="hidden">
+                    <div class="spinner"></div>
+                </div>
+            </div>
         </div>
-        <h1 class="text-lg md:text-xl md:text-2xl font-bold">Albary Keuangan</h1>
-      </div>
-      <div class="flex items-center gap-2 md:gap-3">
-        <div class="max-w-4xl mx-auto px-3 md:px-6 mt-0">
-          <div id="userAktif"
-            class="flex items-center gap-1 md:gap-2 p-1 md:p-2 bg-white shadow-md rounded-lg border border-gray-200 text-xs md:text-sm text-gray-700 mobile-user-info">
-            <span class="material-icons text-blue-600 text-sm">person</span>
-            <span class="font-medium">Belum ada user dipilih</span>
-          </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-3 sm:px-3 py-2 sm:py-6">
+        <!-- Ringkasan -->
+        <section class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-2 md:gap-4 sm:gap-6 mb-4 md:mb-6">
+            <div
+                class="rounded-xl md:rounded-2xl bg-white p-3 md:p-5 shadow-lg card-hover border border-blue-100 mobile-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs md:text-sm text-gray-500 mobile-subtitle">Total Rupiah</p>
+                        <p id="totalRp"
+                            class="text-lg md:text-2xl md:text-3xl font-bold text-blue-700 mt-1 mobile-title">Rp 0</p>
+                    </div>
+                    <div class="bg-blue-100 p-1.5 md:p-3 rounded-full mobile-icon">
+                        <span
+                            class="material-icons text-blue-600 text-sm md:text-base saldo-icon">account_balance</span>
+                    </div>
+                </div>
+                <div class="mt-2 md:mt-4 h-1 md:h-2 bg-blue-100 rounded-full overflow-hidden mobile-progress">
+                    <div id="progressRp" class="h-full bg-blue-600 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+            <div
+                class="rounded-xl md:rounded-2xl bg-white p-3 md:p-5 shadow-lg card-hover border border-orange-100 mobile-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs md:text-sm text-gray-500 mobile-subtitle">Total Riyal</p>
+                        <p id="totalSar"
+                            class="text-lg md:text-2xl md:text-3xl font-bold text-orange-600 mt-1 mobile-title">SAR 0
+                        </p>
+                    </div>
+                    <div class="bg-orange-100 p-1.5 md:p-3 rounded-full mobile-icon">
+                        <span class="material-icons text-orange-600 text-sm md:text-base saldo-icon">payments</span>
+                    </div>
+                </div>
+                <div class="mt-2 md:mt-4 h-1 md:h-2 bg-orange-100 rounded-full overflow-hidden mobile-progress">
+                    <div id="progressSar" class="h-full bg-orange-500 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Tombol Transaksi -->
+        <section class="mt-1 sm:mt-4 grid grid-cols-3 gap-2 sm:gap-4 md:grid-cols-3 md:gap-4 sm:gap-6 mb-4 md:mb-8">
+            <button id="tombolMasuk"
+                class="flex flex-col items-center justify-center bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-green-200 hover:bg-green-50 card-hover icon-only-btn">
+                <div class="bg-green-100 p-1.5 md:p-3 rounded-full mobile-icon mobile-transaction-icon">
+                    <span class="material-icons text-green-600 text-lg md:text-2xl">arrow_downward</span>
+                </div>
+            </button>
+            <button id="tombolKeluar"
+                class="flex flex-col items-center justify-center bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-red-200 hover:bg-red-50 card-hover icon-only-btn">
+                <div class="bg-red-100 p-1.5 md:p-3 rounded-full mobile-icon mobile-transaction-icon">
+                    <span class="material-icons text-red-600 text-lg md:text-2xl">arrow_upward</span>
+                </div>
+            </button>
+            <button id="tombolTransfer"
+                class="flex flex-col items-center justify-center bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-blue-200 hover:bg-blue-50 card-hover icon-only-btn">
+                <div class="bg-blue-100 p-1.5 md:p-3 rounded-full mobile-icon mobile-transaction-icon">
+                    <span class="material-icons text-blue-600 text-lg md:text-2xl">swap_horiz</span>
+                </div>
+            </button>
+        </section>
+        <!-- Kantong -->
+        <section class="mt-3 sm:mt-8 mb-4 md:mb-8">
+            <div class="flex justify-between items-center mb-2 md:mb-4">
+                <h2
+                    class="font-semibold text-gray-700 text-base md:text-lg sm:text-xl flex items-center gap-1 md:gap-2">
+                    <span class="material-icons text-blue-600 text-sm md:text-base">account_balance_wallet</span>
+                    Kantong Keuangan
+                </h2>
+                <button id="tambahKantong"
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-blue-600 text-white rounded-lg md:rounded-xl shadow hover:bg-blue-700 text-xs md:text-sm font-medium btn-hover flex items-center gap-1 md:gap-2">
+                    <span class="material-icons text-sm md:text-lg">add</span>
+                    <span class="hidden sm:inline">Tambah Kantong</span>
+                </button>
+            </div>
+            <!-- Ganti bagian container kantong -->
+            <div id="daftarKantong"
+                class="flex gap-3 md:gap-4 overflow-x-auto pb-3 md:pb-4 pt-2 md:pt-2 snap-x scrollbar-hide wallet-container px-2">
+            </div>
+        </section>
+        <!-- Transaksi -->
+        <section class="mt-3 sm:mt-8">
+            <div class="flex justify-between items-center mb-2 md:mb-4">
+                <h2
+                    class="font-semibold text-gray-700 text-base md:text-lg sm:text-xl flex items-center gap-1 md:gap-2">
+                    <span class="material-icons text-blue-600 text-sm md:text-base">receipt_long</span>
+                    Riwayat Transaksi
+                </h2>
+            </div>
+            <div id="daftarTransaksi" class="space-y-2 sm:space-y-3 md:space-y-4">
+                <div class="text-center py-6 md:py-8 text-gray-500">
+                    <span class="material-icons text-3xl md:text-4xl text-gray-300">history</span>
+                    <p class="mt-1 md:mt-2 text-sm">Pilih kantong untuk melihat transaksi</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-3">
+        <div class="bg-white rounded-xl shadow-lg w-full max-w-sm p-4 sm:p-5">
+            <h3 id="modalJudul" class="text-base sm:text-lg font-semibold mb-3">Judul</h3>
+            <div id="modalIsi"></div>
+            <div class="flex justify-end gap-2 mt-4">
+                <button id="modalBatal"
+                    class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-sm">Batal</button>
+                <button id="modalSimpan"
+                    class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-sm">Simpan</button>
+            </div>
         </div>
-        <button id="pilihUserBtn"
-          class="bg-white/20 hover:bg-white/30 px-2 md:px-3 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium btn-hover mobile-header-btn">
-          Pilih User
-        </button>
-        <button id="tambahPengguna"
-          class="bg-white/20 hover:bg-white/30 px-2 md:px-3 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium btn-hover mobile-header-btn">
-          + User
-        </button>
-        <div id="loadingIndicator" class="hidden">
-          <div class="spinner"></div>
-        </div>
-      </div>
     </div>
-  </header>
-  <main class="max-w-6xl mx-auto px-3 sm:px-3 py-2 sm:py-6">
-    <!-- Ringkasan -->
-    <section class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-2 md:gap-4 sm:gap-6 mb-4 md:mb-6">
-      <div
-        class="rounded-xl md:rounded-2xl bg-white p-3 md:p-5 shadow-lg card-hover border border-blue-100 mobile-card">
-        <div class="flex justify-between items-start">
-          <div>
-            <p class="text-xs md:text-sm text-gray-500 mobile-subtitle">Total Rupiah</p>
-            <p id="totalRp" class="text-lg md:text-2xl md:text-3xl font-bold text-blue-700 mt-1 mobile-title">Rp 0</p>
-          </div>
-          <div class="bg-blue-100 p-1.5 md:p-3 rounded-full mobile-icon">
-            <span class="material-icons text-blue-600 text-sm md:text-base saldo-icon">account_balance</span>
-          </div>
+    <!-- Modal Token -->
+    <div id="tokenModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-3">
+        <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6">
+            <h3 class="text-lg font-semibold mb-4 text-center">Masukkan Token GitHub</h3>
+            <p class="text-sm text-gray-600 mb-4 text-center">Token Anda akan disimpan dengan aman di browser ini</p>
+            <input id="tokenInput" type="password" class="w-full border rounded-lg px-3 py-2 mb-4"
+                placeholder="github_pat_..." />
+            <div class="flex justify-between items-center mb-4">
+                <button id="resetTokenBtn" class="text-red-500 hover:text-red-700 text-sm flex items-center gap-1">
+                    <span class="material-icons text-sm">refresh</span>
+                    Reset Token
+                </button>
+            </div>
+            <div class="flex justify-end gap-2">
+                <button id="tokenBatal"
+                    class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-sm">Batal</button>
+                <button id="tokenSimpan"
+                    class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-sm">Simpan</button>
+            </div>
         </div>
-        <div class="mt-2 md:mt-4 h-1 md:h-2 bg-blue-100 rounded-full overflow-hidden mobile-progress">
-          <div id="progressRp" class="h-full bg-blue-600 rounded-full" style="width: 0%"></div>
-        </div>
-      </div>
-      <div
-        class="rounded-xl md:rounded-2xl bg-white p-3 md:p-5 shadow-lg card-hover border border-orange-100 mobile-card">
-        <div class="flex justify-between items-start">
-          <div>
-            <p class="text-xs md:text-sm text-gray-500 mobile-subtitle">Total Riyal</p>
-            <p id="totalSar" class="text-lg md:text-2xl md:text-3xl font-bold text-orange-600 mt-1 mobile-title">SAR 0
-            </p>
-          </div>
-          <div class="bg-orange-100 p-1.5 md:p-3 rounded-full mobile-icon">
-            <span class="material-icons text-orange-600 text-sm md:text-base saldo-icon">payments</span>
-          </div>
-        </div>
-        <div class="mt-2 md:mt-4 h-1 md:h-2 bg-orange-100 rounded-full overflow-hidden mobile-progress">
-          <div id="progressSar" class="h-full bg-orange-500 rounded-full" style="width: 0%"></div>
-        </div>
-      </div>
-    </section>
-    <!-- Tombol Transaksi -->
-    <section class="mt-1 sm:mt-4 grid grid-cols-3 gap-2 sm:gap-4 md:grid-cols-3 md:gap-4 sm:gap-6 mb-4 md:mb-8">
-      <button id="tombolMasuk"
-        class="flex flex-col items-center justify-center bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-green-200 hover:bg-green-50 card-hover icon-only-btn">
-        <div class="bg-green-100 p-1.5 md:p-3 rounded-full mobile-icon mobile-transaction-icon">
-          <span class="material-icons text-green-600 text-lg md:text-2xl">arrow_downward</span>
-        </div>
-      </button>
-      <button id="tombolKeluar"
-        class="flex flex-col items-center justify-center bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-red-200 hover:bg-red-50 card-hover icon-only-btn">
-        <div class="bg-red-100 p-1.5 md:p-3 rounded-full mobile-icon mobile-transaction-icon">
-          <span class="material-icons text-red-600 text-lg md:text-2xl">arrow_upward</span>
-        </div>
-      </button>
-      <button id="tombolTransfer"
-        class="flex flex-col items-center justify-center bg-white shadow-lg rounded-xl md:rounded-2xl py-3 md:py-5 px-1 border border-blue-200 hover:bg-blue-50 card-hover icon-only-btn">
-        <div class="bg-blue-100 p-1.5 md:p-3 rounded-full mobile-icon mobile-transaction-icon">
-          <span class="material-icons text-blue-600 text-lg md:text-2xl">swap_horiz</span>
-        </div>
-      </button>
-    </section>
-    <!-- Kantong -->
-    <section class="mt-3 sm:mt-8 mb-4 md:mb-8">
-      <div class="flex justify-between items-center mb-2 md:mb-4">
-        <h2 class="font-semibold text-gray-700 text-base md:text-lg sm:text-xl flex items-center gap-1 md:gap-2">
-          <span class="material-icons text-blue-600 text-sm md:text-base">account_balance_wallet</span>
-          Kantong Keuangan
-        </h2>
-        <button id="tambahKantong"
-          class="px-3 md:px-4 py-1.5 md:py-2 bg-blue-600 text-white rounded-lg md:rounded-xl shadow hover:bg-blue-700 text-xs md:text-sm font-medium btn-hover flex items-center gap-1 md:gap-2">
-          <span class="material-icons text-sm md:text-lg">add</span>
-          <span class="hidden sm:inline">Tambah Kantong</span>
-        </button>
-      </div>
-      <!-- Ganti bagian container kantong -->
-      <div id="daftarKantong"
-        class="flex gap-3 md:gap-4 overflow-x-auto pb-3 md:pb-4 pt-2 md:pt-2 snap-x scrollbar-hide wallet-container px-2">
-      </div>
-    </section>
-    <!-- Transaksi -->
-    <section class="mt-3 sm:mt-8">
-      <div class="flex justify-between items-center mb-2 md:mb-4">
-        <h2 class="font-semibold text-gray-700 text-base md:text-lg sm:text-xl flex items-center gap-1 md:gap-2">
-          <span class="material-icons text-blue-600 text-sm md:text-base">receipt_long</span>
-          Riwayat Transaksi
-        </h2>
-      </div>
-      <div id="daftarTransaksi" class="space-y-2 sm:space-y-3 md:space-y-4">
-        <div class="text-center py-6 md:py-8 text-gray-500">
-          <span class="material-icons text-3xl md:text-4xl text-gray-300">history</span>
-          <p class="mt-1 md:mt-2 text-sm">Pilih kantong untuk melihat transaksi</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- Modal -->
-  <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-3">
-    <div class="bg-white rounded-xl shadow-lg w-full max-w-sm p-4 sm:p-5">
-      <h3 id="modalJudul" class="text-base sm:text-lg font-semibold mb-3">Judul</h3>
-      <div id="modalIsi"></div>
-      <div class="flex justify-end gap-2 mt-4">
-        <button id="modalBatal"
-          class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-sm">Batal</button>
-        <button id="modalSimpan"
-          class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-sm">Simpan</button>
-      </div>
     </div>
-  </div>
-  <!-- Modal Token -->
-  <div id="tokenModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-3">
-    <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6">
-      <h3 class="text-lg font-semibold mb-4 text-center">Masukkan Token GitHub</h3>
-      <p class="text-sm text-gray-600 mb-4 text-center">Token Anda akan disimpan dengan aman di browser ini</p>
-      <input id="tokenInput" type="password" class="w-full border rounded-lg px-3 py-2 mb-4"
-        placeholder="github_pat_..." />
-      <div class="flex justify-end gap-2">
-        <button id="tokenBatal" class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-sm">Batal</button>
-        <button id="tokenSimpan"
-          class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-sm">Simpan</button>
-      </div>
-    </div>
-  </div>
-  <!-- Tombol Backup (floating) -->
-  <button id="btnBackup"
-    class="fixed bottom-6 right-6 h-12 w-12 md:h-14 md:w-14 rounded-full bg-indigo-600 text-white shadow-xl hover:bg-indigo-700 flex items-center justify-center text-xl md:text-2xl z-[100] btn-hover"
-    aria-label="Buka Backup">
-    ⬇️
-  </button>
-  <!-- Modal (aksesibilitas & klik aman) -->
-  <div id="backupModal" class="fixed inset-0 hidden items-center justify-center p-4 z-[90]" aria-hidden="true">
-    <!-- backdrop -->
-    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-close></div>
-    <!-- dialog -->
-    <div id="backupDialog" role="dialog" aria-modal="true" aria-label="Backup & Export"
-      class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden pointer-events-auto">
-      <div class="flex items-center justify-between px-4 py-3 border-b">
-        <h3 class="font-semibold">Backup & Export</h3>
-        <div class="flex gap-2">
-          <button id="btnExportExcel"
-            class="px-3 py-1.5 rounded-lg ring-1 ring-gray-200 hover:bg-gray-50 text-sm">Excel</button>
-          <button id="btnExportPDF"
-            class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 text-sm">PDF</button>
-          <button class="px-2 py-1.5 rounded-lg hover:bg-gray-100 text-sm" data-close aria-label="Tutup">✕</button>
+    <!-- Tombol Backup (floating) -->
+    <button id="btnBackup"
+        class="fixed bottom-6 right-6 h-12 w-12 md:h-14 md:w-14 rounded-full bg-indigo-600 text-white shadow-xl hover:bg-indigo-700 flex items-center justify-center text-xl md:text-2xl z-[100] btn-hover"
+        aria-label="Buka Backup">
+        ⬇️
+    </button>
+    <!-- Modal (aksesibilitas & klik aman) -->
+    <div id="backupModal" class="fixed inset-0 hidden items-center justify-center p-4 z-[90]" aria-hidden="true">
+        <!-- backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-close></div>
+        <!-- dialog -->
+        <div id="backupDialog" role="dialog" aria-modal="true" aria-label="Backup & Export"
+            class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden pointer-events-auto">
+            <div class="flex items-center justify-between px-4 py-3 border-b">
+                <h3 class="font-semibold">Backup & Export</h3>
+                <div class="flex gap-2">
+                    <button id="btnExportExcel"
+                        class="px-3 py-1.5 rounded-lg ring-1 ring-gray-200 hover:bg-gray-50 text-sm">Excel</button>
+                    <button id="btnExportPDF"
+                        class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 text-sm">PDF</button>
+                    <button class="px-2 py-1.5 rounded-lg hover:bg-gray-100 text-sm" data-close
+                        aria-label="Tutup">✕</button>
+                </div>
+            </div>
+            <div class="p-3">
+                <div id="gridContainer"></div>
+            </div>
         </div>
-      </div>
-      <div class="p-3">
-        <div id="gridContainer"></div>
-      </div>
     </div>
-  </div>
-  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
-  <script>
-    // -------------------------
-    // Konfigurasi GitHub
-    // -------------------------
-    const GITHUB_URL = "https://api.github.com/repos/idarohpusat-blip/my_rep/contents/keuangan_albary.json";
-    const TOKEN_KEY = "albary_github_token";
-    // -------------------------
-    // Data
-    // -------------------------
-    let pengguna = [];
-    let penggunaAktif = 0;
-    let kantongAktif = null;
-    let githubToken = null;
-    function idUnik() { return Date.now() + '' + Math.floor(Math.random() * 1000); }
-    function hariIni() { return new Date().toISOString().split('T')[0]; }
-    function el(id) { return document.getElementById(id); }
-    // -------------------------
-    // Fungsi GitHub API
-    // -------------------------
-    async function loadGithubToken() {
-      // Cek token di localStorage
-      const savedToken = localStorage.getItem(TOKEN_KEY);
-      if (savedToken) {
-        githubToken = savedToken;
-        return true;
-      }
-      // Tampilkan modal input token
-      return new Promise((resolve) => {
-        el('tokenModal').classList.remove('hidden');
-        el('tokenModal').classList.add('flex');
-        el('tokenSimpan').onclick = () => {
-          const token = el('tokenInput').value.trim();
-          if (token) {
-            githubToken = token;
-            localStorage.setItem(TOKEN_KEY, token);
-            el('tokenModal').classList.add('hidden');
-            el('tokenModal').classList.remove('flex');
-            resolve(true);
-          }
-        };
-        el('tokenBatal').onclick = () => {
-          el('tokenModal').classList.add('hidden');
-          el('tokenModal').classList.remove('flex');
-          resolve(false);
-        };
-      });
-    }
-    async function fetchDataFromGithub() {
-      if (!githubToken) return null;
-      try {
-        const response = await fetch(GITHUB_URL, {
-          headers: {
-            'Authorization': `token ${githubToken}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        });
-        if (!response.ok) {
-          throw new Error(`GitHub API error: ${response.status}`);
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+    <script>
+        // -------------------------
+        // Konfigurasi GitHub
+        // -------------------------
+        const GITHUB_URL = "https://api.github.com/repos/idarohpusat-blip/my_rep/contents/keuangan_albary.json";
+        const TOKEN_KEY = "albary_github_token";
+        // -------------------------
+        // Data
+        // -------------------------
+        let pengguna = [];
+        let penggunaAktif = 0;
+        let kantongAktif = null;
+        let githubToken = null;
+        let connectionRetries = 0;
+        const MAX_RETRIES = 3;
+        function idUnik() { return Date.now() + '' + Math.floor(Math.random() * 1000); }
+        function hariIni() { return new Date().toISOString().split('T')[0]; }
+        function el(id) { return document.getElementById(id); }
+        // -------------------------
+        // Fungsi GitHub API
+        // -------------------------
+        async function loadGithubToken() {
+            // Cek token di localStorage
+            const savedToken = localStorage.getItem(TOKEN_KEY);
+            if (savedToken) {
+                githubToken = savedToken;
+                return true;
+            }
+            // Tampilkan modal input token
+            return new Promise((resolve) => {
+                el('tokenModal').classList.remove('hidden');
+                el('tokenModal').classList.add('flex');
+                el('tokenSimpan').onclick = () => {
+                    const token = el('tokenInput').value.trim();
+                    if (token) {
+                        githubToken = token;
+                        localStorage.setItem(TOKEN_KEY, token);
+                        el('tokenModal').classList.add('hidden');
+                        el('tokenModal').classList.remove('flex');
+                        connectionRetries = 0; // Reset retry counter
+                        resolve(true);
+                    }
+                };
+                el('tokenBatal').onclick = () => {
+                    el('tokenModal').classList.add('hidden');
+                    el('tokenModal').classList.remove('flex');
+                    resolve(false);
+                };
+            });
         }
-        const data = await response.json();
-        const content = atob(data.content);
-        return JSON.parse(content);
-      } catch (error) {
-        console.error('Error fetching data from GitHub:', error);
-        return null;
-      }
-    }
-    async function saveDataToGithub(data) {
-      if (!githubToken) return false;
-      try {
-        // Get current file info first
-        const currentData = await fetch(GITHUB_URL, {
-          headers: {
-            'Authorization': `token ${githubToken}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        });
-        let sha = '';
-        if (currentData.ok) {
-          const currentFile = await currentData.json();
-          sha = currentFile.sha;
+
+        function resetToken() {
+            if (confirm('Apakah Anda yakin ingin menghapus token yang tersimpan?')) {
+                localStorage.removeItem(TOKEN_KEY);
+                githubToken = null;
+                el('tokenInput').value = '';
+                showNotification('Token berhasil direset', 'success');
+                // Muat ulang data setelah reset token
+                muatData();
+            }
         }
-        const content = btoa(JSON.stringify(data, null, 2));
-        const message = sha ? 'Update keuangan data' : 'Create keuangan data';
-        const response = await fetch(GITHUB_URL, {
-          method: sha ? 'PUT' : 'POST',
-          headers: {
-            'Authorization': `token ${githubToken}`,
-            'Accept': 'application/vnd.github.v3+json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            message: message,
-            content: content,
-            sha: sha || undefined
-          })
-        });
-        return response.ok;
-      } catch (error) {
-        console.error('Error saving data to GitHub:', error);
-        return false;
-      }
-    }
-    // -------------------------
-    // Loading Indicator
-    // -------------------------
-    function showLoading() {
-      el('loadingIndicator').classList.remove('hidden');
-    }
-    function hideLoading() {
-      el('loadingIndicator').classList.add('hidden');
-    }
-    // -------------------------
-    // Modal Helper
-    // -------------------------
-    function bukaModal(judul, isiHTML, simpanCallback) {
-      el('modalJudul').textContent = judul;
-      el('modalIsi').innerHTML = isiHTML;
-      el('modal').classList.remove('hidden');
-      el('modal').classList.add('flex');
-      el('modalSimpan').onclick = () => {
-        simpanCallback();
-        tutupModal();
-      };
-      el('modalBatal').onclick = tutupModal;
-    }
-    function tutupModal() {
-      el('modal').classList.add('hidden');
-      el('modal').classList.remove('flex');
-    }
-    function pilihUserPopup() {
-      let isi = '<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">';
-      pengguna.forEach((u, i) => {
-        isi += `
+
+        async function fetchDataFromGithub() {
+            if (!githubToken) return null;
+            try {
+                const response = await fetch(GITHUB_URL, {
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        showError("Token GitHub tidak valid. Silakan periksa token Anda.");
+                        return null;
+                    }
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const content = atob(data.content);
+                return JSON.parse(content);
+            } catch (error) {
+                console.error('Error fetching data from GitHub:', error);
+                return null;
+            }
+        }
+
+        async function saveDataToGithub(data) {
+            if (!githubToken) return false;
+            try {
+                // Get current file info first
+                const currentData = await fetch(GITHUB_URL, {
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                let sha = '';
+                if (currentData.ok) {
+                    const currentFile = await currentData.json();
+                    sha = currentFile.sha;
+                }
+
+                const content = btoa(JSON.stringify(data, null, 2));
+                const message = sha ? 'Update keuangan data' : 'Create keuangan data';
+
+                const response = await fetch(GITHUB_URL, {
+                    method: sha ? 'PUT' : 'POST',
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        content: content,
+                        sha: sha || undefined
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+
+                return true;
+            } catch (error) {
+                console.error('Error saving data to GitHub:', error);
+                return false;
+            }
+        }
+
+        // -------------------------
+        // Loading Indicator
+        // -------------------------
+        function showLoading() {
+            el('loadingIndicator').classList.remove('hidden');
+        }
+
+        function hideLoading() {
+            el('loadingIndicator').classList.add('hidden');
+        }
+
+        // -------------------------
+        // Modal Helper
+        // -------------------------
+        function bukaModal(judul, isiHTML, simpanCallback) {
+            el('modalJudul').textContent = judul;
+            el('modalIsi').innerHTML = isiHTML;
+            el('modal').classList.remove('hidden');
+            el('modal').classList.add('flex');
+            el('modalSimpan').onclick = () => {
+                simpanCallback();
+                tutupModal();
+            };
+            el('modalBatal').onclick = tutupModal;
+        }
+
+        function tutupModal() {
+            el('modal').classList.add('hidden');
+            el('modal').classList.remove('flex');
+        }
+
+        function pilihUserPopup() {
+            let isi = '<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">';
+            pengguna.forEach((u, i) => {
+                isi += `
       <div class="relative bg-white shadow rounded-lg p-3 flex flex-col items-center cursor-pointer hover:bg-blue-50 ${penggunaAktif === i ? 'ring-2 ring-blue-500' : ''}"
            onclick="setUser(${i})">
         <!-- Tombol hapus -->
@@ -509,169 +597,180 @@
         <p class="text-sm mt-1">${u.nama}</p>
       </div>
     `;
-      });
-      isi += '</div>';
-      bukaModal("Pilih User", isi, () => { /* tidak pakai tombol Simpan untuk popup pilih user */ });
-    }
-    function hapusUser(i, ev) {
-      if (ev) ev.stopPropagation(); // ⛔ jangan trigger setUser
-      if (pengguna.length <= 1) {
-        alert("Minimal harus ada 1 user. Tambah user baru dulu sebelum menghapus ini.");
-        return;
-      }
-      const nama = pengguna[i]?.nama || 'User';
-      if (!confirm(`Hapus user "${nama}" beserta kantong & transaksinya?`)) return;
-      // Hapus user
-      pengguna.splice(i, 1);
-      // Perbaiki index aktif
-      if (penggunaAktif === i) {
-        penggunaAktif = 0;   // pindah ke user pertama yang tersisa
-        kantongAktif = null; // reset kantong
-      } else if (penggunaAktif > i) {
-        penggunaAktif -= 1;  // geser ke kiri jika perlu
-      }
-      simpanData();        // render ulang
-      tampilUserAktif();   // update label user aktif
-      // Refresh isi popup grid, kalau masih terbuka
-      if (!el('modal').classList.contains('hidden')) {
-        pilihUserPopup();
-      }
-    }
-    // Tombol pilih user
-    el("pilihUserBtn").addEventListener("click", pilihUserPopup);
-    // -------------------------
-    // Simpan & Muat Data
-    // -------------------------
-    async function simpanData() {
-      showLoading();
-      const data = {
-        albary_pengguna: pengguna,
-        albary_user_terakhir: String(penggunaAktif ?? 0),
-        albary_kantong_terakhir: String(kantongAktif ?? -1)
-      };
-      const success = await saveDataToGithub(data);
-      hideLoading();
-      if (success) {
-        tampilSemua();
-      } else {
-        alert('Gagal menyimpan data ke GitHub. Periksa koneksi internet dan token Anda.');
-      }
-    }
-    async function muatData() {
-      showLoading();
-      const hasToken = await loadGithubToken();
-      if (!hasToken) {
-        hideLoading();
-        // Gunakan data default
-        pengguna = [{
-          nama: 'Pengguna 1',
-          kantong: [
-            { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
-            { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
-          ],
-          transaksi: []
-        }];
-        penggunaAktif = 0;
-        kantongAktif = null;
-        tampilUserAktif?.();
-        tampilSemua?.();
-        return;
-      }
-      const data = await fetchDataFromGithub();
-      hideLoading();
-      if (data) {
-        pengguna = data.albary_pengguna || [];
-        // 1) Tentukan user terakhir
-        const lastStr = data.albary_user_terakhir;
-        let last = (lastStr != null) ? parseInt(lastStr, 10) : 0;
-        if (isNaN(last)) last = 0;
-        penggunaAktif = pengguna.length ? Math.min(Math.max(last, 0), pengguna.length - 1) : null;
-        // 2) Tentukan kantong terakhir (setelah tahu user aktif)
-        const lastKStr = data.albary_kantong_terakhir;
-        let lastK = (lastKStr != null) ? parseInt(lastKStr, 10) : -1;
-        if (isNaN(lastK)) lastK = -1;
-        if (penggunaAktif != null && pengguna[penggunaAktif].kantong.length) {
-          kantongAktif = Math.min(Math.max(lastK, 0), pengguna[penggunaAktif].kantong.length - 1);
-        } else {
-          kantongAktif = null;
+            });
+            isi += '</div>';
+            bukaModal("Pilih User", isi, () => { /* tidak pakai tombol Simpan untuk popup pilih user */ });
         }
-      } else {
-        // Gunakan data default jika gagal fetch
-        pengguna = [{
-          nama: 'Pengguna 1',
-          kantong: [
-            { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
-            { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
-          ],
-          transaksi: []
-        }];
-        penggunaAktif = 0;
-        kantongAktif = null;
-      }
-      tampilUserAktif?.();
-      tampilSemua?.();
-    }
-    // -------------------------
-    // Pilihan Pengguna
-    // -------------------------
-    function tampilUserAktif() {
-      const box = el("userAktif");
-      if (!pengguna.length || penggunaAktif == null) {
-        box.innerHTML = `
+
+        function hapusUser(i, ev) {
+            if (ev) ev.stopPropagation(); // ⛔ jangan trigger setUser
+            if (pengguna.length <= 1) {
+                alert("Minimal harus ada 1 user. Tambah user baru dulu sebelum menghapus ini.");
+                return;
+            }
+            const nama = pengguna[i]?.nama || 'User';
+            if (!confirm(`Hapus user "${nama}" beserta kantong & transaksinya?`)) return;
+            // Hapus user
+            pengguna.splice(i, 1);
+            // Perbaiki index aktif
+            if (penggunaAktif === i) {
+                penggunaAktif = 0;   // pindah ke user pertama yang tersisa
+                kantongAktif = null; // reset kantong
+            } else if (penggunaAktif > i) {
+                penggunaAktif -= 1;  // geser ke kiri jika perlu
+            }
+            simpanData();        // render ulang
+            tampilUserAktif();   // update label user aktif
+            // Refresh isi popup grid, kalau masih terbuka
+            if (!el('modal').classList.contains('hidden')) {
+                pilihUserPopup();
+            }
+        }
+
+        // Tombol pilih user
+        el("pilihUserBtn").addEventListener("click", pilihUserPopup);
+
+        // -------------------------
+        // Simpan & Muat Data
+        // -------------------------
+        async function simpanData() {
+            showLoading();
+            const data = {
+                albary_pengguna: pengguna,
+                albary_user_terakhir: String(penggunaAktif ?? 0),
+                albary_kantong_terakhir: String(kantongAktif ?? -1)
+            };
+            const success = await saveDataToGithub(data);
+            hideLoading();
+            if (success) {
+                tampilSemua();
+            } else {
+                showError('Gagal menyimpan data ke GitHub. Periksa koneksi internet dan token Anda.');
+            }
+        }
+
+        async function muatData() {
+            showLoading();
+            const hasToken = await loadGithubToken();
+            if (!hasToken) {
+                hideLoading();
+                // Gunakan data default
+                pengguna = [{
+                    nama: 'Pengguna 1',
+                    kantong: [
+                        { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
+                        { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
+                    ],
+                    transaksi: []
+                }];
+                penggunaAktif = 0;
+                kantongAktif = null;
+                tampilUserAktif?.();
+                tampilSemua?.();
+                return;
+            }
+
+            const data = await fetchDataFromGithub();
+            hideLoading();
+
+            if (data) {
+                pengguna = data.albary_pengguna || [];
+                // 1) Tentukan user terakhir
+                const lastStr = data.albary_user_terakhir;
+                let last = (lastStr != null) ? parseInt(lastStr, 10) : 0;
+                if (isNaN(last)) last = 0;
+                penggunaAktif = pengguna.length ? Math.min(Math.max(last, 0), pengguna.length - 1) : null;
+                // 2) Tentukan kantong terakhir (setelah tahu user aktif)
+                const lastKStr = data.albary_kantong_terakhir;
+                let lastK = (lastKStr != null) ? parseInt(lastKStr, 10) : -1;
+                if (isNaN(lastK)) lastK = -1;
+                if (penggunaAktif != null && pengguna[penggunaAktif].kantong.length) {
+                    kantongAktif = Math.min(Math.max(lastK, 0), pengguna[penggunaAktif].kantong.length - 1);
+                } else {
+                    kantongAktif = null;
+                }
+            } else {
+                // Gunakan data default jika gagal fetch
+                pengguna = [{
+                    nama: 'Pengguna 1',
+                    kantong: [
+                        { nama: 'Kas Rumah', saldo: 500000, mataUang: 'Rp' },
+                        { nama: 'Tabungan SAR', saldo: 300, mataUang: 'SAR' }
+                    ],
+                    transaksi: []
+                }];
+                penggunaAktif = 0;
+                kantongAktif = null;
+            }
+
+            tampilUserAktif?.();
+            tampilSemua?.();
+        }
+
+        // -------------------------
+        // Pilihan Pengguna
+        // -------------------------
+        function tampilUserAktif() {
+            const box = el("userAktif");
+            if (!pengguna.length || penggunaAktif == null) {
+                box.innerHTML = `
       <span class="material-icons text-blue-600 text-sm">person</span>
       <span class="font-medium">Belum ada user dipilih</span>
     `;
-        return;
-      }
-      box.innerHTML = `
+                return;
+            }
+            box.innerHTML = `
     <span class="material-icons text-blue-600 text-sm">person</span>
     <span class="font-medium">${pengguna[penggunaAktif].nama}</span>
   `;
-    }
-    function setUser(i) {
-      penggunaAktif = i;
-      kantongAktif = null;
-      simpanData();            // ini juga menyimpan lagi, aman
-      tampilUserAktif();
-      tampilKantong();
-      tampilTransaksi();
-      tutupModal?.();
-    }
-    // Tombol tambah user
-    el('tambahPengguna').addEventListener('click', () => {
-      bukaModal("Tambah User", `
+        }
+
+        function setUser(i) {
+            penggunaAktif = i;
+            kantongAktif = null;
+            simpanData();            // ini juga menyimpan lagi, aman
+            tampilUserAktif();
+            tampilKantong();
+            tampilTransaksi();
+            tutupModal?.();
+        }
+
+        // Tombol tambah user
+        el('tambahPengguna').addEventListener('click', () => {
+            bukaModal("Tambah User", `
     <input id="userNama" class="w-full border rounded-lg px-3 py-2" placeholder="User..." />
   `, () => {
-        const nama = el('userNama').value.trim();
-        if (!nama) { el('userNama').focus(); return; } // tidak menutup jika kosong
-        // simpan user baru
-        pengguna.push({ nama, kantong: [], transaksi: [] });
-        penggunaAktif = pengguna.length - 1;
-        kantongAktif = null;
-        simpanData();        // akan render ulang
-        tampilUserAktif();   // update label user aktif
-        tutupModal();        // <-- ✅ TUTUP POPUP SETELAH SIMPAN
-      });
-      // fokus ke input begitu popup terbuka
-      setTimeout(() => el('userNama')?.focus(), 0);
-    });
-    // -------------------------
-    // Kantong
-    // -------------------------
-    // Ganti fungsi tampilKantong
-    function tampilKantong() {
-      const wadah = el('daftarKantong');
-      const user = pengguna[penggunaAktif];
-      wadah.innerHTML = '';
-      user.kantong.forEach((kantong, i) => {
-        const div = document.createElement('div');
-        div.className = `
+                const nama = el('userNama').value.trim();
+                if (!nama) { el('userNama').focus(); return; } // tidak menutup jika kosong
+                // simpan user baru
+                pengguna.push({ nama, kantong: [], transaksi: [] });
+                penggunaAktif = pengguna.length - 1;
+                kantongAktif = null;
+                simpanData();        // akan render ulang
+                tampilUserAktif();   // update label user aktif
+                tutupModal();        // <-- ✅ TUTUP POPUP SETELAH SIMPAN
+            });
+            // fokus ke input begitu popup terbuka
+            setTimeout(() => el('userNama')?.focus(), 0);
+        });
+
+        // -------------------------
+        // Kantong
+        // -------------------------
+        // Ganti fungsi tampilKantong
+        function tampilKantong() {
+            const wadah = el('daftarKantong');
+            const user = pengguna[penggunaAktif];
+            wadah.innerHTML = '';
+            user.kantong.forEach((kantong, i) => {
+                const div = document.createElement('div');
+                div.className = `
       relative flex-shrink-0 w-24 sm:w-28 md:w-32 mobile-wallet-card
       rounded-lg shadow p-3 snap-start cursor-pointer
       transition-all duration-200
       ${kantongAktif === i ? 'bg-blue-50 ring-2 ring-blue-500 ring-offset-2' : 'bg-white hover:bg-gray-50'}
     `;
-        div.innerHTML = `
+                div.innerHTML = `
       <button class="absolute -top-2 -right-2 bg-rose-600 hover:bg-rose-700 text-white 
                      rounded-full w-6 h-6 grid place-items-center shadow mobile-delete-btn"
               title="Hapus kantong"
@@ -686,42 +785,44 @@
         ${formatUang(kantong.mataUang, kantong.saldo)}
       </p>
     `;
-        div.onclick = () => {
-          kantongAktif = i;
-          tampilKantong();
-          tampilTransaksi();
-        };
-        wadah.appendChild(div);
-      });
-    }
-    function hapusKantong(i, ev) {
-      if (ev) ev.stopPropagation(); // jangan dianggap klik pilih kantong
-      const user = pengguna[penggunaAktif];
-      const nama = user.kantong[i]?.nama || 'Kantong';
-      if (!confirm(`Hapus kantong "${nama}" beserta transaksi di kantong ini?`)) return;
-      // Hapus semua transaksi yang milik kantong ini, dan reindex sisanya
-      user.transaksi = user.transaksi
-        .filter(t => t.kantong !== i)
-        .map(t => {
-          if (t.kantong > i) return { ...t, kantong: t.kantong - 1 };
-          return t;
-        });
-      // Hapus kantong
-      user.kantong.splice(i, 1);
-      // Atur kantongAktif
-      if (user.kantong.length === 0) {
-        kantongAktif = null;
-      } else if (kantongAktif === i) {
-        kantongAktif = 0; // pindah ke yang pertama
-      } else if (kantongAktif > i) {
-        kantongAktif -= 1;
-      }
-      simpanData();      // render ulang ringkasan, transaksi, dsb
-      tampilKantong();   // refresh kartu
-      tampilTransaksi(); // refresh list transaksi
-    }
-    el('tambahKantong').addEventListener('click', () => {
-      bukaModal("Tambah Kantong", `
+                div.onclick = () => {
+                    kantongAktif = i;
+                    tampilKantong();
+                    tampilTransaksi();
+                };
+                wadah.appendChild(div);
+            });
+        }
+
+        function hapusKantong(i, ev) {
+            if (ev) ev.stopPropagation(); // jangan dianggap klik pilih kantong
+            const user = pengguna[penggunaAktif];
+            const nama = user.kantong[i]?.nama || 'Kantong';
+            if (!confirm(`Hapus kantong "${nama}" beserta transaksi di kantong ini?`)) return;
+            // Hapus semua transaksi yang milik kantong ini, dan reindex sisanya
+            user.transaksi = user.transaksi
+                .filter(t => t.kantong !== i)
+                .map(t => {
+                    if (t.kantong > i) return { ...t, kantong: t.kantong - 1 };
+                    return t;
+                });
+            // Hapus kantong
+            user.kantong.splice(i, 1);
+            // Atur kantongAktif
+            if (user.kantong.length === 0) {
+                kantongAktif = null;
+            } else if (kantongAktif === i) {
+                kantongAktif = 0; // pindah ke yang pertama
+            } else if (kantongAktif > i) {
+                kantongAktif -= 1;
+            }
+            simpanData();      // render ulang ringkasan, transaksi, dsb
+            tampilKantong();   // refresh kartu
+            tampilTransaksi(); // refresh list transaksi
+        }
+
+        el('tambahKantong').addEventListener('click', () => {
+            bukaModal("Tambah Kantong", `
         <label class="block mb-2 text-sm">Nama Kantong</label>
         <input id="kantongNama" class="w-full border rounded-lg px-3 py-2 mb-3" />
         <label class="block mb-2 text-sm">Mata Uang</label>
@@ -730,75 +831,78 @@
           <option value="SAR">Riyal (SAR)</option>
         </select>
       `, () => {
-        const nama = el('kantongNama').value;
-        const mataUang = el('kantongMataUang').value;
-        if (!nama) return;
-        pengguna[penggunaAktif].kantong.push({ nama, saldo: 0, mataUang });
-        simpanData();
-      });
-    });
-    // -------------------------
-    // Transaksi Masuk, Keluar
-    // -------------------------
-    function formTransaksi(jenis) {
-      const user = pengguna[penggunaAktif];
-      if (kantongAktif === null) return alert("Pilih kantong dulu sebelum transaksi!");
-      const k = user.kantong[kantongAktif];
-      bukaModal(`Transaksi ${jenis === 'masuk' ? 'Masuk' : 'Keluar'} (${k.nama})`, `
+                const nama = el('kantongNama').value;
+                const mataUang = el('kantongMataUang').value;
+                if (!nama) return;
+                pengguna[penggunaAktif].kantong.push({ nama, saldo: 0, mataUang });
+                simpanData();
+            });
+        });
+
+        // -------------------------
+        // Transaksi Masuk, Keluar
+        // -------------------------
+        function formTransaksi(jenis) {
+            const user = pengguna[penggunaAktif];
+            if (kantongAktif === null) return alert("Pilih kantong dulu sebelum transaksi!");
+            const k = user.kantong[kantongAktif];
+            bukaModal(`Transaksi ${jenis === 'masuk' ? 'Masuk' : 'Keluar'} (${k.nama})`, `
     <label class="block mb-2 text-sm">Jumlah (${k.mataUang})</label>
     <input id="transaksiJumlah" type="text" class="w-full border rounded-lg px-3 py-2 mb-3"
            placeholder="${k.mataUang === 'Rp' ? 'Rp 10.000' : 'SAR 10,00'}" />
     <label class="block mb-2 text-sm">Keterangan</label>
     <input id="transaksiKeterangan" type="text" class="w-full border rounded-lg px-3 py-2" />
   `, () => {
-        const jumlah = getNilaiDariInput(el('transaksiJumlah'));  // ← angka murni
-        const ket = (el('transaksiKeterangan').value || '').trim();
-        if (!jumlah || jumlah <= 0) { el('transaksiJumlah').focus(); return; }
-        if (jenis === 'masuk') k.saldo += jumlah; else k.saldo -= jumlah;
-        user.transaksi.push({
-          id: idUnik(),
-          kantong: kantongAktif,
-          jenis,
-          jumlah,
-          mataUang: k.mataUang,
-          keterangan: ket,
-          tanggal: hariIni()
-        });
-        simpanData();
-      });
-      // Pasang formatter setelah modal ter-render
-      setTimeout(() => {
-        const input = el('transaksiJumlah');
-        if (!input) return;
-        input.addEventListener('input', () => formatInputUang(input, k.mataUang));
-        input.addEventListener('focus', () => setTimeout(() => input.select(), 0));
-        input.focus();
-      }, 0);
-    }
-    el('tombolMasuk').addEventListener('click', () => formTransaksi('masuk'));
-    el('tombolKeluar').addEventListener('click', () => formTransaksi('keluar'));
-    // -------------------------
-    // Transaksi
-    // -------------------------
-    function tampilTransaksi() {
-      const wadah = el('daftarTransaksi');
-      const user = pengguna[penggunaAktif];
-      wadah.innerHTML = '';
-      if (kantongAktif === null) {
-        wadah.innerHTML = `<p class="text-center text-gray-400 text-sm">Pilih kantong untuk melihat transaksi</p>`;
-        return;
-      }
-      const transaksiKantong = user.transaksi
-        .filter(tr => tr.kantong === kantongAktif)
-        .slice().reverse(); // terbaru di atas
-      if (transaksiKantong.length === 0) {
-        wadah.innerHTML = `<p class="text-center text-gray-400 text-sm">Belum ada transaksi di kantong ini</p>`;
-        return;
-      }
-      transaksiKantong.forEach(tr => {
-        const row = document.createElement('div');
-        row.className = 'flex justify-between items-center border-b py-2 last:border-0 bg-white rounded-lg px-3 shadow-sm card-hover';
-        row.innerHTML = `
+                const jumlah = getNilaiDariInput(el('transaksiJumlah'));  // ← angka murni
+                const ket = (el('transaksiKeterangan').value || '').trim();
+                if (!jumlah || jumlah <= 0) { el('transaksiJumlah').focus(); return; }
+                if (jenis === 'masuk') k.saldo += jumlah; else k.saldo -= jumlah;
+                user.transaksi.push({
+                    id: idUnik(),
+                    kantong: kantongAktif,
+                    jenis,
+                    jumlah,
+                    mataUang: k.mataUang,
+                    keterangan: ket,
+                    tanggal: hariIni()
+                });
+                simpanData();
+            });
+            // Pasang formatter setelah modal ter-render
+            setTimeout(() => {
+                const input = el('transaksiJumlah');
+                if (!input) return;
+                input.addEventListener('input', () => formatInputUang(input, k.mataUang));
+                input.addEventListener('focus', () => setTimeout(() => input.select(), 0));
+                input.focus();
+            }, 0);
+        }
+
+        el('tombolMasuk').addEventListener('click', () => formTransaksi('masuk'));
+        el('tombolKeluar').addEventListener('click', () => formTransaksi('keluar'));
+
+        // -------------------------
+        // Transaksi
+        // -------------------------
+        function tampilTransaksi() {
+            const wadah = el('daftarTransaksi');
+            const user = pengguna[penggunaAktif];
+            wadah.innerHTML = '';
+            if (kantongAktif === null) {
+                wadah.innerHTML = `<p class="text-center text-gray-400 text-sm">Pilih kantong untuk melihat transaksi</p>`;
+                return;
+            }
+            const transaksiKantong = user.transaksi
+                .filter(tr => tr.kantong === kantongAktif)
+                .slice().reverse(); // terbaru di atas
+            if (transaksiKantong.length === 0) {
+                wadah.innerHTML = `<p class="text-center text-gray-400 text-sm">Belum ada transaksi di kantong ini</p>`;
+                return;
+            }
+            transaksiKantong.forEach(tr => {
+                const row = document.createElement('div');
+                row.className = 'flex justify-between items-center border-b py-2 last:border-0 bg-white rounded-lg px-3 shadow-sm card-hover';
+                row.innerHTML = `
       <div class="flex-1">
         <p class="font-semibold ${tr.jenis === 'masuk' ? 'text-emerald-600' : 'text-rose-600'} text-xs sm:text-sm">
           ${tr.jenis === 'masuk' ? '+' : '-'} ${formatUang(tr.mataUang, tr.jumlah)}
@@ -812,17 +916,18 @@
                 title="Hapus" onclick="hapusTransaksi('${tr.id}')">delete</button>
       </div>
     `;
-        wadah.appendChild(row);
-      });
-    }
-    function editTransaksi(id) {
-      const user = pengguna[penggunaAktif];
-      if (!user) return;
-      const tr = user.transaksi.find(t => t.id === id);
-      if (!tr) return;
-      const k = user.kantong[tr.kantong]; // kantong asal transaksi
-      const judul = `Edit Transaksi (${k?.nama || '-'})`;
-      bukaModal(judul, `
+                wadah.appendChild(row);
+            });
+        }
+
+        function editTransaksi(id) {
+            const user = pengguna[penggunaAktif];
+            if (!user) return;
+            const tr = user.transaksi.find(t => t.id === id);
+            if (!tr) return;
+            const k = user.kantong[tr.kantong]; // kantong asal transaksi
+            const judul = `Edit Transaksi (${k?.nama || '-'})`;
+            bukaModal(judul, `
     <div class="space-y-3">
       <label class="block text-sm">Jumlah (${tr.mataUang})
         <input id="editJumlah" type="text" class="mt-1 w-full border rounded-lg px-3 py-2" />
@@ -835,268 +940,323 @@
       </p>
     </div>
   `, () => {
-        const inpJumlah = el('editJumlah');
-        const inpKet = el('editKet');
-        const jumlahBaru = getNilaiDariInput(inpJumlah); // number murni
-        const ketBaru = (inpKet.value || '').trim();
-        if (!jumlahBaru || jumlahBaru <= 0) {
-          inpJumlah.focus(); return;
+                const inpJumlah = el('editJumlah');
+                const inpKet = el('editKet');
+                const jumlahBaru = getNilaiDariInput(inpJumlah); // number murni
+                const ketBaru = (inpKet.value || '').trim();
+                if (!jumlahBaru || jumlahBaru <= 0) {
+                    inpJumlah.focus(); return;
+                }
+                // Koreksi saldo kantong berdasar selisih
+                const selisih = jumlahBaru - tr.jumlah;
+                if (tr.jenis === 'masuk') {
+                    k.saldo += selisih;
+                } else { // 'keluar'
+                    k.saldo -= selisih;
+                }
+                // Update transaksi (tanggal & kantong TIDAK diubah)
+                tr.jumlah = jumlahBaru;
+                tr.keterangan = ketBaru;
+                simpanData();       // render ulang via tampilSemua()
+            });
+            // Prefill + formatter setelah modal ter-render
+            setTimeout(() => {
+                const inpJumlah = el('editJumlah');
+                const inpKet = el('editKet');
+                if (!inpJumlah) return;
+                inpJumlah.value = formatUang(tr.mataUang, tr.jumlah);
+                inpKet.value = tr.keterangan || '';
+                inpJumlah.addEventListener('input', () => formatInputUang(inpJumlah, tr.mataUang));
+                inpJumlah.addEventListener('focus', () => setTimeout(() => inpJumlah.select(), 0));
+                inpJumlah.focus();
+            }, 0);
         }
-        // Koreksi saldo kantong berdasar selisih
-        const selisih = jumlahBaru - tr.jumlah;
-        if (tr.jenis === 'masuk') {
-          k.saldo += selisih;
-        } else { // 'keluar'
-          k.saldo -= selisih;
+
+        function hapusTransaksi(id) {
+            const user = pengguna[penggunaAktif];
+            if (!user) return;
+            const idx = user.transaksi.findIndex(t => t.id === id);
+            if (idx === -1) return;
+            const tr = user.transaksi[idx];
+            const k = user.kantong[tr.kantong];
+            if (!confirm('Hapus transaksi ini?')) return;
+            // Kembalikan saldo sesuai jenis transaksi
+            if (tr.jenis === 'masuk') {
+                k.saldo -= tr.jumlah;
+            } else { // 'keluar'
+                k.saldo += tr.jumlah;
+            }
+            user.transaksi.splice(idx, 1);
+            simpanData(); // render ulang
         }
-        // Update transaksi (tanggal & kantong TIDAK diubah)
-        tr.jumlah = jumlahBaru;
-        tr.keterangan = ketBaru;
-        simpanData();       // render ulang via tampilSemua()
-      });
-      // Prefill + formatter setelah modal ter-render
-      setTimeout(() => {
-        const inpJumlah = el('editJumlah');
-        const inpKet = el('editKet');
-        if (!inpJumlah) return;
-        inpJumlah.value = formatUang(tr.mataUang, tr.jumlah);
-        inpKet.value = tr.keterangan || '';
-        inpJumlah.addEventListener('input', () => formatInputUang(inpJumlah, tr.mataUang));
-        inpJumlah.addEventListener('focus', () => setTimeout(() => inpJumlah.select(), 0));
-        inpJumlah.focus();
-      }, 0);
-    }
-    function hapusTransaksi(id) {
-      const user = pengguna[penggunaAktif];
-      if (!user) return;
-      const idx = user.transaksi.findIndex(t => t.id === id);
-      if (idx === -1) return;
-      const tr = user.transaksi[idx];
-      const k = user.kantong[tr.kantong];
-      if (!confirm('Hapus transaksi ini?')) return;
-      // Kembalikan saldo sesuai jenis transaksi
-      if (tr.jenis === 'masuk') {
-        k.saldo -= tr.jumlah;
-      } else { // 'keluar'
-        k.saldo += tr.jumlah;
-      }
-      user.transaksi.splice(idx, 1);
-      simpanData(); // render ulang
-    }
-    // -------------------------
-    // Ringkasan
-    // -------------------------
-    function tampilRingkasan() {
-      const user = pengguna[penggunaAktif];
-      let jumlahRp = 0, jumlahSar = 0;
-      user.kantong.forEach(k => {
-        if (k.mataUang === 'Rp') jumlahRp += Number(k.saldo || 0);
-        if (k.mataUang === 'SAR') jumlahSar += Number(k.saldo || 0);
-      });
-      el('totalRp').textContent = formatUang('Rp', jumlahRp);
-      el('totalSar').textContent = formatUang('SAR', jumlahSar);
-      // Update progress bar (asumsi target 10 juta untuk Rp dan 5000 untuk SAR)
-      const targetRp = 10000000;
-      const targetSar = 5000;
-      const progressRp = Math.min(100, (jumlahRp / targetRp) * 100);
-      const progressSar = Math.min(100, (jumlahSar / targetSar) * 100);
-      el('progressRp').style.width = `${progressRp}%`;
-      el('progressSar').style.width = `${progressSar}%`;
-    }
-    // -------------------------
-    // Tampil Semua
-    // -------------------------
-    function tampilSemua() {
-      tampilKantong();
-      tampilTransaksi();
-      tampilRingkasan();
-    }
-    // Init
-    muatData();
-    // Auto reload jika idle 30 detik
-    let idleTimer;
-    function resetIdleTimer() {
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => {
-        location.reload(); // reload halaman
-      }, 30000); // 30000 ms = 30 detik
-    }
-    // Event untuk deteksi aktivitas
-    ['click', 'mousemove', 'keydown', 'touchstart', 'scroll'].forEach(evt => {
-      document.addEventListener(evt, resetIdleTimer, { passive: true });
-    });
-    // Mulai timer pertama kali
-    resetIdleTimer();
-    function formatUang(mataUang, nominal) {
-      const n = Number(nominal || 0);
-      if (mataUang === 'Rp') return 'Rp ' + n.toLocaleString('id-ID');
-      if (mataUang === 'SAR') return 'SAR ' + n.toLocaleString('id-ID');
-      return (mataUang || '') + ' ' + n.toLocaleString('id-ID');
-    }
-    function parseUang(str) {
-      if (typeof str === 'number') return str;
-      if (!str) return 0;
-      const clean = String(str).replace(/[^\d.,-]/g, '').replace(/\./g, '').replace(',', '.');
-      const n = parseFloat(clean);
-      return isNaN(n) ? 0 : n;
-    }
-    // Format input live, simpan caret
-    function formatInputUang(inputEl, mataUang) {
-      const start = inputEl.selectionStart;
-      const before = inputEl.value;
-      const angka = parseUang(before);
-      inputEl.value = formatUang(mataUang, angka);
-      // coba pulihkan posisi kursor seperlunya
-      const diff = inputEl.value.length - before.length;
-      inputEl.setSelectionRange(Math.max(0, start + diff), Math.max(0, start + diff));
-    }
-    // Ambil angka murni dari input berformat
-    function getNilaiDariInput(inputEl) {
-      return parseUang(inputEl.value);
-    }
-    function renderGrid() {
-      const root = document.getElementById('gridContainer');
-      root.innerHTML = '';
-      const user = pengguna[penggunaAktif];
-      const rows = (user?.transaksi || []).map(t => {
-        const namaKantong = user?.kantong?.[t.kantong]?.nama || '-';
-        return [
-          t.tanggal,
-          namaKantong,
-          t.jenis,
-          Number(t.jumlah),      // angka murni → sort benar
-          t.mataUang,
-          t.keterangan || ''
-        ];
-      });
-      new gridjs.Grid({
-        columns: ["Tanggal", "Kantong", "Jenis", "Nominal", "Mata Uang", "Keterangan"],
-        data: rows,
-        sort: true,
-        search: { enabled: true, placeholder: 'Cari...' },
-        pagination: { enabled: true, limit: 12 },
-        className: { table: 'min-w-full' }
-      }).render(root);
-    }
-    // --- Util modal yang solid ---
-    const modal = document.getElementById('backupModal');
-    const dialog = document.getElementById('backupDialog');
-    const openBtn = document.getElementById('btnBackup');
-    function openBackup() {
-      modal.classList.add('show');      // tampilkan
-      modal.classList.remove('hidden');
-      modal.setAttribute('aria-hidden', 'false');
-      // kunci scroll bg
-      document.documentElement.style.overflow = 'hidden';
-      // render grid setelah terlihat (hindari ukuran salah)
-      setTimeout(renderGrid, 0);
-      // fokus-trap awal
-      dialog.focus();
-      window.addEventListener('keydown', onEsc);
-    }
-    function closeBackup() {
-      modal.classList.remove('show');
-      modal.classList.add('hidden');
-      modal.setAttribute('aria-hidden', 'true');
-      document.documentElement.style.overflow = '';  // balikin scroll
-      window.removeEventListener('keydown', onEsc);
-    }
-    function onEsc(e) { if (e.key === 'Escape') closeBackup(); }
-    // open
-    openBtn.addEventListener('click', openBackup);
-    // close by [data-close] atau klik backdrop
-    modal.addEventListener('click', (e) => {
-      if (e.target.hasAttribute('data-close')) closeBackup();
-    });
-    // cegah klik dalam dialog menembus backdrop
-    dialog.addEventListener('click', (e) => e.stopPropagation());
-    // --- Export (tetap sama dengan sebelumnya) ---
-    document.getElementById('btnExportExcel').onclick = exportExcel;
-    document.getElementById('btnExportPDF').onclick = exportPDF;
-    function exportExcel() {
-      if (!window.XLSX) { alert('SheetJS belum termuat'); return; }
-      const user = (window.pengguna?.[window.penggunaAktif]) || { kantong: [], transaksi: [] };
-      // --- Transaksi: buat rows (boleh kosong) ---
-      const trxRows = (user.transaksi || []).map(t => ({
-        Tanggal: t.tanggal || '',
-        Kantong: user.kantong?.[t.kantong]?.nama || '-',
-        Jenis: t.jenis || '',
-        Nominal: Number(
-          typeof t.jumlah === 'string' ? t.jumlah.replace(/[^\d.-]/g, '') : (t.jumlah || 0)
-        ),
-        MataUang: t.mataUang || '',
-        Keterangan: t.keterangan || ''
-      }));
-      const wb = XLSX.utils.book_new();
-      // Selalu buat sheet Transaksi (jika kosong, hanya header)
-      const wsT = XLSX.utils.json_to_sheet(
-        trxRows.length ? trxRows : [{ Tanggal: '', Kantong: '', Jenis: '', Nominal: '', MataUang: '', Keterangan: '' }],
-        { skipHeader: false }
-      );
-      wsT['!cols'] = [{ w: 12 }, { w: 18 }, { w: 10 }, { w: 14 }, { w: 10 }, { w: 40 }];
-      // format uang di kolom D (hanya jika cell numerik)
-      for (const c in wsT) if (/^D\d+$/.test(c) && typeof wsT[c].v === 'number') wsT[c].z = '#,##0';
-      XLSX.utils.book_append_sheet(wb, wsT, 'Transaksi');
-      // --- Kantong: selalu ada ---
-      const kRows = (user.kantong || []).map(k => ({
-        Kantong: k.nama || '-',
-        Saldo: Number(k.saldo || 0),
-        MataUang: k.mataUang || ''
-      }));
-      const wsK = XLSX.utils.json_to_sheet(kRows.length ? kRows : [{ Kantong: '', Saldo: '', MataUang: '' }], { skipHeader: false });
-      wsK['!cols'] = [{ w: 24 }, { w: 16 }, { w: 10 }];
-      for (const c in wsK) if (/^B\d+$/.test(c) && typeof wsK[c].v === 'number') wsK[c].z = '#,##0';
-      XLSX.utils.book_append_sheet(wb, wsK, 'Kantong');
-      XLSX.writeFile(wb, `backup_${new Date().toISOString().slice(0, 10)}.xlsx`);
-    }
-    // Tambahkan tombol JSON di modal backup
-    document.getElementById('btnExportPDF').insertAdjacentHTML('afterend',
-      '<button id="btnExportJSON" class="px-3 py-1.5 rounded-lg ring-1 ring-gray-200 hover:bg-gray-50 text-sm">JSON</button>'
-    );
-    document.getElementById('btnExportJSON').addEventListener('click', exportJSON);
-    // Fungsi export JSON
-    function exportJSON() {
-      const user = pengguna[penggunaAktif];
-      const data = {
-        pengguna: user.nama,
-        kantong: user.kantong,
-        transaksi: user.transaksi,
-        exportDate: new Date().toISOString()
-      };
-      const dataStr = JSON.stringify(data, null, 2);
-      const blob = new Blob([dataStr], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `backup_${user.nama}_${new Date().toISOString().slice(0, 10)}.json`;
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(() => {
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      }, 100);
-    }
-    function exportPDF() {
-      const user = pengguna[penggunaAktif];
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF('p', 'pt', 'a4');
-      doc.text('Daftar Transaksi', 40, 40);
-      const body = (user?.transaksi || []).map(t => [
-        t.tanggal,
-        user?.kantong?.[t.kantong]?.nama || '-',
-        t.jenis,
-        Number(t.jumlah).toLocaleString('id-ID'),
-        t.mataUang,
-        t.keterangan || ''
-      ]);
-      doc.autoTable({
-        startY: 60,
-        head: [['Tanggal', 'Kantong', 'Jenis', 'Nominal', 'Mata Uang', 'Keterangan']],
-        body
-      });
-      doc.save(`transaksi_${new Date().toISOString().slice(0, 10)}.pdf`);
-    }
-  </script>
+
+        // -------------------------
+        // Ringkasan
+        // -------------------------
+        function tampilRingkasan() {
+            const user = pengguna[penggunaAktif];
+            let jumlahRp = 0, jumlahSar = 0;
+            user.kantong.forEach(k => {
+                if (k.mataUang === 'Rp') jumlahRp += Number(k.saldo || 0);
+                if (k.mataUang === 'SAR') jumlahSar += Number(k.saldo || 0);
+            });
+            el('totalRp').textContent = formatUang('Rp', jumlahRp);
+            el('totalSar').textContent = formatUang('SAR', jumlahSar);
+            // Update progress bar (asumsi target 10 juta untuk Rp dan 5000 untuk SAR)
+            const targetRp = 10000000;
+            const targetSar = 5000;
+            const progressRp = Math.min(100, (jumlahRp / targetRp) * 100);
+            const progressSar = Math.min(100, (jumlahSar / targetSar) * 100);
+            el('progressRp').style.width = `${progressRp}%`;
+            el('progressSar').style.width = `${progressSar}%`;
+        }
+
+        // -------------------------
+        // Tampil Semua
+        // -------------------------
+        function tampilSemua() {
+            tampilKantong();
+            tampilTransaksi();
+            tampilRingkasan();
+        }
+
+        // Init
+        muatData();
+
+        // Auto reload jika idle 30 detik
+        let idleTimer;
+        function resetIdleTimer() {
+            clearTimeout(idleTimer);
+            idleTimer = setTimeout(() => {
+                location.reload(); // reload halaman
+            }, 30000); // 30000 ms = 30 detik
+        }
+        // Event untuk deteksi aktivitas
+        ['click', 'mousemove', 'keydown', 'touchstart', 'scroll'].forEach(evt => {
+            document.addEventListener(evt, resetIdleTimer, { passive: true });
+        });
+        // Mulai timer pertama kali
+        resetIdleTimer();
+
+        function formatUang(mataUang, nominal) {
+            const n = Number(nominal || 0);
+            if (mataUang === 'Rp') return 'Rp ' + n.toLocaleString('id-ID');
+            if (mataUang === 'SAR') return 'SAR ' + n.toLocaleString('id-ID');
+            return (mataUang || '') + ' ' + n.toLocaleString('id-ID');
+        }
+
+        function parseUang(str) {
+            if (typeof str === 'number') return str;
+            if (!str) return 0;
+            const clean = String(str).replace(/[^\d.,-]/g, '').replace(/\./g, '').replace(',', '.');
+            const n = parseFloat(clean);
+            return isNaN(n) ? 0 : n;
+        }
+
+        // Format input live, simpan caret
+        function formatInputUang(inputEl, mataUang) {
+            const start = inputEl.selectionStart;
+            const before = inputEl.value;
+            const angka = parseUang(before);
+            inputEl.value = formatUang(mataUang, angka);
+            // coba pulihkan posisi kursor seperlunya
+            const diff = inputEl.value.length - before.length;
+            inputEl.setSelectionRange(Math.max(0, start + diff), Math.max(0, start + diff));
+        }
+
+        // Ambil angka murni dari input berformat
+        function getNilaiDariInput(inputEl) {
+            return parseUang(inputEl.value);
+        }
+
+        function renderGrid() {
+            const root = document.getElementById('gridContainer');
+            root.innerHTML = '';
+            const user = pengguna[penggunaAktif];
+            const rows = (user?.transaksi || []).map(t => {
+                const namaKantong = user?.kantong?.[t.kantong]?.nama || '-';
+                return [
+                    t.tanggal,
+                    namaKantong,
+                    t.jenis,
+                    Number(t.jumlah),      // angka murni → sort benar
+                    t.mataUang,
+                    t.keterangan || ''
+                ];
+            });
+            new gridjs.Grid({
+                columns: ["Tanggal", "Kantong", "Jenis", "Nominal", "Mata Uang", "Keterangan"],
+                data: rows,
+                sort: true,
+                search: { enabled: true, placeholder: 'Cari...' },
+                pagination: { enabled: true, limit: 12 },
+                className: { table: 'min-w-full' }
+            }).render(root);
+        }
+
+        // --- Util modal yang solid ---
+        const modal = document.getElementById('backupModal');
+        const dialog = document.getElementById('backupDialog');
+        const openBtn = document.getElementById('btnBackup');
+        function openBackup() {
+            modal.classList.add('show');      // tampilkan
+            modal.classList.remove('hidden');
+            modal.setAttribute('aria-hidden', 'false');
+            // kunci scroll bg
+            document.documentElement.style.overflow = 'hidden';
+            // render grid setelah terlihat (hindari ukuran salah)
+            setTimeout(renderGrid, 0);
+            // fokus-trap awal
+            dialog.focus();
+            window.addEventListener('keydown', onEsc);
+        }
+
+        function closeBackup() {
+            modal.classList.remove('show');
+            modal.classList.add('hidden');
+            modal.setAttribute('aria-hidden', 'true');
+            document.documentElement.style.overflow = '';  // balikin scroll
+            window.removeEventListener('keydown', onEsc);
+        }
+
+        function onEsc(e) { if (e.key === 'Escape') closeBackup(); }
+
+        // open
+        openBtn.addEventListener('click', openBackup);
+
+        // close by [data-close] atau klik backdrop
+        modal.addEventListener('click', (e) => {
+            if (e.target.hasAttribute('data-close')) closeBackup();
+        });
+
+        // cegah klik dalam dialog menembus backdrop
+        dialog.addEventListener('click', (e) => e.stopPropagation());
+
+        // --- Export (tetap sama dengan sebelumnya) ---
+        document.getElementById('btnExportExcel').onclick = exportExcel;
+        document.getElementById('btnExportPDF').onclick = exportPDF;
+
+        function exportExcel() {
+            if (!window.XLSX) { alert('SheetJS belum termuat'); return; }
+            const user = (window.pengguna?.[window.penggunaAktif]) || { kantong: [], transaksi: [] };
+            // --- Transaksi: buat rows (boleh kosong) ---
+            const trxRows = (user.transaksi || []).map(t => ({
+                Tanggal: t.tanggal || '',
+                Kantong: user.kantong?.[t.kantong]?.nama || '-',
+                Jenis: t.jenis || '',
+                Nominal: Number(
+                    typeof t.jumlah === 'string' ? t.jumlah.replace(/[^\d.-]/g, '') : (t.jumlah || 0)
+                ),
+                MataUang: t.mataUang || '',
+                Keterangan: t.keterangan || ''
+            }));
+            const wb = XLSX.utils.book_new();
+            // Selalu buat sheet Transaksi (jika kosong, hanya header)
+            const wsT = XLSX.utils.json_to_sheet(
+                trxRows.length ? trxRows : [{ Tanggal: '', Kantong: '', Jenis: '', Nominal: '', MataUang: '', Keterangan: '' }],
+                { skipHeader: false }
+            );
+            wsT['!cols'] = [{ w: 12 }, { w: 18 }, { w: 10 }, { w: 14 }, { w: 10 }, { w: 40 }];
+            // format uang di kolom D (hanya jika cell numerik)
+            for (const c in wsT) if (/^D\d+$/.test(c) && typeof wsT[c].v === 'number') wsT[c].z = '#,##0';
+            XLSX.utils.book_append_sheet(wb, wsT, 'Transaksi');
+            // --- Kantong: selalu ada ---
+            const kRows = (user.kantong || []).map(k => ({
+                Kantong: k.nama || '-',
+                Saldo: Number(k.saldo || 0),
+                MataUang: k.mataUang || ''
+            }));
+            const wsK = XLSX.utils.json_to_sheet(kRows.length ? kRows : [{ Kantong: '', Saldo: '', MataUang: '' }], { skipHeader: false });
+            wsK['!cols'] = [{ w: 24 }, { w: 16 }, { w: 10 }];
+            for (const c in wsK) if (/^B\d+$/.test(c) && typeof wsK[c].v === 'number') wsK[c].z = '#,##0';
+            XLSX.utils.book_append_sheet(wb, wsK, 'Kantong');
+            XLSX.writeFile(wb, `backup_${new Date().toISOString().slice(0, 10)}.xlsx`);
+        }
+
+        // Tambahkan tombol JSON di modal backup
+        document.getElementById('btnExportPDF').insertAdjacentHTML('afterend',
+            '<button id="btnExportJSON" class="px-3 py-1.5 rounded-lg ring-1 ring-gray-200 hover:bg-gray-50 text-sm">JSON</button>'
+        );
+        document.getElementById('btnExportJSON').addEventListener('click', exportJSON);
+
+        // Fungsi export JSON
+        function exportJSON() {
+            const user = pengguna[penggunaAktif];
+            const data = {
+                pengguna: user.nama,
+                kantong: user.kantong,
+                transaksi: user.transaksi,
+                exportDate: new Date().toISOString()
+            };
+            const dataStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `backup_${user.nama}_${new Date().toISOString().slice(0, 10)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 100);
+        }
+
+        function exportPDF() {
+            const user = pengguna[penggunaAktif];
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'pt', 'a4');
+            doc.text('Daftar Transaksi', 40, 40);
+            const body = (user?.transaksi || []).map(t => [
+                t.tanggal,
+                user?.kantong?.[t.kantong]?.nama || '-',
+                t.jenis,
+                Number(t.jumlah).toLocaleString('id-ID'),
+                t.mataUang,
+                t.keterangan || ''
+            ]);
+            doc.autoTable({
+                startY: 60,
+                head: [['Tanggal', 'Kantong', 'Jenis', 'Nominal', 'Mata Uang', 'Keterangan']],
+                body
+            });
+            doc.save(`transaksi_${new Date().toISOString().slice(0, 10)}.pdf`);
+        }
+
+        // -------------------------
+        // Notification System
+        // -------------------------
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+        <span class="material-icons ${type === 'success' ? 'text-green-500' : type === 'error' ? 'text-red-500' : 'text-blue-500'}">
+          ${type === 'success' ? 'check_circle' : type === 'error' ? 'error' : 'info'}
+        </span>
+        <span>${message}</span>
+      `;
+
+            document.body.appendChild(notification);
+
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        function showError(message) {
+            showNotification(message, 'error');
+        }
+
+        // Event listeners for reset token button
+        document.getElementById('resetTokenBtn').addEventListener('click', resetToken);
+    </script>
 </body>
 
 </html>
