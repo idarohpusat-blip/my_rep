@@ -1,0 +1,30 @@
+{
+  "tasks": [],
+  "tabs": [
+    {
+      "id": "all",
+      "name": "Semua",
+      "icon": "fa-list"
+    },
+    {
+      "id": "work",
+      "name": "Kerja",
+      "icon": "fa-briefcase"
+    },
+    {
+      "id": "personal",
+      "name": "Pribadi",
+      "icon": "fa-user"
+    },
+    {
+      "id": "study",
+      "name": "Belajar",
+      "icon": "fa-book"
+    },
+    {
+      "id": "health",
+      "name": "Kesehatan",
+      "icon": "fa-heartbeat"
+    }
+  ]
+}
