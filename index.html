@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Albary - Manajemen Aplikasi</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="logo.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -30,11 +32,6 @@
 
         .app-card:active {
             transform: scale(0.98);
-        }
-
-        .app-card.pressed {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
         }
 
         .fab {
@@ -103,6 +100,20 @@
             transform: translateY(-24px) scale(0.85);
             color: var(--primary);
         }
+
+        .options-button {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
     </style>
 </head>
 
@@ -113,8 +124,8 @@
             <div class="flex items-center justify-between mb-3">
                 <!-- Title with icon -->
                 <h1 class="text-2xl font-bold text-gray-800 flex items-center">
-                    <i class="fas fa-th-large text-green-600 mr-2"></i>
-                    Albary
+                    <img src="icon.png" alt="Albary Icon" class="w-8 h-8 mr-2 rounded-full border-2 border-green-600">
+                    AppAlbary
                 </h1>
                 <div class="flex space-x-3">
                     <button onclick="toggleSearch()" class="text-gray-600">
@@ -140,7 +151,7 @@
     <!-- Main Content -->
     <main class="px-4 py-4">
         <!-- Apps Grid -->
-        <div id="appsGrid" class="grid grid-cols-4 gap-4">
+        <div id="appsGrid" class="grid grid-cols-2 gap-4">
             <!-- Apps will be dynamically inserted here -->
         </div>
 
@@ -250,7 +261,6 @@
         let apps = JSON.parse(localStorage.getItem('albaryApps')) || [];
         let currentEditId = null;
         let currentApp = null;
-        let pressTimer = null;
 
         // DOM Elements
         const appsGrid = document.getElementById('appsGrid');
@@ -288,7 +298,6 @@
         function createAppCard(app) {
             const card = document.createElement('div');
             card.className = 'app-card bg-white rounded-2xl shadow-sm overflow-hidden relative cursor-pointer';
-            card.dataset.appId = app.id;
 
             const defaultIcon = `https://picsum.photos/seed/${app.id}/100/100.jpg`;
             const iconUrl = app.icon || defaultIcon;
@@ -298,69 +307,27 @@
                     <img src="${iconUrl}" alt="${app.name}" 
                         class="w-full h-full object-cover"
                         onerror="this.src='${defaultIcon}'">
-                    ${app.favorite ? '<i class="fas fa-star absolute top-1 right-1 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
+                    ${app.favorite ? '<i class="fas fa-star absolute top-2 right-10 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
+                    <button class="options-button" onclick="event.stopPropagation(); showAppOptions('${app.id}')">
+                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                    </button>
                 </div>
-                <div class="p-2">
+                <div class="p-3">
                     <h3 class="font-semibold text-gray-800 text-center truncate">${app.name}</h3>
                 </div>
             `;
 
             // Open app on click
-            card.addEventListener('click', (e) => {
-                // Only open URL if not long press
-                if (!card.classList.contains('pressed')) {
-                    openUrl(app.url);
-                }
-            });
-
-            // Handle long press for mobile
-            card.addEventListener('touchstart', handleTouchStart, { passive: false });
-            card.addEventListener('touchend', handleTouchEnd, { passive: false });
-            card.addEventListener('touchmove', handleTouchMove, { passive: false });
-
-            // Handle right click for desktop
-            card.addEventListener('contextmenu', (e) => {
-                e.preventDefault();
-                showAppOptions(app);
-            });
+            card.addEventListener('click', () => openUrl(app.url));
 
             return card;
         }
 
-        // Touch handlers for long press
-        function handleTouchStart(e) {
-            e.preventDefault();
-            const card = e.currentTarget;
-            card.classList.add('pressed');
-
-            pressTimer = setTimeout(() => {
-                showAppOptions(apps.find(a => a.id === card.dataset.appId));
-            }, 500);
-        }
-
-        function handleTouchEnd(e) {
-            e.preventDefault();
-            const card = e.currentTarget;
-            card.classList.remove('pressed');
-
-            if (pressTimer) {
-                clearTimeout(pressTimer);
-                pressTimer = null;
-            }
-        }
-
-        function handleTouchMove(e) {
-            e.preventDefault();
-            if (pressTimer) {
-                const card = e.currentTarget;
-                card.classList.remove('pressed');
-                clearTimeout(pressTimer);
-                pressTimer = null;
-            }
-        }
-
         // Show app options
-        function showAppOptions(app) {
+        function showAppOptions(appId) {
+            const app = apps.find(a => a.id === appId);
+            if (!app) return;
+
             currentApp = app;
             const optionsContent = document.getElementById('optionsContent');
 
