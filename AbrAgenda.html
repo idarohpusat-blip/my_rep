@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Digital - Modern & Clean</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="manifest_agenda.json">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+
+        /* Green gradient buttons */
+        .green-gradient {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            transition: all 0.3s ease;
+        }
+
+        .green-gradient:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3);
+        }
+
+        .green-gradient:active {
+            transform: translateY(0);
+        }
+
+        /* Tab styles */
+        .tab-active {
+            border-bottom: 3px solid #10b981;
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .tab-item {
+            transition: all 0.3s ease;
+        }
+
+        .tab-item:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Task card styles */
+        .task-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .priority-high {
+            border-left-color: #ef4444;
+        }
+
+        .priority-medium {
+            border-left-color: #f59e0b;
+        }
+
+        .priority-low {
+            border-left-color: #10b981;
+        }
+
+        .completed {
+            opacity: 0.6;
+        }
+
+        .completed .task-title {
+            text-decoration: line-through;
+            color: #6b7280;
+        }
+
+        /* Modal styles */
+        .modal-enter {
+            animation: modalEnter 0.3s ease-out;
+        }
+
+        @keyframes modalEnter {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Icon button styles */
+        .icon-btn {
+            transition: all 0.2s ease;
+        }
+
+        .icon-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+
+        /* Badge styles */
+        .badge-green {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge-yellow {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-red {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Category label style */
+        .category-label {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 14px;
+            color: #6b7280;
+            background-color: #f9fafb;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-800">
+                            <i class="fas fa-calendar-check text-green-600 mr-3"></i>
+                            Agenda Digital
+                        </h1>
+                        <p class="text-gray-600 mt-1">Kelola tugas harian dengan mudah</p>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button id="exportBtn"
+                            class="bg-white border border-green-500 text-green-600 px-5 py-2.5 rounded-lg hover:bg-green-50 transition flex items-center">
+                            <i class="fas fa-file-pdf mr-2"></i>Export PDF
+                        </button>
+                        <button id="toggleCompletedBtn"
+                            class="bg-white border border-green-500 text-green-600 px-5 py-2.5 rounded-lg hover:bg-green-50 transition flex items-center">
+                            <i class="fas fa-eye-slash mr-2"></i>Sembunyikan Selesai
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tab Management -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6 border border-gray-100">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">Kategori</h2>
+                <button id="addTabBtn" class="green-gradient text-white px-4 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-plus mr-2"></i>Tambah Tab
+                </button>
+            </div>
+
+            <div class="flex space-x-1 overflow-x-auto pb-2" id="tabContainer">
+                <!-- Tabs will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <div id="taskList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Tasks will be dynamically inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="text-center py-16 hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                <i class="fas fa-clipboard-list text-6xl text-gray-300 mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Belum ada tugas</h3>
+                <p class="text-gray-500">Klik "Tambah Tugas Baru" untuk memulai!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="taskModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md modal-enter">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 id="modalTitle" class="text-2xl font-bold text-gray-800">Tambah Tugas Baru</h2>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <form id="taskForm">
+                    <div class="mb-4 relative">
+                        <label class="block text-gray-700 font-medium mb-2">Judul Tugas</label>
+                        <input type="text" id="taskTitle" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <div id="categoryLabel" class="category-label hidden"></div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Prioritas</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="priority" value="low" class="mr-2">
+                                <span class="text-green-600">Rendah</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="priority" value="medium" class="mr-2" checked>
+                                <span class="text-yellow-600">Sedang</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="priority" value="high" class="mr-2">
+                                <span class="text-red-600">Tinggi</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end space-x-3">
+                        <button type="button" id="cancelBtn"
+                            class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                            Batal
+                        </button>
+                        <button type="submit" class="green-gradient text-white px-6 py-2 rounded-lg font-medium">
+                            Simpan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Edit Modal -->
+    <div id="tabModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md modal-enter">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Edit Kategori</h2>
+                    <button id="closeTabModal" class="text-gray-400 hover:text-gray-600 transition">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <form id="tabForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Nama Kategori</label>
+                        <input type="text" id="tabName" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Icon</label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-briefcase">
+                                <i class="fas fa-briefcase text-green-600"></i>
+                            </button>
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-user">
+                                <i class="fas fa-user text-green-600"></i>
+                            </button>
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-book">
+                                <i class="fas fa-book text-green-600"></i>
+                            </button>
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-heartbeat">
+                                <i class="fas fa-heartbeat text-green-600"></i>
+                            </button>
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-home">
+                                <i class="fas fa-home text-green-600"></i>
+                            </button>
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-shopping-cart">
+                                <i class="fas fa-shopping-cart text-green-600"></i>
+                            </button>
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-plane">
+                                <i class="fas fa-plane text-green-600"></i>
+                            </button>
+                            <button type="button" class="icon-option p-3 border rounded-lg hover:bg-green-50"
+                                data-icon="fa-star">
+                                <i class="fas fa-star text-green-600"></i>
+                            </button>
+                        </div>
+                        <input type="hidden" id="tabIcon" value="fa-tasks">
+                    </div>
+
+                    <div class="flex justify-end space-x-3">
+                        <button type="button" id="cancelTabBtn"
+                            class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                            Batal
+                        </button>
+                        <button type="submit" class="green-gradient text-white px-6 py-2 rounded-lg font-medium">
+                            Simpan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Task Button -->
+    <button id="addTaskBtn"
+        class="fixed bottom-8 right-8 green-gradient text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center icon-btn">
+        <i class="fas fa-plus text-xl"></i>
+    </button>
+
+    <script>
+        // Data Management
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        let tabs = JSON.parse(localStorage.getItem('tabs')) || [
+            { id: 'all', name: 'Semua', icon: 'fa-list' },
+            { id: 'work', name: 'Kerja', icon: 'fa-briefcase' },
+            { id: 'personal', name: 'Pribadi', icon: 'fa-user' },
+            { id: 'study', name: 'Belajar', icon: 'fa-book' },
+            { id: 'health', name: 'Kesehatan', icon: 'fa-heartbeat' }
+        ];
+        let currentTab = 'all';
+        let showCompleted = false;
+        let editingTabId = null;
+        let editingTaskId = null;
+
+        // DOM Elements
+        const taskList = document.getElementById('taskList');
+        const emptyState = document.getElementById('emptyState');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const taskModal = document.getElementById('taskModal');
+        const tabModal = document.getElementById('tabModal');
+        const closeModal = document.getElementById('closeModal');
+        const closeTabModal = document.getElementById('closeTabModal');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const cancelTabBtn = document.getElementById('cancelTabBtn');
+        const taskForm = document.getElementById('taskForm');
+        const tabForm = document.getElementById('tabForm');
+        const exportBtn = document.getElementById('exportBtn');
+        const toggleCompletedBtn = document.getElementById('toggleCompletedBtn');
+        const addTabBtnEl = document.getElementById('addTabBtn');
+        const tabContainer = document.getElementById('tabContainer');
+        const categoryLabel = document.getElementById('categoryLabel');
+        const modalTitle = document.getElementById('modalTitle');
+
+        // Event Listeners
+        addTaskBtn.addEventListener('click', () => openTaskModal());
+        closeModal.addEventListener('click', () => closeTaskModal());
+        closeTabModal.addEventListener('click', () => closeTabModalHandler());
+        cancelBtn.addEventListener('click', () => closeTaskModal());
+        cancelTabBtn.addEventListener('click', () => closeTabModalHandler());
+        taskForm.addEventListener('submit', handleTaskSubmit);
+        tabForm.addEventListener('submit', handleTabSubmit);
+        exportBtn.addEventListener('click', exportToPDF);
+        toggleCompletedBtn.addEventListener('click', toggleCompleted);
+        addTabBtnEl.addEventListener('click', () => openTabModal());
+
+        // Icon selection
+        document.querySelectorAll('.icon-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.icon-option').forEach(b => b.classList.remove('bg-green-100'));
+                btn.classList.add('bg-green-100');
+                document.getElementById('tabIcon').value = btn.dataset.icon;
+            });
+        });
+
+        // Tab Management
+        function renderTabs() {
+            tabContainer.innerHTML = tabs.map(tab => `
+                <div class="tab-item tab-item ${currentTab === tab.id ? 'tab-active' : ''} px-4 py-3 rounded-lg text-gray-700 font-medium flex items-center space-x-2 whitespace-nowrap" data-tab="${tab.id}">
+                    <i class="fas ${tab.icon} text-green-600"></i>
+                    <span>${tab.name}</span>
+                    <div class="tab-actions ml-2">
+                        ${tab.id !== 'all' ? `
+                            <button class="edit-tab-btn text-gray-400 hover:text-yellow-500 ml-2 icon-btn" data-id="${tab.id}">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="delete-tab-btn text-gray-400 hover:text-red-500 ml-2 icon-btn" data-id="${tab.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            // Add event listeners to tabs
+            document.querySelectorAll('.tab-item').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    if (!e.target.closest('.tab-actions')) {
+                        currentTab = tab.dataset.tab;
+                        renderTabs();
+                        renderTasks();
+                        updateCategoryLabel();
+                    }
+                });
+            });
+
+            // Add event listeners to tab actions
+            document.querySelectorAll('.edit-tab-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    editTab(btn.dataset.id);
+                });
+            });
+
+            document.querySelectorAll('.delete-tab-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteTab(btn.dataset.id);
+                });
+            });
+        }
+
+        function openTabModal(tabId = null) {
+            editingTabId = tabId;
+            const modalTitle = document.querySelector('#tabModal h2');
+
+            if (tabId) {
+                const tab = tabs.find(t => t.id === tabId);
+                modalTitle.textContent = 'Edit Kategori';
+                document.getElementById('tabName').value = tab.name;
+                document.getElementById('tabIcon').value = tab.icon;
+
+                // Find and select the correct icon option
+                document.querySelectorAll('.icon-option').forEach(b => b.classList.remove('bg-green-100'));
+                const iconOption = document.querySelector(`.icon-option[data-icon="${tab.icon}"]`);
+                if (iconOption) {
+                    iconOption.classList.add('bg-green-100');
+                }
+            } else {
+                modalTitle.textContent = 'Tambah Kategori Baru';
+                tabForm.reset();
+                document.querySelectorAll('.icon-option').forEach(b => b.classList.remove('bg-green-100'));
+                const defaultIcon = document.querySelector('[data-icon="fa-tasks"]');
+                if (defaultIcon) {
+                    defaultIcon.classList.add('bg-green-100');
+                }
+            }
+
+            tabModal.classList.remove('hidden');
+        }
+
+        function closeTabModalHandler() {
+            tabModal.classList.add('hidden');
+            editingTabId = null;
+            document.querySelectorAll('.icon-option').forEach(b => b.classList.remove('bg-green-100'));
+        }
+
+        function handleTabSubmit(e) {
+            e.preventDefault();
+
+            const tabName = document.getElementById('tabName').value.trim();
+            const tabIcon = document.getElementById('tabIcon').value;
+
+            if (tabName) {
+                if (editingTabId) {
+                    // Update existing tab
+                    const tab = tabs.find(t => t.id === editingTabId);
+                    tab.name = tabName;
+                    tab.icon = tabIcon;
+                } else {
+                    // Add new tab
+                    const newTab = {
+                        id: 'tab_' + Date.now(),
+                        name: tabName,
+                        icon: tabIcon
+                    };
+                    tabs.push(newTab);
+                }
+
+                saveData();
+                renderTabs();
+                closeTabModalHandler();
+
+                // Show success notification
+                showNotification('Kategori berhasil disimpan!', 'success');
+            }
+        }
+
+        function editTab(tabId) {
+            openTabModal(tabId);
+        }
+
+        function deleteTab(tabId) {
+            if (confirm('Apakah Anda yakin ingin menghapus kategori ini?')) {
+                tabs = tabs.filter(t => t.id !== tabId);
+                // Move tasks to 'all' category
+                tasks.forEach(task => {
+                    if (task.category === tabId) {
+                        task.category = 'all';
+                    }
+                });
+
+                if (currentTab === tabId) {
+                    currentTab = 'all';
+                }
+
+                saveData();
+                renderTabs();
+                renderTasks();
+
+                // Show success notification
+                showNotification('Kategori berhasil dihapus!', 'success');
+            }
+        }
+
+        // Task Management
+        function openTaskModal(taskId = null) {
+            if (taskId) {
+                // Editing existing task
+                const task = tasks.find(t => t.id == taskId);
+                modalTitle.textContent = 'Edit Tugas';
+                document.getElementById('taskTitle').value = task.title;
+                editingTaskId = taskId;
+                categoryLabel.textContent = tabs.find(t => t.id === task.category)?.name || 'Lainnya';
+                categoryLabel.classList.remove('hidden');
+            } else {
+                // Adding new task
+                modalTitle.textContent = 'Tambah Tugas Baru';
+                taskForm.reset();
+                editingTaskId = null;
+
+                // Show category label based on current tab
+                if (currentTab !== 'all') {
+                    const tab = tabs.find(t => t.id === currentTab);
+                    categoryLabel.textContent = tab ? tab.name : 'Lainnya';
+                    categoryLabel.classList.remove('hidden');
+                } else {
+                    categoryLabel.classList.add('hidden');
+                }
+            }
+
+            taskModal.classList.remove('hidden');
+        }
+
+        function closeTaskModal() {
+            taskModal.classList.add('hidden');
+            taskForm.reset();
+            editingTaskId = null;
+            categoryLabel.classList.add('hidden');
+        }
+
+        function handleTaskSubmit(e) {
+            e.preventDefault();
+
+            const taskData = {
+                title: document.getElementById('taskTitle').value,
+                category: currentTab === 'all' ? 'work' : currentTab,
+                priority: document.querySelector('input[name="priority"]:checked').value,
+                completed: false,
+                createdAt: new Date().toISOString()
+            };
+
+            if (taskData.title) {
+                if (editingTaskId) {
+                    // Update existing task
+                    const index = tasks.findIndex(t => t.id == editingTaskId);
+                    tasks[index] = { ...tasks[index], ...taskData };
+                } else {
+                    // Add new task
+                    taskData.id = Date.now();
+                    tasks.unshift(taskData);
+                }
+
+                saveData();
+                renderTasks();
+                closeTaskModal();
+
+                // Show success notification
+                showNotification(editingTaskId ? 'Tugas berhasil diperbarui!' : 'Tugas berhasil ditambahkan!', 'success');
+            }
+        }
+
+        function toggleTask(id) {
+            const task = tasks.find(t => t.id == id);
+            if (task) {
+                task.completed = !task.completed;
+                saveData();
+                renderTasks();
+            }
+        }
+
+        function deleteTask(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus tugas ini?')) {
+                tasks = tasks.filter(t => t.id != id);
+                saveData();
+                renderTasks();
+
+                // Show success notification
+                showNotification('Tugas berhasil dihapus!', 'success');
+            }
+        }
+
+        // Toggle Completed Tasks
+        function toggleCompleted() {
+            showCompleted = !showCompleted;
+            const icon = toggleCompletedBtn.querySelector('i');
+
+            if (showCompleted) {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+                toggleCompletedBtn.innerHTML = '<i class="fas fa-eye mr-2"></i>Tampilkan Selesai';
+            } else {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+                toggleCompletedBtn.innerHTML = '<i class="fas fa-eye-slash mr-2"></i>Sembunyikan Selesai';
+            }
+
+            renderTasks();
+        }
+
+        // Update category label
+        function updateCategoryLabel() {
+            if (currentTab !== 'all') {
+                const tab = tabs.find(t => t.id === currentTab);
+                categoryLabel.textContent = tab ? tab.name : 'Lainnya';
+                categoryLabel.classList.remove('hidden');
+            } else {
+                categoryLabel.classList.add('hidden');
+            }
+        }
+
+        // Render Tasks
+        function renderTasks() {
+            let filteredTasks = tasks;
+
+            // Filter by tab
+            if (currentTab !== 'all') {
+                filteredTasks = tasks.filter(task => task.category === currentTab);
+            }
+
+            // Filter by completion status
+            if (!showCompleted) {
+                filteredTasks = filteredTasks.filter(task => !task.completed);
+            }
+
+            if (filteredTasks.length === 0) {
+                taskList.innerHTML = '';
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                taskList.innerHTML = filteredTasks.map(task => createTaskHTML(task)).join('');
+
+                // Add event listeners
+                document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+                    checkbox.addEventListener('change', (e) => {
+                        toggleTask(e.target.dataset.id);
+                    });
+                });
+
+                document.querySelectorAll('.edit-task-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const taskId = btn.dataset.id;
+                        openTaskModal(taskId);
+                    });
+                });
+
+                document.querySelectorAll('.delete-task-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        deleteTask(btn.dataset.id);
+                    });
+                });
+            }
+        }
+
+        // Create Task HTML
+        function createTaskHTML(task) {
+            const priorityClass = `priority-${task.priority}`;
+            const completedClass = task.completed ? 'completed' : '';
+            const tab = tabs.find(t => t.id === task.category);
+            const tabIcon = tab ? tab.icon : 'fa-tasks';
+            const tabName = tab ? tab.name : 'Lainnya';
+            const badgeClass = task.priority === 'high' ? 'badge-red' :
+                task.priority === 'medium' ? 'badge-yellow' : 'badge-green';
+
+            return `
+                <div class="task-card bg-white rounded-xl shadow-md p-5 ${priorityClass} ${completedClass} fade-in">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <input type="checkbox" class="task-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500" data-id="${task.id}" ${task.completed ? 'checked' : ''}>
+                            <div>
+                                <h3 class="task-title font-semibold text-gray-800 text-lg">${task.title}</h3>
+                                <div class="flex items-center space-x-3 mt-2">
+                                    <span class="text-sm px-3 py-1 bg-green-100 text-green-700 rounded-full flex items-center">
+                                        <i class="fas ${tabIcon} mr-2"></i>${tabName}
+                                    </span>
+                                    <span class="text-sm text-gray-500">
+                                        ${new Date(task.createdAt).toLocaleDateString('id-ID')}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-xs font-medium px-3 py-1 rounded-full ${badgeClass}">
+                                ${getPriorityText(task.priority)}
+                            </span>
+                            <button class="edit-task-btn text-blue-500 hover:text-blue-700 icon-btn" data-id="${task.id}">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="delete-task-btn text-red-500 hover:text-red-700 icon-btn" data-id="${task.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Helper Functions
+        function getPriorityText(priority) {
+            switch (priority) {
+                case 'high': return 'Tinggi';
+                case 'medium': return 'Sedang';
+                case 'low': return 'Rendah';
+                default: return 'Tidak Ada';
+            }
+        }
+
+        // Export to PDF
+        function exportToPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFontSize(20);
+            doc.text('Daftar Tugas Agenda Digital', 20, 20);
+
+            doc.setFontSize(10);
+            doc.text(`Dicetak pada: ${new Date().toLocaleDateString('id-ID')} ${new Date().toLocaleTimeString('id-ID')}`, 20, 30);
+
+            let yPosition = 50;
+            tasks.forEach((task, index) => {
+                const tab = tabs.find(t => t.id === task.category);
+                const tabName = tab ? tab.name : 'Lainnya';
+                const tabIcon = tab ? tab.icon : 'fa-tasks';
+
+                doc.text(`${index + 1}. ${task.title} [${tabName}] - ${getPriorityText(task.priority)}`, 20, yPosition);
+                yPosition += 10;
+            });
+
+            doc.save('agenda-tugas.pdf');
+        }
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white fade-in z-50 ${type === 'success' ? 'bg-green-500' :
+                type === 'error' ? 'bg-red-500' :
+                    'bg-blue-500'
+                }`;
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' :
+                    type === 'error' ? 'fa-exclamation-circle' :
+                        'fa-info-circle'
+                } mr-2"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Save Data
+        function saveData() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            localStorage.setItem('tabs', JSON.stringify(tabs));
+        }
+
+        // Initialize
+        renderTabs();
+        renderTasks();
+        updateCategoryLabel();
+    </script>
+</body>
+
+</html>
