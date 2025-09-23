@@ -168,10 +168,106 @@
             padding: 4px 8px;
             border-radius: 4px;
         }
+
+        /* Loading spinner */
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #10b981;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body class="min-h-screen">
+    <!-- Token Modal -->
+    <div id="tokenModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md modal-enter">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Token GitHub</h2>
+                    <button id="closeTokenModal" class="text-gray-400 hover:text-gray-600 transition">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Masukkan token GitHub Anda</label>
+                    <input type="password" id="tokenInput"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        placeholder="ghp_...">
+                </div>
+
+                <div class="mb-4 text-sm text-gray-600">
+                    <p>Token diperlukan untuk mengakses data Anda di GitHub.</p>
+                    <p class="mt-1">Anda bisa membuat token di: <a href="https://github.com/settings/tokens"
+                            target="_blank" class="text-green-600 hover:underline">github.com/settings/tokens</a></p>
+                </div>
+
+                <div class="flex justify-between items-center mb-4">
+                    <button id="resetTokenBtn" class="text-red-500 hover:text-red-700 text-sm">
+                        <i class="fas fa-redo mr-1"></i>Reset Token
+                    </button>
+                </div>
+
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="tokenBatal"
+                        class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        Batal
+                    </button>
+                    <button type="button" id="tokenSimpan"
+                        class="green-gradient text-white px-6 py-2 rounded-lg font-medium">
+                        Simpan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center">
+            <div class="spinner mb-4"></div>
+            <p class="text-gray-700">Memuat data...</p>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md modal-enter">
+            <div class="p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-exclamation-circle text-red-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800">Kesalahan</h2>
+                        <p id="errorMessage" class="text-gray-600 mt-1">Terjadi kesalahan saat memuat data</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button id="errorModalClose"
+                        class="w-full green-gradient text-white px-6 py-2 rounded-lg font-medium">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container mx-auto px-4 py-8 max-w-6xl">
         <!-- Header -->
         <header class="mb-8">
@@ -187,10 +283,11 @@
                     <div class="flex space-x-3">
                         <button id="exportBtn"
                             class="bg-white border border-green-500 text-green-600 px-5 py-2.5 rounded-lg hover:bg-green-50 transition flex items-center">
-                            <i class="fas fa-file-pdf mr-2"></i>
+                            <i class="fas fa-file-pdf mr-2"></i>Export PDF
+                        </button>
                         <button id="toggleCompletedBtn"
                             class="bg-white border border-green-500 text-green-600 px-5 py-2.5 rounded-lg hover:bg-green-50 transition flex items-center">
-                            <i class="fas fa-eye-slash mr-2"></i>
+                            <i class="fas fa-eye-slash mr-2"></i>Sembunyikan Selesai
                         </button>
                     </div>
                 </div>
@@ -355,9 +452,17 @@
     </button>
 
     <script>
+        // GitHub API Configuration
+        const GITHUB_API_URL = "https://api.github.com/repos/idarohpusat-blip/App_Albary/contents/database_layanan.json";
+        const TOKEN_KEY = "agenda_github_token";
+        let githubToken = null;
+        let dataLoaded = false;
+        let connectionRetries = 0;
+        const MAX_RETRIES = 3;
+
         // Data Management
-        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        let tabs = JSON.parse(localStorage.getItem('tabs')) || [
+        let tasks = [];
+        let tabs = [
             { id: 'all', name: 'Semua', icon: 'fa-list' },
             { id: 'work', name: 'Kerja', icon: 'fa-briefcase' },
             { id: 'personal', name: 'Pribadi', icon: 'fa-user' },
@@ -387,6 +492,16 @@
         const tabContainer = document.getElementById('tabContainer');
         const categoryLabel = document.getElementById('categoryLabel');
         const modalTitle = document.getElementById('modalTitle');
+        const tokenModal = document.getElementById('tokenModal');
+        const closeTokenModal = document.getElementById('closeTokenModal');
+        const tokenInput = document.getElementById('tokenInput');
+        const tokenSimpan = document.getElementById('tokenSimpan');
+        const tokenBatal = document.getElementById('tokenBatal');
+        const resetTokenBtn = document.getElementById('resetTokenBtn');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const errorModal = document.getElementById('errorModal');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorModalClose = document.getElementById('errorModalClose');
 
         // Event Listeners
         addTaskBtn.addEventListener('click', () => openTaskModal());
@@ -400,6 +515,19 @@
         toggleCompletedBtn.addEventListener('click', toggleCompleted);
         addTabBtnEl.addEventListener('click', () => openTabModal());
 
+        // Token Modal Event Listeners
+        closeTokenModal.addEventListener('click', () => {
+            tokenModal.classList.add('hidden');
+        });
+        tokenBatal.addEventListener('click', () => {
+            tokenModal.classList.add('hidden');
+        });
+        tokenSimpan.addEventListener('click', saveToken);
+        resetTokenBtn.addEventListener('click', resetToken);
+        errorModalClose.addEventListener('click', () => {
+            errorModal.classList.add('hidden');
+        });
+
         // Icon selection
         document.querySelectorAll('.icon-option').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -408,6 +536,181 @@
                 document.getElementById('tabIcon').value = btn.dataset.icon;
             });
         });
+
+        // GitHub API Functions
+        async function loadGithubToken() {
+            const savedToken = localStorage.getItem(TOKEN_KEY);
+            if (savedToken) {
+                githubToken = savedToken;
+                return true;
+            }
+
+            // Show token modal
+            tokenModal.classList.remove('hidden');
+            tokenModal.classList.add('flex');
+            return new Promise((resolve) => {
+                tokenSimpan.onclick = () => {
+                    const token = tokenInput.value.trim();
+                    if (token) {
+                        saveToken();
+                        resolve(true);
+                    }
+                };
+                tokenBatal.onclick = () => {
+                    tokenModal.classList.add('hidden');
+                    tokenModal.classList.remove('flex');
+                    resolve(false);
+                };
+            });
+        }
+
+        function saveToken() {
+            const token = tokenInput.value.trim();
+            if (token) {
+                githubToken = token;
+                localStorage.setItem(TOKEN_KEY, token);
+                tokenModal.classList.add('hidden');
+                tokenModal.classList.remove('flex');
+                connectionRetries = 0; // Reset retry counter
+                loadDataFromGithub();
+            }
+        }
+
+        function resetToken() {
+            if (confirm('Apakah Anda yakin ingin menghapus token yang tersimpan?')) {
+                localStorage.removeItem(TOKEN_KEY);
+                githubToken = null;
+                tokenInput.value = '';
+                showNotification('Token berhasil direset', 'success');
+            }
+        }
+
+        async function loadDataFromGithub() {
+            showLoading(true);
+            try {
+                const data = await fetchDataFromGithub();
+                if (data) {
+                    tasks = data.tasks || [];
+                    tabs = data.tabs || tabs;
+                    dataLoaded = true;
+                    connectionRetries = 0; // Reset retry counter on success
+                    renderTabs();
+                    renderTasks();
+                    updateCategoryLabel();
+                } else {
+                    // If connection fails and we have retries left, show token modal again
+                    if (connectionRetries < MAX_RETRIES) {
+                        connectionRetries++;
+                        showError(`Gagal terhubung ke GitHub. Percobaan ${connectionRetries}/${MAX_RETRIES}. Silakan periksa token Anda.`);
+                        setTimeout(() => {
+                            tokenModal.classList.remove('hidden');
+                            tokenModal.classList.add('flex');
+                        }, 2000);
+                    } else {
+                        showError("Koneksi ke GitHub gagal setelah beberapa percobaan. Silakan periksa token Anda dan coba lagi.");
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading data from GitHub:', error);
+                showError("Terjadi kesalahan saat memuat data: " + error.message);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function fetchDataFromGithub() {
+            if (!githubToken) return null;
+            try {
+                const response = await fetch(GITHUB_API_URL, {
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        showError("Token GitHub tidak valid. Silakan periksa token Anda.");
+                        return null;
+                    }
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const content = atob(data.content);
+                return JSON.parse(content);
+            } catch (error) {
+                console.error('Error fetching data from GitHub:', error);
+                return null;
+            }
+        }
+
+        async function saveDataToGithub() {
+            if (!githubToken) return false;
+
+            try {
+                // Get current file info first
+                const currentData = await fetch(GITHUB_API_URL, {
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                let sha = '';
+                if (currentData.ok) {
+                    const currentFile = await currentData.json();
+                    sha = currentFile.sha;
+                }
+
+                const dataToSave = {
+                    tasks: tasks,
+                    tabs: tabs
+                };
+
+                const content = btoa(JSON.stringify(dataToSave, null, 2));
+                const message = sha ? 'Update agenda data' : 'Create agenda data';
+
+                const response = await fetch(GITHUB_API_URL, {
+                    method: sha ? 'PUT' : 'POST',
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        content: content,
+                        sha: sha || undefined
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+
+                return true;
+            } catch (error) {
+                console.error('Error saving data to GitHub:', error);
+                return false;
+            }
+        }
+
+        function showLoading(show) {
+            if (show) {
+                loadingIndicator.classList.remove('hidden');
+                loadingIndicator.classList.add('flex');
+            } else {
+                loadingIndicator.classList.add('hidden');
+                loadingIndicator.classList.remove('flex');
+            }
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorModal.classList.remove('hidden');
+            errorModal.classList.add('flex');
+        }
 
         // Tab Management
         function renderTabs() {
@@ -491,7 +794,7 @@
             document.querySelectorAll('.icon-option').forEach(b => b.classList.remove('bg-green-100'));
         }
 
-        function handleTabSubmit(e) {
+        async function handleTabSubmit(e) {
             e.preventDefault();
 
             const tabName = document.getElementById('tabName').value.trim();
@@ -513,12 +816,14 @@
                     tabs.push(newTab);
                 }
 
-                saveData();
-                renderTabs();
-                closeTabModalHandler();
-
-                // Show success notification
-                showNotification('Kategori berhasil disimpan!', 'success');
+                const success = await saveDataToGithub();
+                if (success) {
+                    renderTabs();
+                    closeTabModalHandler();
+                    showNotification('Kategori berhasil disimpan!', 'success');
+                } else {
+                    showError('Gagal menyimpan kategori ke GitHub. Silakan coba lagi.');
+                }
             }
         }
 
@@ -526,7 +831,7 @@
             openTabModal(tabId);
         }
 
-        function deleteTab(tabId) {
+        async function deleteTab(tabId) {
             if (confirm('Apakah Anda yakin ingin menghapus kategori ini?')) {
                 tabs = tabs.filter(t => t.id !== tabId);
                 // Move tasks to 'all' category
@@ -540,12 +845,14 @@
                     currentTab = 'all';
                 }
 
-                saveData();
-                renderTabs();
-                renderTasks();
-
-                // Show success notification
-                showNotification('Kategori berhasil dihapus!', 'success');
+                const success = await saveDataToGithub();
+                if (success) {
+                    renderTabs();
+                    renderTasks();
+                    showNotification('Kategori berhasil dihapus!', 'success');
+                } else {
+                    showError('Gagal menghapus kategori dari GitHub. Silakan coba lagi.');
+                }
             }
         }
 
@@ -585,7 +892,7 @@
             categoryLabel.classList.add('hidden');
         }
 
-        function handleTaskSubmit(e) {
+        async function handleTaskSubmit(e) {
             e.preventDefault();
 
             const taskData = {
@@ -607,32 +914,40 @@
                     tasks.unshift(taskData);
                 }
 
-                saveData();
-                renderTasks();
-                closeTaskModal();
-
-                // Show success notification
-                showNotification(editingTaskId ? 'Tugas berhasil diperbarui!' : 'Tugas berhasil ditambahkan!', 'success');
+                const success = await saveDataToGithub();
+                if (success) {
+                    renderTasks();
+                    closeTaskModal();
+                    showNotification(editingTaskId ? 'Tugas berhasil diperbarui!' : 'Tugas berhasil ditambahkan!', 'success');
+                } else {
+                    showError('Gagal menyimpan tugas ke GitHub. Silakan coba lagi.');
+                }
             }
         }
 
-        function toggleTask(id) {
+        async function toggleTask(id) {
             const task = tasks.find(t => t.id == id);
             if (task) {
                 task.completed = !task.completed;
-                saveData();
-                renderTasks();
+                const success = await saveDataToGithub();
+                if (success) {
+                    renderTasks();
+                } else {
+                    showError('Gagal memperbarui status tugas ke GitHub. Silakan coba lagi.');
+                }
             }
         }
 
-        function deleteTask(id) {
+        async function deleteTask(id) {
             if (confirm('Apakah Anda yakin ingin menghapus tugas ini?')) {
                 tasks = tasks.filter(t => t.id != id);
-                saveData();
-                renderTasks();
-
-                // Show success notification
-                showNotification('Tugas berhasil dihapus!', 'success');
+                const success = await saveDataToGithub();
+                if (success) {
+                    renderTasks();
+                    showNotification('Tugas berhasil dihapus!', 'success');
+                } else {
+                    showError('Gagal menghapus tugas dari GitHub. Silakan coba lagi.');
+                }
             }
         }
 
@@ -816,20 +1131,18 @@
             }, 3000);
         }
 
-        // Save Data
-        function saveData() {
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-            localStorage.setItem('tabs', JSON.stringify(tabs));
-        }
-
         // Initialize
-        renderTabs();
-        renderTasks();
-        updateCategoryLabel();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load GitHub token and data
+            loadGithubToken().then(hasToken => {
+                if (hasToken) {
+                    loadDataFromGithub();
+                } else {
+                    showError("Token GitHub diperlukan untuk menggunakan aplikasi ini. Silakan masukkan token Anda.");
+                }
+            });
+        });
     </script>
 </body>
 
-
 </html>
-
-
