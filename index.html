@@ -242,11 +242,12 @@
         </div>
     </div>
 
-    <script>
+   <script>
         // Initialize
         let apps = JSON.parse(localStorage.getItem('albaryApps')) || [];
         let currentEditId = null;
         let currentApp = null;
+        let pressTimer = null;
 
         // DOM Elements
         const appsGrid = document.getElementById('appsGrid');
@@ -284,6 +285,7 @@
         function createAppCard(app) {
             const card = document.createElement('div');
             card.className = 'app-card bg-white rounded-2xl shadow-sm overflow-hidden relative cursor-pointer';
+            card.dataset.appId = app.id;
 
             const defaultIcon = `https://picsum.photos/seed/${app.id}/100/100.jpg`;
             const iconUrl = app.icon || defaultIcon;
@@ -293,23 +295,62 @@
                     <img src="${iconUrl}" alt="${app.name}" 
                         class="w-full h-full object-cover"
                         onerror="this.src='${defaultIcon}'">
-                    ${app.favorite ? '<i class="fas fa-star absolute top-2 right-2 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
-                </div>
-                <div class="p-3">
-                    <h3 class="font-semibold text-gray-800 text-center truncate">${app.name}</h3>
+                    ${app.favorite ? '<i class="fas fa-star absolute top-1 right-1 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
                 </div>
             `;
 
             // Open app on click
-            card.addEventListener('click', () => openUrl(app.url));
+            card.addEventListener('click', (e) => {
+                // Only open URL if not long press
+                if (!card.classList.contains('pressed')) {
+                    openUrl(app.url);
+                }
+            });
 
-            // Show options on long press
+            // Handle long press for mobile
+            card.addEventListener('touchstart', handleTouchStart, { passive: false });
+            card.addEventListener('touchend', handleTouchEnd, { passive: false });
+            card.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+            // Handle right click for desktop
             card.addEventListener('contextmenu', (e) => {
                 e.preventDefault();
                 showAppOptions(app);
             });
 
             return card;
+        }
+
+        // Touch handlers for long press
+        function handleTouchStart(e) {
+            e.preventDefault();
+            const card = e.currentTarget;
+            card.classList.add('pressed');
+
+            pressTimer = setTimeout(() => {
+                showAppOptions(apps.find(a => a.id === card.dataset.appId));
+            }, 500);
+        }
+
+        function handleTouchEnd(e) {
+            e.preventDefault();
+            const card = e.currentTarget;
+            card.classList.remove('pressed');
+
+            if (pressTimer) {
+                clearTimeout(pressTimer);
+                pressTimer = null;
+            }
+        }
+
+        function handleTouchMove(e) {
+            e.preventDefault();
+            if (pressTimer) {
+                const card = e.currentTarget;
+                card.classList.remove('pressed');
+                clearTimeout(pressTimer);
+                pressTimer = null;
+            }
         }
 
         // Show app options
