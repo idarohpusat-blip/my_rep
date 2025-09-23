@@ -98,34 +98,10 @@
             transform: translateY(-24px) scale(0.85);
             color: var(--primary);
         }
-
-        /* Long press indicator */
-        .long-press-indicator {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 0.75rem;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .long-press-indicator.active {
-            opacity: 1;
-        }
-
-        /* Prevent text selection during long press */
-        .app-card.no-select {
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
     </style>
 </head>
 
 <body class="bg-slate-50 min-h-screen pb-20">
-
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-10">
         <div class="px-4 py-3">
@@ -135,38 +111,29 @@
                     <img src="icon.png" alt="Albary Icon" class="w-8 h-8 mr-2 rounded-full border-2 border-green-600">
                     AppAlbary
                 </h1>
-                <button onclick="showStats()" class="text-gray-600">
-                    <i class="fas fa-chart-line text-xl"></i>
-                </button>
+                <div class="flex space-x-3">
+                    <button onclick="toggleSearch()" class="text-gray-600">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                    <button onclick="showStats()" class="text-gray-600">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </button>
+                </div>
             </div>
 
             <!-- Search Bar -->
-            <div class="relative">
-                <input type="text" id="searchInput" placeholder="Cari aplikasi..."
-                    class="search-input w-full px-4 py-3 pl-12 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500">
-                <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+            <div id="searchContainer" class="hidden">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Cari aplikasi..."
+                        class="search-input w-full px-4 py-3 pl-12 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500">
+                    <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="px-4 py-4">
-        <!-- Category Tabs -->
-        <div class="flex space-x-2 mb-6 overflow-x-auto pb-2 -mx-4 px-4">
-            <button class="category-tab px-4 py-2 bg-green-600 text-white rounded-full text-sm whitespace-nowrap"
-                data-category="all">
-                Semua
-            </button>
-            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap"
-                data-category="recent">
-                Terbaru
-            </button>
-            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap"
-                data-category="favorites">
-                Favorit
-            </button>
-        </div>
-
         <!-- Apps Grid -->
         <div id="appsGrid" class="grid grid-cols-2 gap-4">
             <!-- Apps will be dynamically inserted here -->
@@ -261,85 +228,51 @@
         </div>
     </div>
 
-    <!-- Action Sheet -->
-    <div id="actionSheet" class="hidden fixed inset-0 z-40 flex items-end">
-        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="closeActionSheet()"></div>
-        <div class="bg-white w-full rounded-t-3xl p-6 relative">
+    <!-- App Options Modal -->
+    <div id="optionsModal" class="hidden fixed inset-0 modal-backdrop bg-black bg-opacity-50 z-50 flex items-end">
+        <div class="bg-white w-full rounded-t-3xl p-6 slide-up">
             <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
-            <h3 class="text-lg font-semibold mb-4">Aksi</h3>
+            <h3 class="text-lg font-semibold mb-4">Aksi Aplikasi</h3>
 
-            <div id="actionSheetContent" class="space-y-3">
-                <!-- Actions will be dynamically inserted -->
+            <div id="optionsContent" class="space-y-3">
+                <!-- Options will be dynamically inserted -->
             </div>
         </div>
     </div>
-
-    <!-- Hidden anchor for opening URLs -->
-    <a id="urlAnchor" target="_blank" style="display: none;"></a>
 
     <script>
         // Initialize
         let apps = JSON.parse(localStorage.getItem('albaryApps')) || [];
         let currentEditId = null;
         let currentApp = null;
-        let currentCategory = 'all';
-        let longPressTimer = null;
-        let longPressDelay = 500; // 500ms for long press
-        let touchStartTime = 0;
-        let isLongPress = false;
 
         // DOM Elements
         const appsGrid = document.getElementById('appsGrid');
         const emptyState = document.getElementById('emptyState');
         const searchInput = document.getElementById('searchInput');
+        const searchContainer = document.getElementById('searchContainer');
         const appModal = document.getElementById('appModal');
         const appForm = document.getElementById('appForm');
         const modalTitle = document.getElementById('modalTitle');
         const statsModal = document.getElementById('statsModal');
-        const actionSheet = document.getElementById('actionSheet');
-        const urlAnchor = document.getElementById('urlAnchor');
+        const optionsModal = document.getElementById('optionsModal');
 
         // Event Listeners
         searchInput.addEventListener('input', handleSearch);
         appForm.addEventListener('submit', handleSubmit);
 
-        // Category Tabs
-        document.querySelectorAll('.category-tab').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                document.querySelectorAll('.category-tab').forEach(t => {
-                    t.classList.remove('bg-green-600', 'text-white');
-                    t.classList.add('bg-white', 'text-gray-600');
-                });
-
-                e.target.classList.remove('bg-white', 'text-gray-600');
-                e.target.classList.add('bg-green-600', 'text-white');
-
-                currentCategory = e.target.dataset.category;
-                renderApps();
-            });
-        });
-
         // Render apps
         function renderApps(appsToRender = apps) {
             appsGrid.innerHTML = '';
 
-            let filteredApps = appsToRender;
-
-            // Filter by category
-            if (currentCategory === 'recent') {
-                filteredApps = appsToRender.slice(-5);
-            } else if (currentCategory === 'favorites') {
-                filteredApps = appsToRender.filter(app => app.favorite);
-            }
-
-            if (filteredApps.length === 0) {
+            if (appsToRender.length === 0) {
                 emptyState.classList.remove('hidden');
                 return;
             }
 
             emptyState.classList.add('hidden');
 
-            filteredApps.forEach(app => {
+            appsToRender.forEach(app => {
                 const appCard = createAppCard(app);
                 appsGrid.appendChild(appCard);
             });
@@ -348,121 +281,41 @@
         // Create app card
         function createAppCard(app) {
             const card = document.createElement('div');
-            card.className = 'app-card bg-white rounded-2xl shadow-sm overflow-hidden relative';
-            card.dataset.appId = app.id;
+            card.className = 'app-card bg-white rounded-2xl shadow-sm overflow-hidden relative cursor-pointer';
 
             const defaultIcon = `https://picsum.photos/seed/${app.id}/100/100.jpg`;
             const iconUrl = app.icon || defaultIcon;
 
             card.innerHTML = `
-                <div class="long-press-indicator"></div>
                 <div class="relative aspect-square">
                     <img src="${iconUrl}" alt="${app.name}" 
                         class="w-full h-full object-cover"
                         onerror="this.src='${defaultIcon}'">
                     ${app.favorite ? '<i class="fas fa-star absolute top-2 right-2 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
                 </div>
-                <div class="p-1">
-                    <h3 class="font-semibold text-gray-800 mb-1 text-center truncate">${app.name}</h3>
+                <div class="p-3">
+                    <h3 class="font-semibold text-gray-800 text-center truncate">${app.name}</h3>
                 </div>
             `;
 
-            // Add event listeners
-            card.addEventListener('touchstart', (e) => handleTouchStart(e, app), { passive: false });
-            card.addEventListener('touchend', (e) => handleTouchEnd(e, app));
-            card.addEventListener('touchmove', handleTouchMove);
-            card.addEventListener('click', (e) => handleClick(e, app));
+            // Open app on click
+            card.addEventListener('click', () => openUrl(app.url));
+
+            // Show options on long press
+            card.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                showAppOptions(app);
+            });
 
             return card;
         }
 
-        // Handle touch start
-        function handleTouchStart(e, app) {
-            e.preventDefault();
-            touchStartTime = Date.now();
-
-            // Clear any existing timer
-            if (longPressTimer) {
-                clearTimeout(longPressTimer);
-            }
-
-            // Prevent default to avoid scrolling
-            e.preventDefault();
-
-            // Set a new timer for long press
-            longPressTimer = setTimeout(() => {
-                isLongPress = true;
-                showAppActions(app);
-                const indicator = e.currentTarget.querySelector('.long-press-indicator');
-                indicator.classList.add('active');
-                e.currentTarget.classList.add('no-select');
-            }, longPressDelay);
-        }
-
-        // Handle touch end
-        function handleTouchEnd(e, app) {
-            e.preventDefault();
-
-            // Clear the timer
-            if (longPressTimer) {
-                clearTimeout(longPressTimer);
-                longPressTimer = null;
-            }
-
-            // Remove the indicator and selection prevention
-            const indicator = e.currentTarget.querySelector('.long-press-indicator');
-            indicator.classList.remove('active');
-            e.currentTarget.classList.remove('no-select');
-
-            // If it was a short tap, open the app
-            const touchDuration = Date.now() - touchStartTime;
-            if (touchDuration < longPressDelay && !isLongPress) {
-                setTimeout(() => {
-                    openUrl(app.url);
-                }, 100);
-            }
-
-            // Reset long press flag
-            isLongPress = false;
-        }
-
-        // Handle touch move
-        function handleTouchMove(e) {
-            e.preventDefault();
-
-            // Clear the timer if user moves finger
-            if (longPressTimer) {
-                clearTimeout(longPressTimer);
-                longPressTimer = null;
-            }
-
-            // Remove the indicator
-            const card = e.currentTarget;
-            const indicator = card.querySelector('.long-press-indicator');
-            indicator.classList.remove('active');
-            card.classList.remove('no-select');
-
-            // Reset long press flag
-            isLongPress = false;
-        }
-
-        // Handle click (for mouse events)
-        function handleClick(e, app) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            // Only handle click if it's not a touch device
-            if (!('ontouchstart' in window)) {
-                openUrl(app.url);
-            }
-        }
-
-        // Show app actions
-        function showAppActions(app) {
+        // Show app options
+        function showAppOptions(app) {
             currentApp = app;
-            const actionSheetContent = document.getElementById('actionSheetContent');
+            const optionsContent = document.getElementById('optionsContent');
 
-            actionSheetContent.innerHTML = `
+            optionsContent.innerHTML = `
                 <button onclick="openEditModal('${app.id}')" 
                     class="w-full flex items-center space-x-3 p-4 hover:bg-gray-50 rounded-xl">
                     <i class="fas fa-edit text-gray-600"></i>
@@ -485,12 +338,12 @@
                 </button>
             `;
 
-            actionSheet.classList.remove('hidden');
+            optionsModal.classList.remove('hidden');
         }
 
-        // Close action sheet
-        function closeActionSheet() {
-            actionSheet.classList.add('hidden');
+        // Open URL in the same tab
+        function openUrl(url) {
+            window.location.href = url;
         }
 
         // Toggle favorite
@@ -500,17 +353,8 @@
                 app.favorite = !app.favorite;
                 saveToLocalStorage();
                 renderApps();
-                closeActionSheet();
+                optionsModal.classList.add('hidden');
             }
-        }
-
-        // Open URL using anchor tag
-        function openUrl(url) {
-            urlAnchor.href = url;
-            document.body.appendChild(urlAnchor);
-            urlAnchor.click();
-            document.body.removeChild(urlAnchor);
-            closeActionSheet();
         }
 
         // Delete app
@@ -518,7 +362,19 @@
             apps = apps.filter(app => app.id !== id);
             saveToLocalStorage();
             renderApps();
-            closeActionSheet();
+            optionsModal.classList.add('hidden');
+        }
+
+        // Toggle search
+        function toggleSearch() {
+            if (searchContainer.classList.contains('hidden')) {
+                searchContainer.classList.remove('hidden');
+                searchInput.focus();
+            } else {
+                searchContainer.classList.add('hidden');
+                searchInput.value = '';
+                renderApps();
+            }
         }
 
         // Open add modal
@@ -542,7 +398,7 @@
             document.getElementById('appIcon').value = app.icon || '';
 
             appModal.classList.remove('hidden');
-            closeActionSheet();
+            optionsModal.classList.add('hidden');
         }
 
         // Close modal
@@ -638,6 +494,9 @@
             }
             if (e.target === statsModal) {
                 hideStats();
+            }
+            if (e.target === optionsModal) {
+                optionsModal.classList.add('hidden');
             }
         });
     </script>
