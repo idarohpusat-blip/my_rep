@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Albary - AppAlbary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles */
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f0f9ff;
+        }
+
+        .app-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .app-card:active {
+            transform: scale(0.98);
+        }
+
+        .fab {
+            box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .fab:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.3);
+        }
+
+        .modal-backdrop {
+            backdrop-filter: blur(5px);
+        }
+
+        .slide-up {
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .search-input {
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .icon-fallback {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+
+        .floating-label {
+            transition: all 0.2s ease;
+        }
+
+        .input-field:focus ~ .floating-label,
+        .input-field:not(:placeholder-shown) ~ .floating-label {
+            transform: translateY(-24px) scale(0.85);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen pb-20">
+    <!-- Status Bar -->
+    <div class="bg-white px-4 py-1 flex justify-between items-center text-xs">
+        <span>9:41</span>
+        <div class="flex space-x-1">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="px-4 py-3">
+            <div class="flex items-center justify-between mb-3">
+                <h1 class="text-2xl font-bold text-gray-800">Albary</h1>
+                <button onclick="showStats()" class="text-gray-600">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="Cari aplikasi..." 
+                    class="search-input w-full px-4 py-3 pl-12 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500">
+                <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-4 py-4">
+        <!-- Category Tabs -->
+        <div class="flex space-x-2 mb-6 overflow-x-auto pb-2 -mx-4 px-4">
+            <button class="category-tab px-4 py-2 bg-green-600 text-white rounded-full text-sm whitespace-nowrap" data-category="all">
+                Semua
+            </button>
+            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap" data-category="recent">
+                Terbaru
+            </button>
+            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap" data-category="favorites">
+                Favorit
+            </button>
+        </div>
+
+        <!-- Apps Grid -->
+        <div id="appsGrid" class="grid grid-cols-2 gap-4">
+            <!-- Apps will be dynamically inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-12">
+            <div class="w-24 h-24 mx-auto mb-4 icon-fallback rounded-full flex items-center justify-center">
+                <i class="fas fa-folder-open text-4xl text-green-600"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-700 mb-2">Belum ada aplikasi</h3>
+            <p class="text-gray-500 text-sm">Mulai dengan menambahkan aplikasi favorit Anda</p>
+        </div>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button onclick="openAddModal()" class="fab fixed bottom-6 right-6 w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center">
+        <i class="fas fa-plus text-xl"></i>
+    </button>
+
+    <!-- Stats Modal -->
+    <div id="statsModal" class="hidden fixed inset-0 modal-backdrop bg-black bg-opacity-50 z-50 flex items-end">
+        <div class="bg-white w-full rounded-t-3xl p-6 slide-up">
+            <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
+            <h2 class="text-xl font-bold mb-4">Statistik Aplikasi</h2>
+            
+            <div class="grid grid-cols-3 gap-4 mb-6">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600" id="totalApps">0</div>
+                    <div class="text-sm text-gray-500">Total</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600" id="totalFavorites">0</div>
+                    <div class="text-sm text-gray-500">Favorit</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-600" id="lastAdded">-</div>
+                    <div class="text-sm text-gray-500">Terbaru</div>
+                </div>
+            </div>
+            
+            <button onclick="hideStats()" class="w-full py-3 bg-gray-100 rounded-xl text-gray-700 font-medium">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div id="appModal" class="hidden fixed inset-0 modal-backdrop bg-black bg-opacity-50 z-50 flex items-end">
+        <div class="bg-white w-full rounded-t-3xl p-6 slide-up">
+            <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
+            <h2 class="text-xl font-bold mb-6" id="modalTitle">Tambah Aplikasi</h2>
+            
+            <form id="appForm" class="space-y-4">
+                <input type="hidden" id="appId">
+                
+                <div class="relative">
+                    <input type="text" id="appName" placeholder=" " required
+                        class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
+                    <label for="appName" class="floating-label absolute left-4 top-3 text-gray-500 pointer-events-none">
+                        Nama Aplikasi
+                    </label>
+                </div>
+                
+                <div class="relative">
+                    <input type="url" id="appUrl" placeholder=" " required
+                        class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
+                    <label for="appUrl" class="floating-label absolute left-4 top-3 text-gray-500 pointer-events-none">
+                        URL Aplikasi
+                    </label>
+                </div>
+                
+                <div class="relative">
+                    <input type="url" id="appIcon" placeholder=" "
+                        class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
+                    <label for="appIcon" class="floating-label absolute left-4 top-3 text-gray-500 pointer-events-none">
+                        URL Icon (opsional)
+                    </label>
+                </div>
+                
+                <div class="flex space-x-3 pt-4">
+                    <button type="button" onclick="closeModal()" 
+                        class="flex-1 py-3 bg-gray-100 rounded-xl text-gray-700 font-medium">
+                        Batal
+                    </button>
+                    <button type="submit" 
+                        class="flex-1 py-3 bg-green-600 text-white rounded-xl font-medium">
+                        Simpan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Action Sheet -->
+    <div id="actionSheet" class="hidden fixed inset-0 z-40 flex items-end">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="closeActionSheet()"></div>
+        <div class="bg-white w-full rounded-t-3xl p-6 relative">
+            <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
+            <h3 class="text-lg font-semibold mb-4">Aksi</h3>
+            
+            <div id="actionSheetContent" class="space-y-3">
+                <!-- Actions will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize
+        let apps = JSON.parse(localStorage.getItem('albaryApps')) || [];
+        let currentEditId = null;
+        let currentApp = null;
+        let currentCategory = 'all';
+
+        // DOM Elements
+        const appsGrid = document.getElementById('appsGrid');
+        const emptyState = document.getElementById('emptyState');
+        const searchInput = document.getElementById('searchInput');
+        const appModal = document.getElementById('appModal');
+        const appForm = document.getElementById('appForm');
+        const modalTitle = document.getElementById('modalTitle');
+        const statsModal = document.getElementById('statsModal');
+        const actionSheet = document.getElementById('actionSheet');
+
+        // Event Listeners
+        searchInput.addEventListener('input', handleSearch);
+        appForm.addEventListener('submit', handleSubmit);
+
+        // Category Tabs
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('.category-tab').forEach(t => {
+                    t.classList.remove('bg-green-600', 'text-white');
+                    t.classList.add('bg-white', 'text-gray-600');
+                });
+                
+                e.target.classList.remove('bg-white', 'text-gray-600');
+                e.target.classList.add('bg-green-600', 'text-white');
+                
+                currentCategory = e.target.dataset.category;
+                renderApps();
+            });
+        });
+
+        // Render apps
+        function renderApps(appsToRender = apps) {
+            appsGrid.innerHTML = '';
+            
+            let filteredApps = appsToRender;
+            
+            // Filter by category
+            if (currentCategory === 'recent') {
+                filteredApps = appsToRender.slice(-5);
+            } else if (currentCategory === 'favorites') {
+                filteredApps = appsToRender.filter(app => app.favorite);
+            }
+            
+            if (filteredApps.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            emptyState.classList.add('hidden');
+            
+            filteredApps.forEach(app => {
+                const appCard = createAppCard(app);
+                appsGrid.appendChild(appCard);
+            });
+        }
+
+        // Create app card
+        function createAppCard(app) {
+            const card = document.createElement('div');
+            card.className = 'app-card bg-white rounded-2xl shadow-sm overflow-hidden';
+            
+            const defaultIcon = `https://picsum.photos/seed/${app.id}/100/100.jpg`;
+            const iconUrl = app.icon || defaultIcon;
+            
+            card.innerHTML = `
+                <div class="relative aspect-square">
+                    <img src="${iconUrl}" alt="${app.name}" 
+                        class="w-full h-full object-cover"
+                        onerror="this.src='${defaultIcon}'">
+                    ${app.favorite ? '<i class="fas fa-star absolute top-2 right-2 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1 truncate">${app.name}</h3>
+                    <a href="${app.url}" target="_blank" 
+                        class="text-sm text-green-600 hover:underline block">
+                        ${app.url}
+                    </a>
+                </div>
+            `;
+            
+            card.addEventListener('click', () => showAppActions(app));
+            
+            return card;
+        }
+
+        // Show app actions
+        function showAppActions(app) {
+            currentApp = app;
+            const actionSheetContent = document.getElementById('actionSheetContent');
+            
+            actionSheetContent.innerHTML = `
+                <button onclick="openEditModal('${app.id}')" 
+                    class="w-full flex items-center space-x-3 p-4 hover:bg-gray-50 rounded-xl">
+                    <i class="fas fa-edit text-gray-600"></i>
+                    <span>Edit</span>
+                </button>
+                <button onclick="toggleFavorite('${app.id}')" 
+                    class="w-full flex items-center space-x-3 p-4 hover:bg-gray-50 rounded-xl">
+                    <i class="fas fa-star ${app.favorite ? 'text-yellow-500' : 'text-gray-400'}"></i>
+                    <span>${app.favorite ? 'Hapus Favorit' : 'Tambah Favorit'}</span>
+                </button>
+                <button onclick="openUrl('${app.url}')" 
+                    class="w-full flex items-center space-x-3 p-4 hover:bg-gray-50 rounded-xl">
+                    <i class="fas fa-external-link-alt text-gray-600"></i>
+                    <span>Buka Aplikasi</span>
+                </button>
+                <button onclick="deleteApp('${app.id}')" 
+                    class="w-full flex items-center space-x-3 p-4 hover:bg-red-50 rounded-xl text-red-600">
+                    <i class="fas fa-trash"></i>
+                    <span>Hapus</span>
+                </button>
+            `;
+            
+            actionSheet.classList.remove('hidden');
+        }
+
+        // Close action sheet
+        function closeActionSheet() {
+            actionSheet.classList.add('hidden');
+        }
+
+        // Toggle favorite
+        function toggleFavorite(id) {
+            const app = apps.find(a => a.id === id);
+            if (app) {
+                app.favorite = !app.favorite;
+                saveToLocalStorage();
+                renderApps();
+                closeActionSheet();
+            }
+        }
+
+        // Open URL
+        function openUrl(url) {
+            window.open(url, '_blank');
+            closeActionSheet();
+        }
+
+        // Delete app
+        function deleteApp(id) {
+            apps = apps.filter(app => app.id !== id);
+            saveToLocalStorage();
+            renderApps();
+            closeActionSheet();
+        }
+
+        // Open add modal
+        function openAddModal() {
+            currentEditId = null;
+            modalTitle.textContent = 'Tambah Aplikasi';
+            appForm.reset();
+            appModal.classList.remove('hidden');
+        }
+
+        // Open edit modal
+        function openEditModal(id) {
+            const app = apps.find(a => a.id === id);
+            if (!app) return;
+            
+            currentEditId = id;
+            modalTitle.textContent = 'Edit Aplikasi';
+            
+            document.getElementById('appName').value = app.name;
+            document.getElementById('appUrl').value = app.url;
+            document.getElementById('appIcon').value = app.icon || '';
+            
+            appModal.classList.remove('hidden');
+            closeActionSheet();
+        }
+
+        // Close modal
+        function closeModal() {
+            appModal.classList.add('hidden');
+            appForm.reset();
+        }
+
+        // Show stats
+        function showStats() {
+            document.getElementById('totalApps').textContent = apps.length;
+            document.getElementById('totalFavorites').textContent = apps.filter(a => a.favorite).length;
+            
+            if (apps.length > 0) {
+                const lastApp = apps.reduce((latest, app) => 
+                    new Date(app.createdAt) > new Date(latest.createdAt) ? app : latest
+                );
+                const date = new Date(lastApp.createdAt);
+                document.getElementById('lastAdded').textContent = date.toLocaleDateString('id-ID', { month: 'short', day: 'numeric' });
+            } else {
+                document.getElementById('lastAdded').textContent = '-';
+            }
+            
+            statsModal.classList.remove('hidden');
+        }
+
+        // Hide stats
+        function hideStats() {
+            statsModal.classList.add('hidden');
+        }
+
+        // Handle search
+        function handleSearch(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredApps = apps.filter(app => 
+                app.name.toLowerCase().includes(searchTerm) || 
+                app.url.toLowerCase().includes(searchTerm)
+            );
+            renderApps(filteredApps);
+        }
+
+        // Handle form submit
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('appName').value;
+            const url = document.getElementById('appUrl').value;
+            const icon = document.getElementById('appIcon').value;
+            
+            if (currentEditId) {
+                // Update existing app
+                const index = apps.findIndex(app => app.id === currentEditId);
+                if (index !== -1) {
+                    apps[index] = {
+                        ...apps[index],
+                        name,
+                        url,
+                        icon,
+                        updatedAt: new Date().toISOString()
+                    };
+                }
+            } else {
+                // Add new app
+                const newApp = {
+                    id: Date.now().toString(),
+                    name,
+                    url,
+                    icon,
+                    favorite: false,
+                    createdAt: new Date().toISOString(),
+                    updatedAt: new Date().toISOString()
+                };
+                apps.push(newApp);
+            }
+            
+            saveToLocalStorage();
+            renderApps();
+            closeModal();
+        }
+
+        // Save to local storage
+        function saveToLocalStorage() {
+            localStorage.setItem('albaryApps', JSON.stringify(apps));
+        }
+
+        // Initial render
+        renderApps();
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === appModal) {
+                closeModal();
+            }
+            if (e.target === statsModal) {
+                hideStats();
+            }
+        });
+    </script>
+</body>
+</html>
