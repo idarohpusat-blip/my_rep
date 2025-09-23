@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Albary - AppAlbary</title>
+    <title>Albary - Manajemen Aplikasi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -54,6 +55,7 @@
                 transform: translateY(100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -68,6 +70,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -90,13 +93,37 @@
             transition: all 0.2s ease;
         }
 
-        .input-field:focus ~ .floating-label,
-        .input-field:not(:placeholder-shown) ~ .floating-label {
+        .input-field:focus~.floating-label,
+        .input-field:not(:placeholder-shown)~.floating-label {
             transform: translateY(-24px) scale(0.85);
             color: var(--primary);
         }
+
+        /* Long press indicator */
+        .long-press-indicator {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .long-press-indicator.active {
+            opacity: 1;
+        }
+
+        /* Prevent text selection during long press */
+        .app-card.no-select {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 min-h-screen pb-20">
     <!-- Status Bar -->
     <div class="bg-white px-4 py-1 flex justify-between items-center text-xs">
@@ -112,15 +139,19 @@
     <header class="bg-white shadow-sm sticky top-0 z-10">
         <div class="px-4 py-3">
             <div class="flex items-center justify-between mb-3">
-                <h1 class="text-2xl font-bold text-gray-800">Albary</h1>
+                <!-- Title with icon -->
+                <h1 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <img src="icon.png" alt="Albary Icon" class="w-8 h-8 mr-2 rounded-full border-2 border-green-600">
+                    AppAlbary
+                </h1>
                 <button onclick="showStats()" class="text-gray-600">
                     <i class="fas fa-chart-line text-xl"></i>
                 </button>
             </div>
-            
+
             <!-- Search Bar -->
             <div class="relative">
-                <input type="text" id="searchInput" placeholder="Cari aplikasi..." 
+                <input type="text" id="searchInput" placeholder="Cari aplikasi..."
                     class="search-input w-full px-4 py-3 pl-12 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500">
                 <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
             </div>
@@ -131,13 +162,16 @@
     <main class="px-4 py-4">
         <!-- Category Tabs -->
         <div class="flex space-x-2 mb-6 overflow-x-auto pb-2 -mx-4 px-4">
-            <button class="category-tab px-4 py-2 bg-green-600 text-white rounded-full text-sm whitespace-nowrap" data-category="all">
+            <button class="category-tab px-4 py-2 bg-green-600 text-white rounded-full text-sm whitespace-nowrap"
+                data-category="all">
                 Semua
             </button>
-            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap" data-category="recent">
+            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap"
+                data-category="recent">
                 Terbaru
             </button>
-            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap" data-category="favorites">
+            <button class="category-tab px-4 py-2 bg-white text-gray-600 rounded-full text-sm whitespace-nowrap"
+                data-category="favorites">
                 Favorit
             </button>
         </div>
@@ -158,7 +192,8 @@
     </main>
 
     <!-- Floating Action Button -->
-    <button onclick="openAddModal()" class="fab fixed bottom-6 right-6 w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center">
+    <button onclick="openAddModal()"
+        class="fab fixed bottom-6 right-6 w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center">
         <i class="fas fa-plus text-xl"></i>
     </button>
 
@@ -167,7 +202,7 @@
         <div class="bg-white w-full rounded-t-3xl p-6 slide-up">
             <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
             <h2 class="text-xl font-bold mb-4">Statistik Aplikasi</h2>
-            
+
             <div class="grid grid-cols-3 gap-4 mb-6">
                 <div class="text-center">
                     <div class="text-3xl font-bold text-green-600" id="totalApps">0</div>
@@ -182,7 +217,7 @@
                     <div class="text-sm text-gray-500">Terbaru</div>
                 </div>
             </div>
-            
+
             <button onclick="hideStats()" class="w-full py-3 bg-gray-100 rounded-xl text-gray-700 font-medium">
                 Tutup
             </button>
@@ -194,10 +229,10 @@
         <div class="bg-white w-full rounded-t-3xl p-6 slide-up">
             <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
             <h2 class="text-xl font-bold mb-6" id="modalTitle">Tambah Aplikasi</h2>
-            
+
             <form id="appForm" class="space-y-4">
                 <input type="hidden" id="appId">
-                
+
                 <div class="relative">
                     <input type="text" id="appName" placeholder=" " required
                         class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
@@ -205,7 +240,7 @@
                         Nama Aplikasi
                     </label>
                 </div>
-                
+
                 <div class="relative">
                     <input type="url" id="appUrl" placeholder=" " required
                         class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
@@ -213,7 +248,7 @@
                         URL Aplikasi
                     </label>
                 </div>
-                
+
                 <div class="relative">
                     <input type="url" id="appIcon" placeholder=" "
                         class="input-field w-full px-4 py-3 bg-gray-100 rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-green-500 peer">
@@ -221,14 +256,13 @@
                         URL Icon (opsional)
                     </label>
                 </div>
-                
+
                 <div class="flex space-x-3 pt-4">
-                    <button type="button" onclick="closeModal()" 
+                    <button type="button" onclick="closeModal()"
                         class="flex-1 py-3 bg-gray-100 rounded-xl text-gray-700 font-medium">
                         Batal
                     </button>
-                    <button type="submit" 
-                        class="flex-1 py-3 bg-green-600 text-white rounded-xl font-medium">
+                    <button type="submit" class="flex-1 py-3 bg-green-600 text-white rounded-xl font-medium">
                         Simpan
                     </button>
                 </div>
@@ -242,7 +276,7 @@
         <div class="bg-white w-full rounded-t-3xl p-6 relative">
             <div class="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
             <h3 class="text-lg font-semibold mb-4">Aksi</h3>
-            
+
             <div id="actionSheetContent" class="space-y-3">
                 <!-- Actions will be dynamically inserted -->
             </div>
@@ -255,6 +289,10 @@
         let currentEditId = null;
         let currentApp = null;
         let currentCategory = 'all';
+        let longPressTimer = null;
+        let longPressDelay = 500; // 500ms for long press
+        let touchStartTime = 0;
+        let isLongPress = false;
 
         // DOM Elements
         const appsGrid = document.getElementById('appsGrid');
@@ -277,10 +315,10 @@
                     t.classList.remove('bg-green-600', 'text-white');
                     t.classList.add('bg-white', 'text-gray-600');
                 });
-                
+
                 e.target.classList.remove('bg-white', 'text-gray-600');
                 e.target.classList.add('bg-green-600', 'text-white');
-                
+
                 currentCategory = e.target.dataset.category;
                 renderApps();
             });
@@ -289,23 +327,23 @@
         // Render apps
         function renderApps(appsToRender = apps) {
             appsGrid.innerHTML = '';
-            
+
             let filteredApps = appsToRender;
-            
+
             // Filter by category
             if (currentCategory === 'recent') {
                 filteredApps = appsToRender.slice(-5);
             } else if (currentCategory === 'favorites') {
                 filteredApps = appsToRender.filter(app => app.favorite);
             }
-            
+
             if (filteredApps.length === 0) {
                 emptyState.classList.remove('hidden');
                 return;
             }
-            
+
             emptyState.classList.add('hidden');
-            
+
             filteredApps.forEach(app => {
                 const appCard = createAppCard(app);
                 appsGrid.appendChild(appCard);
@@ -315,37 +353,120 @@
         // Create app card
         function createAppCard(app) {
             const card = document.createElement('div');
-            card.className = 'app-card bg-white rounded-2xl shadow-sm overflow-hidden';
-            
+            card.className = 'app-card bg-white rounded-2xl shadow-sm overflow-hidden relative';
+            card.dataset.appId = app.id;
+
             const defaultIcon = `https://picsum.photos/seed/${app.id}/100/100.jpg`;
             const iconUrl = app.icon || defaultIcon;
-            
+
             card.innerHTML = `
+                <div class="long-press-indicator"></div>
                 <div class="relative aspect-square">
                     <img src="${iconUrl}" alt="${app.name}" 
                         class="w-full h-full object-cover"
                         onerror="this.src='${defaultIcon}'">
                     ${app.favorite ? '<i class="fas fa-star absolute top-2 right-2 text-yellow-500 bg-white rounded-full p-1.5"></i>' : ''}
                 </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-gray-800 mb-1 truncate">${app.name}</h3>
-                    <a href="${app.url}" target="_blank" 
-                        class="text-sm text-green-600 hover:underline block">
-                        ${app.url}
-                    </a>
+                <div class="p-1">
+                    <h3 class="font-semibold text-gray-800 mb-1 text-center truncate">${app.name}</h3>
                 </div>
             `;
-            
-            card.addEventListener('click', () => showAppActions(app));
-            
+
+            // Add event listeners
+            card.addEventListener('touchstart', (e) => handleTouchStart(e, app), { passive: false });
+            card.addEventListener('touchend', (e) => handleTouchEnd(e, app));
+            card.addEventListener('touchmove', handleTouchMove);
+            card.addEventListener('click', (e) => handleClick(e, app));
+
             return card;
+        }
+
+        // Handle touch start
+        function handleTouchStart(e, app) {
+            e.preventDefault();
+            touchStartTime = Date.now();
+
+            // Clear any existing timer
+            if (longPressTimer) {
+                clearTimeout(longPressTimer);
+            }
+
+            // Prevent default to avoid scrolling
+            e.preventDefault();
+
+            // Set a new timer for long press
+            longPressTimer = setTimeout(() => {
+                isLongPress = true;
+                showAppActions(app);
+                const indicator = e.currentTarget.querySelector('.long-press-indicator');
+                indicator.classList.add('active');
+                e.currentTarget.classList.add('no-select');
+            }, longPressDelay);
+        }
+
+        // Handle touch end
+        function handleTouchEnd(e, app) {
+            e.preventDefault();
+
+            // Clear the timer
+            if (longPressTimer) {
+                clearTimeout(longPressTimer);
+                longPressTimer = null;
+            }
+
+            // Remove the indicator and selection prevention
+            const indicator = e.currentTarget.querySelector('.long-press-indicator');
+            indicator.classList.remove('active');
+            e.currentTarget.classList.remove('no-select');
+
+            // If it was a short tap, open the app
+            const touchDuration = Date.now() - touchStartTime;
+            if (touchDuration < longPressDelay && !isLongPress) {
+                setTimeout(() => {
+                    openUrl(app.url);
+                }, 100);
+            }
+
+            // Reset long press flag
+            isLongPress = false;
+        }
+
+        // Handle touch move
+        function handleTouchMove(e) {
+            e.preventDefault();
+
+            // Clear the timer if user moves finger
+            if (longPressTimer) {
+                clearTimeout(longPressTimer);
+                longPressTimer = null;
+            }
+
+            // Remove the indicator
+            const card = e.currentTarget;
+            const indicator = card.querySelector('.long-press-indicator');
+            indicator.classList.remove('active');
+            card.classList.remove('no-select');
+
+            // Reset long press flag
+            isLongPress = false;
+        }
+
+        // Handle click (for mouse events)
+        function handleClick(e, app) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Only handle click if it's not a touch device
+            if (!('ontouchstart' in window)) {
+                openUrl(app.url);
+            }
         }
 
         // Show app actions
         function showAppActions(app) {
             currentApp = app;
             const actionSheetContent = document.getElementById('actionSheetContent');
-            
+
             actionSheetContent.innerHTML = `
                 <button onclick="openEditModal('${app.id}')" 
                     class="w-full flex items-center space-x-3 p-4 hover:bg-gray-50 rounded-xl">
@@ -368,7 +489,7 @@
                     <span>Hapus</span>
                 </button>
             `;
-            
+
             actionSheet.classList.remove('hidden');
         }
 
@@ -414,14 +535,14 @@
         function openEditModal(id) {
             const app = apps.find(a => a.id === id);
             if (!app) return;
-            
+
             currentEditId = id;
             modalTitle.textContent = 'Edit Aplikasi';
-            
+
             document.getElementById('appName').value = app.name;
             document.getElementById('appUrl').value = app.url;
             document.getElementById('appIcon').value = app.icon || '';
-            
+
             appModal.classList.remove('hidden');
             closeActionSheet();
         }
@@ -436,9 +557,9 @@
         function showStats() {
             document.getElementById('totalApps').textContent = apps.length;
             document.getElementById('totalFavorites').textContent = apps.filter(a => a.favorite).length;
-            
+
             if (apps.length > 0) {
-                const lastApp = apps.reduce((latest, app) => 
+                const lastApp = apps.reduce((latest, app) =>
                     new Date(app.createdAt) > new Date(latest.createdAt) ? app : latest
                 );
                 const date = new Date(lastApp.createdAt);
@@ -446,7 +567,7 @@
             } else {
                 document.getElementById('lastAdded').textContent = '-';
             }
-            
+
             statsModal.classList.remove('hidden');
         }
 
@@ -458,8 +579,8 @@
         // Handle search
         function handleSearch(e) {
             const searchTerm = e.target.value.toLowerCase();
-            const filteredApps = apps.filter(app => 
-                app.name.toLowerCase().includes(searchTerm) || 
+            const filteredApps = apps.filter(app =>
+                app.name.toLowerCase().includes(searchTerm) ||
                 app.url.toLowerCase().includes(searchTerm)
             );
             renderApps(filteredApps);
@@ -468,11 +589,11 @@
         // Handle form submit
         function handleSubmit(e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('appName').value;
             const url = document.getElementById('appUrl').value;
             const icon = document.getElementById('appIcon').value;
-            
+
             if (currentEditId) {
                 // Update existing app
                 const index = apps.findIndex(app => app.id === currentEditId);
@@ -498,7 +619,7 @@
                 };
                 apps.push(newApp);
             }
-            
+
             saveToLocalStorage();
             renderApps();
             closeModal();
@@ -523,4 +644,5 @@
         });
     </script>
 </body>
+
 </html>
