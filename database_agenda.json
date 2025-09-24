@@ -1,11 +1,11 @@
 {
   "tasks": [
     {
-      "title": "<p>Musyawaroh Tim Jam 8 Pagi = 1 Siang</p>",
+      "title": "<p><strong>Musyawaroh Tim</strong> Jam 8 Pagi = 1 Siang</p>",
       "category": "work",
-      "priority": "medium",
+      "priority": "high",
       "completed": false,
-      "createdAt": "2025-09-24T05:35:11.506Z",
+      "createdAt": "2025-09-24T05:35:20.964Z",
       "id": 1758689638368
     }
   ],
