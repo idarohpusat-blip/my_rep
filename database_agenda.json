@@ -1,19 +1,11 @@
 {
   "tasks": [
     {
-      "title": "<p>Jam 10 Pagi Mulai kerja</p><p><br></p><p>Besok Laporan</p><ol><li>Berapa Di Upload Fb, Instagram, Tiktok</li><li><br></li><li>Berapa Nanggapi </li><li><br></li><li>Berapa orang yang transaksi </li></ol>",
-      "category": "tab_1758689294005",
-      "priority": "medium",
-      "completed": false,
-      "createdAt": "2025-09-24T05:59:53.457Z",
-      "id": 1758693464285
-    },
-    {
-      "title": "<p><strong>Musyawaroh Tim</strong> Jam 8 Pagi = 1 Siang</p>",
+      "title": "<p>Jam 7 kerja sampai jam 10 Siang</p>",
       "category": "work",
-      "priority": "high",
-      "completed": false,
-      "createdAt": "2025-09-24T05:35:20.964Z",
+      "priority": "medium",
+      "completed": true,
+      "createdAt": "2025-09-24T04:53:58.368Z",
       "id": 1758689638368
     }
   ],
