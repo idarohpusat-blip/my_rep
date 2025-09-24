@@ -1,21 +1,6 @@
 {
   "tasks": [
-    {
-      "title": "<p>afsas</p>",
-      "category": "tab_1758689294005",
-      "priority": "medium",
-      "completed": false,
-      "createdAt": "2025-09-24T06:32:46.992Z",
-      "id": 1758695566992
-    },
-    {
-      "title": "<p>Jam 7 kerja sampai jam 10 Siang</p>",
-      "category": "work",
-      "priority": "medium",
-      "completed": true,
-      "createdAt": "2025-09-24T04:53:58.368Z",
-      "id": 1758689638368
-    }
+   
   ],
   "tabs": [
     {
