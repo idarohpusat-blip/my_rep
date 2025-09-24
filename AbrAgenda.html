@@ -10,6 +10,11 @@
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Quill Editor CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -188,6 +193,87 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* Task content display */
+        .task-content {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.6;
+        }
+
+        .task-content.collapsed {
+            max-height: 4.8em;
+            /* 3 lines of text */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .task-content.collapsed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.2em;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        }
+
+        .expand-btn {
+            color: #10b981;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .expand-btn:hover {
+            color: #059669;
+        }
+
+        .expand-btn i {
+            margin-left: 0.25rem;
+            transition: transform 0.2s ease;
+        }
+
+        .expand-btn.expanded i {
+            transform: rotate(180deg);
+        }
+
+        /* Quill Editor Styles */
+        #editor-container {
+            min-height: 150px;
+            margin-bottom: 15px;
+        }
+
+        .ql-toolbar {
+            border-top: 1px solid #e2e8f0;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: none;
+            border-radius: 0.5rem 0.5rem 0 0;
+            background-color: #f9fafb;
+        }
+
+        .ql-container {
+            border-bottom: 1px solid #e2e8f0;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 0.5rem 0.5rem;
+            font-size: 16px;
+        }
+
+        .ql-editor {
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        .ql-editor:focus {
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
     </style>
 </head>
 
@@ -324,7 +410,7 @@
 
     <!-- Task Modal -->
     <div id="taskModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md modal-enter">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl modal-enter">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h2 id="modalTitle" class="text-2xl font-bold text-gray-800">Tambah Tugas Baru</h2>
@@ -336,8 +422,8 @@
                 <form id="taskForm">
                     <div class="mb-4 relative">
                         <label class="block text-gray-700 font-medium mb-2">Judul Tugas</label>
-                        <input type="text" id="taskTitle" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <div id="editor-container"></div>
+                        <input type="hidden" id="taskTitle" required>
                         <div id="categoryLabel" class="category-label hidden"></div>
                     </div>
 
@@ -472,6 +558,7 @@
         let showCompleted = false;
         let editingTabId = null;
         let editingTaskId = null;
+        let quill = null;
 
         // DOM Elements
         const taskList = document.getElementById('taskList');
@@ -861,7 +948,6 @@
                 // Editing existing task
                 const task = tasks.find(t => t.id == taskId);
                 modalTitle.textContent = 'Edit Tugas';
-                document.getElementById('taskTitle').value = task.title;
                 editingTaskId = taskId;
                 categoryLabel.textContent = tabs.find(t => t.id === task.category)?.name || 'Lainnya';
                 categoryLabel.classList.remove('hidden');
@@ -882,6 +968,52 @@
             }
 
             taskModal.classList.remove('hidden');
+
+            // Initialize Quill editor if not already initialized
+            setTimeout(() => {
+                if (!quill) {
+                    quill = new Quill('#editor-container', {
+                        theme: 'snow',
+                        modules: {
+                            toolbar: [
+                                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                                ['bold', 'italic', 'underline', 'strike'],
+                                [{ 'color': [] }, { 'background': [] }],
+                                [{ 'align': [] }],
+                                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                                ['link', 'image'],
+                                ['clean']
+                            ]
+                        },
+                        placeholder: 'Masukkan judul tugas...'
+                    });
+
+                    // Update hidden input when content changes
+                    quill.on('text-change', function () {
+                        document.getElementById('taskTitle').value = quill.root.innerHTML;
+                    });
+                }
+
+                // Set content if editing
+                if (taskId) {
+                    const task = tasks.find(t => t.id == taskId);
+                    if (task && task.title) {
+                        // Check if content is plain text or HTML
+                        if (task.title.includes('<')) {
+                            quill.root.innerHTML = task.title;
+                        } else {
+                            quill.setText(task.title);
+                        }
+                    } else {
+                        quill.setText('');
+                    }
+                } else {
+                    quill.setText('');
+                }
+
+                // Focus the editor
+                quill.focus();
+            }, 100);
         }
 
         function closeTaskModal() {
@@ -889,11 +1021,17 @@
             taskForm.reset();
             editingTaskId = null;
             categoryLabel.classList.add('hidden');
+
+            // Clear Quill editor
+            if (quill) {
+                quill.setText('');
+            }
         }
 
         async function handleTaskSubmit(e) {
             e.preventDefault();
 
+            // Get content from Quill editor
             const taskData = {
                 title: document.getElementById('taskTitle').value,
                 category: currentTab === 'all' ? 'work' : currentTab,
@@ -1019,6 +1157,19 @@
                         deleteTask(btn.dataset.id);
                     });
                 });
+
+                // Add event listeners for expand/collapse buttons
+                document.querySelectorAll('.expand-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const taskId = btn.dataset.id;
+                        const content = document.querySelector(`.task-content[data-id="${taskId}"]`);
+                        content.classList.toggle('collapsed');
+                        btn.classList.toggle('expanded');
+                        btn.innerHTML = content.classList.contains('collapsed')
+                            ? 'Lihat Selengkapnya <i class="fas fa-chevron-down"></i>'
+                            : 'Lihat Lebih Sedikit <i class="fas fa-chevron-up"></i>';
+                    });
+                });
             }
         }
 
@@ -1032,14 +1183,18 @@
             const badgeClass = task.priority === 'high' ? 'badge-red' :
                 task.priority === 'medium' ? 'badge-yellow' : 'badge-green';
 
+            // Check if content is long (more than 3 lines)
+            const isLongContent = task.title.split('\n').length > 3 || task.title.length > 150;
+
             return `
                 <div class="task-card bg-white rounded-xl shadow-md p-5 ${priorityClass} ${completedClass} fade-in">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <input type="checkbox" class="task-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500" data-id="${task.id}" ${task.completed ? 'checked' : ''}>
-                            <div>
-                                <h3 class="task-title font-semibold text-gray-800 text-lg">${task.title}</h3>
-                                <div class="flex items-center space-x-3 mt-2">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start space-x-4 flex-1">
+                            <input type="checkbox" class="task-checkbox w-5 h-5 text-green-600 rounded focus:ring-green-500 mt-1" data-id="${task.id}" ${task.completed ? 'checked' : ''}>
+                            <div class="flex-1">
+                                <div class="task-content ${isLongContent ? 'collapsed' : ''}" data-id="${task.id}">${task.title}</div>
+                                ${isLongContent ? `<div class="expand-btn" data-id="${task.id}">Lihat Selengkapnya <i class="fas fa-chevron-down"></i></div>` : ''}
+                                <div class="flex items-center space-x-3 mt-3">
                                     <span class="text-sm px-3 py-1 bg-green-100 text-green-700 rounded-full flex items-center">
                                         <i class="fas ${tabIcon} mr-2"></i>${tabName}
                                     </span>
@@ -1049,7 +1204,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-3 ml-4">
                             <span class="text-xs font-medium px-3 py-1 rounded-full ${badgeClass}">
                                 ${getPriorityText(task.priority)}
                             </span>
@@ -1092,8 +1247,25 @@
                 const tabName = tab ? tab.name : 'Lainnya';
                 const tabIcon = tab ? tab.icon : 'fa-tasks';
 
-                doc.text(`${index + 1}. ${task.title} [${tabName}] - ${getPriorityText(task.priority)}`, 20, yPosition);
-                yPosition += 10;
+                // Create a temporary div to render HTML content
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = task.title;
+                const plainText = tempDiv.textContent || tempDiv.innerText || '';
+
+                // Split long text into lines
+                const lines = doc.splitTextToSize(`${index + 1}. ${plainText} [${tabName}] - ${getPriorityText(task.priority)}`, 170);
+
+                // Add each line
+                lines.forEach(line => {
+                    if (yPosition > 270) { // If we're near the bottom of the page
+                        doc.addPage();
+                        yPosition = 20;
+                    }
+                    doc.text(line, 20, yPosition);
+                    yPosition += 7;
+                });
+
+                yPosition += 3; // Add space between tasks
             });
 
             doc.save('agenda-tugas.pdf');
@@ -1145,5 +1317,3 @@
 </body>
 
 </html>
-
-
