@@ -50,6 +50,11 @@
       "id": "health",
       "name": "Kesehatan",
       "icon": "fa-heartbeat"
+    },
+    {
+      "id": "tab_1758689294005",
+      "name": "Agenda D' Sriwahyuni",
+      "icon": "fa-star"
     }
   ]
 }
