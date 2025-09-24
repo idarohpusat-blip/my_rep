@@ -1,11 +1,11 @@
 {
   "tasks": [
     {
-      "title": "<p>Jam 7 kerja sampai jam 10 Siang</p>",
+      "title": "<p>Musyawaroh Tim Jam 8 Pagi = 1 Siang</p>",
       "category": "work",
       "priority": "medium",
       "completed": false,
-      "createdAt": "2025-09-24T04:53:58.368Z",
+      "createdAt": "2025-09-24T05:35:11.506Z",
       "id": 1758689638368
     }
   ],
