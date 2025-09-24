@@ -1,5 +1,14 @@
 {
-  "tasks": [],
+  "tasks": [
+    {
+      "title": "mkan",
+      "category": "work",
+      "priority": "medium",
+      "completed": false,
+      "createdAt": "2025-09-24T04:15:13.089Z",
+      "id": 1758687313089
+    }
+  ],
   "tabs": [
     {
       "id": "all",
