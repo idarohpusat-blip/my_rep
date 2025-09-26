@@ -1,0 +1,32 @@
+{
+  "hotels": [
+    {
+      "id": "d3bcd381-5504-4792-b35d-42a7d0c0e7d6",
+      "name": "Al Shafwa Orchid",
+      "location": "Makkah",
+      "manager": "",
+      "manager_phone": "",
+      "periods": [
+        {
+          "id_priode": "14f3a62b-6aa9-4f66-bb97-81290b2ca413",
+          "from": "2025-09-02",
+          "to": "2025-09-09",
+          "net": {
+            "r2": 250,
+            "r3": 300,
+            "r4": 350,
+            "r5": 400,
+            "meal": 35
+          },
+          "sell": {
+            "r2": 270,
+            "r3": 320,
+            "r4": 370,
+            "r5": 420,
+            "meal": 45
+          }
+        }
+      ]
+    }
+  ]
+}
