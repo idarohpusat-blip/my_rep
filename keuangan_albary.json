@@ -136,7 +136,7 @@
       "kantong": [
         {
           "nama": "Ummi sri CK Agustus",
-          "saldo": -2208,
+          "saldo": -1072,
           "mataUang": "SAR"
         },
         {
@@ -366,6 +366,15 @@
           "mataUang": "SAR",
           "keterangan": "Porter kepulangan",
           "tanggal": "2025-08-26"
+        },
+        {
+          "id": "1759108220768296",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 1136,
+          "mataUang": "SAR",
+          "keterangan": "Dikirim 5 juta kurs ke riyal google 4.452 /4400",
+          "tanggal": "2025-09-29"
         }
       ]
     },
@@ -505,5 +514,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
