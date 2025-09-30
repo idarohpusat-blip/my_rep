@@ -1,6 +1,14 @@
 {
   "tasks": [
     {
+      "title": "<p>Upload Brosur </p><ol><li>Facebook</li><li>Instagram</li><li>Group wa albary haramain</li><li>group Wa pasar ( Belum Saya kirimkan linknya )</li></ol>",
+      "category": "work",
+      "priority": "medium",
+      "completed": false,
+      "createdAt": "2025-09-30T06:07:03.691Z",
+      "id": 1759212423691
+    },
+    {
       "title": "<p>Jadwal brosur yang Di upload</p>",
       "category": "work",
       "priority": "medium",
