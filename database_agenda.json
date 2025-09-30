@@ -41,11 +41,11 @@
       "id": 1758776745753
     },
     {
-      "title": "<p>Jam 7 kerja sampai jam 10 Siang</p>",
+      "title": "<ol><li>Jam 7 kerja sampai jam 10 Siang</li><li>hari minggu libur musyawaroh</li></ol>",
       "category": "work",
-      "priority": "high",
+      "priority": "medium",
       "completed": false,
-      "createdAt": "2025-09-24T06:34:46.662Z",
+      "createdAt": "2025-09-30T06:20:21.918Z",
       "id": 1758695686662
     }
   ],
