@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ustadz Umar palu",
-          "saldo": 0,
+          "saldo": -25000,
           "mataUang": "Rp"
         }
       ],
@@ -133,6 +133,15 @@
           "mataUang": "SAR",
           "keterangan": "Jajan",
           "tanggal": "2025-09-11"
+        },
+        {
+          "id": "1759255622872701",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 25000,
+          "mataUang": "Rp",
+          "keterangan": "sertifikat Ustadz Umar Abdullah bin Ibrahim",
+          "tanggal": "2025-09-30"
         }
       ]
     },
@@ -519,5 +528,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "5"
 }
