@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ustadz Umar palu",
-          "saldo": -25000,
+          "saldo": -50000,
           "mataUang": "Rp"
         }
       ],
@@ -141,6 +141,15 @@
           "jumlah": 25000,
           "mataUang": "Rp",
           "keterangan": "sertifikat Ustadz Umar Abdullah bin Ibrahim",
+          "tanggal": "2025-09-30"
+        },
+        {
+          "id": "1759255641117421",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 25000,
+          "mataUang": "Rp",
+          "keterangan": "sertifikat Ustadz Umar MAT BEKET",
           "tanggal": "2025-09-30"
         }
       ]
