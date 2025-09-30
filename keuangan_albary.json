@@ -27,6 +27,11 @@
           "nama": "Inv akhir",
           "saldo": 0,
           "mataUang": "SAR"
+        },
+        {
+          "nama": "Ustadz Umar palu",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
@@ -514,5 +519,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
