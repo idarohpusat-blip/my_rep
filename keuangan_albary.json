@@ -159,7 +159,7 @@
       "kantong": [
         {
           "nama": "Ummi sri CK Agustus",
-          "saldo": -1072,
+          "saldo": 64,
           "mataUang": "SAR"
         },
         {
@@ -398,6 +398,15 @@
           "mataUang": "SAR",
           "keterangan": "Dikirim 5 juta kurs ke riyal google 4.452 /4400",
           "tanggal": "2025-09-29"
+        },
+        {
+          "id": "1759389708088955",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 1136,
+          "mataUang": "SAR",
+          "keterangan": "30 sep ummi kiri 5 juta bsi",
+          "tanggal": "2025-10-02"
         }
       ]
     },
