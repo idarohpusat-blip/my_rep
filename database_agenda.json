@@ -25,11 +25,11 @@
       "id": 1759676368121
     },
     {
-      "title": "<ul><li>Belanja</li></ul><ol><li>Roti</li><li>Jojo coklat</li><li>Royko</li><li>Air minum besar</li></ol>",
+      "title": "<ul><li>Belanja</li></ul><ol><li>Roti</li><li>Jojo coklat</li><li>Royko</li><li>Air minum besar</li><li>Pop mi</li><li>Kuaci, kacang kacang</li></ol>",
       "category": "personal",
-      "priority": "high",
+      "priority": "medium",
       "completed": false,
-      "createdAt": "2025-10-05T14:59:09.353Z",
+      "createdAt": "2025-10-05T15:03:23.974Z",
       "id": 1759676349354
     },
     {
