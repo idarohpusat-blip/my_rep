@@ -4,7 +4,7 @@
       "title": "<p>Pengecekan barang</p><ol><li>Leptop, mouse charger alas mouse</li><li>Hp samsung &amp; iphone dan charger</li><li>Stopkontak</li><li>Peralatan mandi</li><li>Pernak pernik, alat cukur</li></ol>",
       "category": "personal",
       "priority": "medium",
-      "completed": false,
+      "completed": true,
       "createdAt": "2025-10-05T15:02:25.038Z",
       "id": 1759676545038
     },
@@ -12,7 +12,7 @@
       "title": "<p>Bungkus nasi</p><ol><li>Masak ikan </li><li>Bungkus nasi</li></ol>",
       "category": "personal",
       "priority": "medium",
-      "completed": false,
+      "completed": true,
       "createdAt": "2025-10-05T15:00:13.582Z",
       "id": 1759676413582
     },
@@ -20,7 +20,7 @@
       "title": "<p>Parfum pak brunai</p>",
       "category": "personal",
       "priority": "medium",
-      "completed": false,
+      "completed": true,
       "createdAt": "2025-10-05T14:59:28.121Z",
       "id": 1759676368121
     },
@@ -28,7 +28,7 @@
       "title": "<ul><li>Belanja</li></ul><ol><li>Roti</li><li>Jojo coklat</li><li>Royko</li><li>Air minum besar</li><li>Pop mi</li><li>Kuaci, kacang kacang</li></ol>",
       "category": "personal",
       "priority": "medium",
-      "completed": false,
+      "completed": true,
       "createdAt": "2025-10-05T15:03:23.974Z",
       "id": 1759676349354
     },
