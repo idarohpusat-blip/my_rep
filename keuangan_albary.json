@@ -549,7 +549,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": -274800,
+          "saldo": 125200,
           "mataUang": "Rp"
         }
       ],
@@ -651,6 +651,15 @@
           "jumlah": 250000,
           "mataUang": "Rp",
           "keterangan": "Aplikasi Ustadz Ismail",
+          "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759941247995214",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 400000,
+          "mataUang": "Rp",
+          "keterangan": "Uang sertifikat Ustadz Umar",
           "tanggal": "2025-10-08"
         }
       ]
