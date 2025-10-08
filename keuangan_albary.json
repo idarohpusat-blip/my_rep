@@ -549,13 +549,23 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 0,
+          "saldo": 5000000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1759940517684274",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 5000000,
+          "mataUang": "Rp",
+          "keterangan": "Ummi Sri Cicil",
+          "tanggal": "2025-10-08"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
