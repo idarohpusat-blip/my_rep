@@ -4,16 +4,6 @@
       "nama": "Jamaluddin",
       "kantong": [
         {
-          "nama": "INV Kel",
-          "saldo": 0,
-          "mataUang": "SAR"
-        },
-        {
-          "nama": "Inv akhir",
-          "saldo": 0,
-          "mataUang": "SAR"
-        },
-        {
           "nama": "Ustadz Umar palu",
           "saldo": -50000,
           "mataUang": "Rp"
@@ -22,7 +12,7 @@
       "transaksi": [
         {
           "id": "1759255622872701",
-          "kantong": 2,
+          "kantong": 0,
           "jenis": "keluar",
           "jumlah": 25000,
           "mataUang": "Rp",
@@ -31,7 +21,7 @@
         },
         {
           "id": "1759255641117421",
-          "kantong": 2,
+          "kantong": 0,
           "jenis": "keluar",
           "jumlah": 25000,
           "mataUang": "Rp",
