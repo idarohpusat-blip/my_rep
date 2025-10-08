@@ -549,7 +549,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 10180000,
+          "saldo": 0,
           "mataUang": "Rp"
         }
       ],
@@ -606,6 +606,15 @@
           "jumlah": 440000,
           "mataUang": "Rp",
           "keterangan": "Operasional makan di jalan yaman ke saudi",
+          "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759940865922786",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 10180000,
+          "mataUang": "Rp",
+          "keterangan": "Input Margin",
           "tanggal": "2025-10-08"
         }
       ]
