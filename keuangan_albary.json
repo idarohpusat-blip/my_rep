@@ -546,7 +546,13 @@
     },
     {
       "nama": "Albary Haramain",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Kas Usaha",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
