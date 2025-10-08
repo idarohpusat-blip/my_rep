@@ -549,7 +549,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": -450000,
+          "saldo": -480800,
           "mataUang": "Rp"
         }
       ],
@@ -624,6 +624,15 @@
           "jumlah": 450000,
           "mataUang": "Rp",
           "keterangan": "Internet",
+          "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759940952827480",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 30800,
+          "mataUang": "Rp",
+          "keterangan": "Beli Air",
           "tanggal": "2025-10-08"
         }
       ]
