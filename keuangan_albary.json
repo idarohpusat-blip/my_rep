@@ -549,7 +549,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 11500000,
+          "saldo": 10620000,
           "mataUang": "Rp"
         }
       ],
@@ -588,6 +588,15 @@
           "jumlah": 3500000,
           "mataUang": "Rp",
           "keterangan": "Visa saudi umroh",
+          "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759940678280868",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 880000,
+          "mataUang": "Rp",
+          "keterangan": "Bis yaman ke saudi",
           "tanggal": "2025-10-08"
         }
       ]
