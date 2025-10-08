@@ -549,7 +549,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 0,
+          "saldo": -450000,
           "mataUang": "Rp"
         }
       ],
@@ -615,6 +615,15 @@
           "jumlah": 10180000,
           "mataUang": "Rp",
           "keterangan": "Input Margin",
+          "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759940886737796",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 450000,
+          "mataUang": "Rp",
+          "keterangan": "Internet",
           "tanggal": "2025-10-08"
         }
       ]
