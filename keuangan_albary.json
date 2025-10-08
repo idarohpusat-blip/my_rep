@@ -546,13 +546,7 @@
     },
     {
       "nama": "Albary Haramain",
-      "kantong": [
-        {
-          "nama": "Evaluasi",
-          "saldo": 0,
-          "mataUang": "Rp"
-        }
-      ],
+      "kantong": [],
       "transaksi": []
     }
   ],
