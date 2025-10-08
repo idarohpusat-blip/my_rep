@@ -549,7 +549,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 10000000,
+          "saldo": 15000000,
           "mataUang": "Rp"
         }
       ],
@@ -570,6 +570,15 @@
           "jumlah": 5000000,
           "mataUang": "Rp",
           "keterangan": "Dari Ayah Tf bsi",
+          "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759940607166360",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 5000000,
+          "mataUang": "Rp",
+          "keterangan": "SLA cicil Muthowif",
           "tanggal": "2025-10-08"
         }
       ]
