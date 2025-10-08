@@ -549,7 +549,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": -524800,
+          "saldo": -274800,
           "mataUang": "Rp"
         }
       ],
@@ -642,6 +642,15 @@
           "jumlah": 44000,
           "mataUang": "Rp",
           "keterangan": "Taxi Umroh",
+          "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759941023054906",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 250000,
+          "mataUang": "Rp",
+          "keterangan": "Aplikasi Ustadz Ismail",
           "tanggal": "2025-10-08"
         }
       ]
