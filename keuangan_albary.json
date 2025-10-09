@@ -261,7 +261,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 120800,
+          "saldo": 103200,
           "mataUang": "Rp"
         }
       ],
@@ -381,6 +381,15 @@
           "jumlah": 4400,
           "mataUang": "Rp",
           "keterangan": "Roti canai 1 riyal",
+          "tanggal": "2025-10-09"
+        },
+        {
+          "id": "1760035218680302",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 17600,
+          "mataUang": "Rp",
+          "keterangan": "Roti 4 riyal",
           "tanggal": "2025-10-09"
         }
       ]
