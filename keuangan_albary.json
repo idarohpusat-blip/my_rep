@@ -393,7 +393,7 @@
           "jumlah": 10000000,
           "mataUang": "Rp",
           "keterangan": "Muthowif 10 Hari",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-02-13"
         },
         {
           "id": "1759990245578887",
@@ -402,7 +402,7 @@
           "jumlah": 1688894,
           "mataUang": "Rp",
           "keterangan": "Kereta Cepat",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-02-12"
         },
         {
           "id": "1759990271496149",
@@ -411,7 +411,7 @@
           "jumlah": 2000000,
           "mataUang": "Rp",
           "keterangan": "Muthowif 2 Hari",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-03-10"
         },
         {
           "id": "1759990324666639",
@@ -420,7 +420,7 @@
           "jumlah": 15400000,
           "mataUang": "Rp",
           "keterangan": "Muthowif Bulan juli dan Agustus",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-08-14"
         },
         {
           "id": "1759990349279733",
@@ -429,7 +429,7 @@
           "jumlah": 2500000,
           "mataUang": "Rp",
           "keterangan": "Badal Umroh",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-08-15"
         },
         {
           "id": "1759990395823813",
@@ -438,7 +438,7 @@
           "jumlah": 857560,
           "mataUang": "Rp",
           "keterangan": "Sisa Uang riyal Agustus",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-08-13"
         },
         {
           "id": "1759990431060479",
@@ -447,7 +447,7 @@
           "jumlah": 5000000,
           "mataUang": "Rp",
           "keterangan": "Pembayaran bertahap",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-08-31"
         },
         {
           "id": "175999045953852",
@@ -456,7 +456,7 @@
           "jumlah": 5000000,
           "mataUang": "Rp",
           "keterangan": "Pembayaran Bertahap ke 2",
-          "tanggal": "2025-10-09"
+          "tanggal": "2025-10-02"
         }
       ]
     }
