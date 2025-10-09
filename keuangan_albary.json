@@ -381,7 +381,7 @@
       "kantong": [
         {
           "nama": "SLA Berkah",
-          "saldo": -31588894,
+          "saldo": -30731334,
           "mataUang": "Rp"
         }
       ],
@@ -429,6 +429,15 @@
           "jumlah": 2500000,
           "mataUang": "Rp",
           "keterangan": "Badal Umroh",
+          "tanggal": "2025-10-09"
+        },
+        {
+          "id": "1759990395823813",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 857560,
+          "mataUang": "Rp",
+          "keterangan": "Sisa Uang riyal Agustus",
           "tanggal": "2025-10-09"
         }
       ]
