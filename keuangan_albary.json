@@ -381,13 +381,23 @@
       "kantong": [
         {
           "nama": "SLA Berkah",
-          "saldo": 0,
+          "saldo": -1000000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1759990224300387",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 1000000,
+          "mataUang": "Rp",
+          "keterangan": "Muthowif 10 Hari",
+          "tanggal": "2025-10-09"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
