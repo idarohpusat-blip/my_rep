@@ -381,7 +381,7 @@
       "kantong": [
         {
           "nama": "SLA Berkah",
-          "saldo": -30731334,
+          "saldo": -25731334,
           "mataUang": "Rp"
         }
       ],
@@ -438,6 +438,15 @@
           "jumlah": 857560,
           "mataUang": "Rp",
           "keterangan": "Sisa Uang riyal Agustus",
+          "tanggal": "2025-10-09"
+        },
+        {
+          "id": "1759990431060479",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 5000000,
+          "mataUang": "Rp",
+          "keterangan": "Pembayaran bertahap",
           "tanggal": "2025-10-09"
         }
       ]
