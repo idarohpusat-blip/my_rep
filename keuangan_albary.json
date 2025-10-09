@@ -486,13 +486,23 @@
       "kantong": [
         {
           "nama": "Tabungan",
-          "saldo": 0,
+          "saldo": 53150000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "175999243070363",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 53150000,
+          "mataUang": "Rp",
+          "keterangan": "Emas",
+          "tanggal": "2025-10-09"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
