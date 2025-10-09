@@ -483,7 +483,13 @@
     },
     {
       "nama": "Jamaluddni",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Tabungan",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
