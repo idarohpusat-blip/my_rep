@@ -381,7 +381,7 @@
       "kantong": [
         {
           "nama": "SLA Berkah",
-          "saldo": -29088894,
+          "saldo": -31588894,
           "mataUang": "Rp"
         }
       ],
@@ -420,6 +420,15 @@
           "jumlah": 15400000,
           "mataUang": "Rp",
           "keterangan": "Muthowif Bulan juli dan Agustus",
+          "tanggal": "2025-10-09"
+        },
+        {
+          "id": "1759990349279733",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 2500000,
+          "mataUang": "Rp",
+          "keterangan": "Badal Umroh",
           "tanggal": "2025-10-09"
         }
       ]
