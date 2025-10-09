@@ -459,13 +459,8 @@
           "tanggal": "2025-10-02"
         }
       ]
-    },
-    {
-      "nama": "Tabungan Mama",
-      "kantong": [],
-      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "3",
+  "albary_user_terakhir": "0",
   "albary_kantong_terakhir": "-1"
 }
