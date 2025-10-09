@@ -462,7 +462,13 @@
     },
     {
       "nama": "Mama",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Tabungan Umroh",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
