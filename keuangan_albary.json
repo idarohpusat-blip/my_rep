@@ -261,7 +261,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 125200,
+          "saldo": 120800,
           "mataUang": "Rp"
         }
       ],
@@ -373,6 +373,15 @@
           "mataUang": "Rp",
           "keterangan": "Uang sertifikat Ustadz Umar",
           "tanggal": "2025-10-08"
+        },
+        {
+          "id": "1759995124610989",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 4400,
+          "mataUang": "Rp",
+          "keterangan": "Roti canai 1 riyal",
+          "tanggal": "2025-10-09"
         }
       ]
     },
@@ -504,5 +513,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
