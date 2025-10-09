@@ -378,7 +378,13 @@
     },
     {
       "nama": "SLA Berkah",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "SLA Berkah",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
