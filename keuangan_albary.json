@@ -381,7 +381,7 @@
       "kantong": [
         {
           "nama": "SLA Berkah",
-          "saldo": -25731334,
+          "saldo": -20731334,
           "mataUang": "Rp"
         }
       ],
@@ -447,6 +447,15 @@
           "jumlah": 5000000,
           "mataUang": "Rp",
           "keterangan": "Pembayaran bertahap",
+          "tanggal": "2025-10-09"
+        },
+        {
+          "id": "175999045953852",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 5000000,
+          "mataUang": "Rp",
+          "keterangan": "Pembayaran Bertahap ke 2",
           "tanggal": "2025-10-09"
         }
       ]
