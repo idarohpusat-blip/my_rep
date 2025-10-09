@@ -381,7 +381,7 @@
       "kantong": [
         {
           "nama": "SLA Berkah",
-          "saldo": -4688894,
+          "saldo": -13688894,
           "mataUang": "Rp"
         }
       ],
@@ -390,7 +390,7 @@
           "id": "1759990224300387",
           "kantong": 0,
           "jenis": "keluar",
-          "jumlah": 1000000,
+          "jumlah": 10000000,
           "mataUang": "Rp",
           "keterangan": "Muthowif 10 Hari",
           "tanggal": "2025-10-09"
