@@ -261,7 +261,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 103200,
+          "saldo": 3200,
           "mataUang": "Rp"
         }
       ],
@@ -391,6 +391,15 @@
           "mataUang": "Rp",
           "keterangan": "Roti 4 riyal",
           "tanggal": "2025-10-09"
+        },
+        {
+          "id": "1760075930658380",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 100000,
+          "mataUang": "Rp",
+          "keterangan": "gajiAdek uni",
+          "tanggal": "2025-10-10"
         }
       ]
     },
@@ -522,5 +531,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
