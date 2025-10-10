@@ -261,7 +261,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 3200,
+          "saldo": -84800,
           "mataUang": "Rp"
         }
       ],
@@ -400,6 +400,15 @@
           "mataUang": "Rp",
           "keterangan": "Gaji untuk Uni",
           "tanggal": "2025-10-10"
+        },
+        {
+          "id": "1760076191000239",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 88000,
+          "mataUang": "Rp",
+          "keterangan": "Kebutuhan makan 20 riyal",
+          "tanggal": "2025-10-10"
         }
       ]
     },
@@ -531,5 +540,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
