@@ -1,6 +1,14 @@
 {
   "tasks": [
     {
+      "title": "<p><strong>jam 4.00 </strong>Sholat Sbuh </p>",
+      "category": "personal",
+      "priority": "medium",
+      "completed": false,
+      "createdAt": "2025-10-13T06:08:24.320Z",
+      "id": 1760335704320
+    },
+    {
       "title": "<p>Pengecekan barang</p><ol><li>Leptop, mouse charger alas mouse</li><li>Hp samsung &amp; iphone dan charger</li><li>Stopkontak</li><li>Peralatan mandi</li><li>Pernak pernik, alat cukur</li></ol>",
       "category": "personal",
       "priority": "medium",
