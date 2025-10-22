@@ -540,7 +540,13 @@
     },
     {
       "nama": "Andi Ahmad Paket LA pt Zamzam",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Uang Masuk",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
