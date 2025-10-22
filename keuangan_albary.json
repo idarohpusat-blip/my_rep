@@ -548,7 +548,7 @@
         },
         {
           "nama": "Pengeluaran",
-          "saldo": 0,
+          "saldo": 6500,
           "mataUang": "SAR"
         }
       ],
@@ -570,10 +570,19 @@
           "mataUang": "Rp",
           "keterangan": "Dp kayan Madina",
           "tanggal": "2025-10-22"
+        },
+        {
+          "id": "1761118494454565",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 6500,
+          "mataUang": "SAR",
+          "keterangan": "Tukar riyal kurs 4.450",
+          "tanggal": "2025-10-22"
         }
       ]
     }
   ],
   "albary_user_terakhir": "5",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
