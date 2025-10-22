@@ -543,7 +543,7 @@
       "kantong": [
         {
           "nama": "Uang Masuk",
-          "saldo": 17000000,
+          "saldo": 30000000,
           "mataUang": "Rp"
         },
         {
@@ -560,6 +560,15 @@
           "jumlah": 17000000,
           "mataUang": "Rp",
           "keterangan": "Dp luluah",
+          "tanggal": "2025-10-22"
+        },
+        {
+          "id": "1761118441427194",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 13000000,
+          "mataUang": "Rp",
+          "keterangan": "Dp kayan Madina",
           "tanggal": "2025-10-22"
         }
       ]
