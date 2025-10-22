@@ -543,7 +543,7 @@
       "kantong": [
         {
           "nama": "Uang Masuk",
-          "saldo": 0,
+          "saldo": 17000000,
           "mataUang": "Rp"
         },
         {
@@ -552,9 +552,19 @@
           "mataUang": "SAR"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1761118420632520",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 17000000,
+          "mataUang": "Rp",
+          "keterangan": "Dp luluah",
+          "tanggal": "2025-10-22"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "5",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
