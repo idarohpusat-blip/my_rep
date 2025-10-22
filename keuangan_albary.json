@@ -545,6 +545,11 @@
           "nama": "Uang Masuk",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Pengeluaran",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": []
