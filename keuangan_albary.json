@@ -548,7 +548,7 @@
         },
         {
           "nama": "Pengeluaran",
-          "saldo": 6500,
+          "saldo": 6490,
           "mataUang": "SAR"
         }
       ],
@@ -578,6 +578,15 @@
           "jumlah": 6500,
           "mataUang": "SAR",
           "keterangan": "Tukar riyal kurs 4.450",
+          "tanggal": "2025-10-22"
+        },
+        {
+          "id": "176111854363945",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Taxi ke mansur",
           "tanggal": "2025-10-22"
         }
       ]
