@@ -548,7 +548,7 @@
         },
         {
           "nama": "Pengeluaran",
-          "saldo": 490,
+          "saldo": 9490,
           "mataUang": "SAR"
         }
       ],
@@ -605,6 +605,15 @@
           "jumlah": 3000,
           "mataUang": "SAR",
           "keterangan": "Pembayaran kayan madinah dp",
+          "tanggal": "2025-10-23"
+        },
+        {
+          "id": "1761221339418318",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 9000,
+          "mataUang": "SAR",
+          "keterangan": "Uang masuk tukar riyal",
           "tanggal": "2025-10-23"
         }
       ]
