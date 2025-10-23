@@ -548,7 +548,7 @@
         },
         {
           "nama": "Pengeluaran",
-          "saldo": 9490,
+          "saldo": 1090,
           "mataUang": "SAR"
         }
       ],
@@ -614,6 +614,15 @@
           "jumlah": 9000,
           "mataUang": "SAR",
           "keterangan": "Uang masuk tukar riyal",
+          "tanggal": "2025-10-23"
+        },
+        {
+          "id": "1761221354077959",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 8400,
+          "mataUang": "SAR",
+          "keterangan": "Pelunasan kayan",
           "tanggal": "2025-10-23"
         }
       ]
