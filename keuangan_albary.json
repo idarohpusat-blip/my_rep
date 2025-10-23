@@ -548,7 +548,7 @@
         },
         {
           "nama": "Pengeluaran",
-          "saldo": 6490,
+          "saldo": 3490,
           "mataUang": "SAR"
         }
       ],
@@ -588,6 +588,15 @@
           "mataUang": "SAR",
           "keterangan": "Taxi ke mansur",
           "tanggal": "2025-10-22"
+        },
+        {
+          "id": "1761221298020379",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 3000,
+          "mataUang": "SAR",
+          "keterangan": "Pembayaran dp mekkah",
+          "tanggal": "2025-10-23"
         }
       ]
     }
