@@ -261,7 +261,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": -84800,
+          "saldo": 365200,
           "mataUang": "Rp"
         }
       ],
@@ -409,6 +409,15 @@
           "mataUang": "Rp",
           "keterangan": "Kebutuhan makan 20 riyal",
           "tanggal": "2025-10-10"
+        },
+        {
+          "id": "1761280712269157",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 450000,
+          "mataUang": "Rp",
+          "keterangan": "Uang Photo grafer",
+          "tanggal": "2025-10-24"
         }
       ]
     },
@@ -638,5 +647,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
