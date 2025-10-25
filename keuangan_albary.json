@@ -261,7 +261,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 365200,
+          "saldo": 315200,
           "mataUang": "Rp"
         }
       ],
@@ -418,6 +418,15 @@
           "mataUang": "Rp",
           "keterangan": "Uang Photo grafer",
           "tanggal": "2025-10-24"
+        },
+        {
+          "id": "1761426189891277",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 50000,
+          "mataUang": "Rp",
+          "keterangan": "Gaji uni",
+          "tanggal": "2025-10-25"
         }
       ]
     },
