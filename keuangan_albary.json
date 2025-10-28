@@ -545,7 +545,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 200,
+          "saldo": 193,
           "mataUang": "SAR"
         }
       ],
@@ -566,6 +566,15 @@
           "jumlah": 200,
           "mataUang": "SAR",
           "keterangan": "Hutang bagolah",
+          "tanggal": "2025-10-28"
+        },
+        {
+          "id": "1761627183553961",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 7,
+          "mataUang": "SAR",
+          "keterangan": "Moya",
           "tanggal": "2025-10-28"
         }
       ]
