@@ -545,7 +545,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 173,
+          "saldo": 100,
           "mataUang": "SAR"
         }
       ],
@@ -584,6 +584,15 @@
           "jumlah": 20,
           "mataUang": "SAR",
           "keterangan": "Ambil uang iqbal",
+          "tanggal": "2025-10-28"
+        },
+        {
+          "id": "1761657180277514",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 73,
+          "mataUang": "SAR",
+          "keterangan": "Ambil uang",
           "tanggal": "2025-10-28"
         }
       ]
