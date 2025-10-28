@@ -542,6 +542,11 @@
           "nama": "Tabungan",
           "saldo": 53150000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Bagolah",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
