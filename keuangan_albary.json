@@ -545,7 +545,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 100,
+          "saldo": 75,
           "mataUang": "SAR"
         }
       ],
@@ -593,6 +593,15 @@
           "jumlah": 73,
           "mataUang": "SAR",
           "keterangan": "Ambil uang",
+          "tanggal": "2025-10-28"
+        },
+        {
+          "id": "1761657472086134",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 25,
+          "mataUang": "SAR",
+          "keterangan": "Asmaa",
           "tanggal": "2025-10-28"
         }
       ]
