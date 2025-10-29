@@ -545,7 +545,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 75,
+          "saldo": 59,
           "mataUang": "SAR"
         }
       ],
@@ -603,6 +603,15 @@
           "mataUang": "SAR",
           "keterangan": "Asmaa",
           "tanggal": "2025-10-28"
+        },
+        {
+          "id": "1761717392060833",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 16,
+          "mataUang": "SAR",
+          "keterangan": "Indomie & fairy",
+          "tanggal": "2025-10-29"
         }
       ]
     },
