@@ -550,7 +550,7 @@
         },
         {
           "nama": "Bunda soraya",
-          "saldo": 0,
+          "saldo": -200,
           "mataUang": "SAR"
         }
       ],
@@ -617,6 +617,15 @@
           "mataUang": "SAR",
           "keterangan": "Indomie & fairy",
           "tanggal": "2025-10-29"
+        },
+        {
+          "id": "1762074742117830",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 200,
+          "mataUang": "SAR",
+          "keterangan": "Denda di nusuk",
+          "tanggal": "2025-11-02"
         }
       ]
     },
@@ -720,5 +729,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "2"
 }
