@@ -550,7 +550,7 @@
         },
         {
           "nama": "Bunda soraya",
-          "saldo": -200,
+          "saldo": -600,
           "mataUang": "SAR"
         }
       ],
@@ -625,6 +625,15 @@
           "jumlah": 200,
           "mataUang": "SAR",
           "keterangan": "Denda di nusuk",
+          "tanggal": "2025-11-02"
+        },
+        {
+          "id": "1762074768414924",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 400,
+          "mataUang": "SAR",
+          "keterangan": "Taxi makkah to madina",
           "tanggal": "2025-11-02"
         }
       ]
