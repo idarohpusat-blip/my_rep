@@ -547,6 +547,11 @@
           "nama": "Bagolah",
           "saldo": 59,
           "mataUang": "SAR"
+        },
+        {
+          "nama": "Bunda soraya",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
