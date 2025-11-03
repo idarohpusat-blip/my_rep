@@ -555,7 +555,7 @@
         },
         {
           "nama": "Jamaah Albary Haramain",
-          "saldo": 0,
+          "saldo": 1000000,
           "mataUang": "Rp"
         }
       ],
@@ -640,6 +640,15 @@
           "mataUang": "SAR",
           "keterangan": "Taxi makkah to madina",
           "tanggal": "2025-11-02"
+        },
+        {
+          "id": "176214770244471",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 1000000,
+          "mataUang": "Rp",
+          "keterangan": "Sedekah jumat berkah",
+          "tanggal": "2025-11-03"
         }
       ]
     },
