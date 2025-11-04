@@ -557,6 +557,11 @@
           "nama": "Jamaah Albary Haramain",
           "saldo": 1500000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Denda jamal",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
