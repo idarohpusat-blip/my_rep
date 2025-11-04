@@ -560,7 +560,7 @@
         },
         {
           "nama": "Denda jamal",
-          "saldo": 200000,
+          "saldo": 175000,
           "mataUang": "Rp"
         }
       ],
@@ -671,6 +671,15 @@
           "jumlah": 200000,
           "mataUang": "Rp",
           "keterangan": "Denda maksiat",
+          "tanggal": "2025-11-04"
+        },
+        {
+          "id": "1762226751648472",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 25000,
+          "mataUang": "Rp",
+          "keterangan": "Bayar",
           "tanggal": "2025-11-04"
         }
       ]
