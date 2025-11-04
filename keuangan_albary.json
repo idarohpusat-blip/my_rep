@@ -560,7 +560,7 @@
         },
         {
           "nama": "Denda jamal",
-          "saldo": 0,
+          "saldo": 200000,
           "mataUang": "Rp"
         }
       ],
@@ -663,6 +663,15 @@
           "mataUang": "Rp",
           "keterangan": "Alquran bunda elly",
           "tanggal": "2025-11-03"
+        },
+        {
+          "id": "176222673638942",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 200000,
+          "mataUang": "Rp",
+          "keterangan": "Denda maksiat",
+          "tanggal": "2025-11-04"
         }
       ]
     },
@@ -766,5 +775,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "4"
 }
