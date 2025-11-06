@@ -687,6 +687,11 @@
           "nama": "Pengeluaran",
           "saldo": 1090,
           "mataUang": "SAR"
+        },
+        {
+          "nama": "Hutang pak Andi",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
