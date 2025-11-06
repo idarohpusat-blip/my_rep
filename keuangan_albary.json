@@ -690,7 +690,7 @@
         },
         {
           "nama": "Hutang pak Andi",
-          "saldo": 0,
+          "saldo": -80,
           "mataUang": "SAR"
         }
       ],
@@ -775,10 +775,19 @@
           "mataUang": "Rp",
           "keterangan": "Uang masuk dari pt zamzam",
           "tanggal": "2025-10-23"
+        },
+        {
+          "id": "1762454454867848",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 80,
+          "mataUang": "SAR",
+          "keterangan": "60 bilboy 20 mnadub nusuk",
+          "tanggal": "2025-11-06"
         }
       ]
     }
   ],
   "albary_user_terakhir": "5",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "2"
 }
