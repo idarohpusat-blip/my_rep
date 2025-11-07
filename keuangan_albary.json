@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 15557,
+          "saldo": 15547,
           "mataUang": "SAR"
         }
       ],
@@ -284,6 +284,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Madinah mekkah",
+          "tanggal": "2025-11-07"
+        },
+        {
+          "id": "1762487882997679",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Makan di rest area",
           "tanggal": "2025-11-07"
         }
       ]
