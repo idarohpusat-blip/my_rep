@@ -596,7 +596,7 @@
         },
         {
           "nama": "Denda jamal",
-          "saldo": 175000,
+          "saldo": 75000,
           "mataUang": "Rp"
         },
         {
@@ -713,6 +713,15 @@
           "mataUang": "SAR",
           "keterangan": "Mau di TF",
           "tanggal": "2025-11-05"
+        },
+        {
+          "id": "1762489275809251",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 100000,
+          "mataUang": "Rp",
+          "keterangan": "Sedekah untuk pak toha",
+          "tanggal": "2025-11-07"
         }
       ]
     },
@@ -830,5 +839,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
