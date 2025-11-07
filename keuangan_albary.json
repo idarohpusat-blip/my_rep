@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 0,
+          "saldo": 31567,
           "mataUang": "SAR"
         }
       ],
@@ -258,6 +258,15 @@
           "mataUang": "SAR",
           "keterangan": "30 sep ummi kiri 5 juta bsi",
           "tanggal": "2025-10-02"
+        },
+        {
+          "id": "1762487742278148",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 31567,
+          "mataUang": "SAR",
+          "keterangan": "Tukar Riyal 140 juta",
+          "tanggal": "2025-11-07"
         }
       ]
     },
@@ -794,5 +803,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
