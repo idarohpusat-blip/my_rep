@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 31567,
+          "saldo": 15607,
           "mataUang": "SAR"
         }
       ],
@@ -266,6 +266,15 @@
           "jumlah": 31567,
           "mataUang": "SAR",
           "keterangan": "Tukar Riyal 140 juta",
+          "tanggal": "2025-11-07"
+        },
+        {
+          "id": "176248784724890",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 15960,
+          "mataUang": "SAR",
+          "keterangan": "Pembayaran Hotel saja Maakkah",
           "tanggal": "2025-11-07"
         }
       ]
