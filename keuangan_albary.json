@@ -586,7 +586,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 59,
+          "saldo": 44,
           "mataUang": "SAR"
         },
         {
@@ -722,6 +722,15 @@
           "mataUang": "Rp",
           "keterangan": "Sedekah untuk pak toha",
           "tanggal": "2025-11-07"
+        },
+        {
+          "id": "176257648313762",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 15,
+          "mataUang": "SAR",
+          "keterangan": "Taxi",
+          "tanggal": "2025-11-08"
         }
       ]
     },
@@ -839,5 +848,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
