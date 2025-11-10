@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 15547,
+          "saldo": 15497,
           "mataUang": "SAR"
         }
       ],
@@ -294,6 +294,15 @@
           "mataUang": "SAR",
           "keterangan": "Makan di rest area",
           "tanggal": "2025-11-07"
+        },
+        {
+          "id": "1762768425397796",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Taxi",
+          "tanggal": "2025-11-10"
         }
       ]
     },
@@ -857,5 +866,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
