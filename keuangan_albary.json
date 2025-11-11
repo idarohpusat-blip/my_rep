@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 15463,
+          "saldo": 15443,
           "mataUang": "SAR"
         }
       ],
@@ -320,6 +320,15 @@
           "jumlah": 10,
           "mataUang": "SAR",
           "keterangan": "Es",
+          "tanggal": "2025-11-11"
+        },
+        {
+          "id": "1762880076034929",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 20,
+          "mataUang": "SAR",
+          "keterangan": "Makan siang 2x",
           "tanggal": "2025-11-11"
         }
       ]
