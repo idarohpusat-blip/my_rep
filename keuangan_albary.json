@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 15473,
+          "saldo": 15463,
           "mataUang": "SAR"
         }
       ],
@@ -312,6 +312,15 @@
           "mataUang": "SAR",
           "keterangan": "Makan rest arae madinah",
           "tanggal": "2025-11-10"
+        },
+        {
+          "id": "1762880063558872",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Es",
+          "tanggal": "2025-11-11"
         }
       ]
     },
