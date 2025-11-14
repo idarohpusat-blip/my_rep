@@ -794,7 +794,7 @@
         },
         {
           "nama": "Hutang pak Andi",
-          "saldo": -80,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -888,10 +888,19 @@
           "mataUang": "SAR",
           "keterangan": "60 bilboy 20 mnadub nusuk",
           "tanggal": "2025-11-06"
+        },
+        {
+          "id": "1763103120059826",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 80,
+          "mataUang": "SAR",
+          "keterangan": "Lunas",
+          "tanggal": "2025-11-14"
         }
       ]
     }
   ],
   "albary_user_terakhir": "5",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "2"
 }
