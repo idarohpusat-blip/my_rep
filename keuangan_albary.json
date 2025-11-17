@@ -1055,8 +1055,13 @@
           "tanggal": "2025-11-17"
         }
       ]
+    },
+    {
+      "nama": "Bunda Ughi",
+      "kantong": [],
+      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "4",
+  "albary_user_terakhir": "7",
   "albary_kantong_terakhir": "-1"
 }
