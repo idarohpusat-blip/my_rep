@@ -637,7 +637,7 @@
         },
         {
           "nama": "Mamanya ahmad",
-          "saldo": -200,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -731,15 +731,6 @@
           "mataUang": "Rp",
           "keterangan": "Bayar",
           "tanggal": "2025-11-04"
-        },
-        {
-          "id": "1762362692414937",
-          "kantong": 4,
-          "jenis": "keluar",
-          "jumlah": 200,
-          "mataUang": "SAR",
-          "keterangan": "Mau di TF",
-          "tanggal": "2025-11-05"
         },
         {
           "id": "1762489275809251",
@@ -893,5 +884,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "4"
 }
