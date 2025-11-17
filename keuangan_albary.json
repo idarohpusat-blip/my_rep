@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 283,
+          "saldo": 233,
           "mataUang": "SAR"
         }
       ],
@@ -347,6 +347,15 @@
           "jumlah": 15000,
           "mataUang": "SAR",
           "keterangan": "DP Hotel Madina Rose Holiday",
+          "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763406504209610",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Taxi ke mekkah",
           "tanggal": "2025-11-17"
         }
       ]
