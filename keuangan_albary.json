@@ -338,7 +338,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 11704700,
+          "saldo": 15704700,
           "mataUang": "Rp"
         },
         {
@@ -585,6 +585,15 @@
           "jumlah": 1500000,
           "mataUang": "Rp",
           "keterangan": "Badal dari jamaah soraya",
+          "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763366271563887",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 4000000,
+          "mataUang": "Rp",
+          "keterangan": "Bunda Anti",
           "tanggal": "2025-11-17"
         }
       ]
@@ -1027,5 +1036,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "0"
 }
