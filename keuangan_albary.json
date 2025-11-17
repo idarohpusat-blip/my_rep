@@ -892,7 +892,7 @@
         },
         {
           "nama": "Keinginan",
-          "saldo": 0,
+          "saldo": 3787952,
           "mataUang": "Rp"
         },
         {
@@ -920,10 +920,19 @@
           "mataUang": "Rp",
           "keterangan": "Saldo",
           "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763363217577487",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 3787952,
+          "mataUang": "Rp",
+          "keterangan": "Saldo",
+          "tanggal": "2025-11-17"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
