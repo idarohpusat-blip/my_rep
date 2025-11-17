@@ -343,7 +343,7 @@
         },
         {
           "nama": "Belum Selesai",
-          "saldo": 0,
+          "saldo": 1000000,
           "mataUang": "Rp"
         }
       ],
@@ -544,6 +544,15 @@
           "jumlah": 450000,
           "mataUang": "Rp",
           "keterangan": "Alquran",
+          "tanggal": "2025-11-17"
+        },
+        {
+          "id": "176336614085090",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 1000000,
+          "mataUang": "Rp",
+          "keterangan": "Untuk Sodaqoh Quran",
           "tanggal": "2025-11-17"
         }
       ]
@@ -986,5 +995,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
