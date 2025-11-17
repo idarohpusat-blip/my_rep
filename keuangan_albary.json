@@ -338,7 +338,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 14073200,
+          "saldo": 11254700,
           "mataUang": "Rp"
         }
       ],
@@ -521,6 +521,15 @@
           "jumlah": 4858000,
           "mataUang": "Rp",
           "keterangan": "Layanan Ptzamzam",
+          "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763365974813113",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 2818500,
+          "mataUang": "Rp",
+          "keterangan": "Operasional visa",
           "tanggal": "2025-11-17"
         }
       ]
