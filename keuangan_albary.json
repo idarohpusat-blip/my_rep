@@ -899,6 +899,11 @@
           "nama": "Investasi",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Keluarga",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
