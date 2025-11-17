@@ -887,7 +887,7 @@
       "kantong": [
         {
           "nama": "Keuntungan",
-          "saldo": 0,
+          "saldo": 12626508,
           "mataUang": "Rp"
         },
         {
@@ -911,9 +911,19 @@
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1763363203754978",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 12626508,
+          "mataUang": "Rp",
+          "keterangan": "Saldo",
+          "tanggal": "2025-11-17"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
