@@ -902,7 +902,7 @@
         },
         {
           "nama": "Keluarga",
-          "saldo": 0,
+          "saldo": 1130476,
           "mataUang": "Rp"
         },
         {
@@ -938,10 +938,19 @@
           "mataUang": "Rp",
           "keterangan": "Saldo",
           "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763363259602566",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 1130476,
+          "mataUang": "Rp",
+          "keterangan": "Saldo",
+          "tanggal": "2025-11-17"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "3"
 }
