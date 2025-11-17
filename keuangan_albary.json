@@ -340,6 +340,11 @@
           "nama": "Kas Usaha",
           "saldo": 11704700,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Belum Selesai",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
