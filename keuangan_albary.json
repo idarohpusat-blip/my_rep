@@ -1061,13 +1061,23 @@
       "kantong": [
         {
           "nama": "Uang riyal",
-          "saldo": 0,
+          "saldo": 8500,
           "mataUang": "SAR"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1763393354545374",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 8500,
+          "mataUang": "SAR",
+          "keterangan": "Untuk pembayaran Hotel",
+          "tanggal": "2025-11-17"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
