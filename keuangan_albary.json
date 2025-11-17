@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 15443,
+          "saldo": 15283,
           "mataUang": "SAR"
         }
       ],
@@ -330,6 +330,15 @@
           "mataUang": "SAR",
           "keterangan": "Makan siang 2x",
           "tanggal": "2025-11-11"
+        },
+        {
+          "id": "1763378514701527",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 160,
+          "mataUang": "SAR",
+          "keterangan": "Dar madinah",
+          "tanggal": "2025-11-17"
         }
       ]
     },
@@ -1054,5 +1063,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
