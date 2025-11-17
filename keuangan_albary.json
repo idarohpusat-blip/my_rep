@@ -884,7 +884,13 @@
     },
     {
       "nama": "Xampp Albary",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Keuntungan",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
