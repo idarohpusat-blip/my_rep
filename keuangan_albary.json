@@ -897,7 +897,7 @@
         },
         {
           "nama": "Investasi",
-          "saldo": 0,
+          "saldo": 6313254,
           "mataUang": "Rp"
         },
         {
@@ -929,10 +929,19 @@
           "mataUang": "Rp",
           "keterangan": "Saldo",
           "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763363240615986",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 6313254,
+          "mataUang": "Rp",
+          "keterangan": "Saldo",
+          "tanggal": "2025-11-17"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "2"
 }
