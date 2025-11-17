@@ -1058,7 +1058,13 @@
     },
     {
       "nama": "Bunda Ughi",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "8500",
+          "saldo": 0,
+          "mataUang": "SAR"
+        }
+      ],
       "transaksi": []
     }
   ],
