@@ -338,7 +338,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 11254700,
+          "saldo": 11704700,
           "mataUang": "Rp"
         }
       ],
@@ -530,6 +530,15 @@
           "jumlah": 2818500,
           "mataUang": "Rp",
           "keterangan": "Operasional visa",
+          "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763366097232492",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 450000,
+          "mataUang": "Rp",
+          "keterangan": "Alquran",
           "tanggal": "2025-11-17"
         }
       ]
