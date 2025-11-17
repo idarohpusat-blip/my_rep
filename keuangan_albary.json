@@ -338,7 +338,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 16154700,
+          "saldo": 2603420,
           "mataUang": "Rp"
         },
         {
@@ -603,6 +603,15 @@
           "jumlah": 450000,
           "mataUang": "Rp",
           "keterangan": "Hendling bandara Ahmad",
+          "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763366404669429",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 13551280,
+          "mataUang": "Rp",
+          "keterangan": "Tiket Pulang",
           "tanggal": "2025-11-17"
         }
       ]
