@@ -904,6 +904,11 @@
           "nama": "Keluarga",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Inv Akhirat",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
