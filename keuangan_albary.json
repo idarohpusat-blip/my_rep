@@ -894,6 +894,11 @@
           "nama": "Keinginan",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Investasi",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
