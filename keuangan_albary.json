@@ -338,7 +338,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 315200,
+          "saldo": 9215200,
           "mataUang": "Rp"
         }
       ],
@@ -504,6 +504,15 @@
           "mataUang": "Rp",
           "keterangan": "Gaji uni",
           "tanggal": "2025-10-25"
+        },
+        {
+          "id": "1763365885130533",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 8900000,
+          "mataUang": "Rp",
+          "keterangan": "Pt zamzam hotel",
+          "tanggal": "2025-11-17"
         }
       ]
     },
@@ -945,5 +954,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
