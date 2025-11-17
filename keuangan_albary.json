@@ -907,7 +907,7 @@
         },
         {
           "nama": "Inv Akhirat",
-          "saldo": 0,
+          "saldo": 381325,
           "mataUang": "Rp"
         }
       ],
@@ -947,10 +947,19 @@
           "mataUang": "Rp",
           "keterangan": "Saldo",
           "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763363277367913",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 381325,
+          "mataUang": "Rp",
+          "keterangan": "Saldo",
+          "tanggal": "2025-11-17"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "4"
 }
