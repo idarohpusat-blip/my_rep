@@ -627,7 +627,7 @@
         },
         {
           "nama": "Jamaah Albary Haramain",
-          "saldo": 1500000,
+          "saldo": 1000000,
           "mataUang": "Rp"
         },
         {
@@ -712,15 +712,6 @@
           "jumlah": 1000000,
           "mataUang": "Rp",
           "keterangan": "Sedekah jumat berkah",
-          "tanggal": "2025-11-03"
-        },
-        {
-          "id": "1762147732182520",
-          "kantong": 2,
-          "jenis": "masuk",
-          "jumlah": 500000,
-          "mataUang": "Rp",
-          "keterangan": "Alquran bunda elly",
           "tanggal": "2025-11-03"
         },
         {
@@ -902,5 +893,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "2"
 }
