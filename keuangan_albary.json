@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 233,
+          "saldo": 228,
           "mataUang": "SAR"
         }
       ],
@@ -356,6 +356,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Taxi ke mekkah",
+          "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763406522127129",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 5,
+          "mataUang": "SAR",
+          "keterangan": "Snak",
           "tanggal": "2025-11-17"
         }
       ]
