@@ -374,7 +374,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 2603420,
+          "saldo": -999980,
           "mataUang": "Rp"
         },
         {
@@ -649,6 +649,15 @@
           "mataUang": "Rp",
           "keterangan": "Tiket Pulang",
           "tanggal": "2025-11-17"
+        },
+        {
+          "id": "1763465147271656",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 3603400,
+          "mataUang": "Rp",
+          "keterangan": "Masuk ke Sistem",
+          "tanggal": "2025-11-18"
         }
       ]
     },
@@ -1106,5 +1115,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
