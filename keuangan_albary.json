@@ -374,7 +374,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 0,
+          "saldo": -174000,
           "mataUang": "Rp"
         },
         {
@@ -657,6 +657,15 @@
           "jumlah": 2603420,
           "mataUang": "Rp",
           "keterangan": "Masuk ke Sistem",
+          "tanggal": "2025-11-18"
+        },
+        {
+          "id": "1763465210526460",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 174000,
+          "mataUang": "Rp",
+          "keterangan": "Taxi umroh pp",
           "tanggal": "2025-11-18"
         }
       ]
