@@ -374,7 +374,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": -999980,
+          "saldo": -5,
           "mataUang": "Rp"
         },
         {
@@ -654,7 +654,7 @@
           "id": "1763465147271656",
           "kantong": 0,
           "jenis": "keluar",
-          "jumlah": 3603400,
+          "jumlah": 2603425,
           "mataUang": "Rp",
           "keterangan": "Masuk ke Sistem",
           "tanggal": "2025-11-18"
