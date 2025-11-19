@@ -5,7 +5,7 @@
       "kantong": [
         {
           "nama": "Ummi sri CK Agustus",
-          "saldo": 13857,
+          "saldo": 64,
           "mataUang": "SAR"
         },
         {
@@ -366,15 +366,6 @@
           "mataUang": "SAR",
           "keterangan": "Snak",
           "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763532276948757",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 13793,
-          "mataUang": "SAR",
-          "keterangan": "Uang Masuk 60 juta",
-          "tanggal": "2025-11-19"
         }
       ]
     },
