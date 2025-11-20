@@ -778,7 +778,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 9,
+          "saldo": 5,
           "mataUang": "SAR"
         },
         {
@@ -917,6 +917,15 @@
           "jumlah": 30,
           "mataUang": "SAR",
           "keterangan": "Kako",
+          "tanggal": "2025-11-20"
+        },
+        {
+          "id": "1763662282583398",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 4,
+          "mataUang": "SAR",
+          "keterangan": "Thoot",
           "tanggal": "2025-11-20"
         }
       ]
