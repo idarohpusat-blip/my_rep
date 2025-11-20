@@ -383,7 +383,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": -174000,
+          "saldo": -14000,
           "mataUang": "Rp"
         },
         {
@@ -676,6 +676,15 @@
           "mataUang": "Rp",
           "keterangan": "Taxi umroh pp",
           "tanggal": "2025-11-18"
+        },
+        {
+          "id": "1763668830681815",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 160000,
+          "mataUang": "Rp",
+          "keterangan": "Raudoh",
+          "tanggal": "2025-11-20"
         }
       ]
     },
@@ -1169,5 +1178,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
