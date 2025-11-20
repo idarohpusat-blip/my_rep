@@ -1133,7 +1133,7 @@
       "kantong": [
         {
           "nama": "Uang riyal",
-          "saldo": 5000,
+          "saldo": 8475,
           "mataUang": "SAR"
         }
       ],
@@ -1155,10 +1155,19 @@
           "mataUang": "SAR",
           "keterangan": "Pembayaran Hotel",
           "tanggal": "2025-11-18"
+        },
+        {
+          "id": "1763667963229192",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 3475,
+          "mataUang": "SAR",
+          "keterangan": "Dari ustadz Ahmad",
+          "tanggal": "2025-11-20"
         }
       ]
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
