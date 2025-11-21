@@ -801,7 +801,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 5,
+          "saldo": 3,
           "mataUang": "SAR"
         },
         {
@@ -950,6 +950,15 @@
           "mataUang": "SAR",
           "keterangan": "Thoot",
           "tanggal": "2025-11-20"
+        },
+        {
+          "id": "1763751864187812",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 2,
+          "mataUang": "SAR",
+          "keterangan": "Milhun",
+          "tanggal": "2025-11-21"
         }
       ]
     },
@@ -1201,5 +1210,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
