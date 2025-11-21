@@ -801,7 +801,7 @@
         },
         {
           "nama": "Bagolah",
-          "saldo": 3,
+          "saldo": 0,
           "mataUang": "SAR"
         },
         {
@@ -958,6 +958,15 @@
           "jumlah": 2,
           "mataUang": "SAR",
           "keterangan": "Milhun",
+          "tanggal": "2025-11-21"
+        },
+        {
+          "id": "1763752066864689",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 3,
+          "mataUang": "SAR",
+          "keterangan": "Miranda",
           "tanggal": "2025-11-21"
         }
       ]
