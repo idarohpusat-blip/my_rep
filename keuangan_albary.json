@@ -22,11 +22,6 @@
           "nama": "Des 17 ck",
           "saldo": 14021,
           "mataUang": "SAR"
-        },
-        {
-          "nama": "Pembayaran Pokok 17 des 2025",
-          "saldo": 0,
-          "mataUang": "SAR"
         }
       ],
       "transaksi": [
@@ -1242,5 +1237,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
