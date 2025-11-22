@@ -712,7 +712,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": -460,
+          "saldo": -844,
           "mataUang": "SAR"
         }
       ],
@@ -796,6 +796,15 @@
           "jumlah": 460,
           "mataUang": "SAR",
           "keterangan": "Porter kedatangan",
+          "tanggal": "2025-11-22"
+        },
+        {
+          "id": "1763776358137893",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 384,
+          "mataUang": "SAR",
+          "keterangan": "Nasi + Air",
           "tanggal": "2025-11-22"
         }
       ]
