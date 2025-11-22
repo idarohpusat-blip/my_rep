@@ -709,11 +709,6 @@
           "nama": "SLA Berkah",
           "saldo": -20731334,
           "mataUang": "Rp"
-        },
-        {
-          "nama": "Tanggal 23 November",
-          "saldo": -844,
-          "mataUang": "SAR"
         }
       ],
       "transaksi": [
@@ -788,24 +783,6 @@
           "mataUang": "Rp",
           "keterangan": "Pembayaran Bertahap ke 2",
           "tanggal": "2025-10-02"
-        },
-        {
-          "id": "1763776181103697",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 384,
-          "mataUang": "SAR",
-          "keterangan": "Nasi + Air",
-          "tanggal": "2025-11-22"
-        },
-        {
-          "id": "176377620814130",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 460,
-          "mataUang": "SAR",
-          "keterangan": "Porter kedatangan",
-          "tanggal": "2025-11-22"
         }
       ]
     },
@@ -1242,5 +1219,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "0"
 }
