@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 14021,
+          "saldo": 14011,
           "mataUang": "SAR"
         }
       ],
@@ -375,6 +375,15 @@
           "mataUang": "SAR",
           "keterangan": "uang masuk 60 juta",
           "tanggal": "2025-11-19"
+        },
+        {
+          "id": "1763849430236642",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Taxi tukar riyal",
+          "tanggal": "2025-11-22"
         }
       ]
     },
@@ -1264,5 +1273,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
