@@ -712,7 +712,7 @@
         },
         {
           "nama": "Tanggal 23 November",
-          "saldo": 0,
+          "saldo": -384,
           "mataUang": "SAR"
         }
       ],
@@ -788,6 +788,15 @@
           "mataUang": "Rp",
           "keterangan": "Pembayaran Bertahap ke 2",
           "tanggal": "2025-10-02"
+        },
+        {
+          "id": "1763776181103697",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 384,
+          "mataUang": "SAR",
+          "keterangan": "Nasi + Air",
+          "tanggal": "2025-11-22"
         }
       ]
     },
