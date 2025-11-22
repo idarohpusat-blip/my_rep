@@ -709,6 +709,11 @@
           "nama": "SLA Berkah",
           "saldo": -20731334,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "231126 November",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
