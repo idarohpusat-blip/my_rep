@@ -1201,7 +1201,7 @@
       "kantong": [
         {
           "nama": "Uang riyal",
-          "saldo": 8475,
+          "saldo": 8465,
           "mataUang": "SAR"
         }
       ],
@@ -1232,10 +1232,19 @@
           "mataUang": "SAR",
           "keterangan": "Dari ustadz Ahmad",
           "tanggal": "2025-11-20"
+        },
+        {
+          "id": "176382563760342",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Taxi cek hotel",
+          "tanggal": "2025-11-22"
         }
       ]
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
