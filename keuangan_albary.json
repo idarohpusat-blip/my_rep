@@ -712,7 +712,7 @@
         },
         {
           "nama": "Tanggal 23 November",
-          "saldo": -384,
+          "saldo": -844,
           "mataUang": "SAR"
         }
       ],
@@ -796,6 +796,15 @@
           "jumlah": 384,
           "mataUang": "SAR",
           "keterangan": "Nasi + Air",
+          "tanggal": "2025-11-22"
+        },
+        {
+          "id": "176377620814130",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 460,
+          "mataUang": "SAR",
+          "keterangan": "Porter kedatangan",
           "tanggal": "2025-11-22"
         }
       ]
