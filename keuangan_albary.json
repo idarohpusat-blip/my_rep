@@ -709,6 +709,11 @@
           "nama": "SLA Berkah",
           "saldo": -20731334,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Tanggal 23 November",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
@@ -1219,5 +1224,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
