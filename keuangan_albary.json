@@ -712,7 +712,7 @@
         },
         {
           "nama": "Tanggal 23 November",
-          "saldo": 360,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -788,15 +788,6 @@
           "mataUang": "Rp",
           "keterangan": "Pembayaran Bertahap ke 2",
           "tanggal": "2025-10-02"
-        },
-        {
-          "id": "1763776129794631",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 360,
-          "mataUang": "SAR",
-          "keterangan": "Nasi 15 x 24 pax",
-          "tanggal": "2025-11-22"
         }
       ]
     },
