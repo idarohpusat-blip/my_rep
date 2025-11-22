@@ -1201,7 +1201,7 @@
       "kantong": [
         {
           "nama": "Uang riyal",
-          "saldo": 8455,
+          "saldo": 8445,
           "mataUang": "SAR"
         }
       ],
@@ -1249,6 +1249,15 @@
           "jumlah": 10,
           "mataUang": "SAR",
           "keterangan": "Ke harom untuk pembayaran tapi nga jadi",
+          "tanggal": "2025-11-22"
+        },
+        {
+          "id": "1763825668803467",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Uang pulanf dari harom",
           "tanggal": "2025-11-22"
         }
       ]
