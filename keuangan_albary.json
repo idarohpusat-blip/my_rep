@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": -844,
+          "saldo": -460,
           "mataUang": "SAR"
         }
       ],
@@ -800,15 +800,6 @@
           "jumlah": 460,
           "mataUang": "SAR",
           "keterangan": "Porter kedatangan",
-          "tanggal": "2025-11-22"
-        },
-        {
-          "id": "1763776358137893",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 384,
-          "mataUang": "SAR",
-          "keterangan": "Nasi + Air",
           "tanggal": "2025-11-22"
         }
       ]
@@ -1273,5 +1264,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
