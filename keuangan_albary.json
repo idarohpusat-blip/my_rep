@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": -460,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -792,15 +792,6 @@
           "mataUang": "Rp",
           "keterangan": "Pembayaran Bertahap ke 2",
           "tanggal": "2025-10-02"
-        },
-        {
-          "id": "1763776321564616",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 460,
-          "mataUang": "SAR",
-          "keterangan": "Porter kedatangan",
-          "tanggal": "2025-11-22"
         }
       ]
     },
