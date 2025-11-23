@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 1740,
+          "saldo": 1640,
           "mataUang": "SAR"
         }
       ],
@@ -818,6 +818,15 @@
           "jumlah": 250,
           "mataUang": "SAR",
           "keterangan": "Koper",
+          "tanggal": "2025-11-23"
+        },
+        {
+          "id": "1763940588480538",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Supir jedda madina",
           "tanggal": "2025-11-23"
         }
       ]
