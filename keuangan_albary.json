@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 1350,
+          "saldo": 820,
           "mataUang": "SAR"
         }
       ],
@@ -863,6 +863,15 @@
           "jumlah": 150,
           "mataUang": "SAR",
           "keterangan": "Bu Eni",
+          "tanggal": "2025-11-25"
+        },
+        {
+          "id": "1764074601822128",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 530,
+          "mataUang": "SAR",
+          "keterangan": "Bunda hikmah",
           "tanggal": "2025-11-25"
         }
       ]
