@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 1640,
+          "saldo": 1140,
           "mataUang": "SAR"
         }
       ],
@@ -828,6 +828,15 @@
           "mataUang": "SAR",
           "keterangan": "Supir jedda madina",
           "tanggal": "2025-11-23"
+        },
+        {
+          "id": "1764030331479832",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 500,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy",
+          "tanggal": "2025-11-25"
         }
       ]
     },
@@ -1225,5 +1234,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
