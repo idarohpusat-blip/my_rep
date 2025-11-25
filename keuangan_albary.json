@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 1140,
+          "saldo": 1590,
           "mataUang": "SAR"
         }
       ],
@@ -833,7 +833,7 @@
           "id": "1764030331479832",
           "kantong": 1,
           "jenis": "keluar",
-          "jumlah": 500,
+          "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Bilboy",
           "tanggal": "2025-11-25"
