@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 420,
+          "saldo": 220,
           "mataUang": "SAR"
         }
       ],
@@ -881,6 +881,15 @@
           "jumlah": 400,
           "mataUang": "SAR",
           "keterangan": "Bunda susi",
+          "tanggal": "2025-11-25"
+        },
+        {
+          "id": "1764074629196731",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 200,
+          "mataUang": "SAR",
+          "keterangan": "Bunda iin",
           "tanggal": "2025-11-25"
         }
       ]
