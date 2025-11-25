@@ -1225,69 +1225,8 @@
     },
     {
       "nama": "Bunda Ughi",
-      "kantong": [
-        {
-          "nama": "Uang riyal",
-          "saldo": 8445,
-          "mataUang": "SAR"
-        }
-      ],
-      "transaksi": [
-        {
-          "id": "1763393354545374",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 8500,
-          "mataUang": "SAR",
-          "keterangan": "Untuk pembayaran Hotel",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763491869139561",
-          "kantong": 0,
-          "jenis": "keluar",
-          "jumlah": 3500,
-          "mataUang": "SAR",
-          "keterangan": "Pembayaran Hotel",
-          "tanggal": "2025-11-18"
-        },
-        {
-          "id": "1763667963229192",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 3475,
-          "mataUang": "SAR",
-          "keterangan": "Dari ustadz Ahmad",
-          "tanggal": "2025-11-20"
-        },
-        {
-          "id": "176382563760342",
-          "kantong": 0,
-          "jenis": "keluar",
-          "jumlah": 10,
-          "mataUang": "SAR",
-          "keterangan": "Taxi cek hotel",
-          "tanggal": "2025-11-22"
-        },
-        {
-          "id": "1763825657202333",
-          "kantong": 0,
-          "jenis": "keluar",
-          "jumlah": 10,
-          "mataUang": "SAR",
-          "keterangan": "Ke harom untuk pembayaran tapi nga jadi",
-          "tanggal": "2025-11-22"
-        },
-        {
-          "id": "1763825668803467",
-          "kantong": 0,
-          "jenis": "keluar",
-          "jumlah": 10,
-          "mataUang": "SAR",
-          "keterangan": "Uang pulanf dari harom",
-          "tanggal": "2025-11-22"
-        }
-      ]
+      "kantong": [],
+      "transaksi": []
     }
   ],
   "albary_user_terakhir": "7",
