@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": -8,
+          "saldo": -58,
           "mataUang": "SAR"
         }
       ],
@@ -917,6 +917,15 @@
           "jumlah": 68,
           "mataUang": "SAR",
           "keterangan": "Snakc madina to makkah",
+          "tanggal": "2025-11-28"
+        },
+        {
+          "id": "1764303231925514",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy mekkah kedatangan",
           "tanggal": "2025-11-28"
         }
       ]
