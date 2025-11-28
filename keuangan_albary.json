@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 60,
+          "saldo": -8,
           "mataUang": "SAR"
         }
       ],
@@ -908,6 +908,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Supir",
+          "tanggal": "2025-11-28"
+        },
+        {
+          "id": "1764303216258346",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 68,
+          "mataUang": "SAR",
+          "keterangan": "Snakc madina to makkah",
           "tanggal": "2025-11-28"
         }
       ]
