@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": -153,
+          "saldo": 347,
           "mataUang": "SAR"
         }
       ],
@@ -944,6 +944,15 @@
           "jumlah": 25,
           "mataUang": "SAR",
           "keterangan": "Air mineral",
+          "tanggal": "2025-11-29"
+        },
+        {
+          "id": "1764412946931234",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 500,
+          "mataUang": "SAR",
+          "keterangan": "Tambahan di bis",
           "tanggal": "2025-11-29"
         }
       ]
