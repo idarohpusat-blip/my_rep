@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 347,
+          "saldo": 297,
           "mataUang": "SAR"
         }
       ],
@@ -953,6 +953,15 @@
           "jumlah": 500,
           "mataUang": "SAR",
           "keterangan": "Tambahan di bis",
+          "tanggal": "2025-11-29"
+        },
+        {
+          "id": "1764412955872747",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Baksis supir",
           "tanggal": "2025-11-29"
         }
       ]
