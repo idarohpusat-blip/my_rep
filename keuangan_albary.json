@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": -58,
+          "saldo": -128,
           "mataUang": "SAR"
         }
       ],
@@ -927,6 +927,15 @@
           "mataUang": "SAR",
           "keterangan": "Bilboy mekkah kedatangan",
           "tanggal": "2025-11-28"
+        },
+        {
+          "id": "1764390220960865",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 70,
+          "mataUang": "SAR",
+          "keterangan": "Bindawood",
+          "tanggal": "2025-11-29"
         }
       ]
     },
@@ -1324,5 +1333,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
