@@ -716,7 +716,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 197,
+          "saldo": 179,
           "mataUang": "SAR"
         }
       ],
@@ -972,6 +972,15 @@
           "mataUang": "SAR",
           "keterangan": "Taxi mala abu reski",
           "tanggal": "2025-11-30"
+        },
+        {
+          "id": "1764562122041949",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 18,
+          "mataUang": "SAR",
+          "keterangan": "20 botol sedang toif",
+          "tanggal": "2025-12-01"
         }
       ]
     },
