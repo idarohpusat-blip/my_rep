@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": 14061,
+          "saldo": 14058,
           "mataUang": "SAR"
         }
       ],
@@ -392,6 +392,15 @@
           "jumlah": 30,
           "mataUang": "SAR",
           "keterangan": "Taxi",
+          "tanggal": "2025-12-02"
+        },
+        {
+          "id": "1764694493625322",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 3,
+          "mataUang": "SAR",
+          "keterangan": "Jajan",
           "tanggal": "2025-12-02"
         }
       ]
