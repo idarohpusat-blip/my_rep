@@ -734,7 +734,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 828,
+          "saldo": 468,
           "mataUang": "SAR"
         }
       ],
@@ -1070,6 +1070,15 @@
           "jumlah": 72,
           "mataUang": "SAR",
           "keterangan": "Supir + kornes",
+          "tanggal": "2025-12-03"
+        },
+        {
+          "id": "1764773211696388",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 360,
+          "mataUang": "SAR",
+          "keterangan": "Porter baksis 20",
           "tanggal": "2025-12-03"
         }
       ]
