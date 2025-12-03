@@ -734,7 +734,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 190,
+          "saldo": 130,
           "mataUang": "SAR"
         }
       ],
@@ -1097,6 +1097,15 @@
           "jumlah": 263,
           "mataUang": "SAR",
           "keterangan": "Air zamzam",
+          "tanggal": "2025-12-03"
+        },
+        {
+          "id": "1764785446280481",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 60,
+          "mataUang": "SAR",
+          "keterangan": "Kepulangan taxi",
           "tanggal": "2025-12-03"
         }
       ]
