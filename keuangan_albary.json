@@ -734,7 +734,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 185,
+          "saldo": 190,
           "mataUang": "SAR"
         }
       ],
@@ -1085,7 +1085,7 @@
           "id": "1764773218638857",
           "kantong": 1,
           "jenis": "keluar",
-          "jumlah": 20,
+          "jumlah": 15,
           "mataUang": "SAR",
           "keterangan": "Baksis zamzam",
           "tanggal": "2025-12-03"
