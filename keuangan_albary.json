@@ -734,7 +734,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 85,
+          "saldo": 70,
           "mataUang": "SAR"
         }
       ],
@@ -1017,6 +1017,15 @@
           "mataUang": "SAR",
           "keterangan": "Kunafa",
           "tanggal": "2025-12-01"
+        },
+        {
+          "id": "1764767267226976",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 15,
+          "mataUang": "SAR",
+          "keterangan": "Taxi ke alwafa",
+          "tanggal": "2025-12-03"
         }
       ]
     },
@@ -1414,5 +1423,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
