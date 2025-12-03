@@ -734,7 +734,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 0,
+          "saldo": 200,
           "mataUang": "SAR"
         }
       ],
@@ -1043,6 +1043,15 @@
           "jumlah": 20,
           "mataUang": "SAR",
           "keterangan": "Air kepulangan",
+          "tanggal": "2025-12-03"
+        },
+        {
+          "id": "1764770214342145",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 200,
+          "mataUang": "SAR",
+          "keterangan": "Uang keuntungan telefrik",
           "tanggal": "2025-12-03"
         }
       ]
