@@ -734,7 +734,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 70,
+          "saldo": 20,
           "mataUang": "SAR"
         }
       ],
@@ -1025,6 +1025,15 @@
           "jumlah": 15,
           "mataUang": "SAR",
           "keterangan": "Taxi ke alwafa",
+          "tanggal": "2025-12-03"
+        },
+        {
+          "id": "1764767283592173",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy mekkah kepulangan",
           "tanggal": "2025-12-03"
         }
       ]
