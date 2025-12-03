@@ -734,7 +734,7 @@
         },
         {
           "nama": "231126 November",
-          "saldo": 200,
+          "saldo": 900,
           "mataUang": "SAR"
         }
       ],
@@ -1052,6 +1052,15 @@
           "jumlah": 200,
           "mataUang": "SAR",
           "keterangan": "Uang keuntungan telefrik",
+          "tanggal": "2025-12-03"
+        },
+        {
+          "id": "176477038902960",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 700,
+          "mataUang": "SAR",
+          "keterangan": "Tambahan bis",
           "tanggal": "2025-12-03"
         }
       ]
