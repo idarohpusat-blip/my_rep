@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -551,
+          "saldo": -606,
           "mataUang": "SAR"
         }
       ],
@@ -392,6 +392,15 @@
           "jumlah": 89,
           "mataUang": "SAR",
           "keterangan": "Penjemputan mekkah",
+          "tanggal": "2025-12-17"
+        },
+        {
+          "id": "176598163062691",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 55,
+          "mataUang": "SAR",
+          "keterangan": "Porter",
           "tanggal": "2025-12-17"
         }
       ]
