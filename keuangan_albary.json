@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -442,
+          "saldo": -462,
           "mataUang": "SAR"
         }
       ],
@@ -374,6 +374,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Hadia hotel karena pemberitahuan",
+          "tanggal": "2025-12-17"
+        },
+        {
+          "id": "1765967320996692",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 20,
+          "mataUang": "SAR",
+          "keterangan": "Taxi pp pelunasan makan hotel",
           "tanggal": "2025-12-17"
         }
       ]
