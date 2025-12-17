@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -706,
+          "saldo": -721,
           "mataUang": "SAR"
         }
       ],
@@ -410,6 +410,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Tip supir jedda mekka",
+          "tanggal": "2025-12-17"
+        },
+        {
+          "id": "1766015635417351",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 15,
+          "mataUang": "SAR",
+          "keterangan": "Tip Muassasah",
           "tanggal": "2025-12-17"
         }
       ]
