@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -781,
+          "saldo": -791,
           "mataUang": "SAR"
         }
       ],
@@ -425,7 +425,7 @@
           "id": "1766079640503765",
           "kantong": 3,
           "jenis": "keluar",
-          "jumlah": 60,
+          "jumlah": 70,
           "mataUang": "SAR",
           "keterangan": "Bilboy",
           "tanggal": "2025-12-18"
