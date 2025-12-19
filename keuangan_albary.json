@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 270,
+          "saldo": 376,
           "mataUang": "SAR"
         }
       ],
@@ -1582,6 +1582,15 @@
           "jumlah": 43,
           "mataUang": "SAR",
           "keterangan": "200 rb ang dwi saputra",
+          "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1766143102839938",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 106,
+          "mataUang": "SAR",
+          "keterangan": "Bunda tarsikem& bunda sulfiani",
           "tanggal": "2025-12-19"
         }
       ]
