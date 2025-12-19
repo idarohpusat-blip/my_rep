@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 227,
+          "saldo": 270,
           "mataUang": "SAR"
         }
       ],
@@ -1573,6 +1573,15 @@
           "jumlah": 21,
           "mataUang": "SAR",
           "keterangan": "Hamba Allah",
+          "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1766142490760133",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 43,
+          "mataUang": "SAR",
+          "keterangan": "200 rb ang dwi saputra",
           "tanggal": "2025-12-19"
         }
       ]
