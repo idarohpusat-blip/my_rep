@@ -1528,8 +1528,13 @@
           "tanggal": "2025-11-20"
         }
       ]
+    },
+    {
+      "nama": "Ck desember 2025",
+      "kantong": [],
+      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "3"
+  "albary_user_terakhir": "7",
+  "albary_kantong_terakhir": "-1"
 }
