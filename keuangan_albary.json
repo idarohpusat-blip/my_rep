@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 206,
+          "saldo": 227,
           "mataUang": "SAR"
         }
       ],
@@ -1564,6 +1564,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Mas adit",
+          "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1766141606646884",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 21,
+          "mataUang": "SAR",
+          "keterangan": "Hamba Allah",
           "tanggal": "2025-12-19"
         }
       ]
