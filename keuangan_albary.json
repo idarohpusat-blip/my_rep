@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 64,
+          "saldo": 54,
           "mataUang": "SAR"
         }
       ],
@@ -1654,6 +1654,15 @@
           "jumlah": 64,
           "mataUang": "SAR",
           "keterangan": "300rb susilowati keluarga",
+          "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1766154933376352",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Sodaqoh",
           "tanggal": "2025-12-19"
         }
       ]
