@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 482,
+          "saldo": 82,
           "mataUang": "SAR"
         }
       ],
@@ -1600,6 +1600,15 @@
           "jumlah": 106,
           "mataUang": "SAR",
           "keterangan": "Bunda Aghnia 500rb",
+          "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1766150182920828",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 400,
+          "mataUang": "SAR",
+          "keterangan": "Kurma 10 box × 40",
           "tanggal": "2025-12-19"
         }
       ]
