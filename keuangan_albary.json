@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 82,
+          "saldo": 57,
           "mataUang": "SAR"
         }
       ],
@@ -1609,6 +1609,15 @@
           "jumlah": 400,
           "mataUang": "SAR",
           "keterangan": "Kurma 10 box × 40",
+          "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1766150217177601",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 25,
+          "mataUang": "SAR",
+          "keterangan": "Coklat 1/5 panjang",
           "tanggal": "2025-12-19"
         }
       ]
