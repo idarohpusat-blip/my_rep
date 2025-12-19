@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 376,
+          "saldo": 482,
           "mataUang": "SAR"
         }
       ],
@@ -1591,6 +1591,15 @@
           "jumlah": 106,
           "mataUang": "SAR",
           "keterangan": "Bunda tarsikem& bunda sulfiani",
+          "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1766148833919378",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 106,
+          "mataUang": "SAR",
+          "keterangan": "Bunda Aghnia",
           "tanggal": "2025-12-19"
         }
       ]
