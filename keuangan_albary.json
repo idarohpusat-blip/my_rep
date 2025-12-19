@@ -1534,7 +1534,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 1,
+          "saldo": 106,
           "mataUang": "SAR"
         }
       ],
@@ -1543,7 +1543,7 @@
           "id": "176610534462580",
           "kantong": 0,
           "jenis": "masuk",
-          "jumlah": 1,
+          "jumlah": 106,
           "mataUang": "SAR",
           "keterangan": "500rb Diana kawati = bpk khomaruddin dan ibu roqoyyah",
           "tanggal": "2025-12-19"
