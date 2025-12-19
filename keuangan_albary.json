@@ -1531,7 +1531,13 @@
     },
     {
       "nama": "Ck desember 2025",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Sedekah jumat",
+          "saldo": 0,
+          "mataUang": "SAR"
+        }
+      ],
       "transaksi": []
     }
   ],
