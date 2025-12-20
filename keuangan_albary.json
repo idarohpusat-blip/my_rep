@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -791,
+          "saldo": -821,
           "mataUang": "SAR"
         }
       ],
@@ -429,6 +429,15 @@
           "mataUang": "SAR",
           "keterangan": "Bilboy",
           "tanggal": "2025-12-18"
+        },
+        {
+          "id": "1766189936225620",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "Dorong fuad bandara",
+          "tanggal": "2025-12-20"
         }
       ]
     },
@@ -1669,5 +1678,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
