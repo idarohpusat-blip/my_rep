@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -1001,
+          "saldo": -1051,
           "mataUang": "SAR"
         }
       ],
@@ -464,6 +464,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Tip supr makka mazarat",
+          "tanggal": "2025-12-20"
+        },
+        {
+          "id": "176624201346792",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Sevenday",
           "tanggal": "2025-12-20"
         }
       ]
