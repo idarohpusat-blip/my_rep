@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -821,
+          "saldo": -941,
           "mataUang": "SAR"
         }
       ],
@@ -437,6 +437,15 @@
           "jumlah": 30,
           "mataUang": "SAR",
           "keterangan": "Dorong fuad bandara",
+          "tanggal": "2025-12-20"
+        },
+        {
+          "id": "1766219422638195",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 120,
+          "mataUang": "SAR",
+          "keterangan": "Eskrim",
           "tanggal": "2025-12-20"
         }
       ]
