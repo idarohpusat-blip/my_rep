@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -941,
+          "saldo": -951,
           "mataUang": "SAR"
         }
       ],
@@ -446,6 +446,15 @@
           "jumlah": 120,
           "mataUang": "SAR",
           "keterangan": "Eskrim",
+          "tanggal": "2025-12-20"
+        },
+        {
+          "id": "1766241960824314",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Buah campur",
           "tanggal": "2025-12-20"
         }
       ]
