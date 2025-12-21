@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -1074,
+          "saldo": -1579,
           "mataUang": "SAR"
         }
       ],
@@ -483,6 +483,15 @@
           "mataUang": "SAR",
           "keterangan": "AIR mazarat",
           "tanggal": "2025-12-20"
+        },
+        {
+          "id": "1766338346730572",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 505,
+          "mataUang": "SAR",
+          "keterangan": "M1/2",
+          "tanggal": "2025-12-21"
         }
       ]
     },
