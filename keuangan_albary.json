@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -1744,
+          "saldo": -1344,
           "mataUang": "SAR"
         }
       ],
@@ -518,6 +518,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Uang mobil",
+          "tanggal": "2025-12-22"
+        },
+        {
+          "id": "1766417649016532",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 400,
+          "mataUang": "SAR",
+          "keterangan": "Kembalian uang Makan Toif",
           "tanggal": "2025-12-22"
         }
       ]
