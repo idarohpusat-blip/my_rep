@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -1579,
+          "saldo": -1744,
           "mataUang": "SAR"
         }
       ],
@@ -492,6 +492,15 @@
           "mataUang": "SAR",
           "keterangan": "M1/2",
           "tanggal": "2025-12-21"
+        },
+        {
+          "id": "176638397578983",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 165,
+          "mataUang": "SAR",
+          "keterangan": "Telefrik ummi sri 3 orang",
+          "tanggal": "2025-12-22"
         }
       ]
     },
