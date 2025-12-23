@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -2499,
+          "saldo": -2518,
           "mataUang": "SAR"
         }
       ],
@@ -563,6 +563,15 @@
           "jumlah": 55,
           "mataUang": "SAR",
           "keterangan": "Uang rest area",
+          "tanggal": "2025-12-23"
+        },
+        {
+          "id": "1766500179190975",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 19,
+          "mataUang": "SAR",
+          "keterangan": "Jajan resta area",
           "tanggal": "2025-12-23"
         }
       ]
