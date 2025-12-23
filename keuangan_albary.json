@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -2444,
+          "saldo": -2499,
           "mataUang": "SAR"
         }
       ],
@@ -554,6 +554,15 @@
           "jumlah": 500,
           "mataUang": "SAR",
           "keterangan": "Ummi sri kakiya",
+          "tanggal": "2025-12-23"
+        },
+        {
+          "id": "176650014403666",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 55,
+          "mataUang": "SAR",
+          "keterangan": "Uang rest area",
           "tanggal": "2025-12-23"
         }
       ]
