@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -1344,
+          "saldo": -1444,
           "mataUang": "SAR"
         }
       ],
@@ -528,6 +528,15 @@
           "mataUang": "SAR",
           "keterangan": "Kembalian uang Makan Toif",
           "tanggal": "2025-12-22"
+        },
+        {
+          "id": "1766465559351537",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Alquran makka keluarga bustan",
+          "tanggal": "2025-12-23"
         }
       ]
     },
