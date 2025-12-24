@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -2518,
+          "saldo": -2573,
           "mataUang": "SAR"
         }
       ],
@@ -573,6 +573,15 @@
           "mataUang": "SAR",
           "keterangan": "Jajan resta area",
           "tanggal": "2025-12-23"
+        },
+        {
+          "id": "1766558534147168",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 55,
+          "mataUang": "SAR",
+          "keterangan": "Uang tip bilboy madina",
+          "tanggal": "2025-12-24"
         }
       ]
     },
