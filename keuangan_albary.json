@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -2573,
+          "saldo": -2673,
           "mataUang": "SAR"
         }
       ],
@@ -581,6 +581,15 @@
           "jumlah": 55,
           "mataUang": "SAR",
           "keterangan": "Uang tip bilboy madina",
+          "tanggal": "2025-12-24"
+        },
+        {
+          "id": "1766558548017549",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Uang tip bilboy mekkah",
           "tanggal": "2025-12-24"
         }
       ]
