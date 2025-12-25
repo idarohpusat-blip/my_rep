@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3517,
+          "saldo": -3617,
           "mataUang": "SAR"
         }
       ],
@@ -635,6 +635,15 @@
           "jumlah": 280,
           "mataUang": "SAR",
           "keterangan": "Jual tiket museum",
+          "tanggal": "2025-12-25"
+        },
+        {
+          "id": "1766676553867461",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Setelah museum",
           "tanggal": "2025-12-25"
         }
       ]
