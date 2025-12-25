@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3688,
+          "saldo": -2608,
           "mataUang": "SAR"
         }
       ],
@@ -591,15 +591,6 @@
           "mataUang": "SAR",
           "keterangan": "Uang tip supir mekkah madina",
           "tanggal": "2025-12-24"
-        },
-        {
-          "id": "1766629986224518",
-          "kantong": 3,
-          "jenis": "keluar",
-          "jumlah": 1080,
-          "mataUang": "SAR",
-          "keterangan": "Tiket museum",
-          "tanggal": "2025-12-25"
         }
       ]
     },
