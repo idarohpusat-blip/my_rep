@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -2737,
+          "saldo": -3697,
           "mataUang": "SAR"
         }
       ],
@@ -608,6 +608,15 @@
           "jumlah": 29,
           "mataUang": "SAR",
           "keterangan": "Parkir quba",
+          "tanggal": "2025-12-25"
+        },
+        {
+          "id": "1766657276022250",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 960,
+          "mataUang": "SAR",
+          "keterangan": "Tiket museum",
           "tanggal": "2025-12-25"
         }
       ]
