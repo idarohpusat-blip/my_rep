@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3797,
+          "saldo": -3517,
           "mataUang": "SAR"
         }
       ],
@@ -626,6 +626,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Ummi minta di kamar",
+          "tanggal": "2025-12-25"
+        },
+        {
+          "id": "1766672200442467",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 280,
+          "mataUang": "SAR",
+          "keterangan": "Uang tiket",
           "tanggal": "2025-12-25"
         }
       ]
