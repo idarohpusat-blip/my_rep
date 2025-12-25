@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -2708,
+          "saldo": -2737,
           "mataUang": "SAR"
         }
       ],
@@ -599,6 +599,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Grand plaza",
+          "tanggal": "2025-12-25"
+        },
+        {
+          "id": "176665158549527",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 29,
+          "mataUang": "SAR",
+          "keterangan": "Parkir quba",
           "tanggal": "2025-12-25"
         }
       ]
