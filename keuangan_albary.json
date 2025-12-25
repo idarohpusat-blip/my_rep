@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3617,
+          "saldo": -3717,
           "mataUang": "SAR"
         }
       ],
@@ -644,6 +644,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Setelah museum",
+          "tanggal": "2025-12-25"
+        },
+        {
+          "id": "1766679172045216",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Mobil dari rose holiday ke airport",
           "tanggal": "2025-12-25"
         }
       ]
