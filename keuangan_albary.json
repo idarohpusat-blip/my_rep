@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3770,
+          "saldo": -4370,
           "mataUang": "SAR"
         }
       ],
@@ -680,6 +680,15 @@
           "jumlah": 8,
           "mataUang": "SAR",
           "keterangan": "Bindawood betrei",
+          "tanggal": "2025-12-26"
+        },
+        {
+          "id": "1766752965002162",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 600,
+          "mataUang": "SAR",
+          "keterangan": "Umm sri untuk menerima tukaran jamaah",
           "tanggal": "2025-12-26"
         }
       ]
