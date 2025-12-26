@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -8218,
+          "saldo": -13551,
           "mataUang": "SAR"
         }
       ],
@@ -698,6 +698,15 @@
           "jumlah": 3988,
           "mataUang": "SAR",
           "keterangan": "Bulan agustus",
+          "tanggal": "2025-12-26"
+        },
+        {
+          "id": "1766762881503735",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 5333,
+          "mataUang": "SAR",
+          "keterangan": "Pelunasan 24juta",
           "tanggal": "2025-12-26"
         }
       ]
