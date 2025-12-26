@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3717,
+          "saldo": -3762,
           "mataUang": "SAR"
         }
       ],
@@ -663,6 +663,15 @@
           "mataUang": "SAR",
           "keterangan": "Cafe moment dari rp",
           "tanggal": "2025-12-25"
+        },
+        {
+          "id": "1766723337160431",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 45,
+          "mataUang": "SAR",
+          "keterangan": "Repping 3",
+          "tanggal": "2025-12-26"
         }
       ]
     },
