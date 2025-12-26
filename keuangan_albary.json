@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3762,
+          "saldo": -3770,
           "mataUang": "SAR"
         }
       ],
@@ -671,6 +671,15 @@
           "jumlah": 45,
           "mataUang": "SAR",
           "keterangan": "Repping 3",
+          "tanggal": "2025-12-26"
+        },
+        {
+          "id": "1766723362316382",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 8,
+          "mataUang": "SAR",
+          "keterangan": "Bindawood betrei",
           "tanggal": "2025-12-26"
         }
       ]
