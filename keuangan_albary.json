@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -4370,
+          "saldo": -4230,
           "mataUang": "SAR"
         }
       ],
@@ -686,7 +686,7 @@
           "id": "1766752965002162",
           "kantong": 3,
           "jenis": "keluar",
-          "jumlah": 600,
+          "jumlah": 460,
           "mataUang": "SAR",
           "keterangan": "Umm sri untuk menerima tukaran jamaah",
           "tanggal": "2025-12-26"
