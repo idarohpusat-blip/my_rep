@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -2885,
+          "saldo": -3045,
           "mataUang": "SAR"
         }
       ],
@@ -708,6 +708,15 @@
           "mataUang": "SAR",
           "keterangan": "Pelunasan 24 juta",
           "tanggal": "2025-12-26"
+        },
+        {
+          "id": "176683758519828",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 160,
+          "mataUang": "SAR",
+          "keterangan": "Porter",
+          "tanggal": "2025-12-27"
         }
       ]
     },
