@@ -20,7 +20,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3045,
+          "saldo": -3145,
           "mataUang": "SAR"
         }
       ],
@@ -716,6 +716,15 @@
           "jumlah": 160,
           "mataUang": "SAR",
           "keterangan": "Porter",
+          "tanggal": "2025-12-27"
+        },
+        {
+          "id": "176683766373975",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Tip supir jedda",
           "tanggal": "2025-12-27"
         }
       ]
