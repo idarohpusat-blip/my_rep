@@ -1443,11 +1443,6 @@
       "nama": "Jamaluddni",
       "kantong": [
         {
-          "nama": "Tabungan",
-          "saldo": 53150000,
-          "mataUang": "Rp"
-        },
-        {
           "nama": "Jamaah Albary Haramain",
           "saldo": 1000000,
           "mataUang": "Rp"
@@ -1460,17 +1455,8 @@
       ],
       "transaksi": [
         {
-          "id": "175999243070363",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 53150000,
-          "mataUang": "Rp",
-          "keterangan": "Emas",
-          "tanggal": "2025-10-09"
-        },
-        {
           "id": "176214770244471",
-          "kantong": 1,
+          "kantong": 0,
           "jenis": "masuk",
           "jumlah": 1000000,
           "mataUang": "Rp",
@@ -1479,7 +1465,7 @@
         },
         {
           "id": "176222673638942",
-          "kantong": 2,
+          "kantong": 1,
           "jenis": "masuk",
           "jumlah": 200000,
           "mataUang": "Rp",
@@ -1488,7 +1474,7 @@
         },
         {
           "id": "1762226751648472",
-          "kantong": 2,
+          "kantong": 1,
           "jenis": "keluar",
           "jumlah": 25000,
           "mataUang": "Rp",
@@ -1497,7 +1483,7 @@
         },
         {
           "id": "1762489275809251",
-          "kantong": 2,
+          "kantong": 1,
           "jenis": "keluar",
           "jumlah": 100000,
           "mataUang": "Rp",
