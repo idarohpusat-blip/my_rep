@@ -1441,56 +1441,8 @@
     },
     {
       "nama": "Jamaluddni",
-      "kantong": [
-        {
-          "nama": "Jamaah Albary Haramain",
-          "saldo": 1000000,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Denda jamal",
-          "saldo": 75000,
-          "mataUang": "Rp"
-        }
-      ],
-      "transaksi": [
-        {
-          "id": "176214770244471",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 1000000,
-          "mataUang": "Rp",
-          "keterangan": "Sedekah jumat berkah",
-          "tanggal": "2025-11-03"
-        },
-        {
-          "id": "176222673638942",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 200000,
-          "mataUang": "Rp",
-          "keterangan": "Denda maksiat",
-          "tanggal": "2025-11-04"
-        },
-        {
-          "id": "1762226751648472",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 25000,
-          "mataUang": "Rp",
-          "keterangan": "Bayar",
-          "tanggal": "2025-11-04"
-        },
-        {
-          "id": "1762489275809251",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 100000,
-          "mataUang": "Rp",
-          "keterangan": "Sedekah untuk pak toha",
-          "tanggal": "2025-11-07"
-        }
-      ]
+      "kantong": [],
+      "transaksi": []
     },
     {
       "nama": "Andi Ahmad Paket LA pt Zamzam",
