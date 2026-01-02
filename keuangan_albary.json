@@ -1441,7 +1441,13 @@
     },
     {
       "nama": "Jamaluddni",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Pak Arifin",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     },
     {
