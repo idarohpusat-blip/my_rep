@@ -1444,11 +1444,21 @@
       "kantong": [
         {
           "nama": "Pak Arifin",
-          "saldo": 0,
+          "saldo": -100,
           "mataUang": "SAR"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1767344220392857",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Hutang pembayaran 2 pekan",
+          "tanggal": "2026-01-02"
+        }
+      ]
     },
     {
       "nama": "Andi Ahmad Paket LA pt Zamzam",
@@ -1797,5 +1807,5 @@
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
