@@ -1448,11 +1448,6 @@
           "mataUang": "Rp"
         },
         {
-          "nama": "Bagolah",
-          "saldo": 0,
-          "mataUang": "SAR"
-        },
-        {
           "nama": "Jamaah Albary Haramain",
           "saldo": 1000000,
           "mataUang": "Rp"
@@ -1474,62 +1469,8 @@
           "tanggal": "2025-10-09"
         },
         {
-          "id": "1761627125500972",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 200,
-          "mataUang": "SAR",
-          "keterangan": "Hutang bagolah",
-          "tanggal": "2025-10-28"
-        },
-        {
-          "id": "1761627183553961",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 7,
-          "mataUang": "SAR",
-          "keterangan": "Moya",
-          "tanggal": "2025-10-28"
-        },
-        {
-          "id": "176162725645025",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 20,
-          "mataUang": "SAR",
-          "keterangan": "Ambil uang iqbal",
-          "tanggal": "2025-10-28"
-        },
-        {
-          "id": "1761657180277514",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 73,
-          "mataUang": "SAR",
-          "keterangan": "Ambil uang",
-          "tanggal": "2025-10-28"
-        },
-        {
-          "id": "1761657472086134",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 25,
-          "mataUang": "SAR",
-          "keterangan": "Asmaa",
-          "tanggal": "2025-10-28"
-        },
-        {
-          "id": "1761717392060833",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 16,
-          "mataUang": "SAR",
-          "keterangan": "Indomie & fairy",
-          "tanggal": "2025-10-29"
-        },
-        {
           "id": "176214770244471",
-          "kantong": 2,
+          "kantong": 1,
           "jenis": "masuk",
           "jumlah": 1000000,
           "mataUang": "Rp",
@@ -1538,7 +1479,7 @@
         },
         {
           "id": "176222673638942",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "masuk",
           "jumlah": 200000,
           "mataUang": "Rp",
@@ -1547,7 +1488,7 @@
         },
         {
           "id": "1762226751648472",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 25000,
           "mataUang": "Rp",
@@ -1556,66 +1497,12 @@
         },
         {
           "id": "1762489275809251",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100000,
           "mataUang": "Rp",
           "keterangan": "Sedekah untuk pak toha",
           "tanggal": "2025-11-07"
-        },
-        {
-          "id": "176257648313762",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 15,
-          "mataUang": "SAR",
-          "keterangan": "Taxi",
-          "tanggal": "2025-11-08"
-        },
-        {
-          "id": "1762577349138918",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 5,
-          "mataUang": "SAR",
-          "keterangan": "Sabun",
-          "tanggal": "2025-11-08"
-        },
-        {
-          "id": "1763662211561187",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 30,
-          "mataUang": "SAR",
-          "keterangan": "Kako",
-          "tanggal": "2025-11-20"
-        },
-        {
-          "id": "1763662282583398",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 4,
-          "mataUang": "SAR",
-          "keterangan": "Thoot",
-          "tanggal": "2025-11-20"
-        },
-        {
-          "id": "1763751864187812",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 2,
-          "mataUang": "SAR",
-          "keterangan": "Milhun",
-          "tanggal": "2025-11-21"
-        },
-        {
-          "id": "1763752066864689",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 3,
-          "mataUang": "SAR",
-          "keterangan": "Miranda",
-          "tanggal": "2025-11-21"
         }
       ]
     },
