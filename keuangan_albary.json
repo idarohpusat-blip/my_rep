@@ -1519,7 +1519,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 54,
+          "saldo": 79,
           "mataUang": "SAR"
         }
       ],
@@ -1649,10 +1649,19 @@
           "mataUang": "SAR",
           "keterangan": "Sodaqoh",
           "tanggal": "2025-12-19"
+        },
+        {
+          "id": "1767752002787871",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 25,
+          "mataUang": "SAR",
+          "keterangan": "bunda Aghinia",
+          "tanggal": "2026-01-07"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
