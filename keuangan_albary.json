@@ -734,7 +734,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 128500,
+          "saldo": 0,
           "mataUang": "Rp"
         },
         {
@@ -1045,6 +1045,15 @@
           "mataUang": "Rp",
           "keterangan": "Tukaran Riyal",
           "tanggal": "2025-11-20"
+        },
+        {
+          "id": "1767748538133478",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 128500,
+          "mataUang": "Rp",
+          "keterangan": "Pelunasan",
+          "tanggal": "2026-01-07"
         }
       ]
     },
@@ -1807,5 +1816,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
