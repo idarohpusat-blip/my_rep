@@ -734,7 +734,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 1590000,
+          "saldo": 1490000,
           "mataUang": "Rp"
         },
         {
@@ -1039,6 +1039,15 @@
           "jumlah": 70000,
           "mataUang": "Rp",
           "keterangan": "Void Malaysia ke jakarta\tEfendi madura\t05/01/2026",
+          "tanggal": "2026-01-07"
+        },
+        {
+          "id": "1767758114355277",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 100000,
+          "mataUang": "Rp",
+          "keterangan": "Mouse & Flashdisk",
           "tanggal": "2026-01-07"
         }
       ]
