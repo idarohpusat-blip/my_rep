@@ -739,7 +739,7 @@
         },
         {
           "nama": "Belum Selesai",
-          "saldo": 6500000,
+          "saldo": 5000000,
           "mataUang": "Rp"
         },
         {
@@ -972,15 +972,6 @@
           "jumlah": 1000000,
           "mataUang": "Rp",
           "keterangan": "Badal dari Ayah",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763366249501923",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 1500000,
-          "mataUang": "Rp",
-          "keterangan": "Badal dari jamaah soraya",
           "tanggal": "2025-11-17"
         },
         {
@@ -1816,5 +1807,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
