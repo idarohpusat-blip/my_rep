@@ -739,7 +739,7 @@
         },
         {
           "nama": "Belum Selesai",
-          "saldo": 2000000,
+          "saldo": 1000000,
           "mataUang": "Rp"
         }
       ],
@@ -940,15 +940,6 @@
           "jumlah": 450000,
           "mataUang": "Rp",
           "keterangan": "Alquran",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "176336614085090",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 1000000,
-          "mataUang": "Rp",
-          "keterangan": "Untuk Sodaqoh Quran",
           "tanggal": "2025-11-17"
         },
         {
