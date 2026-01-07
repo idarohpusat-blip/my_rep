@@ -734,7 +734,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 2130000,
+          "saldo": 1590000,
           "mataUang": "Rp"
         },
         {
@@ -1021,15 +1021,6 @@
           "jumlah": 1250000,
           "mataUang": "Rp",
           "keterangan": "visa bunda fatimah",
-          "tanggal": "2026-01-07"
-        },
-        {
-          "id": "1767754261496751",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 540000,
-          "mataUang": "Rp",
-          "keterangan": "Void jeddah jakarta\tEfendi madura\t09/01/2026",
           "tanggal": "2026-01-07"
         },
         {
