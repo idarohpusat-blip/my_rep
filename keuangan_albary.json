@@ -734,7 +734,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 1477000,
+          "saldo": 1467000,
           "mataUang": "Rp"
         },
         {
@@ -1057,6 +1057,15 @@
           "jumlah": 13000,
           "mataUang": "Rp",
           "keterangan": "Bakso nyonyang",
+          "tanggal": "2026-01-07"
+        },
+        {
+          "id": "1767827461287654",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 10000,
+          "mataUang": "Rp",
+          "keterangan": "Jajan pagi",
           "tanggal": "2026-01-07"
         }
       ]
