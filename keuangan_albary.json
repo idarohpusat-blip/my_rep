@@ -734,7 +734,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 1250000,
+          "saldo": 1850000,
           "mataUang": "Rp"
         },
         {
@@ -1021,6 +1021,15 @@
           "jumlah": 1250000,
           "mataUang": "Rp",
           "keterangan": "visa bunda fatimah",
+          "tanggal": "2026-01-07"
+        },
+        {
+          "id": "1767754213958520",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 600000,
+          "mataUang": "Rp",
+          "keterangan": "Siskopatuh bunda fatimah",
           "tanggal": "2026-01-07"
         }
       ]
