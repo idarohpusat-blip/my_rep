@@ -1429,127 +1429,6 @@
       ]
     },
     {
-      "nama": "Andi Ahmad Paket LA pt Zamzam",
-      "kantong": [
-        {
-          "nama": "Uang Masuk",
-          "saldo": 130000000,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Pengeluaran",
-          "saldo": 1090,
-          "mataUang": "SAR"
-        },
-        {
-          "nama": "Hutang pak Andi",
-          "saldo": 0,
-          "mataUang": "SAR"
-        }
-      ],
-      "transaksi": [
-        {
-          "id": "1761118420632520",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 17000000,
-          "mataUang": "Rp",
-          "keterangan": "Dp luluah",
-          "tanggal": "2025-10-22"
-        },
-        {
-          "id": "1761118441427194",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 13000000,
-          "mataUang": "Rp",
-          "keterangan": "Dp kayan Madina",
-          "tanggal": "2025-10-22"
-        },
-        {
-          "id": "1761118494454565",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 6500,
-          "mataUang": "SAR",
-          "keterangan": "Tukar riyal kurs 4.450",
-          "tanggal": "2025-10-22"
-        },
-        {
-          "id": "176111854363945",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 10,
-          "mataUang": "SAR",
-          "keterangan": "Taxi ke mansur",
-          "tanggal": "2025-10-22"
-        },
-        {
-          "id": "1761221298020379",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 3000,
-          "mataUang": "SAR",
-          "keterangan": "Pembayaran dp mekkah",
-          "tanggal": "2025-10-23"
-        },
-        {
-          "id": "1761221319397651",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 3000,
-          "mataUang": "SAR",
-          "keterangan": "Pembayaran kayan madinah dp",
-          "tanggal": "2025-10-23"
-        },
-        {
-          "id": "1761221339418318",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 9000,
-          "mataUang": "SAR",
-          "keterangan": "Uang masuk tukar riyal",
-          "tanggal": "2025-10-23"
-        },
-        {
-          "id": "1761221354077959",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 8400,
-          "mataUang": "SAR",
-          "keterangan": "Pelunasan kayan",
-          "tanggal": "2025-10-23"
-        },
-        {
-          "id": "1761221411371591",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 100000000,
-          "mataUang": "Rp",
-          "keterangan": "Uang masuk dari pt zamzam",
-          "tanggal": "2025-10-23"
-        },
-        {
-          "id": "1762454454867848",
-          "kantong": 2,
-          "jenis": "keluar",
-          "jumlah": 80,
-          "mataUang": "SAR",
-          "keterangan": "60 bilboy 20 mnadub nusuk",
-          "tanggal": "2025-11-06"
-        },
-        {
-          "id": "1763103120059826",
-          "kantong": 2,
-          "jenis": "masuk",
-          "jumlah": 80,
-          "mataUang": "SAR",
-          "keterangan": "Lunas",
-          "tanggal": "2025-11-14"
-        }
-      ]
-    },
-    {
       "nama": "Xampp Albary",
       "kantong": [
         {
@@ -1774,6 +1653,6 @@
       ]
     }
   ],
-  "albary_user_terakhir": "5",
+  "albary_user_terakhir": "0",
   "albary_kantong_terakhir": "-1"
 }
