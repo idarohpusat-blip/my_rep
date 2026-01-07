@@ -734,7 +734,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 1490000,
+          "saldo": 1477000,
           "mataUang": "Rp"
         },
         {
@@ -1048,6 +1048,15 @@
           "jumlah": 100000,
           "mataUang": "Rp",
           "keterangan": "Mouse & Flashdisk",
+          "tanggal": "2026-01-07"
+        },
+        {
+          "id": "1767758133160187",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 13000,
+          "mataUang": "Rp",
+          "keterangan": "Bakso nyonyang",
           "tanggal": "2026-01-07"
         }
       ]
