@@ -739,7 +739,7 @@
         },
         {
           "nama": "Belum Selesai",
-          "saldo": 1000000,
+          "saldo": 0,
           "mataUang": "Rp"
         }
       ],
@@ -940,15 +940,6 @@
           "jumlah": 450000,
           "mataUang": "Rp",
           "keterangan": "Alquran",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763366229610598",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 1000000,
-          "mataUang": "Rp",
-          "keterangan": "Badal dari Ayah",
           "tanggal": "2025-11-17"
         },
         {
