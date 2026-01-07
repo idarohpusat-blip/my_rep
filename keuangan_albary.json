@@ -741,11 +741,6 @@
           "nama": "Belum Selesai",
           "saldo": 5000000,
           "mataUang": "Rp"
-        },
-        {
-          "nama": "Ummi Sri",
-          "saldo": 0,
-          "mataUang": "Rp"
         }
       ],
       "transaksi": [
@@ -1807,5 +1802,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "0"
 }
