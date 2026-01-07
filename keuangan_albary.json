@@ -734,7 +734,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 0,
+          "saldo": 1250000,
           "mataUang": "Rp"
         },
         {
@@ -1012,6 +1012,15 @@
           "jumlah": 128500,
           "mataUang": "Rp",
           "keterangan": "Pelunasan",
+          "tanggal": "2026-01-07"
+        },
+        {
+          "id": "1767754190624340",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 1250000,
+          "mataUang": "Rp",
+          "keterangan": "visa bunda fatimah",
           "tanggal": "2026-01-07"
         }
       ]
@@ -1663,5 +1672,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
