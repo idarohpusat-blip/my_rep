@@ -1491,92 +1491,6 @@
       ]
     },
     {
-      "nama": "Xampp Albary",
-      "kantong": [
-        {
-          "nama": "Keuntungan",
-          "saldo": 12626508,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Keinginan",
-          "saldo": 3787952,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Investasi",
-          "saldo": 6313254,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Keluarga",
-          "saldo": 1130476,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Inv Akhirat",
-          "saldo": 111325,
-          "mataUang": "Rp"
-        }
-      ],
-      "transaksi": [
-        {
-          "id": "1763363203754978",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 12626508,
-          "mataUang": "Rp",
-          "keterangan": "Saldo",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763363217577487",
-          "kantong": 1,
-          "jenis": "masuk",
-          "jumlah": 3787952,
-          "mataUang": "Rp",
-          "keterangan": "Saldo",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763363240615986",
-          "kantong": 2,
-          "jenis": "masuk",
-          "jumlah": 6313254,
-          "mataUang": "Rp",
-          "keterangan": "Saldo",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763363259602566",
-          "kantong": 3,
-          "jenis": "masuk",
-          "jumlah": 1130476,
-          "mataUang": "Rp",
-          "keterangan": "Saldo",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763363277367913",
-          "kantong": 4,
-          "jenis": "masuk",
-          "jumlah": 381325,
-          "mataUang": "Rp",
-          "keterangan": "Saldo",
-          "tanggal": "2025-11-17"
-        },
-        {
-          "id": "1763668955103192",
-          "kantong": 4,
-          "jenis": "keluar",
-          "jumlah": 270000,
-          "mataUang": "Rp",
-          "keterangan": "Beli kecantikan wanita mama",
-          "tanggal": "2025-11-20"
-        }
-      ]
-    },
-    {
       "nama": "Ck desember 2025",
       "kantong": [
         {
@@ -1724,6 +1638,6 @@
       ]
     }
   ],
-  "albary_user_terakhir": "4",
+  "albary_user_terakhir": "0",
   "albary_kantong_terakhir": "-1"
 }
