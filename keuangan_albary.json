@@ -14,11 +14,6 @@
           "mataUang": "SAR"
         },
         {
-          "nama": "Umm Sri Rp",
-          "saldo": -484781,
-          "mataUang": "Rp"
-        },
-        {
           "nama": "Des 17 ck",
           "saldo": -3195,
           "mataUang": "SAR"
@@ -224,15 +219,6 @@
           "tanggal": "2025-08-24"
         },
         {
-          "id": "1756155914981352",
-          "kantong": 2,
-          "jenis": "keluar",
-          "jumlah": 484781,
-          "mataUang": "Rp",
-          "keterangan": "Cofee moment",
-          "tanggal": "2025-08-25"
-        },
-        {
           "id": "175625014660665",
           "kantong": 0,
           "jenis": "keluar",
@@ -261,7 +247,7 @@
         },
         {
           "id": "1762487866885125",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 50,
           "mataUang": "SAR",
@@ -270,7 +256,7 @@
         },
         {
           "id": "1762487882997679",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 10,
           "mataUang": "SAR",
@@ -279,7 +265,7 @@
         },
         {
           "id": "1762768425397796",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 50,
           "mataUang": "SAR",
@@ -288,7 +274,7 @@
         },
         {
           "id": "176276843651288",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 24,
           "mataUang": "SAR",
@@ -297,7 +283,7 @@
         },
         {
           "id": "1762880063558872",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 10,
           "mataUang": "SAR",
@@ -306,7 +292,7 @@
         },
         {
           "id": "1762880076034929",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 20,
           "mataUang": "SAR",
@@ -315,7 +301,7 @@
         },
         {
           "id": "1763378514701527",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 80,
           "mataUang": "SAR",
@@ -324,7 +310,7 @@
         },
         {
           "id": "1763406504209610",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 50,
           "mataUang": "SAR",
@@ -333,7 +319,7 @@
         },
         {
           "id": "1763406522127129",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 5,
           "mataUang": "SAR",
@@ -342,7 +328,7 @@
         },
         {
           "id": "1763849430236642",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 10,
           "mataUang": "SAR",
@@ -351,7 +337,7 @@
         },
         {
           "id": "1764694413141149",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 30,
           "mataUang": "SAR",
@@ -360,7 +346,7 @@
         },
         {
           "id": "1764694493625322",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 3,
           "mataUang": "SAR",
@@ -369,7 +355,7 @@
         },
         {
           "id": "176596729297370",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -378,7 +364,7 @@
         },
         {
           "id": "1765967320996692",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 20,
           "mataUang": "SAR",
@@ -387,7 +373,7 @@
         },
         {
           "id": "1765968291110389",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 89,
           "mataUang": "SAR",
@@ -396,7 +382,7 @@
         },
         {
           "id": "176598163062691",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 55,
           "mataUang": "SAR",
@@ -405,7 +391,7 @@
         },
         {
           "id": "1765989175479901",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -414,7 +400,7 @@
         },
         {
           "id": "1766015635417351",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 15,
           "mataUang": "SAR",
@@ -423,7 +409,7 @@
         },
         {
           "id": "1766079640503765",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 70,
           "mataUang": "SAR",
@@ -432,7 +418,7 @@
         },
         {
           "id": "1766189936225620",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 30,
           "mataUang": "SAR",
@@ -441,7 +427,7 @@
         },
         {
           "id": "1766219422638195",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 120,
           "mataUang": "SAR",
@@ -450,7 +436,7 @@
         },
         {
           "id": "1766241960824314",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 10,
           "mataUang": "SAR",
@@ -459,7 +445,7 @@
         },
         {
           "id": "1766241981970647",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 50,
           "mataUang": "SAR",
@@ -468,7 +454,7 @@
         },
         {
           "id": "176624201346792",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 50,
           "mataUang": "SAR",
@@ -477,7 +463,7 @@
         },
         {
           "id": "1766242033690600",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 23,
           "mataUang": "SAR",
@@ -486,7 +472,7 @@
         },
         {
           "id": "1766338346730572",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 505,
           "mataUang": "SAR",
@@ -495,7 +481,7 @@
         },
         {
           "id": "176638436191694",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -504,7 +490,7 @@
         },
         {
           "id": "1766417527391265",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "masuk",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -513,7 +499,7 @@
         },
         {
           "id": "1766417649016532",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "masuk",
           "jumlah": 400,
           "mataUang": "SAR",
@@ -522,7 +508,7 @@
         },
         {
           "id": "1766465559351537",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -531,7 +517,7 @@
         },
         {
           "id": "1766472434445713",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 500,
           "mataUang": "SAR",
@@ -540,7 +526,7 @@
         },
         {
           "id": "1766474516659938",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 500,
           "mataUang": "SAR",
@@ -549,7 +535,7 @@
         },
         {
           "id": "176650014403666",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 55,
           "mataUang": "SAR",
@@ -558,7 +544,7 @@
         },
         {
           "id": "1766500179190975",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 19,
           "mataUang": "SAR",
@@ -567,7 +553,7 @@
         },
         {
           "id": "1766558534147168",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 55,
           "mataUang": "SAR",
@@ -576,7 +562,7 @@
         },
         {
           "id": "1766558548017549",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -585,7 +571,7 @@
         },
         {
           "id": "1766558564508153",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -594,7 +580,7 @@
         },
         {
           "id": "1766648118471568",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -603,7 +589,7 @@
         },
         {
           "id": "176665158549527",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 29,
           "mataUang": "SAR",
@@ -612,7 +598,7 @@
         },
         {
           "id": "1766657276022250",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 960,
           "mataUang": "SAR",
@@ -621,7 +607,7 @@
         },
         {
           "id": "1766657290124345",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -630,7 +616,7 @@
         },
         {
           "id": "1766672591294698",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "masuk",
           "jumlah": 280,
           "mataUang": "SAR",
@@ -639,7 +625,7 @@
         },
         {
           "id": "1766676553867461",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -648,7 +634,7 @@
         },
         {
           "id": "1766679172045216",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 150,
           "mataUang": "SAR",
@@ -666,7 +652,7 @@
         },
         {
           "id": "1766723337160431",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 45,
           "mataUang": "SAR",
@@ -675,7 +661,7 @@
         },
         {
           "id": "1766723362316382",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 8,
           "mataUang": "SAR",
@@ -684,7 +670,7 @@
         },
         {
           "id": "1766752965002162",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 460,
           "mataUang": "SAR",
@@ -693,7 +679,7 @@
         },
         {
           "id": "1766762849165363",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 3988,
           "mataUang": "SAR",
@@ -702,7 +688,7 @@
         },
         {
           "id": "1766762900251895",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "masuk",
           "jumlah": 5333,
           "mataUang": "SAR",
@@ -711,7 +697,7 @@
         },
         {
           "id": "176683758519828",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 160,
           "mataUang": "SAR",
@@ -720,7 +706,7 @@
         },
         {
           "id": "176683766373975",
-          "kantong": 3,
+          "kantong": 2,
           "jenis": "keluar",
           "jumlah": 100,
           "mataUang": "SAR",
@@ -1735,5 +1721,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "0"
 }
