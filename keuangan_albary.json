@@ -10,7 +10,7 @@
         },
         {
           "nama": "Hutang Ummi sri",
-          "saldo": -3988,
+          "saldo": 0,
           "mataUang": "SAR"
         },
         {
@@ -734,6 +734,15 @@
           "jumlah": 64,
           "mataUang": "SAR",
           "keterangan": "Pelunasan",
+          "tanggal": "2026-01-08"
+        },
+        {
+          "id": "1767870921304280",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 3988,
+          "mataUang": "SAR",
+          "keterangan": "Lunas",
           "tanggal": "2026-01-08"
         }
       ]
@@ -1726,5 +1735,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
