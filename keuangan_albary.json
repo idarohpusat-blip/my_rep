@@ -15,7 +15,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3195,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -727,6 +727,15 @@
           "kantong": 1,
           "jenis": "masuk",
           "jumlah": 3988,
+          "mataUang": "SAR",
+          "keterangan": "Lunas",
+          "tanggal": "2026-01-08"
+        },
+        {
+          "id": "1767870971524984",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 3195,
           "mataUang": "SAR",
           "keterangan": "Lunas",
           "tanggal": "2026-01-08"
