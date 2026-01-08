@@ -15,7 +15,7 @@
         },
         {
           "nama": "Des 17 ck",
-          "saldo": -3195,
+          "saldo": -6380,
           "mataUang": "SAR"
         }
       ],
@@ -727,6 +727,15 @@
           "kantong": 1,
           "jenis": "masuk",
           "jumlah": 3988,
+          "mataUang": "SAR",
+          "keterangan": "Lunas",
+          "tanggal": "2026-01-08"
+        },
+        {
+          "id": "1767870955535607",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 3185,
           "mataUang": "SAR",
           "keterangan": "Lunas",
           "tanggal": "2026-01-08"
@@ -1721,5 +1730,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "2"
 }
