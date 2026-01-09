@@ -747,7 +747,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 2007000,
+          "saldo": 2127000,
           "mataUang": "Rp"
         },
         {
@@ -1088,6 +1088,15 @@
           "jumlah": 540000,
           "mataUang": "Rp",
           "keterangan": "Void jeddah jakarta\tEfendi madura",
+          "tanggal": "2026-01-09"
+        },
+        {
+          "id": "1768003163559187",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 120000,
+          "mataUang": "Rp",
+          "keterangan": "Siskopatuh\tM Ihsan",
           "tanggal": "2026-01-09"
         }
       ]
