@@ -1495,7 +1495,7 @@
       "kantong": [
         {
           "nama": "Sedekah jumat",
-          "saldo": 79,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -1634,10 +1634,19 @@
           "mataUang": "SAR",
           "keterangan": "bunda Aghnia",
           "tanggal": "2026-01-07"
+        },
+        {
+          "id": "1768002764903599",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 79,
+          "mataUang": "SAR",
+          "keterangan": "Sedekah jumat udah di tf",
+          "tanggal": "2026-01-09"
         }
       ]
     }
   ],
   "albary_user_terakhir": "4",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
