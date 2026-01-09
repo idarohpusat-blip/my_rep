@@ -747,7 +747,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 1467000,
+          "saldo": 2007000,
           "mataUang": "Rp"
         },
         {
@@ -1080,6 +1080,15 @@
           "mataUang": "Rp",
           "keterangan": "Jajan pagi",
           "tanggal": "2026-01-07"
+        },
+        {
+          "id": "1768003133918541",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 540000,
+          "mataUang": "Rp",
+          "keterangan": "Void jeddah jakarta\tEfendi madura",
+          "tanggal": "2026-01-09"
         }
       ]
     },
@@ -1648,5 +1657,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
