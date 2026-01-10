@@ -1676,6 +1676,11 @@
           "nama": "Keinginan 15%",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Investasi 25%",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
