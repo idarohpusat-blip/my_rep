@@ -1684,7 +1684,7 @@
         },
         {
           "nama": "Keluarga 7,5%",
-          "saldo": 159519,
+          "saldo": 111664,
           "mataUang": "Rp"
         },
         {
@@ -1743,9 +1743,9 @@
           "id": "1768007153697732",
           "kantong": 3,
           "jenis": "keluar",
-          "jumlah": 1,
+          "jumlah": 47858,
           "mataUang": "Rp",
-          "keterangan": "Mama\t 47.858",
+          "keterangan": "Mama",
           "tanggal": "2026-01-10"
         },
         {
@@ -1773,24 +1773,6 @@
           "jumlah": 1,
           "mataUang": "Rp",
           "keterangan": "Ka jumadi\t 27.119",
-          "tanggal": "2026-01-10"
-        },
-        {
-          "id": "1768007220166286",
-          "kantong": 3,
-          "jenis": "keluar",
-          "jumlah": 1,
-          "mataUang": "Rp",
-          "keterangan": "Ka hasan\t 20.738",
-          "tanggal": "2026-01-10"
-        },
-        {
-          "id": "1768007260215781",
-          "kantong": 3,
-          "jenis": "keluar",
-          "jumlah": 1,
-          "mataUang": "Rp",
-          "keterangan": "Isma\t 20.738",
           "tanggal": "2026-01-10"
         }
       ]
