@@ -1684,7 +1684,7 @@
         },
         {
           "nama": "Keluarga 7,5%",
-          "saldo": 159525,
+          "saldo": 159524,
           "mataUang": "Rp"
         },
         {
@@ -1738,10 +1738,19 @@
           "mataUang": "Rp",
           "keterangan": "Kas Usaha Albary Haromain",
           "tanggal": "2026-01-10"
+        },
+        {
+          "id": "1768007153697732",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 1,
+          "mataUang": "Rp",
+          "keterangan": "Mama\t 47.858",
+          "tanggal": "2026-01-10"
         }
       ]
     }
   ],
   "albary_user_terakhir": "5",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
