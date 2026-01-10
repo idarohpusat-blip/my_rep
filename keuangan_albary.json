@@ -1689,7 +1689,7 @@
         },
         {
           "nama": "Inv Akhirat 2.50%",
-          "saldo": 0,
+          "saldo": 53175,
           "mataUang": "Rp"
         }
       ],
@@ -1729,10 +1729,19 @@
           "mataUang": "Rp",
           "keterangan": "Kas Usaha Albary Haromain",
           "tanggal": "2026-01-10"
+        },
+        {
+          "id": "1768003688325882",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 53175,
+          "mataUang": "Rp",
+          "keterangan": "Kas Usaha Albary Haromain",
+          "tanggal": "2026-01-10"
         }
       ]
     }
   ],
   "albary_user_terakhir": "5",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "4"
 }
