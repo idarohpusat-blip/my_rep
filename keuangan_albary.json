@@ -1671,11 +1671,16 @@
           "nama": "Kebutuhan 50%",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Keinginan 15%",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
     }
   ],
   "albary_user_terakhir": "5",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
