@@ -1686,6 +1686,11 @@
           "nama": "Keluarga 7,5%",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Inv Akhirat 2.50%",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
