@@ -747,7 +747,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 0,
+          "saldo": 750000,
           "mataUang": "Rp"
         },
         {
@@ -1106,6 +1106,15 @@
           "jumlah": 2127000,
           "mataUang": "Rp",
           "keterangan": "Kas",
+          "tanggal": "2026-01-10"
+        },
+        {
+          "id": "176802143108248",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 750000,
+          "mataUang": "Rp",
+          "keterangan": "Siskopatuh\tUmmi Fatimah",
           "tanggal": "2026-01-10"
         }
       ]
