@@ -1681,6 +1681,11 @@
           "nama": "Investasi 25%",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Keluarga 7,5%",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
