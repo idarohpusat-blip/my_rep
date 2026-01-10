@@ -747,7 +747,7 @@
       "kantong": [
         {
           "nama": "Kas Usaha",
-          "saldo": 2127000,
+          "saldo": 0,
           "mataUang": "Rp"
         },
         {
@@ -1098,6 +1098,15 @@
           "mataUang": "Rp",
           "keterangan": "Siskopatuh\tM Ihsan",
           "tanggal": "2026-01-09"
+        },
+        {
+          "id": "176802136390085",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 2127000,
+          "mataUang": "Rp",
+          "keterangan": "Kas",
+          "tanggal": "2026-01-10"
         }
       ]
     },
@@ -1788,5 +1797,5 @@
     }
   ],
   "albary_user_terakhir": "1",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
