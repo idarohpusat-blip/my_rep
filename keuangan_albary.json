@@ -1666,7 +1666,13 @@
     },
     {
       "nama": "Keuangan",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Kebutuhan 50%",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
