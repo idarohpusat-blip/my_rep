@@ -1669,7 +1669,7 @@
       "kantong": [
         {
           "nama": "Kebutuhan 50%",
-          "saldo": 0,
+          "saldo": 1063500,
           "mataUang": "Rp"
         },
         {
@@ -1693,7 +1693,17 @@
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1768003600515756",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 1063500,
+          "mataUang": "Rp",
+          "keterangan": "Kas Usaha Albary Haromain",
+          "tanggal": "2026-01-10"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "5",
