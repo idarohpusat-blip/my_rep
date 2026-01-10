@@ -1684,7 +1684,7 @@
         },
         {
           "nama": "Keluarga 7,5%",
-          "saldo": 159524,
+          "saldo": 159523,
           "mataUang": "Rp"
         },
         {
@@ -1746,6 +1746,15 @@
           "jumlah": 1,
           "mataUang": "Rp",
           "keterangan": "Mama\t 47.858",
+          "tanggal": "2026-01-10"
+        },
+        {
+          "id": "1768007168484814",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 1,
+          "mataUang": "Rp",
+          "keterangan": "Ayah\t 22.334",
           "tanggal": "2026-01-10"
         }
       ]
