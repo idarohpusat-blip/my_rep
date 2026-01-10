@@ -1663,8 +1663,13 @@
           "tanggal": "2026-01-09"
         }
       ]
+    },
+    {
+      "nama": "Keuangan",
+      "kantong": [],
+      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "3",
+  "albary_user_terakhir": "5",
   "albary_kantong_terakhir": "-1"
 }
