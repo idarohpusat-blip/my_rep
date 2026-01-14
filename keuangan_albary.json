@@ -1515,7 +1515,7 @@
         },
         {
           "nama": "Hasan",
-          "saldo": -86000,
+          "saldo": 0,
           "mataUang": "Rp"
         }
       ],
@@ -1528,15 +1528,6 @@
           "mataUang": "Rp",
           "keterangan": "2 pekan dari sekarang hutang",
           "tanggal": "2026-01-02"
-        },
-        {
-          "id": "1768023424193659",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 86000,
-          "mataUang": "Rp",
-          "keterangan": "Cod",
-          "tanggal": "2026-01-10"
         }
       ]
     },
@@ -1859,5 +1850,5 @@
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
