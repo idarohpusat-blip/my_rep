@@ -1823,7 +1823,7 @@
       "kantong": [
         {
           "nama": "Bintang 3",
-          "saldo": 100000000,
+          "saldo": 28240000,
           "mataUang": "Rp"
         }
       ],
@@ -1835,6 +1835,15 @@
           "jumlah": 100000000,
           "mataUang": "Rp",
           "keterangan": "Masuk",
+          "tanggal": "2026-01-14"
+        },
+        {
+          "id": "1768396741273837",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 71760000,
+          "mataUang": "Rp",
+          "keterangan": "Tukar riyal",
           "tanggal": "2026-01-14"
         }
       ]
