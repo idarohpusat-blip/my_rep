@@ -1820,7 +1820,13 @@
     },
     {
       "nama": "Pt zamzam",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Bintang 3",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
