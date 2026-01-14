@@ -1823,13 +1823,23 @@
       "kantong": [
         {
           "nama": "Bintang 3",
-          "saldo": 0,
+          "saldo": 100000000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1768396724427479",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 100000000,
+          "mataUang": "Rp",
+          "keterangan": "Masuk",
+          "tanggal": "2026-01-14"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
