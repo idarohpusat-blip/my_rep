@@ -1814,7 +1814,7 @@
         },
         {
           "nama": "Bintang 5",
-          "saldo": 0,
+          "saldo": -141834705,
           "mataUang": "Rp"
         },
         {
@@ -1859,10 +1859,19 @@
           "mataUang": "Rp",
           "keterangan": "Tukar riyal",
           "tanggal": "2026-01-15"
+        },
+        {
+          "id": "1768512673485272",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 141834705,
+          "mataUang": "Rp",
+          "keterangan": "Anggaran Bintang 5",
+          "tanggal": "2026-01-15"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
