@@ -1819,7 +1819,7 @@
         },
         {
           "nama": "Pengeluaran Bintang 3",
-          "saldo": 0,
+          "saldo": -71760000,
           "mataUang": "Rp"
         }
       ],
@@ -1850,10 +1850,19 @@
           "mataUang": "Rp",
           "keterangan": "Masuk",
           "tanggal": "2026-01-14"
+        },
+        {
+          "id": "1768512601009452",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 71760000,
+          "mataUang": "Rp",
+          "keterangan": "Tukar riyal",
+          "tanggal": "2026-01-15"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "2"
 }
