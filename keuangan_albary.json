@@ -1809,7 +1809,7 @@
       "kantong": [
         {
           "nama": "Bintang 3",
-          "saldo": 98240000,
+          "saldo": -57430000,
           "mataUang": "Rp"
         },
         {
@@ -1837,9 +1837,9 @@
           "id": "1768396741273837",
           "kantong": 0,
           "jenis": "keluar",
-          "jumlah": 71760000,
+          "jumlah": 227430000,
           "mataUang": "Rp",
-          "keterangan": "Tukar riyal",
+          "keterangan": "Total",
           "tanggal": "2026-01-14"
         },
         {
@@ -1864,5 +1864,5 @@
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "0"
 }
