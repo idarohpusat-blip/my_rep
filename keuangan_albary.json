@@ -1821,6 +1821,11 @@
           "nama": "Pengeluaran Bintang 3",
           "saldo": -71760000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Pengeluaran Bintang 5",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
@@ -1873,5 +1878,5 @@
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "0"
 }
