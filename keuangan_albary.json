@@ -1816,6 +1816,11 @@
           "nama": "Bintang 5",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Pengeluaran Bintang 3",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
