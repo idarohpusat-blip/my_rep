@@ -1811,6 +1811,11 @@
           "nama": "Bintang 3",
           "saldo": 98240000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Bintang 5",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
@@ -1845,5 +1850,5 @@
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
