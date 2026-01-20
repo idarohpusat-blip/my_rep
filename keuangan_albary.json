@@ -1814,7 +1814,7 @@
         },
         {
           "nama": "Bintang 5",
-          "saldo": -141834705,
+          "saldo": -71834705,
           "mataUang": "Rp"
         },
         {
@@ -1873,10 +1873,19 @@
           "mataUang": "Rp",
           "keterangan": "Anggaran Bintang 5",
           "tanggal": "2026-01-15"
+        },
+        {
+          "id": "1768916728688826",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 70000000,
+          "mataUang": "Rp",
+          "keterangan": "",
+          "tanggal": "2026-01-20"
         }
       ]
     }
   ],
   "albary_user_terakhir": "6",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "1"
 }
