@@ -1510,7 +1510,7 @@
       "kantong": [
         {
           "nama": "Pak Arifin",
-          "saldo": -500000,
+          "saldo": 0,
           "mataUang": "Rp"
         }
       ],
@@ -1523,6 +1523,15 @@
           "mataUang": "Rp",
           "keterangan": "2 pekan dari sekarang hutang",
           "tanggal": "2026-01-02"
+        },
+        {
+          "id": "1769855632629624",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 500000,
+          "mataUang": "Rp",
+          "keterangan": "Lunas Bayar Londry",
+          "tanggal": "2026-01-31"
         }
       ]
     },
@@ -1887,5 +1896,5 @@
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
