@@ -1515,7 +1515,7 @@
         },
         {
           "nama": "Ustadz Fahri",
-          "saldo": 0,
+          "saldo": -100000,
           "mataUang": "Rp"
         }
       ],
@@ -1536,6 +1536,15 @@
           "jumlah": 500000,
           "mataUang": "Rp",
           "keterangan": "Lunas Bayar Londry",
+          "tanggal": "2026-01-31"
+        },
+        {
+          "id": "1769858729857427",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 100000,
+          "mataUang": "Rp",
+          "keterangan": "2 Pekan Dari Sekarang",
           "tanggal": "2026-01-31"
         }
       ]
@@ -1901,5 +1910,5 @@
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
