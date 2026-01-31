@@ -1512,6 +1512,11 @@
           "nama": "Pak Arifin",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Ustadz Fahri",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
