@@ -20,7 +20,7 @@
         },
         {
           "nama": "Full romadhon",
-          "saldo": 0,
+          "saldo": -200000,
           "mataUang": "Rp"
         }
       ],
@@ -744,6 +744,15 @@
           "mataUang": "SAR",
           "keterangan": "Lunas",
           "tanggal": "2026-01-08"
+        },
+        {
+          "id": "1770000827397659",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 200000,
+          "mataUang": "Rp",
+          "keterangan": "",
+          "tanggal": "2026-02-02"
         }
       ]
     },
@@ -1915,5 +1924,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "3"
 }
