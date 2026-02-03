@@ -20,7 +20,7 @@
         },
         {
           "nama": "Full romadhon",
-          "saldo": -200000,
+          "saldo": -300000,
           "mataUang": "Rp"
         }
       ],
@@ -753,6 +753,15 @@
           "mataUang": "Rp",
           "keterangan": "",
           "tanggal": "2026-02-02"
+        },
+        {
+          "id": "1770121188254422",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 100000,
+          "mataUang": "Rp",
+          "keterangan": "Buka puasa 15 Syaban",
+          "tanggal": "2026-02-03"
         }
       ]
     },
