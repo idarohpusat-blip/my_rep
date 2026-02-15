@@ -20,7 +20,7 @@
         },
         {
           "nama": "Full romadhon",
-          "saldo": -750000,
+          "saldo": -950000,
           "mataUang": "Rp"
         }
       ],
@@ -770,6 +770,15 @@
           "jumlah": 450000,
           "mataUang": "Rp",
           "keterangan": "Ambil jaket",
+          "tanggal": "2026-02-15"
+        },
+        {
+          "id": "1771153778788242",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 200000,
+          "mataUang": "Rp",
+          "keterangan": "Yang hafidz 2 dan santri 2 orang",
           "tanggal": "2026-02-15"
         }
       ]
