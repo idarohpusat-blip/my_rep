@@ -20,7 +20,7 @@
         },
         {
           "nama": "Full romadhon",
-          "saldo": -300000,
+          "saldo": -750000,
           "mataUang": "Rp"
         }
       ],
@@ -762,6 +762,15 @@
           "mataUang": "Rp",
           "keterangan": "Buka puasa 15 Syaban",
           "tanggal": "2026-02-03"
+        },
+        {
+          "id": "1771153630211760",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 450000,
+          "mataUang": "Rp",
+          "keterangan": "Ambil jaket",
+          "tanggal": "2026-02-15"
         }
       ]
     },
@@ -1933,5 +1942,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
