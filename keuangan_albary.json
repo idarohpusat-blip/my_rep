@@ -20,7 +20,7 @@
         },
         {
           "nama": "Full romadhon",
-          "saldo": -1454000,
+          "saldo": -1461500,
           "mataUang": "Rp"
         }
       ],
@@ -797,6 +797,15 @@
           "jumlah": 500000,
           "mataUang": "Rp",
           "keterangan": "Tarik bajai",
+          "tanggal": "2026-02-17"
+        },
+        {
+          "id": "1771315816483540",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 7500,
+          "mataUang": "Rp",
+          "keterangan": "Biaya admin",
           "tanggal": "2026-02-17"
         }
       ]
