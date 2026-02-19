@@ -1987,7 +1987,13 @@
     },
     {
       "nama": "Bank BSI",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Jamal",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
