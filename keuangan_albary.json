@@ -1992,6 +1992,11 @@
           "nama": "Jamal",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Ummi sri",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
