@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": 1425,
+          "saldo": 1426,
           "mataUang": "SAR"
         }
       ],
@@ -829,6 +829,15 @@
           "jumlah": 1425,
           "mataUang": "SAR",
           "keterangan": "Uang tukaran Riyal",
+          "tanggal": "2026-02-21"
+        },
+        {
+          "id": "1771674267243903",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 1,
+          "mataUang": "SAR",
+          "keterangan": "Tambahan",
           "tanggal": "2026-02-21"
         }
       ]
