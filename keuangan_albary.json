@@ -22,6 +22,11 @@
           "nama": "Full romadhon",
           "saldo": 392093500,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Uang Ummi Sri",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
@@ -1847,5 +1852,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
