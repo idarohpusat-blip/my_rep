@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": 0,
+          "saldo": 1425,
           "mataUang": "SAR"
         }
       ],
@@ -821,6 +821,15 @@
           "mataUang": "Rp",
           "keterangan": "Uang Masuk",
           "tanggal": "2026-02-19"
+        },
+        {
+          "id": "1771673448456592",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 1425,
+          "mataUang": "SAR",
+          "keterangan": "Uang tukaran Riyal",
+          "tanggal": "2026-02-21"
         }
       ]
     },
@@ -1852,5 +1861,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "4"
 }
