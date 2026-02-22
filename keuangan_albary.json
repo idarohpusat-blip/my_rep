@@ -1891,7 +1891,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 104,
+          "saldo": 125,
           "mataUang": "SAR"
         }
       ],
@@ -1921,6 +1921,15 @@
           "jumlah": 21,
           "mataUang": "SAR",
           "keterangan": "100 Ayah",
+          "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771756849003807",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 21,
+          "mataUang": "SAR",
+          "keterangan": "Bunda sartina",
           "tanggal": "2026-02-22"
         }
       ]
