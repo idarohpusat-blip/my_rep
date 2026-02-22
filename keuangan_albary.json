@@ -1891,7 +1891,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 125,
+          "saldo": 167,
           "mataUang": "SAR"
         }
       ],
@@ -1930,6 +1930,15 @@
           "jumlah": 21,
           "mataUang": "SAR",
           "keterangan": "Bunda sartina",
+          "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771756883372745",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 42,
+          "mataUang": "SAR",
+          "keterangan": "Bunda miranda 200rb",
           "tanggal": "2026-02-22"
         }
       ]
