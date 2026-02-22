@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": 1426,
+          "saldo": 1776,
           "mataUang": "SAR"
         }
       ],
@@ -839,6 +839,24 @@
           "mataUang": "SAR",
           "keterangan": "Tambahan",
           "tanggal": "2026-02-21"
+        },
+        {
+          "id": "1771756597585306",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 2000,
+          "mataUang": "SAR",
+          "keterangan": "Dar 12juta sisa 1 juta",
+          "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771756630379132",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 1650,
+          "mataUang": "SAR",
+          "keterangan": "Mobil transportasi",
+          "tanggal": "2026-02-22"
         }
       ]
     },
@@ -1891,5 +1909,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
