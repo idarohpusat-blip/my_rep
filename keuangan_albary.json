@@ -1870,7 +1870,13 @@
     },
     {
       "nama": "Uang jamaah",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Sedekah ",
+          "saldo": 0,
+          "mataUang": "SAR"
+        }
+      ],
       "transaksi": []
     }
   ],
