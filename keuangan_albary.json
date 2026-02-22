@@ -1891,7 +1891,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 188,
+          "saldo": 113,
           "mataUang": "SAR"
         }
       ],
@@ -1948,6 +1948,15 @@
           "jumlah": 21,
           "mataUang": "SAR",
           "keterangan": "100 bunda yuni",
+          "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771766838386789",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 75,
+          "mataUang": "SAR",
+          "keterangan": "2 karton kurma",
           "tanggal": "2026-02-22"
         }
       ]
