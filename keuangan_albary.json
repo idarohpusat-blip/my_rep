@@ -1891,7 +1891,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 63,
+          "saldo": 83,
           "mataUang": "SAR"
         }
       ],
@@ -1904,10 +1904,19 @@
           "mataUang": "SAR",
           "keterangan": "300rb Bunda wilda dan bunda intan dan mama nya",
           "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771756789960345",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 20,
+          "mataUang": "SAR",
+          "keterangan": "Bunda ana Riau",
+          "tanggal": "2026-02-22"
         }
       ]
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
