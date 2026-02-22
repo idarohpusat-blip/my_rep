@@ -1900,7 +1900,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 83,
+          "saldo": 27,
           "mataUang": "SAR"
         }
       ],
@@ -1975,6 +1975,15 @@
           "jumlah": 30,
           "mataUang": "SAR",
           "keterangan": "2 kardus air",
+          "tanggal": "2026-02-22"
+        },
+        {
+          "id": "177176858830887",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 56,
+          "mataUang": "SAR",
+          "keterangan": "Rtoti",
           "tanggal": "2026-02-22"
         }
       ]
