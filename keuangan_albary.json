@@ -1900,7 +1900,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 113,
+          "saldo": 83,
           "mataUang": "SAR"
         }
       ],
@@ -1967,10 +1967,19 @@
           "mataUang": "SAR",
           "keterangan": "2 karton kurma",
           "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771768521648795",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "2 kardus air",
+          "tanggal": "2026-02-22"
         }
       ]
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
