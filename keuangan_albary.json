@@ -1891,7 +1891,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 83,
+          "saldo": 104,
           "mataUang": "SAR"
         }
       ],
@@ -1912,6 +1912,15 @@
           "jumlah": 20,
           "mataUang": "SAR",
           "keterangan": "Bunda ana Riau",
+          "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771756837048542",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 21,
+          "mataUang": "SAR",
+          "keterangan": "100 Ayah",
           "tanggal": "2026-02-22"
         }
       ]
