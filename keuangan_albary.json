@@ -2026,7 +2026,13 @@
     },
     {
       "nama": "Abu Rezki",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Uang makan",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
