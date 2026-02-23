@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": 1976,
+          "saldo": 1776,
           "mataUang": "SAR"
         }
       ],
@@ -866,6 +866,15 @@
           "mataUang": "SAR",
           "keterangan": "Uang hutang",
           "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1771830360741577",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 200,
+          "mataUang": "SAR",
+          "keterangan": "Uang bus ke quba'",
+          "tanggal": "2026-02-23"
         }
       ]
     },
@@ -1990,5 +1999,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
