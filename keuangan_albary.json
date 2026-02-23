@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": 1711,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -892,6 +892,15 @@
           "jumlah": 35,
           "mataUang": "SAR",
           "keterangan": "Kurma sukkari",
+          "tanggal": "2026-02-23"
+        },
+        {
+          "id": "1771830649844305",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 1711,
+          "mataUang": "SAR",
+          "keterangan": "Di ambil Ummi loby",
           "tanggal": "2026-02-23"
         }
       ]
