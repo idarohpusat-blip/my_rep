@@ -2029,13 +2029,23 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": 0,
+          "saldo": 1000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1771882498477504",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 1000,
+          "mataUang": "Rp",
+          "keterangan": "Uang makan",
+          "tanggal": "2026-02-23"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
