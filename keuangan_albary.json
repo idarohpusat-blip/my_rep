@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": 1746,
+          "saldo": 1711,
           "mataUang": "SAR"
         }
       ],
@@ -883,6 +883,15 @@
           "jumlah": 30,
           "mataUang": "SAR",
           "keterangan": "Roti",
+          "tanggal": "2026-02-23"
+        },
+        {
+          "id": "1771830548721201",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 35,
+          "mataUang": "SAR",
+          "keterangan": "Kurma sukkari",
           "tanggal": "2026-02-23"
         }
       ]
