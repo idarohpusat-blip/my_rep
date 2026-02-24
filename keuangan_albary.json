@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": 0,
+          "saldo": -100,
           "mataUang": "SAR"
         }
       ],
@@ -902,6 +902,15 @@
           "mataUang": "SAR",
           "keterangan": "Di ambil Ummi loby",
           "tanggal": "2026-02-23"
+        },
+        {
+          "id": "1771933436515546",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Supir dari madinah ke mekkah",
+          "tanggal": "2026-02-24"
         }
       ]
     },
@@ -2056,5 +2065,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
