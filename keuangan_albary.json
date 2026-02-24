@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -190,
+          "saldo": -208,
           "mataUang": "SAR"
         }
       ],
@@ -928,6 +928,15 @@
           "jumlah": 35,
           "mataUang": "SAR",
           "keterangan": "Bilboy mekkah",
+          "tanggal": "2026-02-24"
+        },
+        {
+          "id": "1771933492186588",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 18,
+          "mataUang": "SAR",
+          "keterangan": "Air minum di perjalanan",
           "tanggal": "2026-02-24"
         }
       ]
