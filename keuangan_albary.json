@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -238,
+          "saldo": -182,
           "mataUang": "SAR"
         }
       ],
@@ -964,6 +964,15 @@
           "jumlah": 40,
           "mataUang": "SAR",
           "keterangan": "Mobil",
+          "tanggal": "2026-02-26"
+        },
+        {
+          "id": "1772111912347870",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 56,
+          "mataUang": "SAR",
+          "keterangan": "Uang rupiah 265.000",
           "tanggal": "2026-02-26"
         }
       ]
