@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -278,
+          "saldo": -238,
           "mataUang": "SAR"
         }
       ],
@@ -955,6 +955,15 @@
           "jumlah": 40,
           "mataUang": "SAR",
           "keterangan": "Dari tanim ke harom",
+          "tanggal": "2026-02-26"
+        },
+        {
+          "id": "1772111873640431",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 40,
+          "mataUang": "SAR",
+          "keterangan": "Mobil",
           "tanggal": "2026-02-26"
         }
       ]
