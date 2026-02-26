@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -208,
+          "saldo": -238,
           "mataUang": "SAR"
         }
       ],
@@ -938,6 +938,15 @@
           "mataUang": "SAR",
           "keterangan": "Air minum di perjalanan",
           "tanggal": "2026-02-24"
+        },
+        {
+          "id": "1772110197549348",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "Ke tanim",
+          "tanggal": "2026-02-26"
         }
       ]
     },
@@ -2110,5 +2119,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
