@@ -2017,7 +2017,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 132,
+          "saldo": 184,
           "mataUang": "SAR"
         }
       ],
@@ -2111,6 +2111,15 @@
           "mataUang": "SAR",
           "keterangan": "Bunda wilda dan dan sartina",
           "tanggal": "2026-02-27"
+        },
+        {
+          "id": "1772191989074375",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 52,
+          "mataUang": "SAR",
+          "keterangan": "250.000 uang sedekah ummi",
+          "tanggal": "2026-02-27"
         }
       ]
     },
@@ -2182,5 +2191,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
