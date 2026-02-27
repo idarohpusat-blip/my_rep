@@ -2008,7 +2008,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 27,
+          "saldo": 132,
           "mataUang": "SAR"
         }
       ],
@@ -2093,6 +2093,15 @@
           "mataUang": "SAR",
           "keterangan": "Rtoti",
           "tanggal": "2026-02-22"
+        },
+        {
+          "id": "1772169923755808",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 105,
+          "mataUang": "SAR",
+          "keterangan": "Bunda wilda dan dan sartina",
+          "tanggal": "2026-02-27"
         }
       ]
     },
@@ -2164,5 +2173,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
