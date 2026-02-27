@@ -2101,7 +2101,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": 220,
+          "saldo": -35,
           "mataUang": "Rp"
         }
       ],
@@ -2141,10 +2141,19 @@
           "mataUang": "Rp",
           "keterangan": "Malam ke 3",
           "tanggal": "2026-02-25"
+        },
+        {
+          "id": "1772155590914200",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 255,
+          "mataUang": "Rp",
+          "keterangan": "Ambil setelah trowongan",
+          "tanggal": "2026-02-27"
         }
       ]
     }
   ],
   "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
