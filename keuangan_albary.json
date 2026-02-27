@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -182,
+          "saldo": -202,
           "mataUang": "SAR"
         }
       ],
@@ -974,6 +974,15 @@
           "mataUang": "SAR",
           "keterangan": "Uang rupiah 265.000",
           "tanggal": "2026-02-26"
+        },
+        {
+          "id": "1772187119251831",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 20,
+          "mataUang": "SAR",
+          "keterangan": "Air galon kamr 3",
+          "tanggal": "2026-02-27"
         }
       ]
     },
@@ -2173,5 +2182,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
