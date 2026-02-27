@@ -2101,7 +2101,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": -35,
+          "saldo": 465,
           "mataUang": "Rp"
         }
       ],
@@ -2149,6 +2149,15 @@
           "jumlah": 255,
           "mataUang": "Rp",
           "keterangan": "Ambil setelah trowongan",
+          "tanggal": "2026-02-27"
+        },
+        {
+          "id": "1772155609917465",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 500,
+          "mataUang": "Rp",
+          "keterangan": "Ana kasih di trowongan depan taxi",
           "tanggal": "2026-02-27"
         }
       ]
