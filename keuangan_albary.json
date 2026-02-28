@@ -2026,7 +2026,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 184,
+          "saldo": 154,
           "mataUang": "SAR"
         }
       ],
@@ -2129,6 +2129,15 @@
           "mataUang": "SAR",
           "keterangan": "250.000 uang sedekah ummi",
           "tanggal": "2026-02-27"
+        },
+        {
+          "id": "1772273387087688",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "Beli",
+          "tanggal": "2026-02-28"
         }
       ]
     },
@@ -2209,5 +2218,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
