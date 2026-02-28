@@ -2137,7 +2137,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": 465,
+          "saldo": 210,
           "mataUang": "Rp"
         }
       ],
@@ -2195,10 +2195,19 @@
           "mataUang": "Rp",
           "keterangan": "Ana kasih di trowongan depan taxi",
           "tanggal": "2026-02-27"
+        },
+        {
+          "id": "1772271966211362",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 255,
+          "mataUang": "Rp",
+          "keterangan": "Abu reski bawa bareng ustadz abdurrohman",
+          "tanggal": "2026-02-28"
         }
       ]
     }
   ],
   "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
