@@ -2031,7 +2031,7 @@
         },
         {
           "nama": "Bunda nadia",
-          "saldo": -500000,
+          "saldo": -545000,
           "mataUang": "Rp"
         }
       ],
@@ -2151,6 +2151,15 @@
           "jumlah": 500000,
           "mataUang": "Rp",
           "keterangan": "Nadia di restoran",
+          "tanggal": "2026-02-28"
+        },
+        {
+          "id": "1772273467759327",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 45000,
+          "mataUang": "Rp",
+          "keterangan": "Es cendol ana sing",
           "tanggal": "2026-02-28"
         }
       ]
