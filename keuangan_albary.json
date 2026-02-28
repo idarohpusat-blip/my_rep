@@ -2031,7 +2031,7 @@
         },
         {
           "nama": "Bunda nadia",
-          "saldo": 0,
+          "saldo": -500000,
           "mataUang": "Rp"
         }
       ],
@@ -2143,6 +2143,15 @@
           "mataUang": "SAR",
           "keterangan": "Beli",
           "tanggal": "2026-02-28"
+        },
+        {
+          "id": "1772273437133141",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 500000,
+          "mataUang": "Rp",
+          "keterangan": "Nadia di restoran",
+          "tanggal": "2026-02-28"
         }
       ]
     },
@@ -2223,5 +2232,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
