@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1492,
+          "saldo": -1480,
           "mataUang": "SAR"
         }
       ],
@@ -1027,15 +1027,6 @@
           "jumlah": 40,
           "mataUang": "SAR",
           "keterangan": "Dari hp ke hotel",
-          "tanggal": "2026-03-01"
-        },
-        {
-          "id": "177238005643130",
-          "kantong": 4,
-          "jenis": "keluar",
-          "jumlah": 12,
-          "mataUang": "SAR",
-          "keterangan": "Funeral + Transport",
           "tanggal": "2026-03-01"
         }
       ]
@@ -2299,5 +2290,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
