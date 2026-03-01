@@ -2071,7 +2071,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 186,
+          "saldo": 106,
           "mataUang": "SAR"
         }
       ],
@@ -2191,6 +2191,15 @@
           "jumlah": 32,
           "mataUang": "SAR",
           "keterangan": "Nadia",
+          "tanggal": "2026-03-01"
+        },
+        {
+          "id": "1772380496530450",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 80,
+          "mataUang": "SAR",
+          "keterangan": "Telur",
           "tanggal": "2026-03-01"
         }
       ]
