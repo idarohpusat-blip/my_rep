@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1440,
+          "saldo": -1480,
           "mataUang": "SAR"
         }
       ],
@@ -1018,6 +1018,15 @@
           "jumlah": 47,
           "mataUang": "SAR",
           "keterangan": "Dari al hijra ke al haddad",
+          "tanggal": "2026-03-01"
+        },
+        {
+          "id": "177237150876471",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 40,
+          "mataUang": "SAR",
+          "keterangan": "Dari hp ke hotel",
           "tanggal": "2026-03-01"
         }
       ]
