@@ -2073,11 +2073,6 @@
           "nama": "Sedekah ",
           "saldo": 154,
           "mataUang": "SAR"
-        },
-        {
-          "nama": "Bunda nadia",
-          "saldo": -545000,
-          "mataUang": "Rp"
         }
       ],
       "transaksi": [
@@ -2188,24 +2183,6 @@
           "mataUang": "SAR",
           "keterangan": "Beli",
           "tanggal": "2026-02-28"
-        },
-        {
-          "id": "1772273437133141",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 500000,
-          "mataUang": "Rp",
-          "keterangan": "Nadia di restoran",
-          "tanggal": "2026-02-28"
-        },
-        {
-          "id": "1772273467759327",
-          "kantong": 1,
-          "jenis": "keluar",
-          "jumlah": 45000,
-          "mataUang": "Rp",
-          "keterangan": "Es cendol ana sing",
-          "tanggal": "2026-02-28"
         }
       ]
     },
@@ -2286,5 +2263,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
