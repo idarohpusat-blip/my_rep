@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1313,
+          "saldo": -1202,
           "mataUang": "SAR"
         }
       ],
@@ -982,15 +982,6 @@
           "jumlah": 20,
           "mataUang": "SAR",
           "keterangan": "Air galon kamr 3",
-          "tanggal": "2026-02-27"
-        },
-        {
-          "id": "1772201818593751",
-          "kantong": 4,
-          "jenis": "keluar",
-          "jumlah": 111,
-          "mataUang": "SAR",
-          "keterangan": "Ambil 500rb",
           "tanggal": "2026-02-27"
         },
         {
