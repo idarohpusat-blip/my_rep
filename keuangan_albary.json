@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -393,
+          "saldo": -1393,
           "mataUang": "SAR"
         }
       ],
@@ -1000,6 +1000,15 @@
           "jumlah": 80,
           "mataUang": "SAR",
           "keterangan": "Ke pemandian mayat",
+          "tanggal": "2026-03-01"
+        },
+        {
+          "id": "1772369744722381",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 1000,
+          "mataUang": "SAR",
+          "keterangan": "Beli hp",
           "tanggal": "2026-03-01"
         }
       ]
