@@ -2196,7 +2196,7 @@
         },
         {
           "nama": "Nasi dadakan",
-          "saldo": 0,
+          "saldo": -255,
           "mataUang": "SAR"
         }
       ],
@@ -2263,10 +2263,19 @@
           "mataUang": "Rp",
           "keterangan": "Abu reski bawa bareng ustadz abdurrohman",
           "tanggal": "2026-02-28"
+        },
+        {
+          "id": "1772461195149638",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 255,
+          "mataUang": "SAR",
+          "keterangan": "Nasi kotak",
+          "tanggal": "2026-03-02"
         }
       ]
     }
   ],
   "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
