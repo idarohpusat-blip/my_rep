@@ -2196,7 +2196,7 @@
         },
         {
           "nama": "Nasi dadakan",
-          "saldo": -255,
+          "saldo": -530,
           "mataUang": "SAR"
         }
       ],
@@ -2271,6 +2271,15 @@
           "jumlah": 255,
           "mataUang": "SAR",
           "keterangan": "Nasi kotak",
+          "tanggal": "2026-03-02"
+        },
+        {
+          "id": "1772461218467192",
+          "kantong": 1,
+          "jenis": "keluar",
+          "jumlah": 275,
+          "mataUang": "SAR",
+          "keterangan": "Beli palestin",
           "tanggal": "2026-03-02"
         }
       ]
