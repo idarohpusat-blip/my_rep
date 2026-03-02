@@ -2193,6 +2193,11 @@
           "nama": "Uang makan",
           "saldo": 210,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Nasi dadakan",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
@@ -2263,5 +2268,5 @@
     }
   ],
   "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
