@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -850,
+          "saldo": -980,
           "mataUang": "SAR"
         }
       ],
@@ -1001,6 +1001,15 @@
           "mataUang": "SAR",
           "keterangan": "Bayar di loby",
           "tanggal": "2026-03-01"
+        },
+        {
+          "id": "1772520961170626",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 130,
+          "mataUang": "SAR",
+          "keterangan": "Yuni ke jedda",
+          "tanggal": "2026-03-03"
         }
       ]
     },
@@ -2286,5 +2295,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
