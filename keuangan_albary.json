@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -980,
+          "saldo": -1068,
           "mataUang": "SAR"
         }
       ],
@@ -1009,6 +1009,15 @@
           "jumlah": 130,
           "mataUang": "SAR",
           "keterangan": "Yuni ke jedda",
+          "tanggal": "2026-03-03"
+        },
+        {
+          "id": "1772520973970167",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 88,
+          "mataUang": "SAR",
+          "keterangan": "Jedda mekkah",
           "tanggal": "2026-03-03"
         }
       ]
