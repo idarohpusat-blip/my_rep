@@ -2227,7 +2227,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": 955,
+          "saldo": 965,
           "mataUang": "Rp"
         },
         {
@@ -2352,6 +2352,15 @@
           "jumlah": 255,
           "mataUang": "Rp",
           "keterangan": "Kurang airnya",
+          "tanggal": "2026-03-05"
+        },
+        {
+          "id": "1772721332341496",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 10,
+          "mataUang": "Rp",
+          "keterangan": "Untuk beli air",
           "tanggal": "2026-03-05"
         }
       ]
