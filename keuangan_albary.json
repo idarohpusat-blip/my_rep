@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -3132,
+          "saldo": -3272,
           "mataUang": "SAR"
         }
       ],
@@ -1081,6 +1081,15 @@
           "jumlah": 5,
           "mataUang": "SAR",
           "keterangan": "Bersihin wc",
+          "tanggal": "2026-03-06"
+        },
+        {
+          "id": "1772796561151688",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 140,
+          "mataUang": "SAR",
+          "keterangan": "Ke madinah",
           "tanggal": "2026-03-06"
         }
       ]
