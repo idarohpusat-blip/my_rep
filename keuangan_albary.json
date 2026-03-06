@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -3127,
+          "saldo": -3132,
           "mataUang": "SAR"
         }
       ],
@@ -1072,6 +1072,15 @@
           "jumlah": 60,
           "mataUang": "SAR",
           "keterangan": "Taxi jarwal",
+          "tanggal": "2026-03-06"
+        },
+        {
+          "id": "177279655100535",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 5,
+          "mataUang": "SAR",
+          "keterangan": "Bersihin wc",
           "tanggal": "2026-03-06"
         }
       ]
