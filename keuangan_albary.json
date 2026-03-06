@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1178,
+          "saldo": -3067,
           "mataUang": "SAR"
         }
       ],
@@ -1055,6 +1055,15 @@
           "mataUang": "SAR",
           "keterangan": "Dia ber 2 orang untuk kebersihan",
           "tanggal": "2026-03-05"
+        },
+        {
+          "id": "1772782511584735",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 1889,
+          "mataUang": "SAR",
+          "keterangan": "Tiket nawa",
+          "tanggal": "2026-03-06"
         }
       ]
     },
