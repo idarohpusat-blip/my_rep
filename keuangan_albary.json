@@ -2125,7 +2125,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 96,
+          "saldo": 117,
           "mataUang": "SAR"
         }
       ],
@@ -2281,6 +2281,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Bunda mariana",
+          "tanggal": "2026-03-06"
+        },
+        {
+          "id": "1772807334935384",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 21,
+          "mataUang": "SAR",
+          "keterangan": "100 rb untuk 2 x mertua ustdz maryudi",
           "tanggal": "2026-03-06"
         }
       ]
