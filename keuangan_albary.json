@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1333,
+          "saldo": -1334,
           "mataUang": "SAR"
         }
       ],
@@ -1090,6 +1090,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Bayar tukaran riyal",
+          "tanggal": "2026-03-06"
+        },
+        {
+          "id": "1772832498936492",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 1,
+          "mataUang": "SAR",
+          "keterangan": "Pembayaran raudoh",
           "tanggal": "2026-03-06"
         }
       ]
@@ -2471,5 +2480,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
