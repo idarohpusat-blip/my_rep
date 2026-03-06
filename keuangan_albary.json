@@ -2125,7 +2125,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 117,
+          "saldo": 159,
           "mataUang": "SAR"
         }
       ],
@@ -2290,6 +2290,15 @@
           "jumlah": 21,
           "mataUang": "SAR",
           "keterangan": "100 rb untuk 2 x mertua ustdz maryudi",
+          "tanggal": "2026-03-06"
+        },
+        {
+          "id": "177280740837189",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 42,
+          "mataUang": "SAR",
+          "keterangan": "Temannya bunda wild mobil",
           "tanggal": "2026-03-06"
         }
       ]
