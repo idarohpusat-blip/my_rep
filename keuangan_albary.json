@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -3272,
+          "saldo": -3222,
           "mataUang": "SAR"
         }
       ],
@@ -1090,6 +1090,15 @@
           "jumlah": 140,
           "mataUang": "SAR",
           "keterangan": "Ke madinah",
+          "tanggal": "2026-03-06"
+        },
+        {
+          "id": "1772807206946369",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Bayar tukaran riyal",
           "tanggal": "2026-03-06"
         }
       ]
