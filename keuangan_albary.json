@@ -1869,6 +1869,11 @@
           "nama": "Ustadz Fahri",
           "saldo": -100000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Ustadz Faishol",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
