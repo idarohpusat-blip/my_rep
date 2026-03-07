@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1906,
+          "saldo": -1936,
           "mataUang": "SAR"
         }
       ],
@@ -1126,6 +1126,15 @@
           "jumlah": 502,
           "mataUang": "SAR",
           "keterangan": "Hutang 2",
+          "tanggal": "2026-03-07"
+        },
+        {
+          "id": "1772890932529309",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "Untuk pembayran setengah dar",
           "tanggal": "2026-03-07"
         }
       ]
