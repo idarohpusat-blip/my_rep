@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1404,
+          "saldo": -1904,
           "mataUang": "SAR"
         }
       ],
@@ -1117,6 +1117,15 @@
           "jumlah": 40,
           "mataUang": "SAR",
           "keterangan": "Makan di rest area madinah",
+          "tanggal": "2026-03-07"
+        },
+        {
+          "id": "1772890861014577",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 500,
+          "mataUang": "SAR",
+          "keterangan": "Hutang",
           "tanggal": "2026-03-07"
         }
       ]
