@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -1966,
+          "saldo": -2091,
           "mataUang": "SAR"
         }
       ],
@@ -1145,6 +1145,15 @@
           "mataUang": "SAR",
           "keterangan": "Setengah untuk hari ke 2",
           "tanggal": "2026-03-07"
+        },
+        {
+          "id": "1772941689207329",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 125,
+          "mataUang": "SAR",
+          "keterangan": "Baju",
+          "tanggal": "2026-03-08"
         }
       ]
     },
@@ -2534,5 +2543,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
