@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -4251,
+          "saldo": -4573,
           "mataUang": "SAR"
         }
       ],
@@ -1198,6 +1198,15 @@
           "jumlah": 300,
           "mataUang": "SAR",
           "keterangan": "Miqot",
+          "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773077301534990",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 322,
+          "mataUang": "SAR",
+          "keterangan": "Opersdioan nawa dan ustadz rahmat",
           "tanggal": "2026-03-09"
         }
       ]
