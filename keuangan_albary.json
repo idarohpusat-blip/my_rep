@@ -2288,7 +2288,7 @@
         },
         {
           "nama": "Dam",
-          "saldo": 500,
+          "saldo": 1500,
           "mataUang": "SAR"
         }
       ],
@@ -2525,6 +2525,15 @@
           "jumlah": 300,
           "mataUang": "SAR",
           "keterangan": "Asnaf mekkah",
+          "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773098872039662",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 1000,
+          "mataUang": "SAR",
+          "keterangan": "2x nasi sabil",
           "tanggal": "2026-03-09"
         }
       ]
