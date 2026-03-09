@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -3951,
+          "saldo": -4251,
           "mataUang": "SAR"
         }
       ],
@@ -1189,6 +1189,15 @@
           "jumlah": 80,
           "mataUang": "SAR",
           "keterangan": "Bilboy",
+          "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773077277556706",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 300,
+          "mataUang": "SAR",
+          "keterangan": "Miqot",
           "tanggal": "2026-03-09"
         }
       ]
