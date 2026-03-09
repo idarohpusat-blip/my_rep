@@ -2274,7 +2274,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 119,
+          "saldo": 104,
           "mataUang": "SAR"
         }
       ],
@@ -2457,6 +2457,15 @@
           "jumlah": 40,
           "mataUang": "SAR",
           "keterangan": "Kurma",
+          "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773098279658564",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 15,
+          "mataUang": "SAR",
+          "keterangan": "Air",
           "tanggal": "2026-03-09"
         }
       ]
