@@ -2285,6 +2285,11 @@
           "nama": "Sedekah ",
           "saldo": 36,
           "mataUang": "SAR"
+        },
+        {
+          "nama": "Dam",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
