@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -4569,
+          "saldo": -4415,
           "mataUang": "SAR"
         }
       ],
@@ -1159,9 +1159,9 @@
           "id": "1772946387602587",
           "kantong": 4,
           "jenis": "keluar",
-          "jumlah": 155,
+          "jumlah": 1,
           "mataUang": "SAR",
-          "keterangan": "Karak",
+          "keterangan": "Karak 155",
           "tanggal": "2026-03-08"
         },
         {
@@ -2701,5 +2701,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
