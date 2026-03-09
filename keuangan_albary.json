@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -4415,
+          "saldo": -4316,
           "mataUang": "SAR"
         }
       ],
@@ -1150,9 +1150,9 @@
           "id": "1772941689207329",
           "kantong": 4,
           "jenis": "keluar",
-          "jumlah": 100,
+          "jumlah": 1,
           "mataUang": "SAR",
-          "keterangan": "Baju",
+          "keterangan": "Baju 100",
           "tanggal": "2026-03-08"
         },
         {
