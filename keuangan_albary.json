@@ -2274,7 +2274,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 159,
+          "saldo": 119,
           "mataUang": "SAR"
         }
       ],
@@ -2449,6 +2449,15 @@
           "mataUang": "SAR",
           "keterangan": "Temannya bunda wild mobil",
           "tanggal": "2026-03-06"
+        },
+        {
+          "id": "1773098270478147",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 40,
+          "mataUang": "SAR",
+          "keterangan": "Kurma",
+          "tanggal": "2026-03-09"
         }
       ]
     },
@@ -2615,5 +2624,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
