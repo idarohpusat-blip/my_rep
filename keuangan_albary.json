@@ -25,7 +25,7 @@
         },
         {
           "nama": "Uang Ummi Sri",
-          "saldo": -2721,
+          "saldo": -3871,
           "mataUang": "SAR"
         }
       ],
@@ -1172,6 +1172,15 @@
           "mataUang": "SAR",
           "keterangan": "10 pax masuk raudoh",
           "tanggal": "2026-03-08"
+        },
+        {
+          "id": "1773077251911361",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 1150,
+          "mataUang": "SAR",
+          "keterangan": "Mobil",
+          "tanggal": "2026-03-09"
         }
       ]
     },
