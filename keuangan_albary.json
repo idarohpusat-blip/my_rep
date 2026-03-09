@@ -2283,7 +2283,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": -6,
+          "saldo": 36,
           "mataUang": "SAR"
         }
       ],
@@ -2494,6 +2494,15 @@
           "mataUang": "SAR",
           "keterangan": "Balik",
           "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773098686699899",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 42,
+          "mataUang": "SAR",
+          "keterangan": "200rb wilda",
+          "tanggal": "2026-03-09"
         }
       ]
     },
@@ -2660,5 +2669,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
