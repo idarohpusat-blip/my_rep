@@ -2288,7 +2288,7 @@
         },
         {
           "nama": "Dam",
-          "saldo": 0,
+          "saldo": 200,
           "mataUang": "SAR"
         }
       ],
@@ -2508,6 +2508,15 @@
           "mataUang": "SAR",
           "keterangan": "200rb wilda",
           "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773098747930910",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 200,
+          "mataUang": "SAR",
+          "keterangan": "Puan syafiah untuk asnaf",
+          "tanggal": "2026-03-09"
         }
       ]
     },
@@ -2674,5 +2683,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "1"
 }
