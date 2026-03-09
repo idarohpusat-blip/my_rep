@@ -2288,7 +2288,7 @@
         },
         {
           "nama": "Dam",
-          "saldo": 200,
+          "saldo": 500,
           "mataUang": "SAR"
         }
       ],
@@ -2516,6 +2516,15 @@
           "jumlah": 200,
           "mataUang": "SAR",
           "keterangan": "Puan syafiah untuk asnaf madina",
+          "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773098835349918",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 300,
+          "mataUang": "SAR",
+          "keterangan": "Asnaf mekkah",
           "tanggal": "2026-03-09"
         }
       ]
