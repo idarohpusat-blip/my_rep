@@ -20,7 +20,7 @@
         },
         {
           "nama": "Full romadhon",
-          "saldo": 392093500,
+          "saldo": -1461500,
           "mataUang": "Rp"
         },
         {
@@ -812,15 +812,6 @@
           "mataUang": "Rp",
           "keterangan": "Biaya admin",
           "tanggal": "2026-02-17"
-        },
-        {
-          "id": "1771462261132711",
-          "kantong": 3,
-          "jenis": "masuk",
-          "jumlah": 393555000,
-          "mataUang": "Rp",
-          "keterangan": "Uang Masuk",
-          "tanggal": "2026-02-19"
         },
         {
           "id": "1771673448456592",
@@ -2710,5 +2701,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "3"
 }
