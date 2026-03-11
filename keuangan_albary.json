@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -20,
+          "saldo": 0,
           "mataUang": "SAR"
         }
       ],
@@ -1222,24 +1222,6 @@
           "mataUang": "SAR",
           "keterangan": "Makan bakso",
           "tanggal": "2026-03-09"
-        },
-        {
-          "id": "1773246427703788",
-          "kantong": 5,
-          "jenis": "masuk",
-          "jumlah": 40,
-          "mataUang": "SAR",
-          "keterangan": "Ke kakiya",
-          "tanggal": "2026-03-11"
-        },
-        {
-          "id": "1773246438053875",
-          "kantong": 5,
-          "jenis": "keluar",
-          "jumlah": 60,
-          "mataUang": "SAR",
-          "keterangan": "Pulang",
-          "tanggal": "2026-03-11"
         }
       ]
     },
