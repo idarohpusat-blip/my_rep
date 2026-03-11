@@ -2525,7 +2525,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": -295,
+          "saldo": -565,
           "mataUang": "Rp"
         },
         {
@@ -2705,6 +2705,15 @@
           "mataUang": "Rp",
           "keterangan": "Untuk 20 orang",
           "tanggal": "2026-03-10"
+        },
+        {
+          "id": "1773231766756370",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 270,
+          "mataUang": "Rp",
+          "keterangan": "18pax",
+          "tanggal": "2026-03-11"
         }
       ]
     }
