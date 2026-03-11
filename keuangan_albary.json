@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -100,
+          "saldo": -130,
           "mataUang": "SAR"
         }
       ],
@@ -1239,6 +1239,15 @@
           "jumlah": 60,
           "mataUang": "SAR",
           "keterangan": "Pulang kakiya",
+          "tanggal": "2026-03-11"
+        },
+        {
+          "id": "1773246479702528",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "Jasa angkat",
           "tanggal": "2026-03-11"
         }
       ]
