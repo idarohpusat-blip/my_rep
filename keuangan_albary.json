@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -260,
+          "saldo": -286,
           "mataUang": "SAR"
         }
       ],
@@ -1257,6 +1257,15 @@
           "jumlah": 130,
           "mataUang": "SAR",
           "keterangan": "Berangkat ke jedda bunda yuni",
+          "tanggal": "2026-03-12"
+        },
+        {
+          "id": "1773284911445158",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 26,
+          "mataUang": "SAR",
+          "keterangan": "Albaik",
           "tanggal": "2026-03-12"
         }
       ]
