@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -346,
+          "saldo": -476,
           "mataUang": "SAR"
         }
       ],
@@ -1284,6 +1284,15 @@
           "jumlah": 10,
           "mataUang": "SAR",
           "keterangan": "Bilboy kebersihan ac kamar 205",
+          "tanggal": "2026-03-12"
+        },
+        {
+          "id": "1773341886370289",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 130,
+          "mataUang": "SAR",
+          "keterangan": "125 telur 5 riyal hadia",
           "tanggal": "2026-03-12"
         }
       ]
