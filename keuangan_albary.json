@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -286,
+          "saldo": -336,
           "mataUang": "SAR"
         }
       ],
@@ -1266,6 +1266,15 @@
           "jumlah": 26,
           "mataUang": "SAR",
           "keterangan": "Albaik",
+          "tanggal": "2026-03-12"
+        },
+        {
+          "id": "1773284930259682",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Transportasi",
           "tanggal": "2026-03-12"
         }
       ]
