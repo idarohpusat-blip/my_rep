@@ -2584,7 +2584,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": -565,
+          "saldo": 935,
           "mataUang": "Rp"
         },
         {
@@ -2773,10 +2773,19 @@
           "mataUang": "Rp",
           "keterangan": "18pax",
           "tanggal": "2026-03-11"
+        },
+        {
+          "id": "1773307531225461",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 1500,
+          "mataUang": "Rp",
+          "keterangan": "Ana bayar di rumah abu ya",
+          "tanggal": "2026-03-12"
         }
       ]
     }
   ],
   "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
