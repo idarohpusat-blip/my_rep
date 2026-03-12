@@ -2584,7 +2584,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": 635,
+          "saldo": 1135,
           "mataUang": "Rp"
         },
         {
@@ -2778,9 +2778,9 @@
           "id": "1773307531225461",
           "kantong": 0,
           "jenis": "masuk",
-          "jumlah": 1500,
+          "jumlah": 2000,
           "mataUang": "Rp",
-          "keterangan": "Ana bayar di rumah abu ya",
+          "keterangan": "Ana bayar di rumah abu ya tf 9juta",
           "tanggal": "2026-03-12"
         },
         {
