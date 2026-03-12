@@ -2584,7 +2584,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": 935,
+          "saldo": 635,
           "mataUang": "Rp"
         },
         {
@@ -2781,6 +2781,15 @@
           "jumlah": 1500,
           "mataUang": "Rp",
           "keterangan": "Ana bayar di rumah abu ya",
+          "tanggal": "2026-03-12"
+        },
+        {
+          "id": "1773307556543628",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 300,
+          "mataUang": "Rp",
+          "keterangan": "Bayar rumah abuya",
           "tanggal": "2026-03-12"
         }
       ]
