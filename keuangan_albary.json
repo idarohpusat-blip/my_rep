@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -336,
+          "saldo": -346,
           "mataUang": "SAR"
         }
       ],
@@ -1275,6 +1275,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Transportasi",
+          "tanggal": "2026-03-12"
+        },
+        {
+          "id": "1773332442906826",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy kebersihan ac kamar 205",
           "tanggal": "2026-03-12"
         }
       ]
@@ -2795,6 +2804,6 @@
       ]
     }
   ],
-  "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "0"
+  "albary_user_terakhir": "0",
+  "albary_kantong_terakhir": "5"
 }
