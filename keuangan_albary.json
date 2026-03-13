@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -476,
+          "saldo": -486,
           "mataUang": "SAR"
         }
       ],
@@ -1294,6 +1294,15 @@
           "mataUang": "SAR",
           "keterangan": "125 telur 5 riyal hadia",
           "tanggal": "2026-03-12"
+        },
+        {
+          "id": "1773382120588622",
+          "kantong": 5,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Baqolah untuk sedekah",
+          "tanggal": "2026-03-13"
         }
       ]
     },
