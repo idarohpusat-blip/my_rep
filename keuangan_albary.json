@@ -2351,7 +2351,7 @@
       "kantong": [
         {
           "nama": "Sedekah ",
-          "saldo": 36,
+          "saldo": -174,
           "mataUang": "SAR"
         },
         {
@@ -2603,6 +2603,15 @@
           "mataUang": "SAR",
           "keterangan": "2x nasi sabil",
           "tanggal": "2026-03-09"
+        },
+        {
+          "id": "1773391045535316",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 210,
+          "mataUang": "SAR",
+          "keterangan": "1 juta",
+          "tanggal": "2026-03-13"
         }
       ]
     },
@@ -2823,5 +2832,5 @@
     }
   ],
   "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
