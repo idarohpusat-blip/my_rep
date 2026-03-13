@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -486,
+          "saldo": -496,
           "mataUang": "SAR"
         }
       ],
@@ -1299,7 +1299,7 @@
           "id": "1773382120588622",
           "kantong": 5,
           "jenis": "keluar",
-          "jumlah": 10,
+          "jumlah": 20,
           "mataUang": "SAR",
           "keterangan": "Baqolah untuk sedekah",
           "tanggal": "2026-03-13"
