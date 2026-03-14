@@ -32,6 +32,11 @@
           "nama": "Ummi sri ",
           "saldo": -496,
           "mataUang": "SAR"
+        },
+        {
+          "nama": "Umminsri 3",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
