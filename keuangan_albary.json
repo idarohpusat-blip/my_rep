@@ -35,7 +35,7 @@
         },
         {
           "nama": "Umminsri 3",
-          "saldo": 0,
+          "saldo": -500,
           "mataUang": "Rp"
         }
       ],
@@ -1308,6 +1308,15 @@
           "mataUang": "SAR",
           "keterangan": "Baqolah untuk sedekah",
           "tanggal": "2026-03-13"
+        },
+        {
+          "id": "1773473204126928",
+          "kantong": 6,
+          "jenis": "keluar",
+          "jumlah": 500,
+          "mataUang": "Rp",
+          "keterangan": "Ke kakiyah",
+          "tanggal": "2026-03-14"
         }
       ]
     },
@@ -2846,5 +2855,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "6"
 }
