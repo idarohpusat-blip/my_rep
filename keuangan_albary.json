@@ -35,7 +35,7 @@
         },
         {
           "nama": "Umminsri 3",
-          "saldo": -740,
+          "saldo": -720,
           "mataUang": "Rp"
         }
       ],
@@ -1334,15 +1334,6 @@
           "jumlah": 50,
           "mataUang": "Rp",
           "keterangan": "Balik darinkakiya",
-          "tanggal": "2026-03-15"
-        },
-        {
-          "id": "1773541004574619",
-          "kantong": 6,
-          "jenis": "keluar",
-          "jumlah": 20,
-          "mataUang": "Rp",
-          "keterangan": "Jasa angkut",
           "tanggal": "2026-03-15"
         },
         {
