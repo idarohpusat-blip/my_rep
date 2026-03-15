@@ -35,7 +35,7 @@
         },
         {
           "nama": "Umminsri 3",
-          "saldo": -671,
+          "saldo": -632,
           "mataUang": "Rp"
         }
       ],
@@ -1322,9 +1322,9 @@
           "id": "1773540977731351",
           "kantong": 6,
           "jenis": "keluar",
-          "jumlah": 40,
+          "jumlah": 1,
           "mataUang": "Rp",
-          "keterangan": "Ke kakiya",
+          "keterangan": "Ke kakiya 40",
           "tanggal": "2026-03-15"
         },
         {
