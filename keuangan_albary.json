@@ -35,7 +35,7 @@
         },
         {
           "nama": "Umminsri 3",
-          "saldo": -750,
+          "saldo": -740,
           "mataUang": "Rp"
         }
       ],
@@ -1349,7 +1349,7 @@
           "id": "177357078371241",
           "kantong": 6,
           "jenis": "keluar",
-          "jumlah": 140,
+          "jumlah": 130,
           "mataUang": "Rp",
           "keterangan": "Taxi ke tanim",
           "tanggal": "2026-03-15"
