@@ -35,7 +35,7 @@
         },
         {
           "nama": "Umminsri 3",
-          "saldo": -610,
+          "saldo": -480,
           "mataUang": "Rp"
         }
       ],
@@ -1343,6 +1343,15 @@
           "jumlah": 20,
           "mataUang": "Rp",
           "keterangan": "Jasa angkut",
+          "tanggal": "2026-03-15"
+        },
+        {
+          "id": "177357076418874",
+          "kantong": 6,
+          "jenis": "masuk",
+          "jumlah": 130,
+          "mataUang": "Rp",
+          "keterangan": "Taxi pp ke tanim",
           "tanggal": "2026-03-15"
         }
       ]
@@ -2891,5 +2900,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "6"
 }
