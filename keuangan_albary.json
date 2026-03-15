@@ -35,7 +35,7 @@
         },
         {
           "nama": "Umminsri 3",
-          "saldo": -500,
+          "saldo": -540,
           "mataUang": "Rp"
         }
       ],
@@ -1317,6 +1317,15 @@
           "mataUang": "Rp",
           "keterangan": "Ke kakiyah",
           "tanggal": "2026-03-14"
+        },
+        {
+          "id": "1773540977731351",
+          "kantong": 6,
+          "jenis": "keluar",
+          "jumlah": 40,
+          "mataUang": "Rp",
+          "keterangan": "Ke kakiya",
+          "tanggal": "2026-03-15"
         }
       ]
     },
@@ -2863,6 +2872,6 @@
       ]
     }
   ],
-  "albary_user_terakhir": "7",
-  "albary_kantong_terakhir": "-1"
+  "albary_user_terakhir": "0",
+  "albary_kantong_terakhir": "6"
 }
