@@ -2670,7 +2670,7 @@
       "kantong": [
         {
           "nama": "Uang makan",
-          "saldo": 280,
+          "saldo": -20,
           "mataUang": "Rp"
         },
         {
@@ -2904,10 +2904,19 @@
           "mataUang": "Rp",
           "keterangan": "19pax",
           "tanggal": "2026-03-15"
+        },
+        {
+          "id": "1773709724484222",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 300,
+          "mataUang": "Rp",
+          "keterangan": "20 pax tanggal 16",
+          "tanggal": "2026-03-17"
         }
       ]
     }
   ],
   "albary_user_terakhir": "8",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
