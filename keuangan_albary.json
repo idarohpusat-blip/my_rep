@@ -5,7 +5,7 @@
       "kantong": [
         {
           "nama": "Ummi sri CK Agustus",
-          "saldo": -10,
+          "saldo": 0,
           "mataUang": "SAR"
         },
         {
@@ -1353,15 +1353,6 @@
           "mataUang": "Rp",
           "keterangan": "Bayar di jalan",
           "tanggal": "2026-03-15"
-        },
-        {
-          "id": "178050901588026",
-          "kantong": 0,
-          "jenis": "keluar",
-          "jumlah": 10,
-          "mataUang": "SAR",
-          "keterangan": "",
-          "tanggal": "2026-06-03"
         }
       ]
     },
