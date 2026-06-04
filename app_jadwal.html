@@ -1658,23 +1658,94 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
           showToast("Nomor WA tidak tersedia", "error");
           return;
         }
+        const job = appState.jobs.find((j) => j.namaPekerjaan === name && j.deadline === date);
 
-        let text = `Assalamu Alaikum, Maaf tugas: *${name}* Ket: *${ket}*  Untuk Tanggal: *${formatTanggalDenganHari(date)}*. Mohon segera diselesaikan .`;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
 
-        if (isBulk) {
-          const template = document.getElementById("wa-template").value;
-          const job = appState.jobs.find((j) => j.namaPekerjaan === name && j.deadline === date);
-          if (job) {
-            text = template
-              .replace("[Nama Petugas]", job.petugas)
-              .replace("[Nama Pekerjaan]", job.namaPekerjaan)
-              .replace("[Deskripsi]", job.deskripsi || "-")
-              .replace("[Kendala]", job.kendala || "-")
-              .replace("[Deadline]", formatTanggalDenganHari(job.deadline))
-              .replace("[Status]", job.status)
-              .replace("[Progress]", job.progress);
+        const targetDate = new Date(job.deadline);
+        targetDate.setHours(0, 0, 0, 0);
+
+        const diffDays = Math.ceil((targetDate - today) / (1000 * 60 * 60 * 24));
+
+        let tambahan = "";
+
+        if (job.status === "Selesai") {
+          tambahan = `
+Alhamdulillah, tugas ini telah dinyatakan selesai.
+
+Terima kasih atas kesediaan, perhatian, dan ikhtiar yang telah diberikan dalam melaksanakan amanah ini. Semoga Allah SWT menerima setiap kebaikan yang dilakukan dan memberikan keberkahan dalam segala urusan.
+`;
+        } else {
+          if (diffDays > 7) {
+            tambahan = `
+Tugas ini masih memiliki waktu ${diffDays} hari sebelum jadwal yang telah ditentukan.
+
+Mohon agar tugas dapat mulai dipersiapkan dan direncanakan dengan baik sehingga pelaksanaannya berjalan lancar.
+`;
+          } else if (diffDays > 3) {
+            tambahan = `
+Jadwal pelaksanaan tugas semakin mendekat dengan sisa waktu ${diffDays} hari.
+
+Mohon agar progres tugas dapat diperhatikan dan dipersiapkan dengan baik.
+`;
+          } else if (diffDays === 3) {
+            tambahan = `
+Jadwal pelaksanaan tugas tinggal H-3.
+
+Mohon agar tugas ini mulai menjadi perhatian utama sehingga seluruh kebutuhan dan persiapan dapat terselesaikan dengan baik.
+`;
+          } else if (diffDays === 2) {
+            tambahan = `
+Jadwal pelaksanaan tugas tinggal H-2.
+
+Mohon agar segera dilakukan tindak lanjut dan penyelesaian terhadap hal-hal yang masih diperlukan.
+`;
+          } else if (diffDays === 1) {
+            tambahan = `
+Jadwal pelaksanaan tugas tinggal H-1.
+
+Mohon agar amanah ini menjadi prioritas dan dapat dipastikan siap untuk dilaksanakan sesuai waktu yang telah ditentukan.
+`;
+          } else if (diffDays === 0) {
+            tambahan = `
+Hari ini merupakan hari pelaksanaan tugas.
+
+Mohon agar amanah yang telah dipercayakan dapat segera dilaksanakan dan dituntaskan dengan sebaik-baiknya.
+`;
+          } else {
+            tambahan = `
+Jadwal pelaksanaan tugas telah berlalu ${Math.abs(diffDays)} hari.
+
+Mohon berkenan untuk segera melakukan tindak lanjut serta memberikan informasi perkembangan tugas agar dapat dilakukan penyesuaian dan koordinasi yang diperlukan.
+`;
           }
         }
+
+        let text = `Assalamu'alaikum Wr. Wb.
+Mengingatkan kembali amanah tugas yang menjadi tanggung jawab *${job.petugas}*.
+Tugas : *${name}*
+Keterangan : *${ket}*
+Tanggal Pelaksanaan : *${formatTanggalDenganHari(date)}*
+${tambahan}
+
+Atas perhatian dan kerjasamanya kami sampaikan terima kasih.
+Semoga Allah SWT memberikan kemudahan, kelancaran, dan keberkahan dalam setiap ikhtiar yang dilakukan.
+Wassalamu'alaikum Wr. Wb.`;
+
+        // if (isBulk) {
+        //   const template = document.getElementById("wa-template").value;
+        //   if (job) {
+        //     text = template
+        //       .replace("[Nama Petugas]", job.petugas)
+        //       .replace("[Nama Pekerjaan]", job.namaPekerjaan)
+        //       .replace("[Deskripsi]", job.deskripsi || "-")
+        //       .replace("[Kendala]", job.kendala || "-")
+        //       .replace("[Deadline]", formatTanggalDenganHari(job.deadline))
+        //       .replace("[Status]", job.status)
+        //       .replace("[Progress]", job.progress);
+        //   }
+        // }
 
         const url = `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
         window.open(url, "_blank");
