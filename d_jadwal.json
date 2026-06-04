@@ -139,6 +139,20 @@
       "progress": 0,
       "istiqomahType": "weekly",
       "kendala": ""
+    },
+    {
+      "id": "1780566920650",
+      "namaPekerjaan": "Musyaworh Mingguan",
+      "deskripsi": "DSM SMART Santri Digital",
+      "petugas": "Group DSM SMART",
+      "wa": "DkF0rEskGsU9BoI2r6a8Ly",
+      "tanggalMulai": "2026-06-05",
+      "deadline": "2026-06-05",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "weekly",
+      "kendala": ""
     }
   ],
   "staff": [
