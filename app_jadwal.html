@@ -1435,14 +1435,136 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
         const month = currentCalendarDate.getMonth();
 
         const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
         document.getElementById("calendar-month-year").innerText = `${monthNames[month]} ${year}`;
 
         const firstDay = new Date(year, month, 1).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
+        const today = new Date();
+        const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+        // Spasi awal bulan
         for (let i = 0; i < firstDay; i++) {
           grid.innerHTML += `<div></div>`;
         }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+          const dayJobs = appState.jobs.filter((j) => j.deadline === dateStr);
+
+          let hasUrgent = false;
+          let hasDone = false;
+
+          dayJobs.forEach((j) => {
+            if (j.status === "Selesai") hasDone = true;
+            if (j.prioritas === "Urgent") hasUrgent = true;
+          });
+
+          // Warna background cell
+          let bgClass = "bg-white";
+          let borderClass = "border-gray-100";
+
+          if (dateStr === todayStr) {
+            bgClass = "bg-blue-50";
+            borderClass = "border-blue-300";
+          } else if (dayJobs.length > 0 && dayJobs.every((j) => j.status === "Selesai")) {
+            bgClass = "bg-emerald-50";
+            borderClass = "border-emerald-200";
+          } else if (hasUrgent) {
+            bgClass = "bg-red-50";
+            borderClass = "border-red-200";
+          } else if (dayJobs.length > 0) {
+            bgClass = "bg-amber-50";
+            borderClass = "border-amber-200";
+          }
+
+          const cell = document.createElement("div");
+
+          cell.className = `
+      ${bgClass}
+      border
+      ${borderClass}
+      rounded-xl
+      p-2
+      min-h-[90px]
+      md:min-h-[110px]
+      hover:shadow-lg
+      hover:scale-[1.02]
+      transition-all
+      duration-200
+      cursor-pointer
+      relative
+      overflow-hidden
+    `;
+
+          cell.onclick = () => openCalendarModal(dateStr);
+
+          // Daftar pekerjaan
+          let jobDots = "";
+
+          dayJobs.slice(0, 3).forEach((j) => {
+            let color = "bg-amber-500";
+
+            if (j.status === "Selesai") {
+              color = "bg-emerald-500";
+            } else if (j.prioritas === "Urgent") {
+              color = "bg-red-500";
+            }
+
+            jobDots += `
+        <div
+          class="${color} text-white text-[10px] md:text-[11px]
+          px-2 py-1 rounded-lg truncate shadow-sm"
+          title="${j.namaPekerjaan}">
+          ${j.namaPekerjaan}
+        </div>
+      `;
+          });
+
+          if (dayJobs.length > 3) {
+            jobDots += `
+        <div class="text-[10px] text-gray-500 font-medium">
+          +${dayJobs.length - 3} pekerjaan lainnya
+        </div>
+      `;
+          }
+
+          cell.innerHTML = `
+      <div class="flex justify-between items-start mb-2">
+
+        <span class="font-bold text-sm md:text-base text-gray-800">
+          ${day}
+        </span>
+
+        ${
+          dayJobs.length
+            ? `
+            <span
+              class="text-[10px]
+              bg-gray-200
+              text-gray-700
+              px-2
+              py-0.5
+              rounded-full
+              font-semibold">
+              ${dayJobs.length}
+            </span>
+          `
+            : ""
+        }
+
+      </div>
+
+      <div class="space-y-1">
+        ${jobDots}
+      </div>
+    `;
+
+          grid.appendChild(cell);
+        }
+      }
 
         for (let day = 1; day <= daysInMonth; day++) {
           const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
