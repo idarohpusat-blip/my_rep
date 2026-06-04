@@ -866,9 +866,6 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
         alert("Token GitHub berhasil dihapus");
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        updateGithubStatus();
-      });
 
       async function loadGithubToken() {
         // cek token tersimpan
@@ -950,6 +947,7 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
       // --- INITIALIZATION ---
       document.addEventListener("DOMContentLoaded", () => {
         loadData();
+        updateGithubStatus();
         lucide.createIcons();
         checkBrowserNotification();
 
