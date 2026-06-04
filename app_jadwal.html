@@ -1564,43 +1564,6 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
 
           grid.appendChild(cell);
         }
-      
-
-        for (let day = 1; day <= daysInMonth; day++) {
-          const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-          const dayJobs = appState.jobs.filter((j) => j.deadline === dateStr);
-
-          let dotColor = "bg-gray-200";
-          let hasUrgent = false;
-          let hasDone = false;
-
-          dayJobs.forEach((j) => {
-            if (j.status === "Selesai") hasDone = true;
-            else hasUrgent = true;
-          });
-
-          if (hasDone) dotColor = "bg-emerald-500";
-          else if (hasUrgent) dotColor = "bg-orange-500";
-
-          const cell = document.createElement("div");
-          cell.className = `bg-white border border-gray-100 rounded-lg p-1 md:p-2 min-h-[60px] md:min-h-[80px] hover:shadow-md transition-all cursor-pointer relative group`;
-          cell.onclick = () => openCalendarModal(dateStr);
-
-          let jobDots = "";
-          dayJobs.slice(0, 3).forEach((j) => {
-            const color = j.status === "Selesai" ? "bg-emerald-400" : j.prioritas === "Urgent" ? "bg-red-400" : "bg-yellow-400";
-            jobDots += `<div class="text-[9px] md:text-[10px] truncate px-1 rounded ${color} text-white mt-1 mb-1" title="${j.namaPekerjaan}">${j.namaPekerjaan}</div>`;
-          });
-          if (dayJobs.length > 3) {
-            jobDots += `<div class="text-[8px] md:text-[9px] text-gray-400">+${dayJobs.length - 3} lagi</div>`;
-          }
-
-          cell.innerHTML = `
-                    <div class="font-bold text-xs md:text-sm text-gray-700">${day}</div>
-                    ${jobDots}
-                `;
-          grid.appendChild(cell);
-        }
       }
 
       function changeMonth(delta) {
