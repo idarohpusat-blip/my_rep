@@ -55,6 +55,20 @@
       "progress": "0",
       "istiqomahType": "weekly",
       "kendala": ""
+    },
+    {
+      "id": "1780550175125",
+      "namaPekerjaan": "Umroh SLA",
+      "deskripsi": "Tiket PEsawat",
+      "petugas": "jamaluddin",
+      "wa": "6281342296661",
+      "tanggalMulai": "2026-07-11",
+      "deadline": "2026-07-11",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
     }
   ],
   "staff": [
