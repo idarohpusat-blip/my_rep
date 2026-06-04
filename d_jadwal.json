@@ -1,0 +1,13 @@
+{
+  "jobs": [],
+  "staff": [
+    {
+      "id": 1,
+      "name": "hasan",
+      "wa": "6281342296661"
+    }
+  ],
+  "settings": {
+    "reminderDays": 7
+  }
+}
