@@ -887,6 +887,7 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
           }
 
           const data = await response.json();
+          console.log(data);
           const content = atob(data.content);
           return JSON.parse(content);
         } catch (error) {
