@@ -108,7 +108,7 @@
       "deadline": "2026-06-05",
       "prioritas": "Normal",
       "status": "Belum Mulai",
-      "progress": "0",
+      "progress": "60",
       "istiqomahType": "none",
       "kendala": ""
     },
@@ -142,7 +142,6 @@
     }
   ],
   "staff": [
-   
     {
       "id": 1780539325712,
       "name": "jamaluddin",
