@@ -886,7 +886,7 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
           }
 
           const data = await response.json();
-           console.log(data);
+          console.log(data);
           const content = atob(data.content);
           return JSON.parse(content);
         } catch (error) {
@@ -942,8 +942,65 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
         renderAll();
       });
 
-      function saveData() {
+      async function saveData() {
+        // Simpan lokal
         localStorage.setItem("workMajooData", JSON.stringify(appState));
+
+        // Simpan ke GitHub
+        const success = await saveDataToGithub(appState);
+
+        if (!success) {
+          console.warn("Gagal sync ke GitHub");
+        }
+      }
+
+      async function saveDataToGithub(data) {
+        if (!githubToken) return false;
+
+        try {
+          const currentData = await fetch(GITHUB_URL, {
+            headers: {
+              Authorization: `Bearer ${githubToken}`,
+              Accept: "application/vnd.github+json",
+            },
+          });
+
+          let sha = "";
+
+          if (currentData.ok) {
+            const currentFile = await currentData.json();
+            sha = currentFile.sha;
+          }
+
+          const content = btoa(JSON.stringify(data, null, 2));
+
+          const message = sha ? "Update keuangan data" : "Create keuangan data";
+
+          const response = await fetch(GITHUB_URL, {
+            method: "PUT",
+            headers: {
+              Authorization: `Bearer ${githubToken}`,
+              Accept: "application/vnd.github+json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              message,
+              content,
+              ...(sha ? { sha } : {}),
+            }),
+          });
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            console.error(errorData);
+            throw new Error(`GitHub API error: ${response.status}`);
+          }
+
+          return true;
+        } catch (error) {
+          console.error("Error saving data to GitHub:", error);
+          return false;
+        }
       }
 
       // Navigation Logic
