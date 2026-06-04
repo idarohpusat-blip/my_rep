@@ -121,8 +121,8 @@
       "tanggalMulai": "2026-06-04",
       "deadline": "2026-06-04",
       "prioritas": "Normal",
-      "status": "Selesai",
-      "progress": "100",
+      "status": "Belum Mulai",
+      "progress": "0",
       "istiqomahType": "none",
       "kendala": ""
     },
