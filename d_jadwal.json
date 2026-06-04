@@ -55,6 +55,20 @@
       "progress": "0",
       "istiqomahType": "weekly",
       "kendala": ""
+    },
+    {
+      "id": "1780550358598",
+      "namaPekerjaan": "Anjungan Putri",
+      "deskripsi": "Pemasangan Anjungan Putri",
+      "petugas": "Ust Mustofa Nz",
+      "wa": "6287770575231",
+      "tanggalMulai": "2026-06-08",
+      "deadline": "2026-06-08",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
     }
   ],
   "staff": [
