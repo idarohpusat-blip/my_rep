@@ -41,6 +41,20 @@
       "progress": "0",
       "istiqomahType": "none",
       "kendala": ""
+    },
+    {
+      "id": "1780549167886",
+      "namaPekerjaan": "Laporn keuangan",
+      "deskripsi": "=> Pemasukan \n=> Pengeluaran\n=> Laporan saldo",
+      "petugas": "Ustadz Ibrohim Pp Nz",
+      "wa": "62 823-3122-1970",
+      "tanggalMulai": "2026-06-10",
+      "deadline": "2026-06-09",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "weekly",
+      "kendala": ""
     }
   ],
   "staff": [
