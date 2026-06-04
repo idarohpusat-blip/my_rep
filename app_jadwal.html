@@ -762,7 +762,7 @@ Wassalamu’alaikum warahmatullahi wabarakatuh
       const GITHUB_URL = "https://api.github.com/repos/idarohpusat-blip/my_rep/contents/d_jadwal.json";
       const TOKEN_KEY = "albar_jadwal_token";
       let githubToken = null;
-loadData()
+
       const tokenModal = document.getElementById("tokenModal");
       const tokenInput = document.getElementById("tokenInput");
       const tokenSimpan = document.getElementById("tokenSimpan");
@@ -942,6 +942,7 @@ loadData()
           ];
         }
         appState = await fetchDataFromGithub();
+         renderAll()
       }
 
       // --- INITIALIZATION ---
