@@ -139,28 +139,10 @@
       "progress": 0,
       "istiqomahType": "weekly",
       "kendala": ""
-    },
-    {
-      "id": "1780566920650",
-      "namaPekerjaan": "Musyaworh Mingguan",
-      "deskripsi": "DSM SMART Santri Digital",
-      "petugas": "Group DSM SMART",
-      "wa": "DkF0rEskGsU9BoI2r6a8Ly",
-      "tanggalMulai": "2026-06-05",
-      "deadline": "2026-06-05",
-      "prioritas": "Normal",
-      "status": "Belum Mulai",
-      "progress": "0",
-      "istiqomahType": "weekly",
-      "kendala": ""
     }
   ],
   "staff": [
-    {
-      "id": 1,
-      "name": "hasan",
-      "wa": "6281342296661"
-    },
+   
     {
       "id": 1780539325712,
       "name": "jamaluddin",
@@ -168,18 +150,13 @@
     },
     {
       "id": 1780549097558,
-      "name": "Ustadz Ibrohim Pp Nz",
+      "name": "Ust Ibrohim",
       "wa": "6282331221970"
     },
     {
       "id": 1780550260308,
-      "name": "Ust Mustofa Nz",
+      "name": "Ust Mustofa",
       "wa": "6287770575231"
-    },
-    {
-      "id": 1780566859948,
-      "name": "Group DSM SMART",
-      "wa": "DkF0rEskGsU9BoI2r6a8Ly"
     }
   ],
   "settings": {
