@@ -27,6 +27,20 @@
       "progress": "0",
       "istiqomahType": "none",
       "kendala": ""
+    },
+    {
+      "id": "1780548914958",
+      "namaPekerjaan": "RAB Batrai",
+      "deskripsi": "Cek harga Batrai & Inverter",
+      "petugas": "jamaluddin",
+      "wa": "6281342296661",
+      "tanggalMulai": "2026-06-06",
+      "deadline": "2026-06-06",
+      "prioritas": "Penting",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
     }
   ],
   "staff": [
