@@ -1,5 +1,20 @@
 {
-  "jobs": [],
+  "jobs": [
+    {
+      "id": "1780539670598",
+      "namaPekerjaan": "Musyawaroh BSI",
+      "deskripsi": "Penandatanganan Kerjasama Host To Host",
+      "petugas": "jamaluddin",
+      "wa": "6281342296661",
+      "tanggalMulai": "2026-06-07",
+      "deadline": "2026-06-07",
+      "prioritas": "Urgent",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
+    }
+  ],
   "staff": [
     {
       "id": 1,
