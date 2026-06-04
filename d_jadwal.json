@@ -13,6 +13,20 @@
       "progress": "2",
       "istiqomahType": "none",
       "kendala": ""
+    },
+    {
+      "id": "1780548806277",
+      "namaPekerjaan": "Pemasangan Server",
+      "deskripsi": "",
+      "petugas": "jamaluddin",
+      "wa": "6281342296661",
+      "tanggalMulai": "2026-06-08",
+      "deadline": "2026-06-08",
+      "prioritas": "Penting",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
     }
   ],
   "staff": [
