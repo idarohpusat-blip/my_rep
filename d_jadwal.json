@@ -83,6 +83,20 @@
       "progress": "0",
       "istiqomahType": "none",
       "kendala": ""
+    },
+    {
+      "id": "1780550517796",
+      "namaPekerjaan": "Ruang Server",
+      "deskripsi": "Pengecekan Ruangan Server",
+      "petugas": "Ustadz Ibrohim Pp Nz",
+      "wa": "6282331221970",
+      "tanggalMulai": "2026-06-06",
+      "deadline": "2026-06-06",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
     }
   ],
   "staff": [
