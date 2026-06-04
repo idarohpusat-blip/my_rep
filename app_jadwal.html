@@ -1,0 +1,1748 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Sistem Manajemen Kerja & Istiqomah</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+            colors: {
+              emerald: {
+                50: "#ecfdf5",
+                100: "#d1fae5",
+                300: "#6ee7b7",
+                400: "#34d399",
+                500: "#10b981",
+                600: "#059669",
+                700: "#047857",
+                800: "#065f46",
+                900: "#064e3b",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Hide Scrollbar for cleaner look but keep functionality */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Animation */
+      .fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Toast Notification */
+      #toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+      .toast {
+        background: white;
+        border-left: 4px solid #10b981;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: slideIn 0.3s ease-out;
+        min-width: 300px;
+        max-width: 90vw;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      /* Custom Range Slider Styling */
+      input[type="range"] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #10b981;
+        cursor: pointer;
+        margin-top: -6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.1s;
+      }
+      input[type="range"]::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        background: #e5e7eb;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-emerald-300 via-emerald-400 to-green-500 min-h-screen text-gray-800 overflow-hidden">
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/60 z-20 hidden transition-opacity duration-300 opacity-0"></div>
+
+    <div class="flex h-screen relative">
+      <!-- Sidebar -->
+      <!-- Logic: Fixed (absolute) on mobile for drawer effect, Relative on desktop -->
+      <aside id="sidebar" class="fixed inset-y-0 left-0 z-30 w-64 bg-white/95 backdrop-blur-md shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:flex md:flex-col">
+        <div class="p-6 flex items-center justify-between md:justify-start gap-3 border-b border-emerald-100">
+          <div class="bg-emerald-500 p-2 rounded-lg text-white flex-shrink-0">
+            <i data-lucide="rocket"></i>
+          </div>
+          <h1 class="font-bold text-xl text-emerald-800 tracking-tight">WorkMajoo</h1>
+          <!-- Close Button for Mobile Only -->
+          <button onclick="toggleMobileMenu()" class="md:hidden text-gray-400 hover:text-gray-600">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+          <button
+            onclick="
+              navTo('dashboard');
+              toggleMobileMenu();
+            "
+            class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-colors"
+          >
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+            Dashboard
+          </button>
+          <button
+            onclick="
+              navTo('jobs');
+              toggleMobileMenu();
+            "
+            class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors"
+          >
+            <i data-lucide="briefcase" class="w-5 h-5"></i>
+            Pekerjaan
+          </button>
+          <button
+            onclick="
+              navTo('calendar');
+              toggleMobileMenu();
+            "
+            class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors"
+          >
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+            Kalender
+          </button>
+          <button
+            onclick="
+              navTo('staff');
+              toggleMobileMenu();
+            "
+            class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors"
+          >
+            <i data-lucide="users" class="w-5 h-5"></i>
+            Petugas
+          </button>
+          <button
+            onclick="
+              navTo('wa-sender');
+              toggleMobileMenu();
+            "
+            class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors"
+          >
+            <div class="w-5 h-5 relative">
+              <svg viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                />
+              </svg>
+            </div>
+            WhatsApp Sender
+          </button>
+          <button
+            onclick="
+              navTo('istiqomah');
+              toggleMobileMenu();
+            "
+            class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors"
+          >
+            <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+            Istiqomah
+          </button>
+          <button
+            onclick="
+              navTo('reports');
+              toggleMobileMenu();
+            "
+            class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors"
+          >
+            <i data-lucide="file-bar-chart" class="w-5 h-5"></i>
+            Laporan
+          </button>
+        </nav>
+
+        <div class="p-4 border-t border-emerald-100">
+          <button
+            onclick="
+              navTo('settings');
+              toggleMobileMenu();
+            "
+            class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-gray-600 hover:bg-gray-50 transition-colors"
+          >
+            <i data-lucide="settings" class="w-5 h-5"></i>
+            Settings
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col h-screen overflow-hidden relative w-full">
+        <!-- Mobile Header -->
+        <header class="md:hidden bg-white/95 backdrop-blur-md shadow-sm p-4 flex justify-between items-center z-10 sticky top-0">
+          <div class="flex items-center gap-2 font-bold text-emerald-800">
+            <i data-lucide="rocket"></i>
+            WorkMajoo
+          </div>
+          <button onclick="toggleMobileMenu()" class="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+            <i data-lucide="menu"></i>
+          </button>
+        </header>
+
+        <!-- Content Area -->
+        <div id="content-area" class="flex-1 overflow-y-auto p-4 md:p-8 hide-scrollbar relative">
+          <!-- DASHBOARD SECTION -->
+          <section id="dashboard" class="space-y-6 fade-in block">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+              <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white drop-shadow-sm">Dashboard Admin</h2>
+                <p class="text-emerald-50 text-sm mt-1" id="current-date-display">...</p>
+              </div>
+              <button onclick="openJobModal()" class="bg-white text-emerald-600 px-4 py-2 rounded-lg shadow-lg hover:bg-emerald-50 font-medium flex items-center gap-2 transition-transform hover:scale-105 active:scale-95">
+                <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                <span class="hidden sm:inline">Tambah Pekerjaan</span>
+              </button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
+              <div class="glass-panel p-4 rounded-2xl shadow-sm">
+                <div class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Total</div>
+                <div class="text-xl md:text-2xl font-bold text-gray-800 mt-1" id="stat-total">0</div>
+              </div>
+              <div class="glass-panel p-4 rounded-2xl shadow-sm border-l-4 border-gray-400">
+                <div class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Belum</div>
+                <div class="text-xl md:text-2xl font-bold text-gray-800 mt-1" id="stat-todo">0</div>
+              </div>
+              <div class="glass-panel p-4 rounded-2xl shadow-sm border-l-4 border-yellow-400">
+                <div class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Proses</div>
+                <div class="text-xl md:text-2xl font-bold text-gray-800 mt-1" id="stat-process">0</div>
+              </div>
+              <div class="glass-panel p-4 rounded-2xl shadow-sm border-l-4 border-emerald-500">
+                <div class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Selesai</div>
+                <div class="text-xl md:text-2xl font-bold text-gray-800 mt-1" id="stat-done">0</div>
+              </div>
+              <div class="glass-panel p-4 rounded-2xl shadow-sm border-l-4 border-red-500">
+                <div class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider">Overdue</div>
+                <div class="text-xl md:text-2xl font-bold text-gray-800 mt-1" id="stat-overdue">0</div>
+              </div>
+            </div>
+
+            <!-- H-7 Warning Section -->
+            <div class="glass-panel rounded-2xl p-4 md:p-6 shadow-sm border border-orange-200 bg-orange-50/50">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-orange-500 text-white rounded-lg animate-pulse">
+                  <i data-lucide="bell-ring"></i>
+                </div>
+                <h3 class="text-md md:text-lg font-bold text-gray-800">
+                  Deadline Mendekang (H-
+                  <span id="reminder-days-badge">7</span>
+                  )
+                </h3>
+              </div>
+
+              <div id="h-warning-list" class="space-y-3">
+                <p class="text-gray-500 text-sm italic">Tidak ada tugas mendekati deadline.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- JOBS SECTION -->
+          <section id="jobs" class="space-y-6 hidden fade-in">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+              <h2 class="text-2xl font-bold text-white drop-shadow-sm">Daftar Pekerjaan</h2>
+              <div class="flex gap-2 w-full md:w-auto">
+                <input type="text" id="job-search" placeholder="Cari pekerjaan..." class="px-4 py-2 rounded-lg border-none focus:ring-2 focus:ring-emerald-500 w-full md:w-64 shadow-sm text-sm" oninput="renderJobs()" />
+                <select id="job-filter-status" onchange="renderJobs()" class="px-4 py-2 rounded-lg border-none focus:ring-2 focus:ring-emerald-500 shadow-sm text-sm">
+                  <option value="all">Semua Status</option>
+                  <option value="Belum Mulai">Belum Mulai</option>
+                  <option value="Proses">Proses</option>
+                  <option value="Selesai">Selesai</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="glass-panel rounded-2xl shadow-sm overflow-hidden">
+              <!-- Responsive Table Container -->
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[800px]">
+                  <thead class="bg-emerald-50 text-emerald-800 text-xs uppercase font-bold">
+                    <tr>
+                      <th class="p-4 whitespace-nowrap">Pekerjaan</th>
+                      <th class="p-4 whitespace-nowrap">Petugas</th>
+                      <th class="p-4 whitespace-nowrap">Deadline</th>
+                      <th class="p-4 whitespace-nowrap">Status</th>
+                      <th class="p-4 whitespace-nowrap">Progress</th>
+                      <th class="p-4 whitespace-nowrap text-right">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="jobs-table-body" class="divide-y divide-gray-100 text-sm">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+              <div id="empty-jobs" class="p-8 text-center text-gray-400 hidden">
+                <i data-lucide="folder-open" class="w-12 h-12 mx-auto mb-2 opacity-50"></i>
+                <p>Belum ada data pekerjaan.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- CALENDAR SECTION -->
+          <section id="calendar" class="hidden fade-in h-full flex flex-col">
+            <div class="glass-panel p-4 rounded-2xl shadow-sm flex-1 flex flex-col">
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg md:text-xl font-bold text-gray-800" id="calendar-month-year">...</h2>
+                <div class="flex gap-2">
+                  <button onclick="changeMonth(-1)" class="p-2 hover:bg-gray-100 rounded-lg"><i data-lucide="chevron-left"></i></button>
+                  <button onclick="changeMonth(1)" class="p-2 hover:bg-gray-100 rounded-lg"><i data-lucide="chevron-right"></i></button>
+                </div>
+              </div>
+              <!-- Calendar Grid -->
+              <div class="grid grid-cols-7 gap-1 md:gap-2 text-center text-[10px] md:text-xs font-bold text-gray-500 mb-2">
+                <div>Min</div>
+                <div>Sen</div>
+                <div>Sel</div>
+                <div>Rab</div>
+                <div>Kam</div>
+                <div>Jum</div>
+                <div>Sab</div>
+              </div>
+              <div id="calendar-grid" class="grid grid-cols-7 gap-1 md:gap-2 flex-1 auto-rows-fr">
+                <!-- JS Generated -->
+              </div>
+            </div>
+          </section>
+
+          <!-- STAFF SECTION -->
+          <section id="staff" class="hidden fade-in space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+              <h2 class="text-2xl font-bold text-white drop-shadow-sm">Manajemen Petugas</h2>
+              <button onclick="openStaffModal()" class="bg-white text-emerald-600 px-4 py-2 rounded-lg shadow-lg hover:bg-emerald-50 font-medium flex items-center gap-2">
+                <i data-lucide="user-plus"></i>
+                Tambah Petugas
+              </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="staff-grid">
+              <!-- Staff Cards -->
+            </div>
+          </section>
+
+          <!-- WHATSAPP SENDER SECTION -->
+          <section id="wa-sender" class="hidden fade-in space-y-6">
+            <h2 class="text-2xl font-bold text-white drop-shadow-sm">WhatsApp Bulk Sender</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <!-- Controls -->
+              <div class="lg:col-span-1 glass-panel p-4 md:p-6 rounded-2xl shadow-sm h-fit">
+                <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                  <i data-lucide="filter"></i>
+                  Filter Kirim
+                </h3>
+                <div class="space-y-2 md:space-y-3">
+                  <label class="flex items-center gap-2 p-2 md:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-emerald-50 transition text-sm md:text-base">
+                    <input type="radio" name="wa-filter" value="all" checked onchange="previewWARecipients()" />
+                    <span>Semua Tugas Petugas</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-2 md:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-emerald-50 transition text-sm md:text-base">
+                    <input type="radio" name="wa-filter" value="unfinished" onchange="previewWARecipients()" />
+                    <span>Belum Selesai</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-2 md:p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-emerald-50 transition text-sm md:text-base">
+                    <input type="radio" name="wa-filter" value="process" onchange="previewWARecipients()" />
+                    <span>Sedang Proses</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-2 md:p-3 border border-orange-200 bg-orange-50 rounded-lg cursor-pointer hover:bg-orange-100 transition text-sm md:text-base">
+                    <input type="radio" name="wa-filter" value="h7" onchange="previewWARecipients()" />
+                    <span class="font-bold text-orange-700">Deadline H-7 (Urgent)</span>
+                  </label>
+                </div>
+
+                <h3 class="font-bold text-gray-800 mt-6 mb-4">Pesan Template</h3>
+                <textarea id="wa-template" class="w-full h-32 p-3 text-[10px] md:text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 text-center resize-none" oninput="previewWARecipients()">
+==============================
+Catatan Tugas
+==============================
+
+Assalamu’alaikum warahmatullahi wabarakatuh
+
+Kepada Yth. [Nama Petugas]
+
+TUGAS      : [Nama Pekerjaan]
+DESKRIPSI  : [Deskripsi]
+KENDALA    : [Kendala]
+DEADLINE   : [Deadline]
+STATUS     : [Status]
+PROGRESS   : [Progress]%
+
+Mohon segera dikerjakan.
+
+Jazakumullahu khairan
+Wassalamu’alaikum warahmatullahi wabarakatuh
+==============================
+</textarea
+                >
+
+                <div class="mt-6 space-y-3">
+                  <button onclick="executeBulkSendWA()" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 md:py-4 rounded-xl font-bold shadow-xl flex justify-center items-center gap-2 transition-transform active:scale-95 border-2 border-green-400 text-xs md:text-sm">
+                    <i data-lucide="send" class="w-5 h-5 animate-pulse"></i>
+                    KIRIM KE SEMUA (BULK)
+                  </button>
+                  <p class="text-[9px] md:text-[10px] text-center text-gray-500">*Pastikan izinkan pop-up di browser untuk mengirim banyak pesan sekaligus.</p>
+                </div>
+              </div>
+
+              <!-- Preview -->
+              <div class="lg:col-span-2 glass-panel p-4 md:p-6 rounded-2xl shadow-sm">
+                <h3 class="font-bold text-gray-800 mb-4">
+                  Preview Penerima (
+                  <span id="wa-count">0</span>
+                  )
+                </h3>
+                <div class="max-h-[500px] overflow-y-auto space-y-3 pr-2" id="wa-preview-list">
+                  <!-- List of recipients -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ISTIQOMAH SECTION -->
+          <section id="istiqomah" class="hidden fade-in space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div>
+                <h2 class="text-2xl font-bold text-white drop-shadow-sm">Sistem Istiqomah (Rutin)</h2>
+                <p class="text-emerald-50 text-sm">Otomatis membuat tugas berulang dari pekerjaan yang selesai.</p>
+              </div>
+              <button onclick="generateIstiqomahTasks()" class="bg-white text-emerald-600 px-4 py-2 rounded-lg shadow-lg hover:bg-emerald-50 font-medium flex items-center gap-2">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                Generate Ulang Tugas Rutin
+              </button>
+            </div>
+
+            <div class="glass-panel p-4 md:p-6 rounded-2xl shadow-sm">
+              <h3 class="font-bold text-gray-800 mb-4">Tugas Berulang Aktif</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left min-w-[600px]">
+                  <thead class="bg-emerald-50 text-emerald-800 text-xs uppercase font-bold">
+                    <tr>
+                      <th class="p-3 whitespace-nowrap">Tugas Induk</th>
+                      <th class="p-3 whitespace-nowrap">Tipe</th>
+                      <th class="p-3 whitespace-nowrap">Petugas</th>
+                      <th class="p-3 whitespace-nowrap">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="istiqomah-list" class="divide-y divide-gray-100 text-sm">
+                    <!-- Populated -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- REPORTS SECTION -->
+          <section id="reports" class="hidden fade-in space-y-6">
+            <h2 class="text-2xl font-bold text-white drop-shadow-sm">Laporan & Analitik</h2>
+            <div class="glass-panel p-4 md:p-6 rounded-2xl shadow-sm">
+              <div class="flex flex-wrap gap-2 md:gap-4 mb-6 items-end">
+                <div class="flex-1 min-w-[150px]">
+                  <label class="block text-[10px] md:text-xs font-bold text-gray-500 mb-1">Filter Petugas</label>
+                  <select id="report-filter-staff" class="w-full p-2 border border-gray-200 rounded-lg text-sm">
+                    <option value="all">Semua Petugas</option>
+                  </select>
+                </div>
+                <div class="flex-1 min-w-[150px]">
+                  <label class="block text-[10px] md:text-xs font-bold text-gray-500 mb-1">Filter Status</label>
+                  <select id="report-filter-status" class="w-full p-2 border border-gray-200 rounded-lg text-sm">
+                    <option value="all">Semua Status</option>
+                    <option value="Belum Mulai">Belum Mulai</option>
+                    <option value="Proses">Proses</option>
+                    <option value="Selesai">Selesai</option>
+                  </select>
+                </div>
+                <button onclick="generateReport()" class="bg-emerald-600 text-white px-4 md:px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 h-[40px] text-xs md:text-sm whitespace-nowrap">Terapkan</button>
+                <button onclick="exportCSV()" class="bg-gray-800 text-white px-4 md:px-6 py-2 rounded-lg font-medium hover:bg-gray-900 h-[40px] flex items-center gap-2 text-xs md:text-sm whitespace-nowrap">
+                  <i data-lucide="download" class="w-4 h-4"></i>
+                  CSV
+                </button>
+              </div>
+
+              <!-- Simple Visualization -->
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                <div class="p-3 md:p-4 bg-emerald-50 rounded-xl text-center">
+                  <div class="text-[10px] md:text-xs text-gray-500 uppercase font-bold">Total Terfilter</div>
+                  <div class="text-2xl md:text-3xl font-bold text-emerald-700" id="report-total">0</div>
+                </div>
+                <div class="p-3 md:p-4 bg-green-50 rounded-xl text-center">
+                  <div class="text-[10px] md:text-xs text-gray-500 uppercase font-bold">Penyelesaian</div>
+                  <div class="text-2xl md:text-3xl font-bold text-green-700" id="report-rate">0%</div>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm text-left min-w-[600px]">
+                    <thead class="bg-gray-50 text-gray-700 font-bold">
+                      <tr>
+                        <th class="p-3 whitespace-nowrap">ID</th>
+                        <th class="p-3 whitespace-nowrap">Pekerjaan</th>
+                        <th class="p-3 whitespace-nowrap">Petugas</th>
+                        <th class="p-3 whitespace-nowrap">Status</th>
+                        <th class="p-3 whitespace-nowrap">Deadline</th>
+                      </tr>
+                    </thead>
+                    <tbody id="report-table-body">
+                      <!-- Report Data -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SETTINGS SECTION -->
+          <section id="settings" class="hidden fade-in space-y-6">
+            <h2 class="text-2xl font-bold text-white drop-shadow-sm">Pengaturan Sistem</h2>
+
+            <div class="glass-panel p-5 md:p-6 rounded-2xl shadow-sm max-w-3xl space-y-8">
+              <!-- NOTIFIKASI -->
+              <div>
+                <h3 class="font-bold text-gray-800 text-lg mb-3 border-b pb-2">Notifikasi Deadline</h3>
+
+                <div class="flex flex-col md:flex-row md:items-center gap-3">
+                  <label class="text-sm text-gray-600">Ingatkan sebelum (Hari)</label>
+
+                  <input type="number" id="setting-reminder-days" value="7" min="1" class="w-24 p-2 border rounded-lg text-center font-bold" />
+
+                  <button onclick="saveSettings()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm">Simpan</button>
+                </div>
+
+                <p class="text-xs text-gray-500 mt-2">Notifikasi akan muncul di Dashboard jika deadline tinggal sesuai jumlah hari yang ditentukan.</p>
+              </div>
+
+              <!-- GITHUB TOKEN -->
+              <div>
+                <h3 class="font-bold text-gray-800 text-lg mb-3 border-b pb-2">Integrasi GitHub</h3>
+
+                <div class="bg-gray-50 border rounded-xl p-4">
+                  <div class="flex justify-between items-center mb-3">
+                    <div>
+                      <p class="font-medium text-gray-700">GitHub Personal Access Token</p>
+                      <p class="text-xs text-gray-500">Digunakan untuk sinkronisasi data ke repository GitHub.</p>
+                    </div>
+
+                    <span id="githubTokenStatus" class="px-3 py-1 text-xs rounded-full bg-red-100 text-red-600">Belum Tersambung</span>
+                  </div>
+
+                  <div class="flex flex-wrap gap-2">
+                    <button onclick="showTokenModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm">Atur Token</button>
+
+                    <button onclick="hapusTokenGithub()" class="bg-red-100 hover:bg-red-200 text-red-600 px-4 py-2 rounded-lg text-sm">Hapus Token</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DATA -->
+              <div>
+                <h3 class="font-bold text-gray-800 text-lg mb-3 border-b pb-2">Manajemen Data</h3>
+
+                <div class="bg-red-50 border border-red-100 rounded-xl p-4">
+                  <p class="text-sm text-red-700 mb-4">Tindakan ini akan menghapus seluruh data yang tersimpan di browser.</p>
+
+                  <button onclick="clearData()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm">Reset Semua Data</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- MODAL: ADD/EDIT JOB -->
+    <div id="job-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-emerald-50 rounded-t-2xl sticky top-0 z-10">
+          <h3 class="text-lg font-bold text-emerald-800" id="modal-title">Tambah Pekerjaan</h3>
+          <button onclick="closeJobModal()" class="text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>
+        </div>
+        <form id="job-form" onsubmit="handleJobSubmit(event)" class="p-6 space-y-4">
+          <input type="hidden" id="job-id" />
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Nama Pekerjaan</label>
+            <input type="text" id="inp-nama" required class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Deskripsi</label>
+            <textarea id="inp-deskripsi" rows="2" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none text-sm"></textarea>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Petugas</label>
+              <select id="inp-petugas" class="w-full p-2 border border-gray-300 rounded-lg bg-white text-sm" required onchange="autofillWA()">
+                <option value="">Pilih Petugas...</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">No. WhatsApp</label>
+              <input type="text" id="inp-wa" placeholder="628..." class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none text-sm" />
+              <p class="text-[10px] text-gray-400">Format: 628xxx (Gunakan no utk WA)</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Tanggal Mulai</label>
+              <input type="date" id="inp-mulai" required class="w-full p-2 border border-gray-300 rounded-lg text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Deadline</label>
+              <input type="date" id="inp-deadline" required class="w-full p-2 border border-gray-300 rounded-lg text-sm" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Prioritas</label>
+              <select id="inp-prioritas" class="w-full p-2 border border-gray-300 rounded-lg bg-white text-sm">
+                <option value="Normal">Normal</option>
+                <option value="Penting">Penting</option>
+                <option value="Urgent">Urgent</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Status</label>
+              <select id="inp-status" class="w-full p-2 border border-gray-300 rounded-lg bg-white text-sm">
+                <option value="Belum Mulai">Belum Mulai</option>
+                <option value="Proses">Proses</option>
+                <option value="Selesai">Selesai</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Progress (%)</label>
+              <input type="number" id="inp-progress" min="0" max="100" value="0" class="w-full p-2 border border-gray-300 rounded-lg text-sm" />
+            </div>
+          </div>
+
+          <!-- KENDALA FIELD -->
+          <div>
+            <label class="block text-xs font-bold text-red-500 mb-1">Kendala / Hambatan (Opsional)</label>
+            <input type="text" id="inp-kendala" placeholder="Contoh: Belum ada material, Menunggu revisi..." class="w-full p-2 border border-red-200 rounded-lg focus:ring-2 focus:ring-red-500 outline-none bg-red-50 text-sm" />
+          </div>
+
+          <div class="pt-4 border-t border-gray-100">
+            <label class="block text-xs font-bold text-emerald-600 mb-2 uppercase tracking-wide">Pengaturan Istiqomah (Pengulangan)</label>
+            <select id="inp-istiqomah" class="w-full p-2 border border-emerald-200 rounded-lg bg-emerald-50 text-emerald-800 text-sm">
+              <option value="none">Tidak Berulang (None)</option>
+              <option value="weekly">Mingguan (Weekly)</option>
+              <option value="monthly">Bulanan (Monthly)</option>
+              <option value="yearly">Tahunan (Yearly)</option>
+            </select>
+          </div>
+
+          <div class="flex justify-end gap-3 mt-6">
+            <button type="button" onclick="closeJobModal()" class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg text-sm">Batal</button>
+            <button type="submit" class="px-6 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-bold shadow-lg text-sm">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: CALENDAR DETAIL -->
+    <div id="calendar-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md">
+        <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-emerald-50 rounded-t-2xl">
+          <h3 class="font-bold text-emerald-800" id="cal-modal-date">Tanggal</h3>
+          <button onclick="document.getElementById('calendar-modal').classList.add('hidden')" class="text-gray-400"><i data-lucide="x"></i></button>
+        </div>
+        <div class="p-4 max-h-[60vh] overflow-y-auto" id="cal-modal-list">
+          <!-- List jobs for that day -->
+        </div>
+      </div>
+    </div>
+
+    <div id="tokenModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-3">
+      <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6">
+        <h3 class="text-lg font-semibold mb-4 text-center">Masukkan Token GitHub</h3>
+        <p class="text-sm text-gray-600 mb-4 text-center">Token Anda akan disimpan dengan aman di browser ini</p>
+        <input id="tokenInput" type="password" class="w-full border rounded-lg px-3 py-2 mb-4" placeholder="github_pat_..." />
+        <div class="flex justify-between items-center mb-4">
+          <button id="resetTokenBtn" class="text-red-500 hover:text-red-700 text-sm flex items-center gap-1">
+            <span class="material-icons text-sm">refresh</span>
+            Reset Token
+          </button>
+        </div>
+        <div class="flex justify-end gap-2">
+          <button id="tokenBatal" class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-sm">Batal</button>
+          <button id="tokenSimpan" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-sm">Simpan</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const GITHUB_URL = "d_jadwal.json";
+      // const GITHUB_URL = "https://api.github.com/repos/idarohpusat-blip/my_rep/contents/keuangan_albary.json";
+      const TOKEN_KEY = "albar_jadwal_token";
+      let githubToken = null;
+
+      const tokenModal = document.getElementById("tokenModal");
+      const tokenInput = document.getElementById("tokenInput");
+      const tokenSimpan = document.getElementById("tokenSimpan");
+      const tokenBatal = document.getElementById("tokenBatal");
+      const resetTokenBtn = document.getElementById("resetTokenBtn");
+
+      // Ambil token
+      function getGithubToken() {
+        return localStorage.getItem(TOKEN_KEY);
+      }
+
+      // Simpan token
+      function saveGithubToken(token) {
+        localStorage.setItem(TOKEN_KEY, token);
+      }
+
+      // Hapus token
+      function removeGithubToken() {
+        localStorage.removeItem(TOKEN_KEY);
+      }
+
+      // Tampilkan modal
+      function showTokenModal() {
+        tokenModal.classList.remove("hidden");
+        tokenModal.classList.add("flex");
+
+        const savedToken = getGithubToken();
+
+        if (savedToken) {
+          tokenInput.value = savedToken;
+        } else {
+          tokenInput.value = "";
+        }
+
+        setTimeout(() => tokenInput.focus(), 100);
+      }
+
+      // Tutup modal
+      function hideTokenModal() {
+        tokenModal.classList.add("hidden");
+        tokenModal.classList.remove("flex");
+      }
+
+      // Klik Simpan
+      tokenSimpan.addEventListener("click", () => {
+        const token = tokenInput.value.trim();
+
+        if (!token) {
+          alert("Token GitHub wajib diisi");
+          return;
+        }
+        saveGithubToken(token);
+        updateGithubStatus();
+        hideTokenModal();
+        alert("Token berhasil disimpan");
+      });
+
+      // Klik Batal
+      tokenBatal.addEventListener("click", () => {
+        hideTokenModal();
+      });
+
+      // Reset Token
+      resetTokenBtn.addEventListener("click", () => {
+        if (!confirm("Hapus token yang tersimpan?")) return;
+
+        removeGithubToken();
+
+        tokenInput.value = "";
+
+        alert("Token berhasil dihapus");
+      });
+
+      // Tutup saat klik area luar modal
+      tokenModal.addEventListener("click", (e) => {
+        if (e.target === tokenModal) {
+          hideTokenModal();
+        }
+      });
+
+      function updateGithubStatus() {
+        const status = document.getElementById("githubTokenStatus");
+        const token = localStorage.getItem(TOKEN_KEY);
+
+        if (token) {
+          status.textContent = "Tersambung";
+          status.className = "px-3 py-1 text-xs rounded-full bg-green-100 text-green-700";
+        } else {
+          status.textContent = "Belum Tersambung";
+          status.className = "px-3 py-1 text-xs rounded-full bg-red-100 text-red-600";
+        }
+      }
+
+      function hapusTokenGithub() {
+        if (!confirm("Hapus token GitHub yang tersimpan?")) return;
+
+        localStorage.removeItem(TOKEN_KEY);
+
+        updateGithubStatus();
+
+        alert("Token GitHub berhasil dihapus");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        updateGithubStatus();
+      });
+
+      async function loadGithubToken() {
+        // cek token tersimpan
+        const savedToken = localStorage.getItem(TOKEN_KEY);
+
+        if (savedToken) {
+          githubToken = savedToken;
+          return true;
+        }
+
+        return new Promise((resolve) => {
+          tokenInput.value = "";
+          tokenModal.classList.remove("hidden");
+          tokenModal.classList.add("flex");
+        });
+      }
+
+      async function fetchDataFromGithub() {
+        if (!githubToken) return null;
+        try {
+          const response = await fetch(GITHUB_URL, {
+            headers: {
+              Authorization: `token ${githubToken}`,
+              Accept: "application/vnd.github.v3+json",
+            },
+          });
+
+          if (!response.ok) {
+            if (response.status === 401) {
+              showError("Token GitHub tidak valid. Silakan periksa token Anda.");
+              return null;
+            }
+            throw new Error(`GitHub API error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          const content = atob(data.content);
+          return JSON.parse(content);
+        } catch (error) {
+          console.error("Error fetching data from GitHub:", error);
+          return null;
+        }
+      }
+
+      // --- STATE MANAGEMENT ---
+      let appState = {
+        jobs: [],
+        staff: [],
+        settings: {
+          reminderDays: 7,
+        },
+      };
+
+      async function loadData() {
+        const hasToken = await loadGithubToken();
+        if (!hasToken) {
+          hideLoading();
+          // Gunakan data default
+          appState = [
+            {
+              jobs: [],
+              staff: [
+                {
+                  id: 1,
+                  name: "Jamaluddin",
+                  wa: "6281342296661",
+                },
+              ],
+              settings: {
+                reminderDays: 7,
+              },
+            },
+          ];
+        }
+        appState = await fetchDataFromGithub();
+      }
+
+      // --- INITIALIZATION ---
+      document.addEventListener("DOMContentLoaded", () => {
+        loadData();
+        lucide.createIcons();
+        checkBrowserNotification();
+
+        // Set Today's Date Display
+        const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        document.getElementById("current-date-display").innerText = new Date().toLocaleDateString("id-ID", options);
+
+        // Initial Render
+        renderAll();
+      });
+
+      function saveData() {
+        localStorage.setItem("workMajooData", JSON.stringify(appState));
+      }
+
+      // Navigation Logic
+      function navTo(sectionId) {
+        document.querySelectorAll("section").forEach((el) => el.classList.add("hidden"));
+        document.getElementById(sectionId).classList.remove("hidden");
+
+        document.querySelectorAll(".nav-item").forEach((el) => {
+          el.classList.remove("bg-emerald-50", "text-emerald-700");
+          el.classList.add("text-gray-600");
+        });
+        const activeNav = document.querySelector(`button[onclick*="navTo('${sectionId}')"]`);
+        if (activeNav) {
+          activeNav.classList.add("bg-emerald-50", "text-emerald-700");
+          activeNav.classList.remove("text-gray-600");
+        }
+
+        if (sectionId === "dashboard") renderDashboard();
+        if (sectionId === "jobs") renderJobs();
+        if (sectionId === "calendar") renderCalendar();
+        if (sectionId === "staff") renderStaff();
+        if (sectionId === "wa-sender") previewWARecipients();
+        if (sectionId === "istiqomah") renderIstiqomah();
+        if (sectionId === "reports") generateReport();
+      }
+
+      function renderAll() {
+        renderDashboard();
+        renderJobs();
+        renderCalendar();
+        renderStaff();
+      }
+
+      // --- TOGGLE MOBILE MENU ---
+      function toggleMobileMenu() {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("sidebar-overlay");
+
+        const isDesktop = window.innerWidth >= 1024;
+
+        // =========================
+        // DESKTOP: JANGAN TOGGLE
+        // =========================
+        if (isDesktop) return;
+
+        // =========================
+        // MOBILE: TOGGLE NORMAL
+        // =========================
+        const isOpen = !sidebar.classList.contains("-translate-x-full");
+
+        if (!isOpen) {
+          // OPEN
+          sidebar.classList.remove("-translate-x-full");
+          overlay.classList.remove("hidden");
+
+          setTimeout(() => {
+            overlay.classList.remove("opacity-0");
+          }, 10);
+        } else {
+          // CLOSE
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("opacity-0");
+
+          setTimeout(() => {
+            overlay.classList.add("hidden");
+          }, 300);
+        }
+      }
+
+      // --- DASHBOARD LOGIC ---
+      function renderDashboard() {
+        const total = appState.jobs.length;
+        const todo = appState.jobs.filter((j) => j.status === "Belum Mulai").length;
+        const process = appState.jobs.filter((j) => j.status === "Proses").length;
+        const done = appState.jobs.filter((j) => j.status === "Selesai").length;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const overdue = appState.jobs.filter((j) => {
+          const d = new Date(j.deadline);
+          return d < today && j.status !== "Selesai";
+        }).length;
+
+        document.getElementById("stat-total").innerText = total;
+        document.getElementById("stat-todo").innerText = todo;
+        document.getElementById("stat-process").innerText = process;
+        document.getElementById("stat-done").innerText = done;
+        document.getElementById("stat-overdue").innerText = overdue;
+        document.getElementById("reminder-days-badge").innerText = appState.settings.reminderDays;
+
+        const reminderDays = parseInt(appState.settings.reminderDays) || 7;
+        const warningListEl = document.getElementById("h-warning-list");
+        warningListEl.innerHTML = "";
+
+        const urgentJobs = appState.jobs
+          .filter((j) => {
+            if (j.status === "Selesai") return false;
+            const deadline = new Date(j.deadline);
+            const diffTime = deadline - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays <= reminderDays && diffDays >= 0;
+          })
+          .sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+
+        if (urgentJobs.length === 0) {
+          warningListEl.innerHTML = '<p class="text-gray-500 text-sm italic">Tidak ada tugas mendekati deadline.</p>';
+        } else {
+          urgentJobs.forEach((job) => {
+            const daysLeft = Math.ceil((new Date(job.deadline) - today) / (1000 * 60 * 60 * 24));
+            const colorClass = daysLeft <= 2 ? "bg-red-50 border-red-200 text-red-700" : "bg-yellow-50 border-yellow-200 text-yellow-700";
+
+            const card = document.createElement("div");
+            card.className = `flex flex-col md:flex-row md:items-center justify-between p-4 rounded-xl border ${colorClass} shadow-sm gap-2`;
+            card.innerHTML = `
+                        <div>
+                            <div class="font-bold text-sm truncate">${job.namaPekerjaan}</div>
+                            <div class="text-xs opacity-80">${job.petugas} &bull; ${job.deadline}</div>
+                        </div>
+                        <div class="flex gap-2 md:mt-0">
+                            <button onclick="openWAQuick('${job.wa}', '${job.namaPekerjaan}', '${job.deskripsi}', '${job.deadline}')" class="bg-green-500 text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-green-600 flex items-center gap-1 whitespace-nowrap">
+                                <svg viewBox="0 0 24 24" fill="white" class="w-3 h-3"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Kirim WA
+                            </button>
+                            <button onclick="editJob('${job.id}')" class="bg-white px-3 py-1 rounded-lg text-xs font-bold border hover:bg-gray-50">Detail</button>
+                        </div>
+                    `;
+            warningListEl.appendChild(card);
+          });
+        }
+      }
+
+      // --- JOB CRUD ---
+      function renderJobs() {
+        const tbody = document.getElementById("jobs-table-body");
+        const search = document.getElementById("job-search").value.toLowerCase();
+        const statusFilter = document.getElementById("job-filter-status").value;
+
+        tbody.innerHTML = "";
+
+        let filtered = appState.jobs.filter((j) => {
+          const matchSearch = j.namaPekerjaan.toLowerCase().includes(search) || j.petugas.toLowerCase().includes(search);
+          const matchStatus = statusFilter === "all" || j.status === statusFilter;
+          return matchSearch && matchStatus;
+        });
+
+        filtered.sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+
+        if (filtered.length === 0) {
+          document.getElementById("empty-jobs").classList.remove("hidden");
+        } else {
+          document.getElementById("empty-jobs").classList.add("hidden");
+
+          filtered.forEach((job) => {
+            let statusText = job.status;
+            let statusBg = "bg-gray-100 text-gray-600";
+            if (job.status === "Proses") {
+              statusBg = "bg-yellow-100 text-yellow-700";
+            }
+            if (job.status === "Selesai") {
+              statusBg = "bg-emerald-100 text-emerald-700";
+            }
+
+            const isOverdue = new Date(job.deadline) < new Date() && job.status !== "Selesai";
+            const rowClass = isOverdue ? "bg-red-50/50" : "hover:bg-gray-50";
+
+            const hasObstacle = job.kendala && job.kendala.length > 0;
+
+            const tr = document.createElement("tr");
+            tr.className = `border-b border-gray-100 transition-colors ${rowClass}`;
+            tr.innerHTML = `
+                        <td class="p-4">
+                            <div class="font-bold text-gray-800 flex items-center gap-2 max-w-[200px] md:max-w-none truncate">
+                                ${job.namaPekerjaan}
+                                ${hasObstacle ? '<span title="Ada Kendala" class="text-red-500 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>' : ""}
+                            </div>
+                            <div class="text-xs text-gray-500 truncate max-w-[150px] md:max-w-[200px]">${job.deskripsi || "-"}</div>
+                            ${isOverdue ? '<div class="text-[10px] bg-red-200 text-red-800 inline-block px-1 rounded mt-1 font-bold">OVERDUE</div>' : ""}
+                        </td>
+                        <td class="p-4 text-sm font-medium whitespace-nowrap">${job.petugas}</td>
+                        <td class="p-4 text-sm font-mono whitespace-nowrap">${job.deadline}</td>
+                        <td class="p-4">
+                            <span id="badge-${job.id}" class="text-xs font-bold px-2 py-1 rounded-full border-0 ${statusBg} whitespace-nowrap inline-block">${statusText}</span>
+                        </td>
+                        <td class="p-4">
+                            <div class="flex items-center gap-2 w-24 md:w-32 group">
+                                <input type="range" min="0" max="100" value="${job.progress}" 
+                                    oninput="handleProgressChange('${job.id}', this.value)"
+                                    class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer z-10 relative">
+                                <span id="prog-val-${job.id}" class="text-[10px] font-bold w-8 text-right text-emerald-600 whitespace-nowrap">${job.progress}%</span>
+                            </div>
+                        </td>
+                        <td class="p-4 text-right space-x-2 whitespace-nowrap">
+                            <button onclick="editJob('${job.id}')" class="p-2 text-blue-500 hover:bg-blue-50 rounded-lg"><i data-lucide="edit-2" class="w-4 h-4"></i></button>
+                            <button onclick="deleteJob('${job.id}')" class="p-2 text-red-500 hover:bg-red-50 rounded-lg"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                        </td>
+                    `;
+            tbody.appendChild(tr);
+          });
+        }
+        lucide.createIcons();
+      }
+
+      function handleProgressChange(id, value) {
+        const index = appState.jobs.findIndex((j) => j.id === id);
+        if (index !== -1) {
+          const job = appState.jobs[index];
+          let newStatus = "Belum Mulai";
+          let newColorClass = "bg-gray-100 text-gray-600";
+
+          if (value > 0 && value < 100) {
+            newStatus = "Proses";
+            newColorClass = "bg-yellow-100 text-yellow-700";
+          } else if (value == 100) {
+            newStatus = "Selesai";
+            newColorClass = "bg-emerald-100 text-emerald-700";
+          }
+
+          job.progress = value;
+          job.status = newStatus;
+
+          document.getElementById(`prog-val-${id}`).innerText = `${value}%`;
+          const badge = document.getElementById(`badge-${id}`);
+          badge.innerText = newStatus;
+          badge.className = `text-xs font-bold px-2 py-1 rounded-full border-0 ${newColorClass} whitespace-nowrap inline-block`;
+
+          saveData();
+          renderDashboard();
+
+          if (newStatus === "Selesai" && job.istiqomahType !== "none") {
+            generateNextIstiqomahInstance(job);
+          }
+        }
+      }
+
+      function generateNextIstiqomahInstance(sourceJob) {
+        const lastDate = new Date(sourceJob.deadline);
+        let nextDate = new Date(lastDate);
+
+        if (sourceJob.istiqomahType === "weekly") nextDate.setDate(lastDate.getDate() + 7);
+        else if (sourceJob.istiqomahType === "monthly") nextDate.setMonth(lastDate.getMonth() + 1);
+        else if (sourceJob.istiqomahType === "yearly") nextDate.setFullYear(lastDate.getFullYear() + 1);
+
+        const nextDateStr = nextDate.toISOString().split("T")[0];
+
+        const exists = appState.jobs.some((j) => j.istiqomahType === sourceJob.istiqomahType && j.namaPekerjaan === sourceJob.namaPekerjaan && j.deadline === nextDateStr);
+
+        if (!exists) {
+          const newJob = { ...sourceJob };
+          newJob.id = Date.now().toString() + Math.floor(Math.random() * 1000);
+          newJob.deadline = nextDateStr;
+          newJob.tanggalMulai = nextDateStr;
+          newJob.status = "Belum Mulai";
+          newJob.progress = 0;
+          newJob.deskripsi = `${sourceJob.deskripsi} (Otomatis: ${sourceJob.istiqomahType})`;
+
+          appState.jobs.push(newJob);
+          saveData();
+          showToast(`Istiqomah: Tugas berikutnya untuk ${sourceJob.namaPekerjaan} telah dibuat!`);
+        }
+      }
+
+      function openJobModal(id = null) {
+        const modal = document.getElementById("job-modal");
+        const form = document.getElementById("job-form");
+        form.reset();
+
+        const staffSelect = document.getElementById("inp-petugas");
+        staffSelect.innerHTML = '<option value="">Pilih Petugas...</option>';
+        appState.staff.forEach((s) => {
+          const opt = document.createElement("option");
+          opt.value = s.name;
+          opt.innerText = s.name;
+          staffSelect.appendChild(opt);
+        });
+
+        if (id) {
+          const job = appState.jobs.find((j) => j.id === id);
+          document.getElementById("modal-title").innerText = "Edit Pekerjaan";
+          document.getElementById("job-id").value = job.id;
+          document.getElementById("inp-nama").value = job.namaPekerjaan;
+          document.getElementById("inp-deskripsi").value = job.deskripsi;
+          document.getElementById("inp-petugas").value = job.petugas;
+          document.getElementById("inp-wa").value = job.wa;
+          document.getElementById("inp-mulai").value = job.tanggalMulai;
+          document.getElementById("inp-deadline").value = job.deadline;
+          document.getElementById("inp-prioritas").value = job.prioritas;
+          document.getElementById("inp-status").value = job.status;
+          document.getElementById("inp-progress").value = job.progress;
+          document.getElementById("inp-istiqomah").value = job.istiqomahType || "none";
+          document.getElementById("inp-kendala").value = job.kendala || "";
+        } else {
+          document.getElementById("modal-title").innerText = "Tambah Pekerjaan";
+          document.getElementById("job-id").value = "";
+          document.getElementById("inp-progress").value = 0;
+        }
+        modal.classList.remove("hidden");
+      }
+
+      function closeJobModal() {
+        document.getElementById("job-modal").classList.add("hidden");
+      }
+
+      function autofillWA() {
+        const staffName = document.getElementById("inp-petugas").value;
+        const staff = appState.staff.find((s) => s.name === staffName);
+        if (staff) {
+          document.getElementById("inp-wa").value = staff.wa;
+        } else {
+          document.getElementById("inp-wa").value = "";
+        }
+      }
+
+      function handleJobSubmit(e) {
+        e.preventDefault();
+        const id = document.getElementById("job-id").value;
+        const jobData = {
+          id: id || Date.now().toString(),
+          namaPekerjaan: document.getElementById("inp-nama").value,
+          deskripsi: document.getElementById("inp-deskripsi").value,
+          petugas: document.getElementById("inp-petugas").value,
+          wa: document.getElementById("inp-wa").value,
+          tanggalMulai: document.getElementById("inp-mulai").value,
+          deadline: document.getElementById("inp-deadline").value,
+          prioritas: document.getElementById("inp-prioritas").value,
+          status: document.getElementById("inp-status").value,
+          progress: document.getElementById("inp-progress").value,
+          istiqomahType: document.getElementById("inp-istiqomah").value,
+          kendala: document.getElementById("inp-kendala").value,
+        };
+
+        if (id) {
+          const oldJob = appState.jobs.find((j) => j.id === id);
+          const index = appState.jobs.findIndex((j) => j.id === id);
+          appState.jobs[index] = jobData;
+
+          if (oldJob.status !== "Selesai" && jobData.status === "Selesai" && jobData.istiqomahType !== "none") {
+            generateNextIstiqomahInstance(jobData);
+          }
+
+          showToast("Pekerjaan diperbarui");
+        } else {
+          appState.jobs.push(jobData);
+          showToast("Pekerjaan berhasil ditambahkan");
+        }
+
+        saveData();
+        closeJobModal();
+        renderAll();
+      }
+
+      function editJob(id) {
+        openJobModal(id);
+      }
+
+      function deleteJob(id) {
+        if (confirm("Yakin ingin menghapus pekerjaan ini?")) {
+          appState.jobs = appState.jobs.filter((j) => j.id !== id);
+          saveData();
+          renderAll();
+          showToast("Pekerjaan dihapus", "error");
+        }
+      }
+
+      // --- STAFF MANAGEMENT ---
+      function openStaffModal() {
+        const name = prompt("Nama Petugas:");
+        if (!name) return;
+        const wa = prompt("Nomor WA (62xxx):");
+
+        appState.staff.push({ id: Date.now(), name, wa: wa || "" });
+        saveData();
+        renderStaff();
+        showToast("Petugas ditambahkan");
+      }
+
+      function renderStaff() {
+        const grid = document.getElementById("staff-grid");
+        grid.innerHTML = "";
+        appState.staff.forEach((s) => {
+          const jobCount = appState.jobs.filter((j) => j.petugas === s.name).length;
+          const doneCount = appState.jobs.filter((j) => j.petugas === s.name && j.status === "Selesai").length;
+
+          const card = document.createElement("div");
+          card.className = "glass-panel p-5 rounded-xl shadow-sm flex items-center gap-4";
+          card.innerHTML = `
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold text-lg flex-shrink-0">
+                        ${s.name.charAt(0)}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-gray-800 truncate">${s.name}</h4>
+                        <div class="text-xs text-gray-500 flex items-center gap-2 truncate">
+                            <span><i data-lucide="phone" class="w-3 h-3 inline"></i> ${s.wa || "-"}</span>
+                        </div>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <div class="text-sm font-bold text-gray-700">${doneCount}/${jobCount} Tugas</div>
+                        <div class="w-16 h-1 bg-gray-200 rounded-full mt-1">
+                            <div class="h-full bg-emerald-500" style="width: ${jobCount ? (doneCount / jobCount) * 100 : 0}%"></div>
+                        </div>
+                    </div>
+                `;
+          grid.appendChild(card);
+        });
+        lucide.createIcons();
+      }
+
+      // --- CALENDAR LOGIC ---
+      let currentCalendarDate = new Date();
+
+      function renderCalendar() {
+        const grid = document.getElementById("calendar-grid");
+        grid.innerHTML = "";
+
+        const year = currentCalendarDate.getFullYear();
+        const month = currentCalendarDate.getMonth();
+
+        const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        document.getElementById("calendar-month-year").innerText = `${monthNames[month]} ${year}`;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+          grid.innerHTML += `<div></div>`;
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+          const dayJobs = appState.jobs.filter((j) => j.deadline === dateStr);
+
+          let dotColor = "bg-gray-200";
+          let hasUrgent = false;
+          let hasDone = false;
+
+          dayJobs.forEach((j) => {
+            if (j.status === "Selesai") hasDone = true;
+            else hasUrgent = true;
+          });
+
+          if (hasDone) dotColor = "bg-emerald-500";
+          else if (hasUrgent) dotColor = "bg-orange-500";
+
+          const cell = document.createElement("div");
+          cell.className = `bg-white border border-gray-100 rounded-lg p-1 md:p-2 min-h-[60px] md:min-h-[80px] hover:shadow-md transition-all cursor-pointer relative group`;
+          cell.onclick = () => openCalendarModal(dateStr);
+
+          let jobDots = "";
+          dayJobs.slice(0, 3).forEach((j) => {
+            const color = j.status === "Selesai" ? "bg-emerald-400" : j.prioritas === "Urgent" ? "bg-red-400" : "bg-yellow-400";
+            jobDots += `<div class="text-[9px] md:text-[10px] truncate px-1 rounded ${color} text-white mt-1 mb-1" title="${j.namaPekerjaan}">${j.namaPekerjaan}</div>`;
+          });
+          if (dayJobs.length > 3) {
+            jobDots += `<div class="text-[8px] md:text-[9px] text-gray-400">+${dayJobs.length - 3} lagi</div>`;
+          }
+
+          cell.innerHTML = `
+                    <div class="font-bold text-xs md:text-sm text-gray-700">${day}</div>
+                    ${jobDots}
+                `;
+          grid.appendChild(cell);
+        }
+      }
+
+      function changeMonth(delta) {
+        currentCalendarDate.setMonth(currentCalendarDate.getMonth() + delta);
+        renderCalendar();
+      }
+
+      function openCalendarModal(dateStr) {
+        document.getElementById("calendar-modal").classList.remove("hidden");
+        document.getElementById("cal-modal-date").innerText = `Tugas: ${dateStr}`;
+
+        const list = document.getElementById("cal-modal-list");
+        list.innerHTML = "";
+
+        const dayJobs = appState.jobs.filter((j) => j.deadline === dateStr);
+
+        if (dayJobs.length === 0) {
+          list.innerHTML = '<div class="text-center text-gray-400 py-4">Tidak ada tugas.</div>';
+        } else {
+          dayJobs.forEach((j) => {
+            const el = document.createElement("div");
+            el.className = "flex justify-between items-center border-b border-gray-100 py-3 last:border-0";
+            el.innerHTML = `
+                        <div>
+                            <div class="font-bold text-sm text-gray-800">${j.namaPekerjaan}</div>
+                            <div class="text-xs text-gray-500">${j.petugas}</div>
+                        </div>
+                        <button onclick="openWAQuick('${j.wa}', '${j.namaPekerjaan}', '${j.deskripsi}', '${j.deadline}')" class="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 shadow-lg flex-shrink-0">
+                            <svg viewBox="0 0 24 24" fill="white" class="w-4 h-4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        </button>
+                    `;
+            list.appendChild(el);
+          });
+        }
+      }
+
+      // --- WHATSAPP SENDER ---
+      function previewWARecipients() {
+        const filterType = document.querySelector('input[name="wa-filter"]:checked').value;
+        const template = document.getElementById("wa-template").value;
+        const list = document.getElementById("wa-preview-list");
+        list.innerHTML = "";
+
+        let recipients = [];
+
+        if (filterType === "all") recipients = appState.jobs;
+        else if (filterType === "unfinished") recipients = appState.jobs.filter((j) => j.status !== "Selesai");
+        else if (filterType === "process") recipients = appState.jobs.filter((j) => j.status === "Proses");
+        else if (filterType === "h7") {
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          const reminderDays = parseInt(appState.settings.reminderDays) || 7;
+          recipients = appState.jobs.filter((j) => {
+            if (j.status === "Selesai") return false;
+            const diffTime = new Date(j.deadline) - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays <= reminderDays && diffDays >= 0;
+          });
+        }
+
+        recipients = recipients.filter((j) => j.wa && j.wa.length > 5);
+
+        document.getElementById("wa-count").innerText = recipients.length;
+
+        recipients.forEach((r) => {
+          let msg = template
+            .replace("[Nama Petugas]", r.petugas)
+            .replace("[Nama Pekerjaan]", r.namaPekerjaan)
+            .replace("[Deskripsi]", r.deskripsi || "-")
+            .replace("[Kendala]", r.kendala || "-")
+            .replace("[Deadline]", r.deadline)
+            .replace("[Status]", r.status)
+            .replace("[Progress]", r.progress);
+
+          const item = document.createElement("div");
+          item.className = "bg-white p-3 rounded-lg border border-gray-100 shadow-sm flex justify-between items-start gap-3";
+          item.innerHTML = `
+                    <div class="min-w-0 flex-1">
+                        <div class="font-bold text-sm text-emerald-700 truncate">${r.petugas} (${r.wa})</div>
+                        <div class="text-xs text-gray-500 mt-1 font-mono bg-gray-50 p-2 rounded whitespace-pre-wrap">Nama Pekerjaan : ${r.namaPekerjaan}</div>
+                    </div>
+                    <button onclick="openWAQuick('${r.wa}', '${r.namaPekerjaan}', '${r.deskripsi}', '${r.deadline}', true)" class="text-green-500 hover:bg-green-50 p-2 rounded flex-shrink-0">
+                        <svg viewBox="0 0 24 24" fill="#25D366" class="w-5 h-5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.P157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    </button>
+                `;
+          list.appendChild(item);
+        });
+      }
+
+      function openWAQuick(wa, name, ket, date, isBulk = false) {
+        if (!wa) {
+          showToast("Nomor WA tidak tersedia", "error");
+          return;
+        }
+
+        let text = `Assalamu Alaikum, Maaf tugas: *${name}* Ket: *${ket}*  Untuk Tanggal: *${formatTanggalDenganHari(date)}*. Mohon segera diselesaikan .`;
+
+        if (isBulk) {
+          const template = document.getElementById("wa-template").value;
+          const job = appState.jobs.find((j) => j.namaPekerjaan === name && j.deadline === date);
+          if (job) {
+            text = template
+              .replace("[Nama Petugas]", job.petugas)
+              .replace("[Nama Pekerjaan]", job.namaPekerjaan)
+              .replace("[Deskripsi]", job.deskripsi || "-")
+              .replace("[Kendala]", job.kendala || "-")
+              .replace("[Deadline]", formatTanggalDenganHari(job.deadline))
+              .replace("[Status]", job.status)
+              .replace("[Progress]", job.progress);
+          }
+        }
+
+        const url = `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank");
+      }
+
+      function formatTanggalDenganHari(dateString) {
+        const hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+        const bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        const d = new Date(dateString);
+        const namaHari = hari[d.getDay()];
+        const tgl = d.getDate();
+        const namaBulan = bulan[d.getMonth()];
+        const tahun = d.getFullYear();
+        return `${namaHari}, ${tgl} ${namaBulan} ${tahun}`;
+      }
+
+      function executeBulkSendWA() {
+        const filterType = document.querySelector('input[name="wa-filter"]:checked').value;
+        const template = document.getElementById("wa-template").value;
+
+        let recipients = [];
+        if (filterType === "all") recipients = appState.jobs;
+        else if (filterType === "unfinished") recipients = appState.jobs.filter((j) => j.status !== "Selesai");
+        else if (filterType === "process") recipients = appState.jobs.filter((j) => j.status === "Proses");
+        else if (filterType === "h7") {
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          const reminderDays = parseInt(appState.settings.reminderDays) || 7;
+          recipients = appState.jobs.filter((j) => {
+            if (j.status === "Selesai") return false;
+            const diffTime = new Date(j.deadline) - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays <= reminderDays && diffDays >= 0;
+          });
+        }
+
+        recipients = recipients.filter((j) => j.wa && j.wa.length > 5);
+
+        if (recipients.length === 0) {
+          showToast("Tidak ada penerima yang valid", "error");
+          return;
+        }
+
+        showToast(`Memulai pengiriman ke ${recipients.length} kontak...`, "success");
+
+        let delay = 0;
+        recipients.forEach((r, index) => {
+          setTimeout(() => {
+            let msg = template
+              .replace("[Nama Petugas]", r.petugas)
+              .replace("[Nama Pekerjaan]", r.namaPekerjaan)
+              .replace("[Deskripsi]", r.deskripsi || "-")
+              .replace("[Kendala]", r.kendala || "-")
+              .replace("[Deadline]", r.deadline)
+              .replace("[Status]", r.status)
+              .replace("[Progress]", r.progress);
+
+            const url = `https://wa.me/${r.wa}?text=${encodeURIComponent(msg)}`;
+            window.open(url, "_blank");
+
+            if (index === recipients.length - 1) {
+              showToast("Selesai mengirim!", "success");
+            }
+          }, delay);
+          delay += 1500;
+        });
+      }
+
+      // --- ISTIQOMAH SYSTEM ---
+      function renderIstiqomah() {
+        const tbody = document.getElementById("istiqomah-list");
+        tbody.innerHTML = "";
+        const recurringJobs = appState.jobs.filter((j) => j.istiqomahType !== "none");
+
+        recurringJobs.forEach((j) => {
+          const tr = document.createElement("tr");
+          tr.className = "border-b border-gray-100 hover:bg-gray-50";
+          tr.innerHTML = `
+                    <td class="p-3 font-medium whitespace-nowrap">${j.namaPekerjaan}</td>
+                    <td class="p-3"><span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full font-bold uppercase">${j.istiqomahType}</span></td>
+                    <td class="p-3 text-sm text-gray-600 whitespace-nowrap">${j.petugas}</td>
+                    <td class="p-3 text-sm text-gray-500">Otomatis saat 100%</td>
+                `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function generateIstiqomahTasks() {
+        let newJobsAdded = 0;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const completedRecurring = appState.jobs.filter((j) => j.istiqomahType !== "none" && j.status === "Selesai");
+
+        completedRecurring.forEach((sourceJob) => {
+          const lastDate = new Date(sourceJob.deadline);
+          let nextDate = new Date(lastDate);
+
+          if (sourceJob.istiqomahType === "weekly") nextDate.setDate(lastDate.getDate() + 7);
+          else if (sourceJob.istiqomahType === "monthly") nextDate.setMonth(lastDate.getMonth() + 1);
+          else if (sourceJob.istiqomahType === "yearly") nextDate.setFullYear(lastDate.getFullYear() + 1);
+
+          const nextDateStr = nextDate.toISOString().split("T")[0];
+          const exists = appState.jobs.some((j) => j.istiqomahType === sourceJob.istiqomahType && j.namaPekerjaan === sourceJob.namaPekerjaan && j.deadline === nextDateStr);
+
+          if (!exists && nextDate >= today) {
+            const newJob = { ...sourceJob };
+            newJob.id = Date.now().toString() + Math.floor(Math.random() * 1000);
+            newJob.deadline = nextDateStr;
+            newJob.tanggalMulai = nextDateStr;
+            newJob.status = "Belum Mulai";
+            newJob.progress = 0;
+            newJob.deskripsi = `${sourceJob.deskripsi} (Otomatis: ${sourceJob.istiqomahType})`;
+
+            appState.jobs.push(newJob);
+            newJobsAdded++;
+          }
+        });
+
+        if (newJobsAdded > 0) {
+          saveData();
+          showToast(`${newJobsAdded} tugas rutin berhasil dibuat!`);
+          renderAll();
+        } else {
+          showToast("Tidak ada tugas rutin baru yang perlu dibuat saat ini.");
+        }
+      }
+
+      // --- REPORTS ---
+      function generateReport() {
+        const staffFilter = document.getElementById("report-filter-staff").value;
+        const statusFilter = document.getElementById("report-filter-status").value;
+
+        const staffSelect = document.getElementById("report-filter-staff");
+        if (staffSelect.children.length === 1) {
+          appState.staff.forEach((s) => {
+            const opt = document.createElement("option");
+            opt.value = s.name;
+            opt.innerText = s.name;
+            staffSelect.appendChild(opt);
+          });
+        }
+
+        let data = appState.jobs;
+        if (staffFilter !== "all") data = data.filter((j) => j.petugas === staffFilter);
+        if (statusFilter !== "all") data = data.filter((j) => j.status === statusFilter);
+
+        document.getElementById("report-total").innerText = data.length;
+        const done = data.filter((j) => j.status === "Selesai").length;
+        const rate = data.length ? Math.round((done / data.length) * 100) : 0;
+        document.getElementById("report-rate").innerText = `${rate}%`;
+
+        const tbody = document.getElementById("report-table-body");
+        tbody.innerHTML = "";
+        data.forEach((j) => {
+          tbody.innerHTML += `
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 text-gray-500 text-xs whitespace-nowrap">${j.id}</td>
+                        <td class="p-3 font-medium truncate max-w-[150px]">${j.namaPekerjaan}</td>
+                        <td class="p-3 whitespace-nowrap">${j.petugas}</td>
+                        <td class="p-3 whitespace-nowrap"><span class="text-xs font-bold ${j.status === "Selesai" ? "text-emerald-600" : "text-yellow-600"}">${j.status}</span></td>
+                        <td class="p-3 text-gray-500 whitespace-nowrap">${j.deadline}</td>
+                    </tr>
+                `;
+        });
+      }
+
+      function exportCSV() {
+        const rows = [["ID", "Nama Pekerjaan", "Petugas", "WA", "Mulai", "Deadline", "Status", "Progress", "Kendala"]];
+
+        appState.jobs.forEach((j) => {
+          rows.push([j.id, j.namaPekerjaan, j.petugas, `'${j.wa}`, j.tanggalMulai, j.deadline, j.status, j.progress, j.kendala]);
+        });
+
+        let csvContent = "data:text/csv;charset=utf-8," + rows.map((e) => e.join(",")).join("\n");
+
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "laporan_kerja.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      // --- SETTINGS & UTILS ---
+      function saveSettings() {
+        const days = document.getElementById("setting-reminder-days").value;
+        appState.settings.reminderDays = days;
+        saveData();
+        showToast("Pengaturan disimpan");
+        renderDashboard();
+      }
+
+      function clearData() {
+        if (confirm("PERINGATAN: Semua data akan dihapus permanen!")) {
+          localStorage.removeItem("workMajooData");
+          location.reload();
+        }
+      }
+
+      function checkBrowserNotification() {
+        if (!("Notification" in window)) {
+          console.log("Browser does not support desktop notification");
+        } else if (Notification.permission !== "denied") {
+          Notification.requestPermission();
+        }
+      }
+
+      function showToast(message, type = "success") {
+        const container = document.getElementById("toast-container");
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        const icon = type === "success" ? "check-circle" : "alert-circle";
+        const color = type === "success" ? "text-emerald-500" : "text-red-500";
+
+        toast.innerHTML = `
+                <i data-lucide="${icon}" class="w-6 h-6 ${color}"></i>
+                <div class="text-sm font-medium text-gray-800">${message}</div>
+            `;
+        container.appendChild(toast);
+        lucide.createIcons();
+
+        setTimeout(() => {
+          toast.style.animation = "slideIn 0.3s ease-in reverse forwards";
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
