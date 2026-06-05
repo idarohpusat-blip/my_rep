@@ -2134,7 +2134,7 @@
         },
         {
           "nama": "Ustadz Faishol",
-          "saldo": -700000,
+          "saldo": 0,
           "mataUang": "Rp"
         }
       ],
@@ -2174,6 +2174,15 @@
           "mataUang": "Rp",
           "keterangan": "Hutang bayar bulan depan",
           "tanggal": "2026-03-06"
+        },
+        {
+          "id": "1780664468568735",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 700000,
+          "mataUang": "Rp",
+          "keterangan": "Lunas",
+          "tanggal": "2026-06-05"
         }
       ]
     },
@@ -2945,5 +2954,5 @@
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "2"
 }
