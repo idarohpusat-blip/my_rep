@@ -153,6 +153,20 @@
       "progress": "10",
       "istiqomahType": "none",
       "kendala": ""
+    },
+    {
+      "id": "1780837984490",
+      "namaPekerjaan": "Cek HotelUmmi Sri",
+      "deskripsi": "",
+      "petugas": "jamaluddin",
+      "wa": "6281342296661",
+      "tanggalMulai": "2026-07-10",
+      "deadline": "2026-06-10",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
     }
   ],
   "staff": [
