@@ -167,6 +167,20 @@
       "progress": "0",
       "istiqomahType": "none",
       "kendala": ""
+    },
+    {
+      "id": "1780838089683",
+      "namaPekerjaan": "Berangkat Umroh",
+      "deskripsi": "",
+      "petugas": "jamaluddin",
+      "wa": "6281342296661",
+      "tanggalMulai": "2026-07-06",
+      "deadline": "2026-07-06",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": "0",
+      "istiqomahType": "none",
+      "kendala": ""
     }
   ],
   "staff": [
