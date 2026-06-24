@@ -135,8 +135,8 @@
       "tanggalMulai": "2026-06-11",
       "deadline": "2026-06-11",
       "prioritas": "Normal",
-      "status": "Belum Mulai",
-      "progress": 0,
+      "status": "Selesai",
+      "progress": "100",
       "istiqomahType": "weekly",
       "kendala": ""
     },
@@ -180,6 +180,20 @@
       "status": "Belum Mulai",
       "progress": "0",
       "istiqomahType": "none",
+      "kendala": ""
+    },
+    {
+      "id": "1782302228024368",
+      "namaPekerjaan": "Laporn keuangan",
+      "deskripsi": "Latihan Membuat laporan  (Otomatis: weekly) (Otomatis: weekly)",
+      "petugas": "Ustadz Ibrohim Pp Nz",
+      "wa": "6282331221970",
+      "tanggalMulai": "2026-06-18",
+      "deadline": "2026-06-18",
+      "prioritas": "Normal",
+      "status": "Belum Mulai",
+      "progress": 0,
+      "istiqomahType": "weekly",
       "kendala": ""
     }
   ],
