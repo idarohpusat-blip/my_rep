@@ -1745,6 +1745,11 @@
           "nama": "231126 November",
           "saldo": 130,
           "mataUang": "SAR"
+        },
+        {
+          "nama": "18 juli 26",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
