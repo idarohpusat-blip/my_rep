@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 390,
+          "saldo": 360,
           "mataUang": "SAR"
         }
       ],
@@ -2156,6 +2156,15 @@
           "jumlah": 10,
           "mataUang": "SAR",
           "keterangan": "Ayah imam ketika city tour nga dapat snack ,, dan belum makan pagi",
+          "tanggal": "2026-07-22"
+        },
+        {
+          "id": "1784714758505570",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "Air mineral",
           "tanggal": "2026-07-22"
         }
       ]
