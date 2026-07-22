@@ -1750,6 +1750,11 @@
           "nama": "18 juli 26",
           "saldo": 330,
           "mataUang": "SAR"
+        },
+        {
+          "nama": "Hutang ke jamaah",
+          "saldo": 0,
+          "mataUang": "SAR"
         }
       ],
       "transaksi": [
