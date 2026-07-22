@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 330,
+          "saldo": 235,
           "mataUang": "SAR"
         },
         {
@@ -2206,6 +2206,15 @@
           "jumlah": 140,
           "mataUang": "SAR",
           "keterangan": "Ayah imam",
+          "tanggal": "2026-07-22"
+        },
+        {
+          "id": "1784731318549403",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 95,
+          "mataUang": "SAR",
+          "keterangan": "Beli kauta",
           "tanggal": "2026-07-22"
         }
       ]
@@ -3045,5 +3054,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "2"
 }
