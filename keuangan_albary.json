@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 500,
+          "saldo": 450,
           "mataUang": "SAR"
         }
       ],
@@ -2129,6 +2129,15 @@
           "jumlah": 500,
           "mataUang": "SAR",
           "keterangan": "Dari Abuya reski dari supir",
+          "tanggal": "2026-07-22"
+        },
+        {
+          "id": "1784714687683807",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Sevenday",
           "tanggal": "2026-07-22"
         }
       ]
