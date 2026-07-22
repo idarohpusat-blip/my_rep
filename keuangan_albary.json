@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 450,
+          "saldo": 400,
           "mataUang": "SAR"
         }
       ],
@@ -2138,6 +2138,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Sevenday",
+          "tanggal": "2026-07-22"
+        },
+        {
+          "id": "178471470341377",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 50,
+          "mataUang": "SAR",
+          "keterangan": "Tip supir",
           "tanggal": "2026-07-22"
         }
       ]
