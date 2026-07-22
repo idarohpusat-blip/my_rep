@@ -1753,7 +1753,7 @@
         },
         {
           "nama": "Hutang ke jamaah",
-          "saldo": 0,
+          "saldo": 130,
           "mataUang": "SAR"
         }
       ],
@@ -2179,6 +2179,15 @@
           "jumlah": 30,
           "mataUang": "SAR",
           "keterangan": "Pemanas Air",
+          "tanggal": "2026-07-22"
+        },
+        {
+          "id": "1784714813986389",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 130,
+          "mataUang": "SAR",
+          "keterangan": "Uang abuya",
           "tanggal": "2026-07-22"
         }
       ]
@@ -3018,5 +3027,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "3"
 }
