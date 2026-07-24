@@ -1753,7 +1753,7 @@
         },
         {
           "nama": "Hutang ke jamaah",
-          "saldo": 290,
+          "saldo": 270,
           "mataUang": "SAR"
         }
       ],
@@ -2188,15 +2188,6 @@
           "jumlah": 130,
           "mataUang": "SAR",
           "keterangan": "Uang abuya",
-          "tanggal": "2026-07-22"
-        },
-        {
-          "id": "1784714830372191",
-          "kantong": 3,
-          "jenis": "masuk",
-          "jumlah": 20,
-          "mataUang": "SAR",
-          "keterangan": "Ardiyansyah",
           "tanggal": "2026-07-22"
         },
         {
@@ -3054,5 +3045,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "3"
 }
