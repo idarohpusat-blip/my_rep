@@ -1753,7 +1753,7 @@
         },
         {
           "nama": "Hutang ke jamaah",
-          "saldo": 270,
+          "saldo": 470,
           "mataUang": "SAR"
         }
       ],
@@ -2207,6 +2207,15 @@
           "mataUang": "SAR",
           "keterangan": "Beli kauta",
           "tanggal": "2026-07-22"
+        },
+        {
+          "id": "1784896501518566",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 200,
+          "mataUang": "SAR",
+          "keterangan": "Ardiyansyah",
+          "tanggal": "2026-07-24"
         }
       ]
     },
