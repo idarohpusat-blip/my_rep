@@ -1753,7 +1753,7 @@
         },
         {
           "nama": "Hutang ke jamaah",
-          "saldo": 870,
+          "saldo": 730,
           "mataUang": "SAR"
         }
       ],
@@ -2188,15 +2188,6 @@
           "jumlah": 130,
           "mataUang": "SAR",
           "keterangan": "Uang abuya",
-          "tanggal": "2026-07-22"
-        },
-        {
-          "id": "1784714857015769",
-          "kantong": 3,
-          "jenis": "masuk",
-          "jumlah": 140,
-          "mataUang": "SAR",
-          "keterangan": "Ayah imam",
           "tanggal": "2026-07-22"
         },
         {
