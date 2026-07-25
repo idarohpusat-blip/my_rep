@@ -1753,7 +1753,7 @@
         },
         {
           "nama": "Hutang ke jamaah",
-          "saldo": 730,
+          "saldo": 530,
           "mataUang": "SAR"
         }
       ],
@@ -2212,7 +2212,7 @@
           "id": "1784896532855878",
           "kantong": 3,
           "jenis": "masuk",
-          "jumlah": 400,
+          "jumlah": 200,
           "mataUang": "SAR",
           "keterangan": "Rahiba",
           "tanggal": "2026-07-24"
