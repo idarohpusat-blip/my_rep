@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 1195,
+          "saldo": 1080,
           "mataUang": "SAR"
         },
         {
@@ -2242,6 +2242,15 @@
           "jumlah": 800,
           "mataUang": "SAR",
           "keterangan": "Makan di toif",
+          "tanggal": "2026-07-25"
+        },
+        {
+          "id": "1784980795160598",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 115,
+          "mataUang": "SAR",
+          "keterangan": "Snack Toif",
           "tanggal": "2026-07-25"
         }
       ]
