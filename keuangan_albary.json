@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 1995,
+          "saldo": 1195,
           "mataUang": "SAR"
         },
         {
@@ -2233,6 +2233,15 @@
           "jumlah": 45,
           "mataUang": "SAR",
           "keterangan": "30dan 15 setengah kilo",
+          "tanggal": "2026-07-25"
+        },
+        {
+          "id": "178498072009097",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 800,
+          "mataUang": "SAR",
+          "keterangan": "Makan di toif",
           "tanggal": "2026-07-25"
         }
       ]
@@ -3072,5 +3081,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "2"
 }
