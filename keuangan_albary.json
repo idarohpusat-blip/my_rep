@@ -1753,7 +1753,7 @@
         },
         {
           "nama": "Hutang ke jamaah",
-          "saldo": 330,
+          "saldo": 285,
           "mataUang": "SAR"
         }
       ],
@@ -2224,6 +2224,15 @@
           "jumlah": 40,
           "mataUang": "SAR",
           "keterangan": "Air ke toif",
+          "tanggal": "2026-07-25"
+        },
+        {
+          "id": "1784974448013101",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 45,
+          "mataUang": "SAR",
+          "keterangan": "30dan 15 setengah kilo",
           "tanggal": "2026-07-25"
         }
       ]
