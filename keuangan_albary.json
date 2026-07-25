@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 235,
+          "saldo": 2035,
           "mataUang": "SAR"
         },
         {
@@ -2216,6 +2216,15 @@
           "mataUang": "SAR",
           "keterangan": "Rahiba",
           "tanggal": "2026-07-24"
+        },
+        {
+          "id": "1784948480412371",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 1800,
+          "mataUang": "SAR",
+          "keterangan": "Dari Abuya ke Toif",
+          "tanggal": "2026-07-25"
         }
       ]
     },
