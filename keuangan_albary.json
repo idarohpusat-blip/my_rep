@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 235,
+          "saldo": -1765,
           "mataUang": "SAR"
         },
         {
@@ -2216,6 +2216,15 @@
           "mataUang": "SAR",
           "keterangan": "Rahiba",
           "tanggal": "2026-07-24"
+        },
+        {
+          "id": "1784948460780805",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 2000,
+          "mataUang": "SAR",
+          "keterangan": "Dari abuya untuk toif",
+          "tanggal": "2026-07-25"
         }
       ]
     },
@@ -3054,5 +3063,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "2"
 }
