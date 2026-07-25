@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 2035,
+          "saldo": 1995,
           "mataUang": "SAR"
         },
         {
@@ -2224,6 +2224,15 @@
           "jumlah": 1800,
           "mataUang": "SAR",
           "keterangan": "Dari Abuya ke Toif",
+          "tanggal": "2026-07-25"
+        },
+        {
+          "id": "1784952401078738",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 40,
+          "mataUang": "SAR",
+          "keterangan": "Air ke toif",
           "tanggal": "2026-07-25"
         }
       ]
