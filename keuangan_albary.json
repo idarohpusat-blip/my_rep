@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 280,
+          "saldo": 215,
           "mataUang": "SAR"
         },
         {
@@ -2252,6 +2252,15 @@
           "mataUang": "SAR",
           "keterangan": "Supir",
           "tanggal": "2026-07-25"
+        },
+        {
+          "id": "178514464774891",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 65,
+          "mataUang": "SAR",
+          "keterangan": "Bill boy koper",
+          "tanggal": "2026-07-27"
         }
       ]
     },
