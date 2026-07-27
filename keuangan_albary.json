@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 148,
+          "saldo": 108,
           "mataUang": "SAR"
         },
         {
@@ -2269,6 +2269,15 @@
           "jumlah": 67,
           "mataUang": "SAR",
           "keterangan": "Snack roti",
+          "tanggal": "2026-07-27"
+        },
+        {
+          "id": "1785147185284947",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 40,
+          "mataUang": "SAR",
+          "keterangan": "Air",
           "tanggal": "2026-07-27"
         }
       ]
