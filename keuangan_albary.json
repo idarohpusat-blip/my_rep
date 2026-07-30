@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": -46,
+          "saldo": 80,
           "mataUang": "SAR"
         },
         {
@@ -2314,6 +2314,15 @@
           "jumlah": 18,
           "mataUang": "SAR",
           "keterangan": "Jajan kebab",
+          "tanggal": "2026-07-30"
+        },
+        {
+          "id": "1785393013803706",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 126,
+          "mataUang": "SAR",
+          "keterangan": "600rb dari abuya",
           "tanggal": "2026-07-30"
         }
       ]
