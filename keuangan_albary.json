@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 80,
+          "saldo": 70,
           "mataUang": "SAR"
         },
         {
@@ -2332,6 +2332,15 @@
           "jumlah": 5000000,
           "mataUang": "Rp",
           "keterangan": "Pembayaran bertahap 30 juli 2026",
+          "tanggal": "2026-07-30"
+        },
+        {
+          "id": "178541916135744",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 10,
+          "mataUang": "SAR",
+          "keterangan": "Timbangan",
           "tanggal": "2026-07-30"
         }
       ]
@@ -3171,5 +3180,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "2"
 }
