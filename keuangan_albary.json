@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": -28,
+          "saldo": -46,
           "mataUang": "SAR"
         },
         {
@@ -2306,6 +2306,15 @@
           "mataUang": "SAR",
           "keterangan": "Snack mazarat madina air 35, janajan 13 x 6",
           "tanggal": "2026-07-29"
+        },
+        {
+          "id": "1785392955957993",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 18,
+          "mataUang": "SAR",
+          "keterangan": "Jajan kebab",
+          "tanggal": "2026-07-30"
         }
       ]
     },
