@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": -115,
+          "saldo": -130,
           "mataUang": "SAR"
         },
         {
@@ -2368,6 +2368,15 @@
           "jumlah": 10,
           "mataUang": "SAR",
           "keterangan": "Tip Supir madina",
+          "tanggal": "2026-07-31"
+        },
+        {
+          "id": "1785501244084939",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 15,
+          "mataUang": "SAR",
+          "keterangan": "Kembali dari bandara",
           "tanggal": "2026-07-31"
         }
       ]
