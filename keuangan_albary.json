@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 550,
+          "saldo": 212,
           "mataUang": "SAR"
         },
         {
@@ -2476,6 +2476,15 @@
           "jumlah": 450,
           "mataUang": "SAR",
           "keterangan": "Porter bandara kepulangan",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785587958514975",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 338,
+          "mataUang": "SAR",
+          "keterangan": "Air zamzam 27",
           "tanggal": "2026-08-01"
         }
       ]
