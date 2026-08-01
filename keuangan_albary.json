@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 1100,
+          "saldo": 1030,
           "mataUang": "SAR"
         },
         {
@@ -2449,6 +2449,15 @@
           "jumlah": 140,
           "mataUang": "SAR",
           "keterangan": "Karak ayam lauk tambahan",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785558588285499",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 70,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy madinah kepulangan",
           "tanggal": "2026-08-01"
         }
       ]
