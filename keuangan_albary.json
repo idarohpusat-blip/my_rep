@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": -215,
+          "saldo": 435,
           "mataUang": "SAR"
         },
         {
@@ -2404,6 +2404,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Tukaran riyal TR syaifuddin",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785558493199813",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 650,
+          "mataUang": "SAR",
+          "keterangan": "Ayah Kirom TR",
           "tanggal": "2026-08-01"
         }
       ]
