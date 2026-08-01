@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 575,
+          "saldo": 1190,
           "mataUang": "SAR"
         },
         {
@@ -2422,6 +2422,15 @@
           "jumlah": 140,
           "mataUang": "SAR",
           "keterangan": "Istiqomah TR",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785558533199496",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 615,
+          "mataUang": "SAR",
+          "keterangan": "Ayah Imam TR",
           "tanggal": "2026-08-01"
         }
       ]
