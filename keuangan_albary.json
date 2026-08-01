@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 212,
+          "saldo": 112,
           "mataUang": "SAR"
         },
         {
@@ -2485,6 +2485,15 @@
           "jumlah": 338,
           "mataUang": "SAR",
           "keterangan": "Air zamzam 27",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "178558797653453",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Baksis Supir madinah jedda",
           "tanggal": "2026-08-01"
         }
       ]
