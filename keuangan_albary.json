@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 1240,
+          "saldo": 1100,
           "mataUang": "SAR"
         },
         {
@@ -2440,6 +2440,15 @@
           "jumlah": 50,
           "mataUang": "SAR",
           "keterangan": "Bunda katini TR",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785558568009920",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 140,
+          "mataUang": "SAR",
+          "keterangan": "Karak ayam lauk tambahan",
           "tanggal": "2026-08-01"
         }
       ]
