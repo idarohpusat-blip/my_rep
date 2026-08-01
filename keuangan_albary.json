@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": -315,
+          "saldo": -215,
           "mataUang": "SAR"
         },
         {
@@ -2395,6 +2395,15 @@
           "jumlah": 65,
           "mataUang": "SAR",
           "keterangan": "Bilboy kedatangan madinah",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785558470430395",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 100,
+          "mataUang": "SAR",
+          "keterangan": "Tukaran riyal TR syaifuddin",
           "tanggal": "2026-08-01"
         }
       ]
@@ -3234,5 +3243,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "2"
 }
