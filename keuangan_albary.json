@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 1030,
+          "saldo": 1000,
           "mataUang": "SAR"
         },
         {
@@ -2458,6 +2458,15 @@
           "jumlah": 70,
           "mataUang": "SAR",
           "keterangan": "Bilboy madinah kepulangan",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785587868483427",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 30,
+          "mataUang": "SAR",
+          "keterangan": "Baksis hendling bandara",
           "tanggal": "2026-08-01"
         }
       ]
