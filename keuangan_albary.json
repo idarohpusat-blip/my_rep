@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": -250,
+          "saldo": -315,
           "mataUang": "SAR"
         },
         {
@@ -2395,6 +2395,15 @@
           "jumlah": 100,
           "mataUang": "SAR",
           "keterangan": "Tip Supir mekkah madina",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785546786242869",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 65,
+          "mataUang": "SAR",
+          "keterangan": "Bilboy kedatangan madinah",
           "tanggal": "2026-08-01"
         }
       ]
