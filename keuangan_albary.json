@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 435,
+          "saldo": 575,
           "mataUang": "SAR"
         },
         {
@@ -2413,6 +2413,15 @@
           "jumlah": 650,
           "mataUang": "SAR",
           "keterangan": "Ayah Kirom TR",
+          "tanggal": "2026-08-01"
+        },
+        {
+          "id": "1785558515376331",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 140,
+          "mataUang": "SAR",
+          "keterangan": "Istiqomah TR",
           "tanggal": "2026-08-01"
         }
       ]
