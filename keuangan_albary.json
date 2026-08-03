@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": -1393,
+          "saldo": -393,
           "mataUang": "SAR"
         },
         {
@@ -2513,15 +2513,6 @@
           "mataUang": "SAR",
           "keterangan": "Jajan bandara roti o 62rb",
           "tanggal": "2026-08-02"
-        },
-        {
-          "id": "1785751931663435",
-          "kantong": 2,
-          "jenis": "keluar",
-          "jumlah": 1000,
-          "mataUang": "SAR",
-          "keterangan": "Ustadz Yusron Kasih 1000 riyal di Mobiil",
-          "tanggal": "2026-08-03"
         }
       ]
     },
