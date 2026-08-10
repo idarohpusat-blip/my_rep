@@ -1738,7 +1738,7 @@
       "kantong": [
         {
           "nama": "SLA Berkah",
-          "saldo": -15731334,
+          "saldo": -12848084,
           "mataUang": "Rp"
         },
         {
@@ -2522,6 +2522,15 @@
           "mataUang": "SAR",
           "keterangan": "Ustadz Yusron Kasih Di Mobil",
           "tanggal": "2026-08-03"
+        },
+        {
+          "id": "1786364230835718",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 2883250,
+          "mataUang": "Rp",
+          "keterangan": "607 riyal di jadikan rupiah 4750perriyal",
+          "tanggal": "2026-08-10"
         }
       ]
     },
@@ -3360,5 +3369,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "0"
 }
