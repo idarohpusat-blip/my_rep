@@ -1748,7 +1748,7 @@
         },
         {
           "nama": "18 juli 26",
-          "saldo": 607,
+          "saldo": 0,
           "mataUang": "SAR"
         },
         {
@@ -2530,6 +2530,15 @@
           "jumlah": 2883250,
           "mataUang": "Rp",
           "keterangan": "607 riyal di jadikan rupiah 4750perriyal",
+          "tanggal": "2026-08-10"
+        },
+        {
+          "id": "1786364253307612",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 607,
+          "mataUang": "SAR",
+          "keterangan": "Untuk Cicilan Hutang",
           "tanggal": "2026-08-10"
         }
       ]
@@ -3369,5 +3378,5 @@
     }
   ],
   "albary_user_terakhir": "2",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "2"
 }
