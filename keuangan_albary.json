@@ -2569,6 +2569,11 @@
           "nama": "Ustadz Faishol",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Mustofa nz",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
@@ -3387,5 +3392,5 @@
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
