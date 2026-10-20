@@ -3398,34 +3398,8 @@
           "tanggal": "2026-03-19"
         }
       ]
-    },
-    {
-      "nama": "Nz",
-      "kantong": [
-        {
-          "nama": "Pondok",
-          "saldo": 1000000,
-          "mataUang": "Rp"
-        },
-        {
-          "nama": "Listrik",
-          "saldo": 0,
-          "mataUang": "Rp"
-        }
-      ],
-      "transaksi": [
-        {
-          "id": "1792468451173531",
-          "kantong": 0,
-          "jenis": "masuk",
-          "jumlah": 1000000,
-          "mataUang": "Rp",
-          "keterangan": "Dari pk hji",
-          "tanggal": "2026-10-20"
-        }
-      ]
     }
   ],
-  "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "0"
+  "albary_user_terakhir": "0",
+  "albary_kantong_terakhir": "-1"
 }
