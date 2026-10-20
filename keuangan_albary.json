@@ -2572,7 +2572,7 @@
         },
         {
           "nama": "Mustofa nz",
-          "saldo": 0,
+          "saldo": -1000000,
           "mataUang": "Rp"
         }
       ],
@@ -2621,6 +2621,15 @@
           "mataUang": "Rp",
           "keterangan": "Lunas",
           "tanggal": "2026-06-05"
+        },
+        {
+          "id": "1792468197264370",
+          "kantong": 3,
+          "jenis": "keluar",
+          "jumlah": 1000000,
+          "mataUang": "Rp",
+          "keterangan": "Kirim bsi Akan di bayar tanggal 03-12-26",
+          "tanggal": "2026-10-20"
         }
       ]
     },
@@ -3392,5 +3401,5 @@
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "3"
 }
