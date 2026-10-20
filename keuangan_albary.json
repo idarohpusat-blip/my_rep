@@ -3406,6 +3406,11 @@
           "nama": "Pondok",
           "saldo": 0,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Listrik",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": []
