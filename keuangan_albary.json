@@ -3401,7 +3401,13 @@
     },
     {
       "nama": "Nz",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Pondok",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
