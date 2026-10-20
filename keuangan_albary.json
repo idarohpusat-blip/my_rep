@@ -3404,7 +3404,7 @@
       "kantong": [
         {
           "nama": "Pondok",
-          "saldo": 0,
+          "saldo": 1000000,
           "mataUang": "Rp"
         },
         {
@@ -3413,9 +3413,19 @@
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1792468451173531",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 1000000,
+          "mataUang": "Rp",
+          "keterangan": "Dari pk hji",
+          "tanggal": "2026-10-20"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
