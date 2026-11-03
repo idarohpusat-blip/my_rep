@@ -40,7 +40,7 @@
         },
         {
           "nama": "Hutang Ummi Sri",
-          "saldo": -19460650,
+          "saldo": -14460650,
           "mataUang": "Rp"
         }
       ],
@@ -1438,6 +1438,15 @@
           "jumlah": 10000000,
           "mataUang": "Rp",
           "keterangan": "29-05 ummi tf ke jamal",
+          "tanggal": "2026-11-03"
+        },
+        {
+          "id": "1793702673048383",
+          "kantong": 7,
+          "jenis": "masuk",
+          "jumlah": 5000000,
+          "mataUang": "Rp",
+          "keterangan": "Ummi  uang tiket sebelum romadhob",
           "tanggal": "2026-11-03"
         }
       ]
