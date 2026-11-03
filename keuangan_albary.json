@@ -40,7 +40,7 @@
         },
         {
           "nama": "Hutang Ummi Sri",
-          "saldo": -21460650,
+          "saldo": -29460650,
           "mataUang": "Rp"
         }
       ],
@@ -1420,6 +1420,15 @@
           "jumlah": 211200,
           "mataUang": "Rp",
           "keterangan": "Romadhon kekurangan uang dari ayah",
+          "tanggal": "2026-11-03"
+        },
+        {
+          "id": "1793702573482921",
+          "kantong": 7,
+          "jenis": "keluar",
+          "jumlah": 8000000,
+          "mataUang": "Rp",
+          "keterangan": "19-04 TF ummi Ke untuk ka darin",
           "tanggal": "2026-11-03"
         }
       ]
