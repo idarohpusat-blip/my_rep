@@ -40,7 +40,7 @@
         },
         {
           "nama": "Hutang Ummi Sri",
-          "saldo": -1461500,
+          "saldo": -21249450,
           "mataUang": "Rp"
         }
       ],
@@ -1402,6 +1402,15 @@
           "jumlah": 1461500,
           "mataUang": "Rp",
           "keterangan": "Jakarta sebelum romadhon",
+          "tanggal": "2026-11-03"
+        },
+        {
+          "id": "179370249411490",
+          "kantong": 7,
+          "jenis": "keluar",
+          "jumlah": 19787950,
+          "mataUang": "Rp",
+          "keterangan": "Romadhon mekkah",
           "tanggal": "2026-11-03"
         }
       ]
