@@ -2672,7 +2672,7 @@
         },
         {
           "nama": "Nafis dan inam",
-          "saldo": -50000,
+          "saldo": -100000,
           "mataUang": "Rp"
         }
       ],
@@ -2747,6 +2747,15 @@
           "jumlah": 50000,
           "mataUang": "Rp",
           "keterangan": "Nafis tidak boleh minta lagi tapi kalodikasi boleh",
+          "tanggal": "2026-11-03"
+        },
+        {
+          "id": "1793703782424346",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 50000,
+          "mataUang": "Rp",
+          "keterangan": "In'am tidak boleh minta uang lagi kecuali kalau di kasih",
           "tanggal": "2026-11-03"
         }
       ]
