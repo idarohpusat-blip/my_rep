@@ -30,7 +30,7 @@
         },
         {
           "nama": "Ummi sri ",
-          "saldo": -496,
+          "saldo": 0,
           "mataUang": "SAR"
         },
         {
@@ -1370,6 +1370,15 @@
           "jumlah": 1461500,
           "mataUang": "Rp",
           "keterangan": "Ini sudah pernah kata 00",
+          "tanggal": "2026-11-03"
+        },
+        {
+          "id": "1793702295321272",
+          "kantong": 5,
+          "jenis": "masuk",
+          "jumlah": 496,
+          "mataUang": "SAR",
+          "keterangan": "Sudah pernah 00",
           "tanggal": "2026-11-03"
         }
       ]
@@ -3428,5 +3437,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "5"
 }
