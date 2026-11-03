@@ -2672,7 +2672,7 @@
         },
         {
           "nama": "Nafis dan inam",
-          "saldo": 0,
+          "saldo": -50000,
           "mataUang": "Rp"
         }
       ],
@@ -2739,6 +2739,15 @@
           "mataUang": "Rp",
           "keterangan": "Gaji ana dari bang gofur Pengembalian tanggal 3-12-2026",
           "tanggal": "2026-10-24"
+        },
+        {
+          "id": "1793702811381625",
+          "kantong": 4,
+          "jenis": "keluar",
+          "jumlah": 50000,
+          "mataUang": "Rp",
+          "keterangan": "Nafis tidak boleh minta lagi tapi kalodikasi boleh",
+          "tanggal": "2026-11-03"
         }
       ]
     },
@@ -3510,5 +3519,5 @@
     }
   ],
   "albary_user_terakhir": "3",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "4"
 }
