@@ -40,7 +40,7 @@
         },
         {
           "nama": "Hutang Ummi Sri",
-          "saldo": 0,
+          "saldo": -1461500,
           "mataUang": "Rp"
         }
       ],
@@ -1393,6 +1393,15 @@
           "jumlah": 478,
           "mataUang": "Rp",
           "keterangan": "Sudah pernah 00",
+          "tanggal": "2026-11-03"
+        },
+        {
+          "id": "1793702470052594",
+          "kantong": 7,
+          "jenis": "keluar",
+          "jumlah": 1461500,
+          "mataUang": "Rp",
+          "keterangan": "Jakarta sebelum romadhon",
           "tanggal": "2026-11-03"
         }
       ]
@@ -3451,5 +3460,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "7"
 }
