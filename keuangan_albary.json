@@ -2669,6 +2669,11 @@
           "nama": "Mustofa nz",
           "saldo": -1500000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Nafis dan inam",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
