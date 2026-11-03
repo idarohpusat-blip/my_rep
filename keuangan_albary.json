@@ -1374,7 +1374,7 @@
           "jenis": "masuk",
           "jumlah": 1461500,
           "mataUang": "Rp",
-          "keterangan": "Ini sudah pernah kata 00",
+          "keterangan": "Pindah ke rupiah",
           "tanggal": "2026-11-03"
         },
         {
@@ -3451,5 +3451,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "6"
+  "albary_kantong_terakhir": "3"
 }
