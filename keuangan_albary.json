@@ -20,7 +20,7 @@
         },
         {
           "nama": "Full romadhon",
-          "saldo": -1461500,
+          "saldo": 0,
           "mataUang": "Rp"
         },
         {
@@ -1361,6 +1361,15 @@
           "jumlah": 4169,
           "mataUang": "SAR",
           "keterangan": "Peralihan ke rupiah",
+          "tanggal": "2026-11-03"
+        },
+        {
+          "id": "179370225558175",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 1461500,
+          "mataUang": "Rp",
+          "keterangan": "Ini sudah pernah kata 00",
           "tanggal": "2026-11-03"
         }
       ]
@@ -3419,5 +3428,5 @@
     }
   ],
   "albary_user_terakhir": "0",
-  "albary_kantong_terakhir": "4"
+  "albary_kantong_terakhir": "3"
 }
