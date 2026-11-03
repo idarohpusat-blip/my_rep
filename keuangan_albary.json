@@ -35,7 +35,7 @@
         },
         {
           "nama": "Umminsri 3",
-          "saldo": 956,
+          "saldo": 478,
           "mataUang": "Rp"
         }
       ],
@@ -1378,15 +1378,6 @@
           "jenis": "masuk",
           "jumlah": 496,
           "mataUang": "SAR",
-          "keterangan": "Sudah pernah 00",
-          "tanggal": "2026-11-03"
-        },
-        {
-          "id": "1793702307041266",
-          "kantong": 6,
-          "jenis": "masuk",
-          "jumlah": 478,
-          "mataUang": "Rp",
           "keterangan": "Sudah pernah 00",
           "tanggal": "2026-11-03"
         }
