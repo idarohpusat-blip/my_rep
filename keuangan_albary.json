@@ -3531,7 +3531,7 @@
       "kantong": [
         {
           "nama": "Tim Sukses",
-          "saldo": 450000,
+          "saldo": -150000,
           "mataUang": "Rp"
         }
       ],
@@ -3558,6 +3558,24 @@
           "id": "1794258767895796",
           "kantong": 0,
           "jenis": "masuk",
+          "jumlah": 300000,
+          "mataUang": "Rp",
+          "keterangan": "Hasan , perjodohan dan pengurusan",
+          "tanggal": "2026-11-09"
+        },
+        {
+          "id": "1794258812919232",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 300000,
+          "mataUang": "Rp",
+          "keterangan": "Ka hasan perjodohan dan pengurusan",
+          "tanggal": "2026-11-09"
+        },
+        {
+          "id": "179425884320053",
+          "kantong": 0,
+          "jenis": "keluar",
           "jumlah": 300000,
           "mataUang": "Rp",
           "keterangan": "Hasan , perjodohan dan pengurusan",
