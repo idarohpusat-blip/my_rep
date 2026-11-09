@@ -3531,7 +3531,7 @@
       "kantong": [
         {
           "nama": "Tim Sukses",
-          "saldo": 150000,
+          "saldo": 450000,
           "mataUang": "Rp"
         }
       ],
@@ -3552,6 +3552,15 @@
           "jumlah": 100000,
           "mataUang": "Rp",
           "keterangan": "Mengantikan pekerjannyaa bapak uni",
+          "tanggal": "2026-11-09"
+        },
+        {
+          "id": "1794258767895796",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 300000,
+          "mataUang": "Rp",
+          "keterangan": "Hasan , perjodohan dan pengurusan",
           "tanggal": "2026-11-09"
         }
       ]
