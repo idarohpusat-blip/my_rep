@@ -3528,13 +3528,7 @@
     },
     {
       "nama": "jamal & Ainun",
-      "kantong": [
-        {
-          "nama": "Hutang nikah",
-          "saldo": 0,
-          "mataUang": "Rp"
-        }
-      ],
+      "kantong": [],
       "transaksi": []
     }
   ],
