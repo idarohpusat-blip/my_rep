@@ -3531,7 +3531,7 @@
       "kantong": [
         {
           "nama": "Tim Sukses",
-          "saldo": 150000,
+          "saldo": 250000,
           "mataUang": "Rp"
         }
       ],
@@ -3570,6 +3570,15 @@
           "jumlah": 300000,
           "mataUang": "Rp",
           "keterangan": "Ka hasan perjodohan dan pengurusan",
+          "tanggal": "2026-11-09"
+        },
+        {
+          "id": "1794258945152188",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 100000,
+          "mataUang": "Rp",
+          "keterangan": "Bapak , catat nama dan mattale undangeng dan diluar bensin dan isi full",
           "tanggal": "2026-11-09"
         }
       ]
