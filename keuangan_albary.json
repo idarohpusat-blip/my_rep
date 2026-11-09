@@ -3531,13 +3531,23 @@
       "kantong": [
         {
           "nama": "Tim Sukses",
-          "saldo": 0,
+          "saldo": 50000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1794258672807407",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 50000,
+          "mataUang": "Rp",
+          "keterangan": "Bapak uni pembahan papenre",
+          "tanggal": "2026-11-09"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
