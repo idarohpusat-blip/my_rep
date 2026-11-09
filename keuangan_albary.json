@@ -3531,7 +3531,7 @@
       "kantong": [
         {
           "nama": "Tim Sukses",
-          "saldo": 50000,
+          "saldo": 150000,
           "mataUang": "Rp"
         }
       ],
@@ -3543,6 +3543,15 @@
           "jumlah": 50000,
           "mataUang": "Rp",
           "keterangan": "Bapak uni pembahan papenre",
+          "tanggal": "2026-11-09"
+        },
+        {
+          "id": "1794258691080614",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 100000,
+          "mataUang": "Rp",
+          "keterangan": "Mengantikan pekerjannyaa",
           "tanggal": "2026-11-09"
         }
       ]
