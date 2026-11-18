@@ -3531,7 +3531,7 @@
       "kantong": [
         {
           "nama": "Tim Sukses",
-          "saldo": 250000,
+          "saldo": 3250000,
           "mataUang": "Rp"
         },
         {
@@ -3622,10 +3622,19 @@
           "mataUang": "Rp",
           "keterangan": "Modal Awal",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "1794989007234968",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 3000000,
+          "mataUang": "Rp",
+          "keterangan": "Jennang",
+          "tanggal": "2026-11-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "0"
 }
