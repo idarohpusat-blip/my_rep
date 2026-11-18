@@ -3553,6 +3553,11 @@
           "nama": "Irang irang baju kaki sampai kepala",
           "saldo": 3000000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Cincin",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
