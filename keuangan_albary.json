@@ -3541,7 +3541,7 @@
         },
         {
           "nama": "Dapur",
-          "saldo": 10000000,
+          "saldo": 9600000,
           "mataUang": "Rp"
         },
         {
@@ -3677,10 +3677,19 @@
           "mataUang": "Rp",
           "keterangan": "Ceramah sholawatan",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "1795002145748399",
+          "kantong": 2,
+          "jenis": "keluar",
+          "jumlah": 400000,
+          "mataUang": "Rp",
+          "keterangan": "Kelapa piceng nanna",
+          "tanggal": "2026-11-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "1"
+  "albary_kantong_terakhir": "2"
 }
