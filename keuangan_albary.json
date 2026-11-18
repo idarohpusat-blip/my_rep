@@ -3551,7 +3551,7 @@
         },
         {
           "nama": "Irang irang baju kaki sampai kepala",
-          "saldo": 0,
+          "saldo": 3000000,
           "mataUang": "Rp"
         }
       ],
@@ -3636,10 +3636,19 @@
           "mataUang": "Rp",
           "keterangan": "Jennang",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "1794989078906156",
+          "kantong": 4,
+          "jenis": "masuk",
+          "jumlah": 3000000,
+          "mataUang": "Rp",
+          "keterangan": "Modal Awal",
+          "tanggal": "2026-11-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "0"
+  "albary_kantong_terakhir": "4"
 }
