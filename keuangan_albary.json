@@ -3556,7 +3556,7 @@
         },
         {
           "nama": "Cincin",
-          "saldo": 0,
+          "saldo": 4000000,
           "mataUang": "Rp"
         }
       ],
@@ -3659,10 +3659,19 @@
           "mataUang": "Rp",
           "keterangan": "Beras",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "1794989556477330",
+          "kantong": 5,
+          "jenis": "masuk",
+          "jumlah": 4000000,
+          "mataUang": "Rp",
+          "keterangan": "Modal Awal",
+          "tanggal": "2026-11-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "5"
 }
