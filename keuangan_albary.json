@@ -3536,7 +3536,7 @@
         },
         {
           "nama": "Lambing lambing dan pelengkap",
-          "saldo": 0,
+          "saldo": 5000000,
           "mataUang": "Rp"
         },
         {
@@ -3613,10 +3613,19 @@
           "mataUang": "Rp",
           "keterangan": "Uang pannai",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "1794988947613836",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 5000000,
+          "mataUang": "Rp",
+          "keterangan": "Modal Awal",
+          "tanggal": "2026-11-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "3"
+  "albary_kantong_terakhir": "1"
 }
