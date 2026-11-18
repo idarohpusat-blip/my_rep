@@ -3533,6 +3533,11 @@
           "nama": "Tim Sukses",
           "saldo": 250000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Lambing lambing dan pelengkap",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
