@@ -3536,7 +3536,7 @@
         },
         {
           "nama": "Lambing lambing dan pelengkap",
-          "saldo": 5000001,
+          "saldo": 6000001,
           "mataUang": "Rp"
         },
         {
@@ -3686,10 +3686,19 @@
           "mataUang": "Rp",
           "keterangan": "Kelapa piceng nanna",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "1795040077993297",
+          "kantong": 1,
+          "jenis": "masuk",
+          "jumlah": 1000000,
+          "mataUang": "Rp",
+          "keterangan": "Jubah putih peci, surban",
+          "tanggal": "2026-11-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "1"
 }
