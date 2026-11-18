@@ -3546,7 +3546,7 @@
         },
         {
           "nama": "Pa Penre",
-          "saldo": 0,
+          "saldo": 40000000,
           "mataUang": "Rp"
         }
       ],
@@ -3604,10 +3604,19 @@
           "mataUang": "Rp",
           "keterangan": "Modal Awal",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "179498892445944",
+          "kantong": 3,
+          "jenis": "masuk",
+          "jumlah": 40000000,
+          "mataUang": "Rp",
+          "keterangan": "Uang pannai",
+          "tanggal": "2026-11-18"
         }
       ]
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "2"
+  "albary_kantong_terakhir": "3"
 }
