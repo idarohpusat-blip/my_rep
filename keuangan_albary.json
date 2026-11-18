@@ -3548,6 +3548,11 @@
           "nama": "Pa Penre",
           "saldo": 40000000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Irang irang baju kaki sampai kepala",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
