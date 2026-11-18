@@ -3541,7 +3541,7 @@
         },
         {
           "nama": "Dapur",
-          "saldo": 0,
+          "saldo": 10000000,
           "mataUang": "Rp"
         },
         {
@@ -3595,6 +3595,15 @@
           "mataUang": "Rp",
           "keterangan": "Bapak , catat nama dan mattale undangeng dan diluar bensin dan isi full",
           "tanggal": "2026-11-09"
+        },
+        {
+          "id": "1794988899110478",
+          "kantong": 2,
+          "jenis": "masuk",
+          "jumlah": 10000000,
+          "mataUang": "Rp",
+          "keterangan": "Modal Awal",
+          "tanggal": "2026-11-18"
         }
       ]
     }
