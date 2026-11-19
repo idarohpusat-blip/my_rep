@@ -3703,13 +3703,23 @@
       "kantong": [
         {
           "nama": "Motor",
-          "saldo": 0,
+          "saldo": 6500000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1795060330377494",
+          "kantong": 0,
+          "jenis": "masuk",
+          "jumlah": 6500000,
+          "mataUang": "Rp",
+          "keterangan": "Belum bayar",
+          "tanggal": "2026-11-19"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "10",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
