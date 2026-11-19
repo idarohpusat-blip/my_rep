@@ -3700,7 +3700,13 @@
     },
     {
       "nama": "Motor tanta sennang",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Motor",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
