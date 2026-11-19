@@ -3697,8 +3697,13 @@
           "tanggal": "2026-11-18"
         }
       ]
+    },
+    {
+      "nama": "Motor tanta sennang",
+      "kantong": [],
+      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "1"
+  "albary_user_terakhir": "10",
+  "albary_kantong_terakhir": "-1"
 }
