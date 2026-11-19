@@ -3703,7 +3703,7 @@
       "kantong": [
         {
           "nama": "Motor",
-          "saldo": 6500000,
+          "saldo": 6000000,
           "mataUang": "Rp"
         }
       ],
@@ -3715,6 +3715,15 @@
           "jumlah": 6500000,
           "mataUang": "Rp",
           "keterangan": "Belum bayar",
+          "tanggal": "2026-11-19"
+        },
+        {
+          "id": "1795060387461844",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 500000,
+          "mataUang": "Rp",
+          "keterangan": "DP motor penerima Tante sennang",
           "tanggal": "2026-11-19"
         }
       ]
