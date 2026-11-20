@@ -3727,19 +3727,8 @@
           "tanggal": "2026-11-19"
         }
       ]
-    },
-    {
-      "nama": "Iwali",
-      "kantong": [
-        {
-          "nama": "Hutang pulsa",
-          "saldo": 0,
-          "mataUang": "Rp"
-        }
-      ],
-      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "11",
-  "albary_kantong_terakhir": "0"
+  "albary_user_terakhir": "0",
+  "albary_kantong_terakhir": "-1"
 }
