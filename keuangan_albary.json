@@ -3733,13 +3733,23 @@
       "kantong": [
         {
           "nama": "Hutang pulsa",
-          "saldo": 0,
+          "saldo": -65000,
           "mataUang": "Rp"
         }
       ],
-      "transaksi": []
+      "transaksi": [
+        {
+          "id": "1795152473711596",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 65000,
+          "mataUang": "Rp",
+          "keterangan": "Pulsa XL",
+          "tanggal": "2026-11-20"
+        }
+      ]
     }
   ],
   "albary_user_terakhir": "11",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "0"
 }
