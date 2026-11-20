@@ -3730,7 +3730,13 @@
     },
     {
       "nama": "Iwali",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Hutang pulsa",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
