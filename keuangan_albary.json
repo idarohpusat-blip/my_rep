@@ -3561,7 +3561,7 @@
         },
         {
           "nama": "Sapi",
-          "saldo": 0,
+          "saldo": 7000000,
           "mataUang": "Rp"
         }
       ],
@@ -3700,6 +3700,15 @@
           "mataUang": "Rp",
           "keterangan": "Jubah putih peci, surban",
           "tanggal": "2026-11-18"
+        },
+        {
+          "id": "1795345244834450",
+          "kantong": 6,
+          "jenis": "masuk",
+          "jumlah": 7000000,
+          "mataUang": "Rp",
+          "keterangan": "Sapi",
+          "tanggal": "2026-11-22"
         }
       ]
     },
@@ -3735,5 +3744,5 @@
     }
   ],
   "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "-1"
+  "albary_kantong_terakhir": "6"
 }
