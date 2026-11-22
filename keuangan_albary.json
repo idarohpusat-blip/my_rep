@@ -3558,6 +3558,11 @@
           "nama": "Cincin",
           "saldo": 4000000,
           "mataUang": "Rp"
+        },
+        {
+          "nama": "Sapi",
+          "saldo": 0,
+          "mataUang": "Rp"
         }
       ],
       "transaksi": [
