@@ -3747,7 +3747,7 @@
       "kantong": [
         {
           "nama": "Persiapan Nikah",
-          "saldo": 20000000,
+          "saldo": 16500000,
           "mataUang": "Rp"
         }
       ],
@@ -3768,6 +3768,15 @@
           "jumlah": 40000000,
           "mataUang": "Rp",
           "keterangan": "Papenree",
+          "tanggal": "2026-11-23"
+        },
+        {
+          "id": "179543581980335",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 3500000,
+          "mataUang": "Rp",
+          "keterangan": "Indo botting",
           "tanggal": "2026-11-23"
         }
       ]
