@@ -3741,8 +3741,13 @@
           "tanggal": "2026-11-19"
         }
       ]
+    },
+    {
+      "nama": "Persiapan Nikah",
+      "kantong": [],
+      "transaksi": []
     }
   ],
-  "albary_user_terakhir": "9",
-  "albary_kantong_terakhir": "6"
+  "albary_user_terakhir": "11",
+  "albary_kantong_terakhir": "-1"
 }
