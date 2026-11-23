@@ -3747,7 +3747,7 @@
       "kantong": [
         {
           "nama": "Persiapan Nikah",
-          "saldo": 60000000,
+          "saldo": 20000000,
           "mataUang": "Rp"
         }
       ],
@@ -3759,6 +3759,15 @@
           "jumlah": 60000000,
           "mataUang": "Rp",
           "keterangan": "Saldo",
+          "tanggal": "2026-11-23"
+        },
+        {
+          "id": "1795435757268547",
+          "kantong": 0,
+          "jenis": "keluar",
+          "jumlah": 40000000,
+          "mataUang": "Rp",
+          "keterangan": "Papenree",
           "tanggal": "2026-11-23"
         }
       ]
