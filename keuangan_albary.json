@@ -3744,7 +3744,13 @@
     },
     {
       "nama": "Persiapan Nikah",
-      "kantong": [],
+      "kantong": [
+        {
+          "nama": "Persiapan Nikah",
+          "saldo": 0,
+          "mataUang": "Rp"
+        }
+      ],
       "transaksi": []
     }
   ],
